@@ -1,0 +1,127 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 16px);
+  --radius-4xl: calc(var(--radius) + 24px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-dark: var(--dark);
+  --color-dark-foreground: var(--dark-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: "Inter", "Noto Serif Bengali", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter", "Noto Serif Bengali", ui-sans-serif, system-ui, sans-serif;
+  --font-bengali: "Noto Serif Bengali", "Inter", serif;
+
+  --ease-artx: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+:root {
+  --radius: 1rem;
+
+  /* ArtX palette */
+  --background: oklch(0.977 0.006 89);        /* #FAF9F6 cream */
+  --foreground: oklch(0.22 0.005 264);        /* near-black */
+  --card: oklch(0.977 0.006 89);
+  --card-foreground: oklch(0.22 0.005 264);
+
+  --primary: oklch(0.22 0.005 264);           /* dark ink */
+  --primary-foreground: oklch(0.977 0.006 89);
+
+  --secondary: oklch(0.94 0.006 89);
+  --secondary-foreground: oklch(0.22 0.005 264);
+
+  --muted: oklch(0.92 0.006 89);
+  --muted-foreground: oklch(0.45 0.008 264);
+
+  --accent: oklch(0.68 0.216 39);             /* #FF4500 accent orange */
+  --accent-foreground: oklch(0.977 0.006 89);
+
+  --dark: oklch(0.22 0.005 264);              /* #1A1A1A */
+  --dark-foreground: oklch(0.977 0.006 89);
+
+  --border: oklch(0.86 0.008 89);
+  --input: oklch(0.86 0.008 89);
+  --ring: oklch(0.68 0.216 39);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    line-height: 1.6;
+    letter-spacing: -0.005em;
+  }
+  p { text-wrap: pretty; }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+  }
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-accent-foreground);
+  }
+  html.lenis, html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+  .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+  .lenis.lenis-stopped { overflow: clip; }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@keyframes artx-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@utility spin-slow {
+  animation: artx-spin 10s linear infinite;
+}
+
+@keyframes artx-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@utility marquee-track {
+  animation: artx-marquee 40s linear infinite;
+}
+
+[lang="bn"],
+[lang="bn"] * {
+  font-family: "Noto Serif Bengali", "Inter", ui-sans-serif, system-ui, sans-serif;
+}

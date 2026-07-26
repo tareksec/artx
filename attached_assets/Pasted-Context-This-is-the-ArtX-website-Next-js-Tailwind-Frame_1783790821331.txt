@@ -1,0 +1,66 @@
+Context: This is the ArtX website (Next.js + Tailwind + Framer Motion + 
+shadcn/ui), currently live with homepage, /work, /services, /about, 
+/contact. Design tokens: background #FAF9F6, accent #FF4500, 
+dark #1A1A1A. Reuse existing components, animation patterns 
+(ScrollReveal, HoverCard), and the props-driven content structure 
+in src/content/site.ts.
+
+Build the following, in this priority order. Complete and confirm 
+each before moving to the next.
+
+1. CASE STUDY DETAIL PAGES — /work/[slug]
+   - Dynamic route reading from a new projects array in site.ts 
+     (extend existing project data: add fullDescription, processSteps, 
+     techStack, timeline, additional images, embedded client testimonial).
+   - Sections: Hero (project title + hero image), Overview (client, 
+     industry, timeline, role), Challenge/Solution/Result (already 
+     exists on cards — expand into full narrative here), Process 
+     breakdown (Research → Design → Build → Scale, matching the 
+     Philosophy section's 4-step framework), Image gallery, 
+     embedded testimonial quote, "Next project" navigation.
+   - Link existing Portfolio cards on homepage/work page to these 
+     new detail pages (currently "1 min read" has no target).
+   - Use ScrollReveal for section entrances, consistent with rest 
+     of site.
+
+2. SERVICE DETAIL PAGES — /services/[slug]
+   - One page each for Website Design, Web Development, SEO, 
+     Web Security.
+   - Sections: Hero (service name + one-line value prop), 
+     What's included (deliverables list), Process, FAQ accordion, 
+     relevant case study links (pull 1-2 related projects), CTA.
+   - Link from homepage Services numbered list (currently links to 
+     /contact — change to /services/[slug] instead, keep /contact 
+     as final CTA within the page).
+
+3. BLOG — /blog and /blog/[slug]
+   - Blog index: grid of article cards (title, excerpt, date, 
+     read time, category tag).
+   - Article page: clean typography-focused layout, table of contents 
+     for long posts, author byline, related articles at bottom.
+   - Add 3 placeholder articles to start (topics: web design trends, 
+     Core Web Vitals/SEO, case study retrospective).
+   - Add /blog link to main nav.
+
+4. PRICING — /pricing
+   - 3-tier card layout (Starter / Growth / Enterprise), consistent 
+     card style with Portfolio/Testimonials cards.
+   - Each tier: price range or "Custom quote", included services, 
+     CTA to /contact.
+   - FAQ section below addressing common pricing questions.
+
+5. ABOUT PAGE DEPTH — expand /about
+   - Add team member section (name, role, photo placeholder, short bio).
+   - Add studio timeline/milestones (founded 2016 → key growth points).
+   - Add values/principles section matching the "Beautiful is not 
+     enough. It has to perform." philosophy tone already established.
+
+Requirements throughout:
+- Maintain design token consistency (#FAF9F6, #FF4500, #1A1A1A)
+- All new content must be props-driven (extend site.ts, not hardcoded)
+- All images use next/image with proper alt text
+- Add generateMetadata() SEO tags to every new page
+- Update sitemap.ts to include all new dynamic routes
+- Test mobile responsiveness for every new page before marking complete
+
+Confirm completion of each numbered section before starting the next.

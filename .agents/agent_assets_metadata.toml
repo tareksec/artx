@@ -1,0 +1,14 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "Wx9Tm1TyxGNV3LyEvDCW2"
+uri = "file://attached_assets/generated_images/service_design_mockup.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "-4bdnMf1AhxRySfTu7-i4"
+uri = "file://attached_assets/generated_images/service_security_icon.png"
+type = "image"
+title = "generated_image"

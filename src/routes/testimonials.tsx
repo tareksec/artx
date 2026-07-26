@@ -1,0 +1,266 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import * as React from "react";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { RotatingAsterisk } from "@/components/animations/RotatingAsterisk";
+import { Footer } from "@/components/sections/Footer";
+import { useLanguage } from "@/components/providers/LanguageProvider";
+import { ArrowLeft, ArrowRight, Star, Sparkles } from "lucide-react";
+
+export const Route = createFileRoute("/testimonials")({
+  head: () => ({
+    meta: [
+      { title: "Testimonials — Words from the teams we ship with | ArtX Studio" },
+      {
+        name: "description",
+        content:
+          "Read client reviews, feedback, and case study results from SaaS, e-commerce, and global brands who partnered with ArtX Studio.",
+      },
+      { property: "og:title", content: "Testimonials — ArtX Studio" },
+      {
+        property: "og:description",
+        content:
+          "Read client reviews, feedback, and case study results from SaaS, e-commerce, and global brands who partnered with ArtX Studio.",
+      },
+      { property: "og:url", content: "/testimonials" },
+    ],
+    links: [{ rel: "canonical", href: "/testimonials" }],
+  }),
+  component: TestimonialsPage,
+});
+
+type TestimonialCard = {
+  qEn: string;
+  qBn: string;
+  name: string;
+  roleEn: string;
+  roleBn: string;
+  rating: number;
+  radii: string;
+  projectSlug?: string;
+  projectLinkEn: string;
+  projectLinkBn: string;
+};
+
+const allTestimonials: TestimonialCard[] = [
+  {
+    qEn: "ArtX delivered a site that finally matched the ambition of our brand. Conversion went up 42% in the first quarter.",
+    qBn: "ArtX আমাদের ব্র্যান্ডের আকাঙ্ক্ষার সাথে মিল রেখে একটি চমৎকার ওয়েবসাইট তৈরি করে দিয়েছে। প্রথম প্রান্তিকে আমাদের কনভার্সন ৪২% বৃদ্ধি পেয়েছে।",
+    name: "Amelia Rhodes",
+    roleEn: "Head of Brand, Northform",
+    roleBn: "হেড অব ব্র্যান্ড, Northform",
+    rating: 5,
+    radii: "rounded-tl-[2.5rem] rounded-br-[2.5rem] rounded-tr-2xl rounded-bl-2xl",
+    projectSlug: "northform-saas",
+    projectLinkEn: "Read the Northform case study",
+    projectLinkBn: "Northform কেস স্টাডি পড়ুন",
+  },
+  {
+    qEn: "The most opinionated studio we've worked with — in the best way. Every decision had a reason and it shows.",
+    qBn: "আমাদের সাথে কাজ করা সেরা স্টুডিও। প্রতিটি কাজের পেছনে একটি স্পষ্ট কারণ ছিল এবং সেটির ফলাফল কাজের মানেই প্রতিফলিত হয়েছে।",
+    name: "Julien Marc",
+    roleEn: "Founder, Jun Century",
+    roleBn: "ফাউন্ডার, Jun Century",
+    rating: 5,
+    radii: "rounded-tr-[2.5rem] rounded-bl-[2.5rem] rounded-tl-2xl rounded-br-2xl",
+    projectSlug: "jun-century",
+    projectLinkEn: "Read the Jun Century case study",
+    projectLinkBn: "Jun Century কেস স্টাডি পড়ুন",
+  },
+  {
+    qEn: "Design, build and SEO under one roof made the whole project ship two months faster than our previous rebuild.",
+    qBn: "ডিজাইন, ডেভেলপমেন্ট এবং এসইও একই ছাদের নিচে থাকায় আমাদের পুরো প্রোজেক্ট আগের চেয়ে দুই মাস আগেই লাইভ হয়েছে।",
+    name: "Priya Shah",
+    roleEn: "VP Marketing, Veative",
+    roleBn: "ভিপি মার্কেটিং, Veative",
+    rating: 5,
+    radii: "rounded-tl-[2.5rem] rounded-bl-[2.5rem] rounded-tr-2xl rounded-br-2xl",
+    projectSlug: "veative-kitchen",
+    projectLinkEn: "Read the Veative case study",
+    projectLinkBn: "Veative কেস স্টাডি পড়ুন",
+  },
+  {
+    qEn: "The 60fps animations and clean architecture gave our e-commerce platform an immediate enterprise feel. Sales increased by 65% within weeks.",
+    qBn: "সাইটের ৬০এফপিএস অ্যানিমেশন এবং ক্লিন আর্কিটেকচারের কারণে আমাদের ই-কমার্স প্ল্যাটফর্মটি একটি প্রিমিয়াম লুক পেয়েছে। কয়েক সপ্তাহের মধ্যেই আমাদের বিক্রি ৬৫% বেড়েছে।",
+    name: "Marcus Vance",
+    roleEn: "Founder & CEO, Gearabout",
+    roleBn: "ফাউন্ডার ও সিইও, Gearabout",
+    rating: 5,
+    radii: "rounded-tr-[2.5rem] rounded-bl-[2.5rem] rounded-tl-2xl rounded-br-2xl",
+    projectSlug: "gearabout",
+    projectLinkEn: "Read the Gearabout case study",
+    projectLinkBn: "Gearabout কেস স্টাডি পড়ুন",
+  },
+  {
+    qEn: "ArtX engineered our web dashboard with incredible precision. They understood our complex AI workflows and turned them into a seamless, intuitive UX.",
+    qBn: "ArtX অত্যন্ত নিখুঁতভাবে আমাদের ওয়েব ড্যাশবোর্ড তৈরি করেছে। তারা আমাদের জটিল এআই ওয়ার্কফ্লো বুঝে সেটিকে একটি সহজ এবং সুন্দর ইউজার এক্সপেরিয়েন্সে রূপান্তর করেছে।",
+    name: "Sarah Jenkins",
+    roleEn: "Director of Product, Cortex AI",
+    roleBn: "ডিরেক্টর অব প্রোডাক্ট, Cortex AI",
+    rating: 5,
+    radii: "rounded-tl-[2.5rem] rounded-br-[2.5rem] rounded-tr-2xl rounded-bl-2xl",
+    projectLinkEn: "Recent Launch · Case study coming soon",
+    projectLinkBn: "সম্প্রতি লাইভ · কেস স্টাডি শীঘ্রই আসছে",
+  },
+  {
+    qEn: "From local bKash integration to WhatsApp checkout redirect, ArtX built the exact scaling system our business needed in Bangladesh.",
+    qBn: "লোকাল পেমেন্ট ইন্টিগ্রেশন থেকে শুরু করে হোয়াটসঅ্যাপ চেকআউট রিডাইরেক্ট পর্যন্ত, ArtX আমাদের ব্যবসার বৃদ্ধির জন্য ঠিক যেমন সিস্টেম দরকার ছিল তেমনই তৈরি করে দিয়েছে।",
+    name: "Tanvir Ahmed",
+    roleEn: "Managing Director, Apex Cloud BN",
+    roleBn: "ম্যানেজিং ডিরেক্টর, Apex Cloud BN",
+    rating: 5,
+    radii: "rounded-tr-[2.5rem] rounded-bl-[2.5rem] rounded-tl-2xl rounded-br-2xl",
+    projectLinkEn: "Recent Launch · Case study coming soon",
+    projectLinkBn: "সম্প্রতি লাইভ · কেস স্টাডি শীঘ্রই আসছে",
+  },
+];
+
+function TestimonialsPage() {
+  const { language } = useLanguage();
+
+  return (
+    <>
+      <main className="min-h-screen px-6 pt-36 pb-24 md:pt-48 md:pb-32">
+        <div className="mx-auto max-w-7xl">
+          {/* Back Link */}
+          <ScrollReveal className="mb-8">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              {language === "bn" ? "হোমে ফিরে যান" : "Back to Home"}
+            </Link>
+          </ScrollReveal>
+
+          {/* Page Header */}
+          <ScrollReveal className="mb-20">
+            <div className="mb-4 flex items-center gap-3 text-sm uppercase tracking-[0.2em] text-muted-foreground">
+              <span className="h-px w-8 bg-foreground/30" />
+              {language === "bn" ? "ক্লায়েন্ট রিভিউ" : "Testimonials"}
+            </div>
+            <h1 className="text-balance text-5xl font-extrabold leading-[0.95] tracking-tight md:text-7xl lg:text-8xl">
+              {language === "bn" ? (
+                <>
+                  যাদের সাথে আমরা কাজ করেছি তাদের <em className="not-italic text-accent">মূল্যবান মতামত</em>।
+                </>
+              ) : (
+                <>
+                  Words from <em className="not-italic text-accent">the teams</em>
+                  <br /> we ship with.
+                </>
+              )}
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
+              {language === "bn"
+                ? "দেশ ও দেশের বাইরের বিভিন্ন আধুনিক ব্র্যান্ড এবং উদ্যোক্তাদের সাথে আমাদের কাজের অভিজ্ঞতা ও তাদের প্রতিক্রিয়া জানুন।"
+                : "Real reviews and verified results from SaaS founders, e-commerce leaders, and product teams around the globe."}
+            </p>
+          </ScrollReveal>
+
+          {/* Grid / Masonry Layout */}
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {allTestimonials.map((t, i) => (
+              <ScrollReveal key={t.name} delay={i * 0.08} className="h-full">
+                <figure
+                  className={`group flex h-full flex-col justify-between border border-border/60 bg-secondary/70 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/40 hover:shadow-xl md:p-10 ${t.radii}`}
+                >
+                  <div>
+                    {/* Top row: Asterisk & 5-Star Visual */}
+                    <div className="mb-6 flex items-center justify-between">
+                      <RotatingAsterisk className="text-2xl text-accent" />
+                      <div className="flex items-center gap-1" aria-label={`Rating: ${t.rating} out of 5 stars`}>
+                        {Array.from({ length: 5 }).map((_, starIdx) => (
+                          <Star
+                            key={starIdx}
+                            className={`h-4 w-4 ${
+                              starIdx < t.rating
+                                ? "fill-accent text-accent"
+                                : "fill-muted text-muted-foreground/30"
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Quote text */}
+                    <blockquote className="text-lg leading-[1.6] tracking-[-0.005em] text-foreground">
+                      <span aria-hidden="true" className="text-accent font-serif text-xl">“</span>
+                      {language === "bn" ? t.qBn : t.qEn}
+                      <span aria-hidden="true" className="text-accent font-serif text-xl">”</span>
+                    </blockquote>
+                  </div>
+
+                  <div>
+                    {/* Client Name & Role */}
+                    <figcaption className="mt-8 flex items-baseline justify-between gap-4 border-t border-foreground/10 pt-6">
+                      <div>
+                        <div className="font-bold tracking-tight text-foreground md:text-lg">
+                          {t.name}
+                        </div>
+                        <div className="mt-1 text-sm text-muted-foreground">
+                          {language === "bn" ? t.roleBn : t.roleEn}
+                        </div>
+                      </div>
+                      <span className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground/60">
+                        0{i + 1}
+                      </span>
+                    </figcaption>
+
+                    {/* Related Project Link or Placeholder Slot */}
+                    {t.projectSlug ? (
+                      <div className="mt-5 border-t border-foreground/5 pt-4">
+                        <Link
+                          to={`/work/${t.projectSlug}`}
+                          className="group/link inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-accent transition-colors hover:underline"
+                        >
+                          <span>{language === "bn" ? t.projectLinkBn : t.projectLinkEn}</span>
+                          <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/link:translate-x-1" />
+                        </Link>
+                      </div>
+                    ) : (
+                      <div className="mt-5 border-t border-foreground/5 pt-4">
+                        <span className="inline-flex items-center gap-2 text-xs font-medium italic text-muted-foreground">
+                          <Sparkles className="h-3.5 w-3.5 text-accent animate-pulse" />
+                          {language === "bn" ? t.projectLinkBn : t.projectLinkEn}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                </figure>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          {/* Bottom CTA Banner */}
+          <ScrollReveal className="mt-28">
+            <div className="flex flex-col items-center justify-between gap-8 rounded-[2.5rem] bg-dark p-10 text-center text-dark-foreground shadow-2xl md:flex-row md:p-16 md:text-left">
+              <div>
+                <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+                  {language === "bn" ? "পরবর্তী সাফল্যের গল্প হতে চান?" : "Ready to be our next success story?"}
+                </div>
+                <h2 className="text-balance text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl">
+                  {language === "bn" ? "চলুন একসাথে কিছু আকর্ষণীয় তৈরি করি।" : "Let's build something standout."}
+                </h2>
+                <p className="mt-3 text-sm text-dark-foreground/70 md:text-base">
+                  {language === "bn"
+                    ? "আপনার নতুন প্রোজেক্ট বা রিডিজাইন নিয়ে আলোচনা করতে আজই যোগাযোগ করুন।"
+                    : "Partner with a team that cares about design, speed, and real revenue impact."}
+                </p>
+              </div>
+              <Link
+                to="/contact"
+                className="group inline-flex shrink-0 items-center gap-3 rounded-full bg-accent px-8 py-5 text-base font-bold text-accent-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/25"
+              >
+                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-accent-foreground/15 text-sm transition-transform duration-500 group-hover:rotate-180">
+                  ✱
+                </span>
+                <span>{language === "bn" ? "প্রোজেক্ট শুরু করুন" : "Start your project"}</span>
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
+      </main>
+      <Footer />
+    </>
+  );
+}
