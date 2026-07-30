@@ -4,6 +4,7 @@ import { ClientLogos } from "@/components/sections/ClientLogos";
 import { BrandPhilosophy } from "@/components/sections/BrandPhilosophy";
 import { Portfolio } from "@/components/sections/Portfolio";
 import { Services } from "@/components/sections/Services";
+import { AllSolutions } from "@/components/sections/AllSolutions";
 import { Pricing } from "@/components/sections/Pricing";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Footer } from "@/components/sections/Footer";
@@ -20,6 +21,7 @@ function Index() {
       <BrandPhilosophy />
       <Portfolio />
       <Services />
+      <AllSolutions />
       <Pricing />
       <Testimonials />
       <Footer />

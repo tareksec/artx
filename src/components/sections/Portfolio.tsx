@@ -214,7 +214,7 @@ export function Portfolio({
 
         <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div
-            className="flex flex-wrap gap-2"
+            className="flex overflow-x-auto pb-4 -mx-6 px-6 sm:mx-0 sm:px-0 sm:pb-0 sm:flex-wrap sm:overflow-x-visible hide-scrollbar gap-2"
             role="tablist"
             aria-label="Filter work by category"
           >
@@ -225,7 +225,7 @@ export function Portfolio({
                 role="tab"
                 aria-selected={activeCategory === category}
                 onClick={() => setActiveCategory(category)}
-                className={`rounded-full border px-4 py-2 text-sm transition-colors ${
+                className={`rounded-full border px-4 py-2.5 min-h-[44px] text-sm whitespace-nowrap transition-colors flex items-center justify-center ${
                   activeCategory === category
                     ? "border-accent bg-accent text-accent-foreground"
                     : "border-border text-foreground/70 hover:border-accent hover:text-accent"

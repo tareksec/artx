@@ -1057,3 +1057,59 @@ export const socialLinks: SocialLink[] = [
     live: false,
   },
 ];
+
+export type ConceptItem = {
+  slug: string;
+  titleKey: string;
+  descriptionKey: string;
+  category: string;
+  images: string[];
+};
+
+export const conceptWork: ConceptItem[] = [
+  { slug: "abstract-geometric-3d", titleKey: "abstractGeometric3dTitle", descriptionKey: "abstractGeometric3dDesc", category: "Brand", images: ["/concepts/abstract-geometric-3d-1.webp", "/concepts/abstract-geometric-3d-2.webp"] },
+  { slug: "cyclone-environment-presentation", titleKey: "cycloneEnvironmentTitle", descriptionKey: "cycloneEnvironmentDesc", category: "Presentation", images: ["/concepts/cyclone-environment-presentation-1.webp", "/concepts/cyclone-environment-presentation-2.webp"] },
+  { slug: "division-business-presentation", titleKey: "divisionBusinessTitle", descriptionKey: "divisionBusinessDesc", category: "Presentation", images: ["/concepts/division-business-presentation-1.webp", "/concepts/division-business-presentation-2.webp"] },
+  { slug: "ensemble-fashion-presentation", titleKey: "ensembleFashionTitle", descriptionKey: "ensembleFashionDesc", category: "Presentation", images: ["/concepts/ensemble-fashion-presentation-1.webp", "/concepts/ensemble-fashion-presentation-2.webp", "/concepts/ensemble-fashion-presentation-3.webp"] },
+  { slug: "lema-preview-presentation", titleKey: "lemaPreviewTitle", descriptionKey: "lemaPreviewDesc", category: "Presentation", images: ["/concepts/lema-preview-presentation-1.webp"] },
+  { slug: "caringmax-medical-presentation", titleKey: "caringmaxMedicalTitle", descriptionKey: "caringmaxMedicalDesc", category: "Health & Medical", images: ["/concepts/caringmax-medical-presentation-1.webp", "/concepts/caringmax-medical-presentation-2.webp", "/concepts/caringmax-medical-presentation-3.webp"] },
+  { slug: "modular-tech-presentation", titleKey: "modularTechTitle", descriptionKey: "modularTechDesc", category: "Presentation", images: ["/concepts/modular-tech-presentation-1.webp", "/concepts/modular-tech-presentation-2.webp"] },
+  { slug: "stacy-travel-presentation", titleKey: "stacyTravelTitle", descriptionKey: "stacyTravelDesc", category: "Presentation", images: ["/concepts/stacy-travel-presentation-1.webp", "/concepts/stacy-travel-presentation-2.webp", "/concepts/stacy-travel-presentation-3.webp"] },
+  { slug: "yuffiny-fashion-presentation", titleKey: "yuffinyFashionTitle", descriptionKey: "yuffinyFashionDesc", category: "Presentation", images: ["/concepts/yuffiny-fashion-presentation-1.webp", "/concepts/yuffiny-fashion-presentation-2.webp", "/concepts/yuffiny-fashion-presentation-3.webp"] },
+  { slug: "nexus-ai-dashboard", titleKey: "nexusAiDashboardTitle", descriptionKey: "nexusAiDashboardDesc", category: "SaaS", images: ["/concepts/nexus-ai-dashboard-1.webp"] },
+  { slug: "nexus-ai-pricing", titleKey: "nexusAiPricingTitle", descriptionKey: "nexusAiPricingDesc", category: "SaaS", images: ["/concepts/nexus-ai-pricing-1.webp"] },
+  { slug: "modern-blog-archive", titleKey: "modernBlogArchiveTitle", descriptionKey: "modernBlogArchiveDesc", category: "Blog & News", images: ["/concepts/modern-blog-archive-1.webp"] },
+  { slug: "book-launch-hero", titleKey: "bookLaunchHeroTitle", descriptionKey: "bookLaunchHeroDesc", category: "E-commerce", images: ["/concepts/book-launch-hero-1.webp"] },
+  { slug: "bookstore-platform", titleKey: "bookstorePlatformTitle", descriptionKey: "bookstorePlatformDesc", category: "E-commerce", images: ["/concepts/bookstore-platform-1.webp"] },
+  { slug: "elearning-course-catalog", titleKey: "elearningCourseCatalogTitle", descriptionKey: "elearningCourseCatalogDesc", category: "Education", images: ["/concepts/elearning-course-catalog-1.webp"] },
+  { slug: "custom-admin-dashboard", titleKey: "customAdminDashboardTitle", descriptionKey: "customAdminDashboardDesc", category: "SaaS", images: ["/concepts/custom-admin-dashboard-1.webp"] },
+  { slug: "medical-clinic-hero", titleKey: "medicalClinicHeroTitle", descriptionKey: "medicalClinicHeroDesc", category: "Health & Medical", images: ["/concepts/medical-clinic-hero-1.webp"] },
+  { slug: "telehealth-platform-hero", titleKey: "telehealthPlatformHeroTitle", descriptionKey: "telehealthPlatformHeroDesc", category: "Health & Medical", images: ["/concepts/telehealth-platform-hero-1.webp"] },
+  { slug: "medical-specialists-directory", titleKey: "medicalSpecialistsDirectoryTitle", descriptionKey: "medicalSpecialistsDirectoryDesc", category: "Health & Medical", images: ["/concepts/medical-specialists-directory-1.webp"] },
+  { slug: "fast-food-delivery-hero", titleKey: "fastFoodDeliveryHeroTitle", descriptionKey: "fastFoodDeliveryHeroDesc", category: "Food & Beverage", images: ["/concepts/fast-food-delivery-hero-1.webp"] },
+  { slug: "foodmart-grocery-app", titleKey: "foodmartGroceryAppTitle", descriptionKey: "foodmartGroceryAppDesc", category: "Food & Beverage", images: ["/concepts/foodmart-grocery-app-1.webp"] },
+  { slug: "foodmart-delivery-hero", titleKey: "foodmartDeliveryHeroTitle", descriptionKey: "foodmartDeliveryHeroDesc", category: "Food & Beverage", images: ["/concepts/foodmart-delivery-hero-1.webp"] },
+  { slug: "restaurant-digital-menu", titleKey: "restaurantDigitalMenuTitle", descriptionKey: "restaurantDigitalMenuDesc", category: "Food & Beverage", images: ["/concepts/restaurant-digital-menu-1.webp"] },
+  { slug: "music-streaming-app", titleKey: "musicStreamingAppTitle", descriptionKey: "musicStreamingAppDesc", category: "Web", images: ["/concepts/music-streaming-app-1.webp"] },
+  { slug: "global-news-portal", titleKey: "globalNewsPortalTitle", descriptionKey: "globalNewsPortalDesc", category: "Blog & News", images: ["/concepts/global-news-portal-1.webp"] },
+  { slug: "daily-journal-homepage", titleKey: "dailyJournalHomepageTitle", descriptionKey: "dailyJournalHomepageDesc", category: "Blog & News", images: ["/concepts/daily-journal-homepage-1.webp"] },
+  { slug: "organic-farm-store", titleKey: "organicFarmStoreTitle", descriptionKey: "organicFarmStoreDesc", category: "E-commerce", images: ["/concepts/organic-farm-store-1.webp"] },
+  { slug: "organic-produce-market", titleKey: "organicProduceMarketTitle", descriptionKey: "organicProduceMarketDesc", category: "E-commerce", images: ["/concepts/organic-produce-market-1.webp"] },
+  { slug: "creative-agency-portfolio", titleKey: "creativeAgencyPortfolioTitle", descriptionKey: "creativeAgencyPortfolioDesc", category: "Agency", images: ["/concepts/creative-agency-portfolio-1.webp"] },
+  { slug: "international-school-portal", titleKey: "internationalSchoolPortalTitle", descriptionKey: "internationalSchoolPortalDesc", category: "Education", images: ["/concepts/international-school-portal-1.webp"] },
+  { slug: "design-studio-services", titleKey: "designStudioServicesTitle", descriptionKey: "designStudioServicesDesc", category: "Agency", images: ["/concepts/design-studio-services-1.webp"] },
+  { slug: "audio-platform-interface", titleKey: "audioPlatformInterfaceTitle", descriptionKey: "audioPlatformInterfaceDesc", category: "Web", images: ["/concepts/audio-platform-interface-1.webp"] },
+  { slug: "hospital-services-portal", titleKey: "hospitalServicesPortalTitle", descriptionKey: "hospitalServicesPortalDesc", category: "Health & Medical", images: ["/concepts/hospital-services-portal-1.webp"] },
+  { slug: "travel-destination-blog", titleKey: "travelDestinationBlogTitle", descriptionKey: "travelDestinationBlogDesc", category: "Blog & News", images: ["/concepts/travel-destination-blog-1.webp"] },
+  { slug: "stellla-video-demo", titleKey: "stelllaVideoTitle", descriptionKey: "stelllaVideoDesc", category: "Web", images: ["/concepts/stellla-video-1.webp"] },
+  { slug: "business-website-ui", titleKey: "businessWebsiteUiTitle", descriptionKey: "businessWebsiteUiDesc", category: "Brand", images: ["/concepts/business-website-ui-1.webp", "/concepts/business-website-ui-2.webp", "/concepts/business-website-ui-3.webp", "/concepts/business-website-ui-4.webp"] },
+  { slug: "consulting-website-design", titleKey: "consultingWebsiteDesignTitle", descriptionKey: "consultingWebsiteDesignDesc", category: "Agency", images: ["/concepts/consulting-website-design-1.webp"] },
+  { slug: "criminal-defense-law-ui", titleKey: "criminalDefenseLawUiTitle", descriptionKey: "criminalDefenseLawUiDesc", category: "Brand", images: ["/concepts/criminal-defense-law-ui-1.webp", "/concepts/criminal-defense-law-ui-2.webp"] },
+  { slug: "hela-women-shoes", titleKey: "helaWomenShoesTitle", descriptionKey: "helaWomenShoesDesc", category: "E-commerce", images: ["/concepts/hela-women-shoes-1.webp"] },
+  { slug: "personal-portfolio-ui", titleKey: "personalPortfolioUiTitle", descriptionKey: "personalPortfolioUiDesc", category: "Brand", images: ["/concepts/personal-portfolio-ui-1.webp", "/concepts/personal-portfolio-ui-2.webp"] },
+  { slug: "petpals-pet-care", titleKey: "petpalsPetCareTitle", descriptionKey: "petpalsPetCareDesc", category: "Brand", images: ["/concepts/petpals-pet-care-1.webp"] },
+  { slug: "shopify-ecommerce-template", titleKey: "shopifyEcommerceTemplateTitle", descriptionKey: "shopifyEcommerceTemplateDesc", category: "E-commerce", images: ["/concepts/shopify-ecommerce-template-1.webp"] },
+  { slug: "sportswear-ecommerce", titleKey: "sportswearEcommerceTitle", descriptionKey: "sportswearEcommerceDesc", category: "E-commerce", images: ["/concepts/sportswear-ecommerce-1.webp", "/concepts/sportswear-ecommerce-2.webp"] },
+  { slug: "lawyer-agency-website", titleKey: "lawyerAgencyWebsiteTitle", descriptionKey: "lawyerAgencyWebsiteDesc", category: "Agency", images: ["/concepts/lawyer-agency-website-1.webp"] },
+  { slug: "ecommerce-websites-templates", titleKey: "ecommerceWebsitesTemplatesTitle", descriptionKey: "ecommerceWebsitesTemplatesDesc", category: "E-commerce", images: ["/concepts/ecommerce-websites-templates-1.webp", "/concepts/ecommerce-websites-templates-2.webp"] }
+];

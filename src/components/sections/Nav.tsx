@@ -14,7 +14,7 @@ export function Nav() {
     { to: "/work", label: t.nav.work },
     { to: "/services", label: t.nav.services },
     { to: "/about", label: t.nav.about },
-    { to: "/blog", label: t.nav.blog },
+    { to: "/concepts", label: t.nav.concepts, highlight: true },
     { to: "/pricing", label: t.nav.pricing },
     { to: "/faq", label: t.nav.faq },
     { to: "/testimonials", label: t.nav.testimonials },
@@ -50,8 +50,12 @@ export function Nav() {
             <li key={l.to}>
               <Link
                 to={l.to}
-                className="rounded-full px-3.5 py-1.5 text-sm text-foreground/70 transition-colors hover:text-foreground"
-                activeProps={{ className: "text-foreground font-medium" }}
+                className={`rounded-full px-3.5 py-1.5 text-sm transition-colors ${
+                  l.highlight 
+                    ? "bg-accent/10 text-accent font-medium border border-accent/20 hover:bg-accent/20"
+                    : "text-foreground/70 hover:text-foreground"
+                }`}
+                activeProps={{ className: l.highlight ? "bg-accent/20 font-bold" : "text-foreground font-medium" }}
               >
                 {l.label}
               </Link>
@@ -118,8 +122,12 @@ export function Nav() {
                   <Link
                     to={l.to}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block rounded-2xl px-4 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground"
-                    activeProps={{ className: "bg-secondary text-foreground font-bold" }}
+                    className={`block rounded-2xl px-4 py-2.5 text-sm font-medium transition-colors ${
+                      l.highlight
+                        ? "bg-accent/10 text-accent border border-accent/20 hover:bg-accent/20"
+                        : "text-foreground/80 hover:bg-secondary hover:text-foreground"
+                    }`}
+                    activeProps={{ className: l.highlight ? "bg-accent/20 font-bold" : "bg-secondary text-foreground font-bold" }}
                   >
                     {l.label}
                   </Link>
