@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Services } from "@/components/sections/Services";
 import { Footer } from "@/components/sections/Footer";
 import { useLanguage } from "@/components/providers/LanguageProvider";
@@ -8,13 +8,13 @@ import { Zap, ShieldCheck, Sparkles, MessageCircle } from "lucide-react";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Design, Development & SEO | ArtX" },
-      { name: "description", content: "Website design, web development and SEO — four disciplines, one studio. Built to perform." },
-      { property: "og:title", content: "Services — ArtX Studio" },
-      { property: "og:description", content: "Website design, web development and SEO for standout brands." },
-      { property: "og:url", content: "/services" },
+      { title: "Services — B2B web development company | ArtX Studio" },
+      { name: "description", content: "ArtX is a B2B web development company and technical SEO agency. We engineer custom websites designed to convert." },
+      { property: "og:title", content: "Services — B2B web development company | ArtX Studio" },
+      { property: "og:description", content: "ArtX is a B2B web development company and technical SEO agency offering website design, web development, and SEO." },
+      { property: "og:url", content: "https://artxx.lovable.app/services" },
     ],
-    links: [{ rel: "canonical", href: "/services" }],
+    links: [{ rel: "canonical", href: "https://artxx.lovable.app/services" }],
   }),
   component: ServicesPage,
 });
@@ -63,15 +63,15 @@ function ServicesPage() {
           </div>
           <h1 className="text-balance text-6xl leading-[0.95] md:text-8xl">
             {language === "bn" ? (
-              <>আমরা যা <em className="not-italic text-accent">করি</em>।</>
+              <>সম্পূর্ণ ডিজিটাল <em className="not-italic text-accent">প্রোডাক্ট স্টুডিও</em>।</>
             ) : (
-              <>What we <em className="not-italic text-accent">do</em>.</>
+              <>Full-service digital <em className="not-italic text-accent">product studio</em>.</>
             )}
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
             {language === "bn"
               ? "ডিজাইন, ডেভেলপমেন্ট, এসইও এবং ওয়েব সিকিউরিটি — একই ছাদের নিচে আপনার ব্যবসার সম্পূর্ণ ডিজিটাল সমাধান। প্রতিটি সার্ভিস বিশ্বমানের মানদণ্ডে তৈরি।"
-              : "Editorial design, 60fps React development, technical SEO, and web security — four core disciplines, one high-performing studio. Engineered for measurable growth."}
+              : "Editorial design, custom web solutions, 60fps React development, technical SEO, and web security — four core disciplines, one high-performing studio. Engineered for measurable growth."}
           </p>
         </div>
       </section>
@@ -81,7 +81,7 @@ function ServicesPage() {
         <div className="mx-auto max-w-7xl">
           <ScrollReveal className="mb-12 border-t border-border pt-12">
             <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-              {language === "bn" ? "আমাদের কাজের বিশেষত্ব" : "The ArtX Standard"}
+              {language === "bn" ? "আমাদের কাজের বিশেষত্ব: কাস্টম ওয়েব সলিউশন" : "The ArtX Standard: Custom Web Solutions"}
             </h2>
             <p className="mt-2 text-sm text-muted-foreground">
               {language === "bn" ? "প্রতিটি প্রজেক্টে আমরা যে মানদণ্ড নিশ্চিত করি" : "What every project ships with by default"}
@@ -110,6 +110,32 @@ function ServicesPage() {
               );
             })}
           </div>
+
+          <ScrollReveal delay={0.2} className="mt-16 text-center">
+            <Link
+              to="/pricing"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
+            >
+              <span className="text-lg">✱</span> {language === "bn" ? "প্যাকেজ ও মূল্য তালিকা দেখুন" : "Explore our affordable web design packages"}
+            </Link>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Semantic Services List for GEO / Crawlers */}
+      <section className="px-6 py-12 bg-secondary/50">
+        <div className="mx-auto max-w-4xl text-center md:text-left">
+          <h2 className="text-xl font-semibold mb-6">
+            {language === "bn" ? "আমাদের মূল সেবাসমূহ" : "Our Core Services"}
+          </h2>
+          <ul className="grid sm:grid-cols-2 gap-4 text-sm text-muted-foreground text-left mx-auto md:mx-0 list-disc list-inside">
+            <li>Website Design & UX/UI Prototyping</li>
+            <li>Custom Web Development (React & WordPress)</li>
+            <li>Technical & On-Page SEO</li>
+            <li>E-commerce Website Development</li>
+            <li>SaaS Platform Design</li>
+            <li>Web Security Audits & Hardening</li>
+          </ul>
         </div>
       </section>
 

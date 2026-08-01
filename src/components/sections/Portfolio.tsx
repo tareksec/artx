@@ -151,24 +151,26 @@ function ProjectCard({
 }
 
 function getCategory(p: CaseStudy): string {
-  if (p.tag.toLowerCase().includes("saas") || p.tag.toLowerCase().includes("app")) {
-    return "SaaS";
-  }
-  if (p.tag.toLowerCase().includes("commerce") || p.tag.toLowerCase().includes("store")) {
-    return "E-commerce";
-  }
-  if (p.tag.toLowerCase().includes("brand") || p.tag.toLowerCase().includes("identity")) {
-    return "Brand";
-  }
+  const tag = p.tag.toLowerCase();
+  if (tag.includes("fintech")) return "FinTech";
+  if (tag.includes("education") || tag.includes("course") || tag.includes("publishing") || tag.includes("pathagar")) return "Education";
+  if (tag.includes("portfolio")) return "Portfolio";
+  if (tag.includes("editorial")) return "Editorial";
+  if (tag.includes("restaurant")) return "Restaurant";
+  if (tag.includes("product") || tag.includes("saas") || tag.includes("app")) return "Product";
+  if (tag.includes("commerce") || tag.includes("store")) return "E-commerce";
+  if (tag.includes("brand") || tag.includes("identity")) return "Brand";
   return "Web";
 }
 
-const categories = ["All", "SaaS", "E-commerce", "Brand", "Web"];
+const categories = ["All", "Editorial", "E-commerce", "Restaurant", "Product", "FinTech", "Education", "Portfolio"];
 
 export function Portfolio({
   items = defaultProjects,
+  limit,
 }: {
   items?: CaseStudy[];
+  limit?: number;
 }) {
   const { language } = useLanguage();
   const [activeCategory, setActiveCategory] = useState("All");
@@ -236,7 +238,16 @@ export function Portfolio({
             ))}
           </div>
 
-          <label className="relative flex-shrink-0">
+          <div className="mt-4 w-full">
+            {activeCategory === "E-commerce" && (
+              <p className="text-sm text-muted-foreground">Expert <strong className="font-medium">e-commerce website development</strong> engineered for conversions and seamless shopping experiences.</p>
+            )}
+            {activeCategory === "Product/SaaS" && (
+              <p className="text-sm text-muted-foreground">Specialized <strong className="font-medium">SaaS website design and development</strong> that drives sign-ups and user engagement.</p>
+            )}
+          </div>
+
+          <label className="relative flex-shrink-0 mt-4 sm:mt-0">
             <span className="sr-only">{language === "bn" ? "প্রজেক্ট খুঁজুন" : "Search projects"}</span>
             <svg
               aria-hidden="true"
@@ -275,7 +286,7 @@ export function Portfolio({
         )}
 
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
-          {filtered.map((p, i) => (
+          {(limit ? filtered.slice(0, limit) : filtered).map((p, i) => (
             <ProjectCard
               key={p.title}
               p={p}
@@ -292,6 +303,17 @@ export function Portfolio({
             />
           ))}
         </div>
+
+        {limit && filtered.length > limit && (
+          <ScrollReveal className="mt-16 text-center" delay={0.2}>
+            <Link
+              to="/work"
+              className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-colors hover:bg-accent hover:text-accent-foreground"
+            >
+              {language === "bn" ? "সব কাজ দেখুন" : "View all work"}
+            </Link>
+          </ScrollReveal>
+        )}
       </div>
     </section>
   );

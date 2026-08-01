@@ -10,13 +10,30 @@ import { useLanguage } from "@/components/providers/LanguageProvider";
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Pricing — ArtX Studio" },
+      { title: "ArtX website pricing & Affordable web design packages" },
       { name: "description", content: "Packages built to scale with you. Pick the tier that fits where your business is today: Basic from ৳2,000, Premium from ৳5,000, Ultra from ৳8,000." },
-      { property: "og:title", content: "Pricing — ArtX Studio" },
+      { property: "og:title", content: "ArtX website pricing & Affordable web design packages" },
       { property: "og:description", content: "Packages built to scale with you. Pick the tier that fits where your business is today." },
-      { property: "og:url", content: "/pricing" },
+      { property: "og:url", content: "https://artxx.lovable.app/pricing" },
     ],
-    links: [{ rel: "canonical", href: "/pricing" }],
+    links: [{ rel: "canonical", href: "https://artxx.lovable.app/pricing" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "ArtX Web Design Packages",
+          "description": "Affordable web design packages and custom website development services.",
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "2000",
+            "highPrice": "8000",
+            "priceCurrency": "BDT"
+          }
+        }),
+      }
+    ]
   }),
   component: PricingPage,
 });

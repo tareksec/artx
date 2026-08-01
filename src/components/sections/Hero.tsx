@@ -60,8 +60,12 @@ export function Hero(props: HeroProps = {}) {
           >
             {t.hero.titleStart}
             <em className="not-italic text-accent">{t.hero.titleAccent}</em>
-            <br />
-            {t.hero.titleEnd}
+            {t.hero.titleEnd && (
+              <>
+                <br />
+                {t.hero.titleEnd}
+              </>
+            )}
           </motion.h1>
 
           <motion.p

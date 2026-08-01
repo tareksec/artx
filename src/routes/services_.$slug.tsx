@@ -9,15 +9,37 @@ export const Route = createFileRoute("/services_/$slug")({
   head: ({ params }) => {
     const svc = serviceDetails.find((s) => s.slug === params.slug);
     if (!svc) return {};
+    let seoTitle = `${svc.t} — ArtX Studio`;
+    if (svc.slug === "website-design") seoTitle = "SaaS website design and development | ArtX Studio";
+    if (svc.slug === "web-development") seoTitle = "Custom WordPress & E-commerce website development | ArtX Studio";
+    if (svc.slug === "seo") seoTitle = "Technical SEO agency | ArtX Studio";
+
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": svc.t,
+      "provider": {
+        "@type": "Organization",
+        "name": "ArtX Studio"
+      },
+      "description": svc.valueProp
+    };
+
     return {
       meta: [
-        { title: `${svc.t} — ArtX Studio` },
+        { title: seoTitle },
         { name: "description", content: svc.valueProp },
-        { property: "og:title", content: `${svc.t} — ArtX Studio` },
+        { property: "og:title", content: seoTitle },
         { property: "og:description", content: svc.valueProp },
-        { property: "og:url", content: `/services/${svc.slug}` },
+        { property: "og:url", content: `https://artxx.lovable.app/services/${svc.slug}` },
       ],
-      links: [{ rel: "canonical", href: `/services/${svc.slug}` }],
+      links: [{ rel: "canonical", href: `https://artxx.lovable.app/services/${svc.slug}` }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(schema),
+        }
+      ]
     };
   },
   loader: ({ params }) => {
@@ -200,6 +222,35 @@ function ServiceDetailPage() {
                 </ScrollReveal>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* Related Package */}
+      {svc.relatedPricing && (
+        <section className="px-6 py-12 md:py-16 bg-secondary">
+          <div className="mx-auto max-w-7xl">
+            <ScrollReveal>
+              <div className="flex flex-col md:flex-row items-center justify-between gap-8 rounded-3xl bg-background p-8 md:p-12 border border-border shadow-sm">
+                <div>
+                  <div className="mb-2 text-xs uppercase tracking-[0.2em] text-accent">
+                    Related Package
+                  </div>
+                  <h3 className="text-3xl font-bold tracking-tight mb-2">
+                    {svc.relatedPricing.name} Tier
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {svc.relatedPricing.description}
+                  </p>
+                </div>
+                <Link
+                  to="/pricing"
+                  className="shrink-0 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-colors hover:bg-accent hover:text-accent-foreground"
+                >
+                  View Pricing Options
+                </Link>
+              </div>
+            </ScrollReveal>
           </div>
         </section>
       )}

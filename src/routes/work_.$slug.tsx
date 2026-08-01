@@ -8,15 +8,40 @@ export const Route = createFileRoute("/work_/$slug")({
   head: ({ params }) => {
     const project = projects.find((p) => p.slug === params.slug);
     if (!project) return {};
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Work",
+          "item": "https://artxx.lovable.app/work"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": project.title,
+          "item": `https://artxx.lovable.app/work/${project.slug}`
+        }
+      ]
+    };
+
     return {
       meta: [
         { title: `${project.title} — ArtX Studio` },
         { name: "description", content: project.fullDescription?.slice(0, 160) ?? project.challenge },
         { property: "og:title", content: `${project.title} — ArtX Studio` },
         { property: "og:description", content: project.challenge },
-        { property: "og:url", content: `/work/${project.slug}` },
+        { property: "og:url", content: `https://artxx.lovable.app/work/${project.slug}` },
       ],
-      links: [{ rel: "canonical", href: `/work/${project.slug}` }],
+      links: [{ rel: "canonical", href: `https://artxx.lovable.app/work/${project.slug}` }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(schema),
+        }
+      ]
     };
   },
   loader: ({ params }) => {

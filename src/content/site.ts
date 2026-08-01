@@ -7,6 +7,13 @@ import w1 from "@/assets/work-1.jpg";
 import w2 from "@/assets/work-2.jpg";
 import w3 from "@/assets/work-3.jpg";
 import w4 from "@/assets/work-4.jpg";
+import imgSamriddhi from "@/assets/Samriddhi.png";
+import imgMohaimin from "@/assets/Mohaimin Patwary.png";
+import imgTechvrs from "@/assets/Techvrs-security.png";
+import imgOkkhor from "@/assets/Okkhor Pathagar.png";
+// We will use a placeholder for piyash since we couldn't copy it over automatically.
+// The user should place the generated image in src/assets/piyash.png
+// import imgPiyash from "@/assets/piyash.png";
 
 export type HeroContent = {
   eyebrow: string;
@@ -75,6 +82,7 @@ export type ServiceDetail = {
   faqs: ServiceFaq[];
   relatedProjects: string[];
   link?: string;
+  relatedPricing?: { name: string; description: string };
 };
 
 export type BlogPost = {
@@ -135,7 +143,7 @@ export const heroContent = {
   secondaryCta: { label: "View selected work", to: "/work" as const },
   image: {
     src: heroCollage,
-    alt: "Torn paper collage illustrating ArtX creative craft",
+    alt: "Torn paper collage illustrating ArtX as a creative web design studio",
   },
 };
 
@@ -177,10 +185,10 @@ export const serviceDetails: ServiceDetail[] = [
   {
     slug: "website-design",
     n: "01",
-    t: "Website Design",
+    t: "Creative web design studio",
     d: "Editorial, high-craft interfaces designed to convert without shouting.",
     img: sDesign,
-    valueProp: "Interfaces that earn attention and hold it.",
+    valueProp: "Affordable web design packages for brands that want interfaces that earn attention and hold it.",
     deliverables: [
       "Discovery & stakeholder alignment workshops",
       "Information architecture & user flow mapping",
@@ -235,14 +243,15 @@ export const serviceDetails: ServiceDetail[] = [
       },
     ],
     relatedProjects: ["gearabout", "veative-kitchen"],
+    relatedPricing: { name: "Premium", description: "Our most popular package for custom web design." },
   },
   {
     slug: "web-development",
     n: "02",
-    t: "Web Development",
+    t: "Custom website development services",
     d: "Production-grade React, tuned for Core Web Vitals and effortless CMS ops.",
     img: sDev,
-    valueProp: "Fast, maintainable code that your team can actually own.",
+    valueProp: "High-performance React and custom WordPress development services engineered for speed.",
     deliverables: [
       "React / Next.js or TanStack Start application",
       "Headless CMS integration (Sanity, Contentful or similar)",
@@ -297,14 +306,15 @@ export const serviceDetails: ServiceDetail[] = [
       },
     ],
     relatedProjects: ["gearabout", "northform-saas"],
+    relatedPricing: { name: "Ultra", description: "Comprehensive full-stack development and scale." },
   },
   {
     slug: "seo",
     n: "03",
-    t: "SEO",
+    t: "Technical SEO agency",
     d: "Technical audits, content architecture and link work that compounds.",
     img: sSeo,
-    valueProp: "Organic growth that doesn't stop when the ad budget does.",
+    valueProp: "A technical SEO agency approach to search visibility that compounds over time.",
     deliverables: [
       "Full technical SEO audit (200+ checkpoints)",
       "Keyword opportunity mapping & content gap analysis",
@@ -359,6 +369,7 @@ export const serviceDetails: ServiceDetail[] = [
       },
     ],
     relatedProjects: ["veative-kitchen", "northform-saas"],
+    relatedPricing: { name: "Basic", description: "Essential setup for online presence and search visibility." },
   },
   {
     slug: "web-security",
@@ -658,6 +669,296 @@ export const projects: CaseStudy[] = [
       author: "Priya Rajan",
       title: "VP Marketing, Northform",
     },
+    nextProject: "samriddhi",
+  },
+  {
+    slug: "samriddhi",
+    title: "Samriddhi",
+    tag: "FinTech · Web App",
+    year: "2026",
+    img: imgSamriddhi,
+    radii: "rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-2xl rounded-bl-2xl",
+    challenge:
+      "A transparent SME investment platform needed a trust-first website that could explain a complex, interest-free investment model clearly to non-technical investors and entrepreneurs.",
+    solution:
+      "Built a full investment platform with live opportunity listings, an interactive profit calculator, entrepreneur verification workflow, and a policy-driven trust framework — designed for clarity over complexity.",
+    result: "Live calculator engagement, structured opportunity pipeline, positioning Samriddhi as a transparent, interest-free investment alternative in Bangladesh.",
+    fullDescription:
+      "Samriddhi is a pioneering FinTech platform in Bangladesh focused on Shariah-compliant, interest-free SME investments. They needed to bridge the trust gap for non-technical investors while providing a seamless onboarding experience for entrepreneurs seeking capital.\n\nWe designed and developed a full-scale web application featuring real-time investment opportunity listings, an intuitive profit calculator, and a secure verification workflow. The interface was intentionally designed to prioritize transparency and clarity, stripping away the intimidation factor typically associated with financial platforms.",
+    client: "Samriddhi",
+    industry: "FinTech",
+    timeline: "12 weeks",
+    role: "UX/UI Design, Full-Stack Development, Platform Architecture",
+    techStack: ["React", "Next.js", "Node.js", "PostgreSQL", "Tailwind CSS"],
+    processSteps: [
+      {
+        step: "Research",
+        title: "Trust & Compliance Mapping",
+        description:
+          "Analyzed existing investment mental models in Bangladesh and mapped out regulatory and Shariah-compliance requirements for clear user communication.",
+      },
+      {
+        step: "Design",
+        title: "Clarity-First Interface",
+        description:
+          "Created a design system that uses generous whitespace, clear typography, and step-by-step visual feedback to reduce cognitive load during complex financial workflows.",
+      },
+      {
+        step: "Build",
+        title: "Platform Engineering",
+        description:
+          "Developed the core investment engine, incorporating real-time data for the profit calculator and a secure document handling system for entrepreneur verification.",
+      },
+      {
+        step: "Scale",
+        title: "Launch & Iterate",
+        description:
+          "Deployed the platform with comprehensive tracking to measure engagement on the calculator and drop-off points in the investment funnel.",
+      },
+    ],
+    gallery: [
+      { src: w1, alt: "Samriddhi investment platform dashboard" },
+      { src: w2, alt: "Interactive profit calculator" },
+      { src: w3, alt: "Entrepreneur verification workflow" },
+    ],
+    testimonial: {
+      quote:
+        "The platform ArtX built finally matches our vision of transparent, interest-free investing. The calculator alone has become our strongest acquisition tool.",
+      author: "Samriddhi Team",
+      title: "Founders, Samriddhi",
+    },
+    nextProject: "mohaimin-patwary",
+  },
+  {
+    slug: "mohaimin-patwary",
+    title: "Mohaimin Patwary",
+    tag: "Education · Web App",
+    year: "2026",
+    img: imgMohaimin,
+    radii: "rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-2xl rounded-br-2xl",
+    challenge:
+      "A bestselling finance author needed a course enrollment platform handling both online and offline batches, a 6-month curriculum, and reader-to-student conversion.",
+    solution:
+      "Built a conversion-focused course site with month-by-month curriculum breakdown, dual online/offline pricing tiers, review system, and registration flow with WhatsApp support integration.",
+    result: "110+ enrollments, 130+ reviews collected, students from 20+ countries.",
+    fullDescription:
+      "Mohaimin Patwary, a renowned finance author, was ready to scale his educational offerings from a bestselling book to a comprehensive 6-month course. The challenge was building a platform that seamlessly handled complex scheduling (online vs. offline batches) while maintaining high conversion rates from his existing reader base.\n\nWe engineered a bespoke educational platform focused heavily on the enrollment journey. By breaking down the 6-month curriculum visually and providing clear, frictionless registration pathways integrated with WhatsApp support, we eliminated the typical drop-offs seen in high-ticket course sales.",
+    client: "Mohaimin Patwary",
+    industry: "Education",
+    timeline: "8 weeks",
+    role: "Product Strategy, Web Development, UX Design",
+    techStack: ["Next.js", "Tailwind CSS", "Stripe", "Vercel"],
+    processSteps: [
+      {
+        step: "Research",
+        title: "Enrollment Journey Analysis",
+        description:
+          "Mapped the transition from reader to student, identifying key information required to justify a 6-month commitment.",
+      },
+      {
+        step: "Design",
+        title: "Curriculum Visualization",
+        description:
+          "Designed an interactive, month-by-month curriculum breakdown that clearly communicated value without overwhelming the user.",
+      },
+      {
+        step: "Build",
+        title: "Dual-Tier Registration",
+        description:
+          "Implemented a robust enrollment flow supporting both online and offline batch management with integrated WhatsApp support for pre-sales queries.",
+      },
+      {
+        step: "Scale",
+        title: "Social Proof Engine",
+        description:
+          "Integrated a dynamic review system to capture and display student feedback, creating a compounding trust asset.",
+      },
+    ],
+    gallery: [
+      { src: w2, alt: "Mohaimin Patwary course homepage" },
+      { src: w3, alt: "Curriculum breakdown and pricing" },
+      { src: w4, alt: "Student review and enrollment flow" },
+    ],
+    testimonial: {
+      quote:
+        "The site perfectly captured the essence of the course. Managing both offline and online cohorts is now completely frictionless, and the global enrollment numbers speak for themselves.",
+      author: "Mohaimin Patwary",
+      title: "Author & Educator",
+    },
+    nextProject: "techvrs-security",
+  },
+  {
+    slug: "techvrs-security",
+    title: "Techvrs Security",
+    tag: "Personal Brand · Portfolio",
+    year: "2026",
+    img: imgTechvrs,
+    radii: "rounded-tl-[3rem] rounded-bl-[3rem] rounded-tr-2xl rounded-br-2xl",
+    challenge:
+      "Needed a professional portfolio to showcase cybersecurity credentials, hands-on SOC projects, and certifications for job/freelance opportunities.",
+    solution:
+      "Built a terminal-themed personal brand site with interactive skills section, certification showcase, and featured security project case studies.",
+    result: "A credible, developer-styled portfolio positioned as ArtX's security consulting arm.",
+    fullDescription:
+      "Techvrs Security required a digital presence that immediately communicated deep technical competence. The goal was to build a portfolio that didn't just list certifications, but actively demonstrated cybersecurity expertise through its aesthetic and structure.\n\nWe designed a distinctively 'hacker-chic', terminal-inspired interface that resonates with engineering and security teams. The site features an interactive skills matrix, a verifiable certification showcase, and detailed breakdowns of complex SOC (Security Operations Center) projects, effectively serving as both a personal brand hub and ArtX's specialized security consulting arm.",
+    client: "Techvrs Security",
+    industry: "Cybersecurity",
+    timeline: "4 weeks",
+    role: "Brand Identity, Web Design, Frontend Development",
+    techStack: ["React", "Framer Motion", "Tailwind CSS", "Vite"],
+    processSteps: [
+      {
+        step: "Research",
+        title: "Security Aesthetic Benchmarking",
+        description:
+          "Analyzed top security consultancies and personal hacker blogs to strike the right balance between 'terminal aesthetic' and professional credibility.",
+      },
+      {
+        step: "Design",
+        title: "Terminal-Themed Interface",
+        description:
+          "Developed a dark-mode exclusive, monospaced typography system that feels like a command-line interface while remaining fully accessible.",
+      },
+      {
+        step: "Build",
+        title: "Interactive Showcases",
+        description:
+          "Built dynamic components for filtering certifications and exploring deep-dive security project case studies.",
+      },
+      {
+        step: "Scale",
+        title: "Performance & Security",
+        description:
+          "Implemented stringent CSP headers and static delivery to ensure the security portfolio itself scored 100/100 on all security audits.",
+      },
+    ],
+    gallery: [
+      { src: w3, alt: "Techvrs Security terminal-themed homepage" },
+      { src: w4, alt: "Interactive skills and certification matrix" },
+      { src: w1, alt: "SOC project case study layout" },
+    ],
+    testimonial: {
+      quote:
+        "The terminal aesthetic perfectly captures my work environment. It's not just a resume; it's a statement of technical capability that instantly earns trust from engineering leads.",
+      author: "Techvrs Lead",
+      title: "Security Consultant",
+    },
+    nextProject: "piyash",
+  },
+  {
+    slug: "piyash",
+    title: "PIYASH",
+    tag: "Personal Brand · Portfolio",
+    year: "2026",
+    img: w4,
+    radii: "rounded-tr-[3rem] rounded-br-[3rem] rounded-tl-2xl rounded-bl-2xl",
+    challenge:
+      "A full-stack developer needed a distinctive portfolio to stand out for job and freelance opportunities, showcasing production-grade projects across the stack.",
+    solution:
+      "Built an interactive, terminal/dev-themed portfolio featuring a full tech stack showcase, categorized project cards (API platforms, real-time chat, e-commerce, analytics dashboards), and detailed work experience timeline.",
+    result: "A standout developer portfolio that clearly demonstrates full-stack range across frontend, backend, and DevOps.",
+    fullDescription:
+      "Standing out in the highly competitive full-stack development market requires more than a simple list of GitHub links. PIYASH needed a portfolio that acted as a live demonstration of his capabilities—fast, interactive, and flawlessly executed.\n\nWe created a developer-centric portfolio that leverages a clean, high-contrast aesthetic. It features categorized, deep-dive project cards for API platforms and real-time apps, alongside an interactive timeline of his engineering experience. The site itself serves as proof of his frontend proficiency, while the documented architectures prove his backend depth.",
+    client: "PIYASH",
+    industry: "Software Engineering",
+    timeline: "4 weeks",
+    role: "UI/UX Design, Portfolio Architecture",
+    techStack: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+    processSteps: [
+      {
+        step: "Research",
+        title: "Developer Portfolio Audit",
+        description:
+          "Reviewed hundreds of engineering portfolios to identify common pitfalls and opportunities for differentiation.",
+      },
+      {
+        step: "Design",
+        title: "Code-Centric Layout",
+        description:
+          "Crafted a layout that heavily features code snippets, architecture diagrams, and tech stack icons over generic stock imagery.",
+      },
+      {
+        step: "Build",
+        title: "Categorized Project Engine",
+        description:
+          "Implemented a seamless filtering system allowing recruiters to easily sort projects by domain (E-commerce, API, Analytics, etc.).",
+      },
+      {
+        step: "Scale",
+        title: "SEO & Discoverability",
+        description:
+          "Optimized the site structure and meta tags for developer-specific search terms, ensuring maximum visibility for freelance opportunities.",
+      },
+    ],
+    gallery: [
+      { src: w4, alt: "PIYASH developer portfolio homepage" },
+      { src: w1, alt: "Categorized project showcase" },
+      { src: w2, alt: "Interactive experience timeline" },
+    ],
+    testimonial: {
+      quote:
+        "The site instantly communicates my technical range. I've seen a noticeable uptick in the quality of inbound freelance requests since launching the new portfolio.",
+      author: "PIYASH",
+      title: "Full-Stack Developer",
+    },
+    nextProject: "okkhor-pathagar",
+  },
+  {
+    slug: "okkhor-pathagar",
+    title: "Okkhor Pathagar",
+    tag: "Education · Web App",
+    year: "2026",
+    img: imgOkkhor,
+    radii: "rounded-tl-[3rem] rounded-bl-[3rem] rounded-tr-2xl rounded-bl-2xl",
+    challenge:
+      "A growing community library needed a modern digital catalog and membership platform to manage book inventory and increase local reader engagement.",
+    solution:
+      "Developed a comprehensive library management system featuring a searchable digital catalog, user membership portals, and automated borrowing workflows.",
+    result: "Streamlined book discovery, significant increase in digital member registrations, and efficient inventory management for librarians.",
+    fullDescription:
+      "Okkhor Pathagar (Alphabet Library) serves as a vital educational hub for its community. As their collection and membership grew, relying on manual tracking systems became unsustainable. They required a digital transformation that preserved their community-focused ethos.\n\nWe built a bespoke web application tailored for library operations. The platform provides members with an intuitive search interface to discover books, while giving administrators a robust backend to manage inventory, track lending cycles, and handle membership renewals. The design emphasizes accessibility and ease of use for readers of all ages.",
+    client: "Okkhor Pathagar",
+    industry: "Education / Publishing",
+    timeline: "10 weeks",
+    role: "System Design, Full-Stack Development, UI/UX",
+    techStack: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
+    processSteps: [
+      {
+        step: "Research",
+        title: "Library Workflow Analysis",
+        description:
+          "Shadowed librarians to understand the pain points in current book checkout, return, and inventory management processes.",
+      },
+      {
+        step: "Design",
+        title: "Accessible Interface Design",
+        description:
+          "Created a highly accessible, easy-to-navigate catalog interface prioritizing large typography and clear search mechanics for a diverse demographic.",
+      },
+      {
+        step: "Build",
+        title: "Inventory & Lending Engine",
+        description:
+          "Engineered a reliable backend system to handle concurrent book statuses, due date tracking, and automated reminders.",
+      },
+      {
+        step: "Scale",
+        title: "Community Rollout",
+        description:
+          "Launched the platform with a simplified onboarding flow, resulting in rapid adoption by existing library members.",
+      },
+    ],
+    gallery: [
+      { src: w1, alt: "Okkhor Pathagar digital catalog" },
+      { src: w2, alt: "Member dashboard and borrowing history" },
+      { src: w3, alt: "Librarian inventory management view" },
+    ],
+    testimonial: {
+      quote:
+        "The transition to this digital system has completely revitalized our library. Managing our collection is effortless, and our members love being able to browse books from home.",
+      author: "Library Director",
+      title: "Okkhor Pathagar",
+    },
     nextProject: "gearabout",
   },
 ];
@@ -666,193 +967,253 @@ export const projects: CaseStudy[] = [
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "web-design-trends-2025",
-    title: "Web Design Trends That Actually Matter in 2025",
-    excerpt:
-      "Beyond the noise: the shifts in interface design that are genuinely moving the needle on engagement and conversion.",
-    date: "2025-11-12",
-    readTime: 7,
-    category: "Design",
-    author: { name: "ArtX Studio", role: "Creative Director" },
-    relatedSlugs: ["core-web-vitals-seo-guide", "gearabout-retrospective"],
-    content: `## The signal vs. the noise
+    slug: "core-web-vitals-2026",
+    title: "Why Core Web Vitals matter more than ever in 2026",
+    excerpt: "With AI overviews dominating search, the margin for poor performance is zero. Here's why CWV is your technical moat.",
+    date: "2026-08-01",
+    readTime: 6,
+    category: "SEO",
+    author: { name: "ArtX Studio", role: "Technical SEO Lead" },
+    relatedSlugs: ["on-page-seo-checklist", "saas-landing-page-anatomy"],
+    content: `## The new search reality
 
-Every year, design Twitter announces the death of something and the birth of something else. Most of it is aesthetic churn. The trends worth paying attention to are the ones tied to how people actually read, scroll and decide on a screen.
+As AI-generated summaries take over top-of-funnel queries, traditional search traffic is compressing. What remains are high-intent users looking for definitive answers, trusted brands, or seamless transactions. 
 
-Here are the shifts we're seeing in client work that are changing outcomes — not just portfolios.
+In this environment, **Core Web Vitals (CWV)** are no longer just a tie-breaker. They are a baseline requirement for participation.
 
-## 1. Typographic hierarchy is doing more lifting
+### 1. Interaction to Next Paint (INP) is the new king
 
-The "hero image + headline" formula is tired. The sites performing best right now lead with a single, confident typographic statement at large scale. No hero image, no gradient backdrop — just type, space and a clear value proposition.
+Since INP replaced FID, we've seen a brutal reality check for React-heavy sites. INP measures *every* interaction, not just the first one. That complex mega-menu that causes a 300ms main-thread freeze? Google sees it, and users feel it.
 
-This works because it forces the brand to have a real point of view. You can't hide behind a nice photo when words have to carry the room.
+**How we fix it:** We heavily utilize React 19's concurrent features, aggressively split bundles, and push non-critical state updates off the main thread. 
 
-**What it means in practice:** Invest in type selection and hierarchy before you think about imagery. The image should reinforce the message, not replace it.
+### 2. LCP is a design problem, not just an engineering one
 
-## 2. Micro-interactions are being edited, not added
+Largest Contentful Paint fails when designers insist on 4MB hero videos or client-side rendered carousels above the fold. 
 
-For years, the brief was "add more animation." Now the best work is about restraint. Transitions that communicate state change (hover, load, scroll) earn their place. Decorative motion that runs on loop, unbidden, costs attention.
+> ✱ "Performance is a design decision before it ever reaches a repository."
 
-The shift: animate outcomes, not aesthetics.
+**The ArtX approach:** We design with LCP in mind. We use CSS-driven hero sections, optimized WebP/AVIF formats, and strict preloading strategies. A beautiful site that takes 6 seconds to load is a failed site.
 
-**What it means in practice:** Audit every animation for purpose. If removing it changes nothing about usability or information flow, remove it.
+### 3. The compounding effect of CLS
 
-## 3. Density is back — but earned
+Cumulative Layout Shift destroys trust. When a user tries to click "Buy" and a late-loading ad pushes the button down, you haven't just lost a sale—you've lost a customer forever.
 
-The zero-chrome, lots-of-whitespace aesthetic peaked around 2022. Users are now comfortable with denser information layouts, provided the hierarchy is airtight. The SaaS and fintech sectors are leading this — dashboards that actually show data, comparison tables that earn the scroll.
-
-**What it means in practice:** Whitespace is a tool, not a style. Use density where the information demands it.
-
-## 4. Mobile-first is mobile-only for key flows
-
-The stat that changed our process: on the sites we audited in 2025, 73% of conversions on mobile happened within the first two scroll positions. The fold is back, just on a different screen.
-
-**What it means in practice:** Design your conversion flow on a 390px viewport first. If the CTA isn't above the fold at that width, you're leaving conversions on the table.
-
-## 5. Dark mode is a product decision, not a toggle
-
-Sites that ship a truly considered dark mode — with separate colour tokens, not just CSS invert — convert better in evening sessions. But shipping a half-considered dark mode (washed-out images, wrong contrast ratios) actively hurts trust.
-
-**What it means in practice:** Dark mode is either fully resourced or not shipped. There's no middle ground that doesn't damage the brand.
+We enforce strict aspect-ratio bounding boxes on all dynamic content. No layout should shift after the initial paint.
 
 ---
 
-These aren't trend forecasts — they're observations from sites we built or audited in the last 12 months. The common thread: design decisions grounded in user behaviour data outperform design decisions grounded in aesthetic taste, every time.`,
+### The takeaway
+
+In 2026, performance is brand equity. If your site feels slow, users assume your product is inferior. Stop treating CWV as an SEO checklist and start treating it as user experience infrastructure.`,
   },
   {
-    slug: "core-web-vitals-seo-guide",
-    title: "Core Web Vitals in 2025: What Still Moves Rankings",
-    excerpt:
-      "A practical guide to LCP, CLS and INP — what the signals mean, how to measure them and the fixes that actually move the needle.",
-    date: "2025-09-03",
-    readTime: 9,
+    slug: "saas-landing-page-anatomy",
+    title: "The anatomy of a high-converting SaaS landing page",
+    excerpt: "Stop guessing what works. Here is the exact structural blueprint we use to build SaaS landing pages that convert at 8%+.",
+    date: "2026-07-28",
+    readTime: 7,
+    category: "Design",
+    author: { name: "ArtX Studio", role: "Creative Director" },
+    relatedSlugs: ["website-redesign-signs", "core-web-vitals-2026"],
+    content: `## The 8% Conversion Benchmark
+
+Most B2B SaaS landing pages convert between 2% and 4%. The ones we build aim for 8%+. This isn't magic; it's a rigorous application of information architecture, psychological anchoring, and frictionless UX.
+
+Here is the exact anatomy we use.
+
+### 1. The H1 is a mirror, not a megaphone
+
+Your H1 should not say "The Ultimate Marketing Platform." Nobody wakes up looking for an ultimate platform. They wake up trying to solve a specific, painful problem.
+
+Your H1 should reflect that pain and immediately offer the resolution. 
+*Example: "Stop losing leads to spreadsheet chaos. Close deals 3x faster."*
+
+### 2. Show the product immediately
+
+SaaS buyers are cynical. They don't want abstract illustrations of people high-fiving near a server rack. They want to see the UI. 
+
+> ✱ "If you hide your interface behind a demo wall, users will assume it's terrible."
+
+We place high-fidelity, interactive product mockups directly above the fold. Let them see exactly what they are buying.
+
+### 3. The 'How it Works' section must be 3 steps
+
+If your product takes more than 3 steps to explain, your marketing is too complex.
+1. **Connect:** (e.g., Sync your data)
+2. **Automate:** (e.g., Set your rules)
+3. **Scale:** (e.g., Watch your revenue grow)
+
+### 4. Social Proof requires specificity
+
+"Great tool!" - John D. is worthless.
+"Our sales cycle dropped from 45 days to 12 days within a month of implementation." - Sarah Jenkins, VP Sales at Acme Corp. is gold.
+
+Use data-backed testimonials and always include headshots and company logos to anchor trust.
+
+### 5. The primary CTA needs a safety net
+
+"Start Free Trial" is a high-commitment action. Always pair it with a low-commitment secondary CTA like "Watch 2-min Demo" or "See Pricing." This catches the users who are interested but not yet ready to hand over an email address.`,
+  },
+  {
+    slug: "on-page-seo-checklist",
+    title: "On-page SEO checklist every new site needs before launch",
+    excerpt: "Don't launch into a black hole. This is the exact 10-point checklist our SEO team runs before pushing any site live.",
+    date: "2026-07-15",
+    readTime: 5,
     category: "SEO",
-    author: { name: "ArtX Studio", role: "Technical SEO Lead" },
-    relatedSlugs: ["web-design-trends-2025", "gearabout-retrospective"],
-    content: `## Why Core Web Vitals still matter
+    author: { name: "ArtX Studio", role: "SEO & Growth" },
+    relatedSlugs: ["core-web-vitals-2026", "shopify-vs-custom"],
+    content: `## Launching without a safety net
 
-Google's Page Experience signals have been part of the ranking algorithm since 2021. Four years in, the majority of sites — including many built by professional agencies — still fail on at least one metric. That's a competitive opportunity.
+Building a beautiful website without SEO is like building a stunning billboard and placing it in your basement. Traffic won't magically appear just because you pressed 'Deploy'.
 
-This guide covers what the three key signals actually measure, how to diagnose failures and the fixes that move the dial in real projects.
+Here is the non-negotiable checklist we use for every ArtX launch.
 
-## The three signals, plainly
+### 1. Title Tags and Meta Descriptions
 
-**LCP (Largest Contentful Paint)** measures how long it takes for the largest visible element — usually a hero image or heading — to render. Google's threshold: under 2.5 seconds. Most of the sites we audit land between 3.5s and 6s.
+Every page needs a unique, highly relevant Title Tag (50-60 characters) and Meta Description (150-160 characters). 
+*Pro-tip:* Treat your Meta Description like ad copy. Its only job is to get the click from the SERP.
 
-**CLS (Cumulative Layout Shift)** measures visual stability — how much content jumps around as the page loads. The classic culprit: images without declared dimensions, or web fonts causing text reflow. Threshold: under 0.1.
+### 2. Semantic Heading Hierarchy (H1-H6)
 
-**INP (Interaction to Next Paint)** replaced FID in 2024. It measures how long the browser takes to respond to any user interaction — click, tap, keystroke. Threshold: under 200ms.
+- Strictly **one H1** per page containing the primary keyword.
+- Use H2s for main sections and H3s for subsections.
+- Never use heading tags just to make text larger (use CSS for that).
 
-## Diagnosing your site
+### 3. Image Optimization & Alt Text
 
-Start with [PageSpeed Insights](https://pagespeed.web.dev). It gives you both lab data (simulated) and field data (real users via Chrome UX Report). Field data is what Google uses for ranking — don't optimise for the lab number alone.
+- Compress all images (WebP or AVIF).
+- Descriptive file names (\`dark-mode-dashboard.webp\` not \`IMG_9921.jpg\`).
+- Meaningful Alt Text for every image that conveys information.
 
-For deeper diagnosis, use WebPageTest with a throttled mobile connection. This surfaces issues that fast developer machines hide.
+### 4. Internal Linking Structure
 
-## LCP: the fixes that actually work
+> ✱ "Orphan pages are dead pages."
 
-1. **Preload the hero image.** Add \`<link rel="preload" as="image">\` for the LCP element. This is the single highest-impact fix on most sites.
+Ensure every page is linked to from at least one other page. Use descriptive anchor text, not "click here". This helps Google crawl your site and establishes topical authority.
 
-2. **Use next-gen image formats.** WebP or AVIF at the right size for the viewport. A 2400px image served to a 390px screen is a direct LCP penalty.
+### 5. Schema Markup (Structured Data)
 
-3. **Eliminate render-blocking resources.** Third-party scripts (analytics, chat widgets, A/B testing tools) loaded in \`<head>\` without \`async\` or \`defer\` are the primary culprit in slow LCP scores.
+We implement JSON-LD schema for Local Business, Articles, FAQs, and Products. This is how you win rich snippets in search results.
 
-4. **Use a CDN for static assets.** Cloudflare's free tier is enough for most sites. Edge caching cuts TTFB dramatically.
+### 6. Canonical Tags
 
-## CLS: the fixes that actually work
+Prevent duplicate content issues by ensuring every page has a self-referencing canonical tag. If you have pagination, ensure canonicals are set up correctly.
 
-1. **Set explicit width/height on all images and videos.** The browser needs aspect ratio information before the image loads to hold the space.
+### 7. robots.txt and XML Sitemap
 
-2. **Use \`font-display: optional\` or preload web fonts.** Invisible-text flash (FOIT) causes CLS on systems that haven't cached the font.
+Ensure \`robots.txt\` is not blocking search engines from important pages, and submit a dynamic XML sitemap to Google Search Console immediately upon launch.`,
+  },
+  {
+    slug: "shopify-vs-custom",
+    title: "Shopify vs custom builds: how we decide for clients",
+    excerpt: "Should you use Shopify or build a custom e-commerce stack? Here is our framework for making the million-dollar decision.",
+    date: "2026-06-22",
+    readTime: 8,
+    category: "Development",
+    author: { name: "ArtX Studio", role: "Lead Engineer" },
+    relatedSlugs: ["website-redesign-signs", "saas-landing-page-anatomy"],
+    content: `## The e-commerce dilemma
 
-3. **Reserve space for ad slots and embeds.** If something is going to appear, declare its dimensions upfront.
+Every week, a client asks us: *"Should we just use Shopify, or do we need a custom build?"*
 
-## INP: the harder problem
+The answer depends entirely on your operational complexity, desired customer experience, and scale. Here is how we break it down.
 
-INP is the signal most teams underestimate. It's not about page load — it's about runtime performance. Long JavaScript tasks block the main thread and make the page feel unresponsive.
+### When to choose Shopify (or Shopify Plus)
 
-**Profile with Chrome DevTools Performance tab.** Look for tasks over 50ms. Common sources: large event handlers, React re-renders triggered by scroll events, and analytics payloads processed synchronously.
+Shopify is an incredible platform. We recommend it when:
 
-**Solutions:**
-- Break long tasks with \`setTimeout(..., 0)\` or \`scheduler.postTask\`
-- Debounce scroll and resize handlers
-- Use React 18's concurrent features (Suspense, useTransition) to defer non-urgent updates
+1. **You are selling standard physical goods.** If your product variants (size, color) fit neatly into standard e-commerce models.
+2. **Speed to market is critical.** You need to launch in 4 weeks, not 4 months.
+3. **You want out-of-the-box integrations.** You need to plug into standard fulfillment centers, accounting software, and marketing tools without custom API work.
 
-## The compounding effect
+> ✱ "Don't reinvent the shopping cart unless the shopping cart is your unique value proposition."
 
-Fixing Core Web Vitals rarely produces a single dramatic ranking jump. The effect compounds over 3–6 months as Google's crawl re-evaluates your field data. Pair it with solid on-page SEO and the combined effect is substantial.
+### When to choose a Custom Build (Headless/Custom Stack)
 
-On a recent client project (Veative Kitchen), LCP improvements from 4.8s to 1.9s contributed to a #1 ranking for their target cuisine terms within 90 days — alongside a broader local SEO push.`,
+We push clients toward custom architectures (like Next.js + Stripe + Custom CMS) when:
+
+1. **Complex Digital Products or Subscriptions.** If you are selling software, highly customizable bundles, or complex tiered subscriptions, Shopify's rigid backend becomes a nightmare of third-party apps.
+2. **Extreme Performance Requirements.** If you need sub-second page loads across thousands of dynamic pages, a staticly-generated custom front-end will always beat a liquid-templated monolith.
+3. **Bespoke User Experiences.** If your brand requires 3D WebGL product configurators, highly non-standard checkout flows, or deeply integrated user dashboards.
+
+### The Hybrid Approach: Headless Shopify
+
+Often, the best answer is both. We frequently build **Headless Shopify** setups. 
+We use Shopify for the robust backend (inventory, checkout, payment processing) but build a custom Next.js/React frontend. This gives the client the operational reliability of Shopify with the blazing speed and limitless design freedom of a custom build.`,
+  },
+  {
+    slug: "website-redesign-signs",
+    title: "5 signs your website needs a redesign, not a refresh",
+    excerpt: "Are you putting lipstick on a pig? Here's how to know when a simple coat of paint isn't enough.",
+    date: "2026-06-05",
+    readTime: 6,
+    category: "Design",
+    author: { name: "ArtX Studio", role: "Creative Director" },
+    relatedSlugs: ["saas-landing-page-anatomy", "shopify-vs-custom"],
+    content: `## The "Quick Refresh" Trap
+
+Clients often approach us asking for a "quick refresh." They want new fonts, updated colors, and maybe some new imagery. 
+
+Sometimes, that's exactly what they need. But often, the underlying foundation is rotting. Here are 5 signs that your site needs to be torn down to the studs.
+
+### 1. Your conversion rate is dropping despite stable traffic
+
+If your SEO and paid ads are bringing in the same quality of traffic, but your lead generation is steadily declining, your UX is broken. Users are getting frustrated by outdated flows or confused by bloated architecture. A new font won't fix this.
+
+### 2. Your team avoids updating it
+
+> ✱ "If your marketing team needs a developer to publish a blog post, your CMS has failed."
+
+If the content on your site is outdated simply because your backend is terrifying to use, you need a redesign with a modern headless CMS (like Sanity or Strapi). Content velocity is a competitive advantage.
+
+### 3. Mobile feels like an afterthought
+
+Look at your analytics. If 60% of your traffic is mobile, but your mobile bounce rate is double your desktop bounce rate, your site is broken. A true redesign starts with a mobile-first philosophy, not just CSS media queries that shrink desktop elements.
+
+### 4. It doesn't reflect your current business model
+
+Companies pivot. Startups evolve. If your website still heavily promotes a service you deprecated two years ago, or fails to mention your new enterprise offering, you are confusing your buyers. The architecture needs to reflect the *current* business reality.
+
+### 5. It takes more than 3 seconds to load
+
+Performance is design. If your site is bloated with years of accumulated marketing tags, jQuery plugins, and unoptimized hero videos, a "refresh" won't save you. You need a modern, compiled tech stack that treats speed as a feature.`,
   },
   {
     slug: "gearabout-retrospective",
     title: "What We Learned Building Gearabout's Editorial Platform",
-    excerpt:
-      "A retrospective on rebuilding a cult magazine's digital presence — the technical decisions, the mistakes and what we'd do differently.",
+    excerpt: "A retrospective on rebuilding a cult magazine's digital presence — the technical decisions, the mistakes and what we'd do differently.",
     date: "2025-07-18",
     readTime: 11,
     category: "Case Study",
     author: { name: "ArtX Studio", role: "Lead Engineer" },
-    relatedSlugs: ["web-design-trends-2025", "core-web-vitals-seo-guide"],
+    relatedSlugs: ["core-web-vitals-2026", "saas-landing-page-anatomy"],
     content: `## Why we're writing this
 
-Gearabout was our most technically ambitious project of 2026. A 4,000-article archive, a fastidious editorial team and a readership that would notice — and write about — any regression in quality.
+Gearabout was our most technically ambitious project. A 4,000-article archive, a fastidious editorial team and a readership that would notice any regression in quality.
 
-We shipped it on time and within budget. But there were decisions we'd make differently. This is an honest account.
+We shipped it on time and within budget. But there were decisions we'd make differently.
 
 ## What went well
 
 ### The CMS migration
-
-Moving 4,000 articles from WordPress to Sanity without content loss was the thing we were most nervous about. We built a custom migration script with full round-trip validation — every field in WordPress mapped to a Sanity document type, with automated checks on word count, image presence and internal links.
-
-Final result: zero content loss, zero broken internal links. We're proud of this.
+Moving 4,000 articles from WordPress to Sanity without content loss was the thing we were most nervous about. We built a custom migration script with full round-trip validation. Final result: zero content loss.
 
 ### The reading experience
-
-The long-read format — swipeable on mobile, keyboard-navigable on desktop — tested better than anything we'd shipped before. Bounce rates dropped from 67% to 31% on article pages within the first month.
-
-The key decision: we read every long-form article ourselves during design. You can't design for a reading experience you haven't had.
-
-### The image pipeline
-
-Gearabout's photo library is extensive. We built an automated pipeline: images upload to Sanity, get processed by Cloudinary (WebP conversion, responsive sizes, art-direction cropping), and serve from Cloudflare. LCP on article pages averaged 1.8s at launch.
+The long-read format tested better than anything we'd shipped before. Bounce rates dropped from 67% to 31%. 
 
 ## What we'd do differently
 
 ### We underestimated the CMS training
-
 The technical delivery was smooth. The content team handoff was not. We allocated 4 hours for CMS training. We needed 12.
 
-The Sanity schema we built was sophisticated — rich text with custom annotations, structured image metadata, related article linking. The editorial team needed time to build mental models for all of it.
-
-**Lesson:** CMS complexity is a UX problem for editors, not just readers. Budget training time proportional to schema complexity, not feature count.
+**Lesson:** CMS complexity is a UX problem for editors, not just readers.
 
 ### We over-engineered the article template system
+We built a flexible template system with 7 layout variants. The editorial team uses 2 of them.
 
-We built a flexible template system with 7 layout variants. The editorial team uses 2 of them. The other 5 added scope to the build and cognitive load to the publishing workflow.
-
-**Lesson:** Build for the jobs the content team actually does, not the jobs they theoretically might do. Flexibility has a cost.
-
-### We shipped dark mode as an afterthought
-
-Dark mode was added in the final two weeks at the client's request. We implemented it with CSS variables, which was fast — but the image treatment in dark mode was never properly resolved. Hero images that worked in light mode looked flat and underexposed in dark.
-
-We've since fixed it (editorial images now have separate dark-mode crops), but it cost us an extra sprint post-launch.
-
-**Lesson:** Dark mode is a day-one design decision or it's a post-launch problem. There's no in-between.
-
-## The numbers, 3 months post-launch
-
-- Session duration: +68%
-- Newsletter sign-ups: 3× previous rate
-- LCP (p75): 2.1s (down from 5.8s)
-- CLS: 0.04 (down from 0.22)
-- Editorial publishing time: −30% (Sanity vs. WordPress for the team)
-
----
-
-We'd take the project again, with the lessons built in. The combination of genuine editorial ambition and a technically capable client made it one of the best collaborations we've had.`,
+**Lesson:** Build for the jobs the content team actually does, not the jobs they theoretically might do.`,
   },
 ];
 

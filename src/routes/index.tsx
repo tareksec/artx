@@ -10,6 +10,9 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { Footer } from "@/components/sections/Footer";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    links: [{ rel: "canonical", href: "https://artxx.lovable.app/" }],
+  }),
   component: Index,
 });
 
@@ -19,7 +22,7 @@ function Index() {
       <Hero />
       <ClientLogos />
       <BrandPhilosophy />
-      <Portfolio />
+      <Portfolio limit={4} />
       <Services />
       <AllSolutions />
       <Pricing />

@@ -110,7 +110,7 @@ export function Footer() {
 
         <div className="flex flex-col items-start justify-between gap-4 border-t border-dark-foreground/15 pt-8 text-xs text-dark-foreground/50 sm:flex-row sm:items-center">
           <div className="flex flex-wrap items-center gap-4">
-            <span>© {new Date().getFullYear()} ArtX Studio. {language === "bn" ? "সর্বস্বত্ব সংরক্ষিত।" : "All rights reserved."}</span>
+            <span>© {new Date().getFullYear()} ArtX (ArtXdev). {language === "bn" ? "সর্বস্বত্ব সংরক্ষিত।" : "All rights reserved."}</span>
             <Link to="/privacy-policy" className="hover:text-accent underline underline-offset-4 transition-colors">
               {language === "bn" ? "প্রাইভেসি পলিসি" : "Privacy Policy"}
             </Link>

@@ -19,18 +19,18 @@ export const translations = {
       eyebrow: "950+ projects completed worldwide",
       credibility:
         "10 years in business · Serving SaaS, e-commerce, hospitality & finance teams across 4 continents",
-      titleStart: "We create ",
-      titleAccent: "impactful",
-      titleEnd: " experiences.",
-      body: "ArtX is an independent studio designing, building, and ranking standout digital products for brands that refuse to blend in.",
+      titleStart: "ArtX: A Creative ",
+      titleAccent: "Web Design Studio",
+      titleEnd: "",
+      body: "ArtXdev is a full-service digital product studio designing, building, and ranking standout digital products for brands that refuse to blend in.",
       primaryCta: "Get Started",
       secondaryCta: "View selected work",
       available: "Available for",
     },
     services: {
       eyebrow: "Services",
-      titleStart: "Four disciplines.",
-      titleAccent: "One studio.",
+      titleStart: "Full-service digital ",
+      titleAccent: "product studio.",
       items: [
         {
           n: "01",
@@ -56,10 +56,10 @@ export const translations = {
     },
     pricing: {
       eyebrow: "Pricing",
-      titleStart: "Packages built to",
-      titleAccent: "scale with you.",
+      titleStart: "ArtX website ",
+      titleAccent: "pricing.",
       subheading:
-        "Pick the tier that fits where your business is today — every package ships production-ready.",
+        "Affordable web design packages built to scale with you — every package ships production-ready.",
       mostPopular: "Most Popular",
       footnote:
         "All prices in BDT (৳). Third-party tools billed at cost. VAT where applicable.",

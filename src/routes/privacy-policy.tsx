@@ -17,9 +17,9 @@ export const Route = createFileRoute("/privacy-policy")({
         content:
           "Privacy Policy and data protection practices for ArtX Studio. Learn how we collect, use, and protect your information.",
       },
-      { property: "og:url", content: "/privacy-policy" },
+      { property: "og:url", content: "https://artxx.lovable.app/privacy-policy" },
     ],
-    links: [{ rel: "canonical", href: "/privacy-policy" }],
+    links: [{ rel: "canonical", href: "https://artxx.lovable.app/privacy-policy" }],
   }),
   component: PrivacyPolicyPage,
 });

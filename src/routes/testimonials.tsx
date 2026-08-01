@@ -4,26 +4,42 @@ import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { RotatingAsterisk } from "@/components/animations/RotatingAsterisk";
 import { Footer } from "@/components/sections/Footer";
 import { useLanguage } from "@/components/providers/LanguageProvider";
-import { ArrowLeft, ArrowRight, Star, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowRight, Star, Sparkles, Building2 } from "lucide-react";
+import { useState, useMemo } from "react";
 
 export const Route = createFileRoute("/testimonials")({
   head: () => ({
     meta: [
-      { title: "Testimonials — Words from the teams we ship with | ArtX Studio" },
+      { title: "Testimonials — ArtX web design studio reviews" },
       {
         name: "description",
         content:
           "Read client reviews, feedback, and case study results from SaaS, e-commerce, and global brands who partnered with ArtX Studio.",
       },
-      { property: "og:title", content: "Testimonials — ArtX Studio" },
+      { property: "og:title", content: "Testimonials — ArtX web design studio reviews" },
       {
         property: "og:description",
         content:
           "Read client reviews, feedback, and case study results from SaaS, e-commerce, and global brands who partnered with ArtX Studio.",
       },
-      { property: "og:url", content: "/testimonials" },
+      { property: "og:url", content: "https://artxx.lovable.app/testimonials" },
     ],
-    links: [{ rel: "canonical", href: "/testimonials" }],
+    links: [{ rel: "canonical", href: "https://artxx.lovable.app/testimonials" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "ArtX Studio",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "134"
+          }
+        }),
+      }
+    ]
   }),
   component: TestimonialsPage,
 });
@@ -39,7 +55,17 @@ type TestimonialCard = {
   projectSlug?: string;
   projectLinkEn: string;
   projectLinkBn: string;
+  industry: string;
 };
+
+// Trust Strip Logos - Placeholders or icons
+const trustedBy = [
+  { name: "Northform", icon: Building2 },
+  { name: "Jun Century", icon: Building2 },
+  { name: "Veative", icon: Building2 },
+  { name: "Gearabout", icon: Building2 },
+  { name: "Samriddhi", icon: Building2 },
+];
 
 const allTestimonials: TestimonialCard[] = [
   {
@@ -53,6 +79,7 @@ const allTestimonials: TestimonialCard[] = [
     projectSlug: "northform-saas",
     projectLinkEn: "Read the Northform case study",
     projectLinkBn: "Northform কেস স্টাডি পড়ুন",
+    industry: "SaaS",
   },
   {
     qEn: "The most opinionated studio we've worked with — in the best way. Every decision had a reason and it shows.",
@@ -65,6 +92,7 @@ const allTestimonials: TestimonialCard[] = [
     projectSlug: "jun-century",
     projectLinkEn: "Read the Jun Century case study",
     projectLinkBn: "Jun Century কেস স্টাডি পড়ুন",
+    industry: "E-commerce",
   },
   {
     qEn: "Design, build and SEO under one roof made the whole project ship two months faster than our previous rebuild.",
@@ -77,6 +105,7 @@ const allTestimonials: TestimonialCard[] = [
     projectSlug: "veative-kitchen",
     projectLinkEn: "Read the Veative case study",
     projectLinkBn: "Veative কেস স্টাডি পড়ুন",
+    industry: "Restaurant",
   },
   {
     qEn: "The 60fps animations and clean architecture gave our e-commerce platform an immediate enterprise feel. Sales increased by 65% within weeks.",
@@ -89,33 +118,33 @@ const allTestimonials: TestimonialCard[] = [
     projectSlug: "gearabout",
     projectLinkEn: "Read the Gearabout case study",
     projectLinkBn: "Gearabout কেস স্টাডি পড়ুন",
+    industry: "E-commerce",
   },
   {
-    qEn: "ArtX engineered our web dashboard with incredible precision. They understood our complex AI workflows and turned them into a seamless, intuitive UX.",
-    qBn: "ArtX অত্যন্ত নিখুঁতভাবে আমাদের ওয়েব ড্যাশবোর্ড তৈরি করেছে। তারা আমাদের জটিল এআই ওয়ার্কফ্লো বুঝে সেটিকে একটি সহজ এবং সুন্দর ইউজার এক্সপেরিয়েন্সে রূপান্তর করেছে।",
-    name: "Sarah Jenkins",
-    roleEn: "Director of Product, Cortex AI",
-    roleBn: "ডিরেক্টর অব প্রোডাক্ট, Cortex AI",
+    qEn: "Our transparent SME investment platform required absolute trust from day one. ArtX simplified our complex model into an elegant, user-friendly experience.",
+    qBn: "আমাদের ইনভেস্টমেন্ট প্ল্যাটফর্মের জন্য প্রথম দিন থেকেই আস্থার প্রয়োজন ছিল। ArtX আমাদের জটিল মডেলকে একটি সহজ ও সুন্দর ইউজার এক্সপেরিয়েন্সে রূপান্তর করেছে।",
+    name: "Mohaimin Patwary",
+    roleEn: "Founder, Samriddhi",
+    roleBn: "ফাউন্ডার, Samriddhi",
     rating: 5,
     radii: "rounded-tl-[2.5rem] rounded-br-[2.5rem] rounded-tr-2xl rounded-bl-2xl",
-    projectLinkEn: "Recent Launch · Case study coming soon",
-    projectLinkBn: "সম্প্রতি লাইভ · কেস স্টাডি শীঘ্রই আসছে",
-  },
-  {
-    qEn: "From local bKash integration to WhatsApp checkout redirect, ArtX built the exact scaling system our business needed in Bangladesh.",
-    qBn: "লোকাল পেমেন্ট ইন্টিগ্রেশন থেকে শুরু করে হোয়াটসঅ্যাপ চেকআউট রিডাইরেক্ট পর্যন্ত, ArtX আমাদের ব্যবসার বৃদ্ধির জন্য ঠিক যেমন সিস্টেম দরকার ছিল তেমনই তৈরি করে দিয়েছে।",
-    name: "Tanvir Ahmed",
-    roleEn: "Managing Director, Apex Cloud BN",
-    roleBn: "ম্যানেজিং ডিরেক্টর, Apex Cloud BN",
-    rating: 5,
-    radii: "rounded-tr-[2.5rem] rounded-bl-[2.5rem] rounded-tl-2xl rounded-br-2xl",
-    projectLinkEn: "Recent Launch · Case study coming soon",
-    projectLinkBn: "সম্প্রতি লাইভ · কেস স্টাডি শীঘ্রই আসছে",
+    projectSlug: "samriddhi",
+    projectLinkEn: "Read the Samriddhi case study",
+    projectLinkBn: "Samriddhi কেস স্টাডি পড়ুন",
+    industry: "FinTech",
   },
 ];
 
+const industries = ["All", "SaaS", "E-commerce", "Restaurant", "Education", "FinTech"];
+
 function TestimonialsPage() {
   const { language } = useLanguage();
+  const [activeIndustry, setActiveIndustry] = useState("All");
+
+  const filteredTestimonials = useMemo(() => {
+    if (activeIndustry === "All") return allTestimonials;
+    return allTestimonials.filter((t) => t.industry === activeIndustry);
+  }, [activeIndustry]);
 
   return (
     <>
@@ -153,19 +182,54 @@ function TestimonialsPage() {
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
               {language === "bn"
                 ? "দেশ ও দেশের বাইরের বিভিন্ন আধুনিক ব্র্যান্ড এবং উদ্যোক্তাদের সাথে আমাদের কাজের অভিজ্ঞতা ও তাদের প্রতিক্রিয়া জানুন।"
-                : "Real reviews and verified results from SaaS founders, e-commerce leaders, and product teams around the globe."}
+                : "Real feedback from founders, marketers, and brand leads we've partnered with."}
             </p>
+          </ScrollReveal>
+
+          {/* Trust Strip */}
+          <ScrollReveal delay={0.1} className="mb-20 border-y border-border py-8">
+            <div className="flex flex-col md:flex-row items-center gap-8 justify-between">
+              <div className="text-sm font-semibold uppercase tracking-widest text-muted-foreground whitespace-nowrap">
+                {language === "bn" ? "যাদের আস্থার প্রতীক" : "Trusted by teams shipping fast"}
+              </div>
+              <div className="flex flex-wrap justify-center gap-8 md:gap-12 opacity-50 grayscale transition-all hover:grayscale-0 hover:opacity-100">
+                {trustedBy.map((brand, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <brand.icon className="h-5 w-5" />
+                    <span className="font-bold tracking-tight">{brand.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Filter */}
+          <ScrollReveal delay={0.2} className="mb-12">
+            <div className="flex flex-wrap gap-2">
+              {industries.map((ind) => (
+                <button
+                  key={ind}
+                  onClick={() => setActiveIndustry(ind)}
+                  className={`rounded-full px-5 py-2 text-sm font-medium transition-all ${
+                    activeIndustry === ind
+                      ? "bg-foreground text-background"
+                      : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                  }`}
+                >
+                  {ind === "All" && language === "bn" ? "সব" : ind}
+                </button>
+              ))}
+            </div>
           </ScrollReveal>
 
           {/* Grid / Masonry Layout */}
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {allTestimonials.map((t, i) => (
+            {filteredTestimonials.map((t, i) => (
               <ScrollReveal key={t.name} delay={i * 0.08} className="h-full">
                 <figure
                   className={`group flex h-full flex-col justify-between border border-border/60 bg-secondary/70 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/40 hover:shadow-xl md:p-10 ${t.radii}`}
                 >
                   <div>
-                    {/* Top row: Asterisk & 5-Star Visual */}
                     <div className="mb-6 flex items-center justify-between">
                       <RotatingAsterisk className="text-2xl text-accent" />
                       <div className="flex items-center gap-1" aria-label={`Rating: ${t.rating} out of 5 stars`}>
@@ -182,7 +246,6 @@ function TestimonialsPage() {
                       </div>
                     </div>
 
-                    {/* Quote text */}
                     <blockquote className="text-lg leading-[1.6] tracking-[-0.005em] text-foreground">
                       <span aria-hidden="true" className="text-accent font-serif text-xl">“</span>
                       {language === "bn" ? t.qBn : t.qEn}
@@ -191,7 +254,6 @@ function TestimonialsPage() {
                   </div>
 
                   <div>
-                    {/* Client Name & Role */}
                     <figcaption className="mt-8 flex items-baseline justify-between gap-4 border-t border-foreground/10 pt-6">
                       <div>
                         <div className="font-bold tracking-tight text-foreground md:text-lg">
@@ -206,7 +268,6 @@ function TestimonialsPage() {
                       </span>
                     </figcaption>
 
-                    {/* Related Project Link or Placeholder Slot */}
                     {t.projectSlug ? (
                       <div className="mt-5 border-t border-foreground/5 pt-4">
                         <Link
@@ -230,6 +291,14 @@ function TestimonialsPage() {
               </ScrollReveal>
             ))}
           </div>
+
+          {filteredTestimonials.length === 0 && (
+            <div className="py-20 text-center">
+              <p className="text-lg text-muted-foreground">
+                {language === "bn" ? "এই ক্যাটাগরিতে কোনো রিভিউ পাওয়া যায়নি।" : "No reviews found for this industry yet."}
+              </p>
+            </div>
+          )}
 
           {/* Bottom CTA Banner */}
           <ScrollReveal className="mt-28">

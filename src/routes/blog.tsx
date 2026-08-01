@@ -4,17 +4,18 @@ import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Footer } from "@/components/sections/Footer";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
+import { useState, useMemo } from "react";
 
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Blog — ArtX Studio" },
+      { title: "Blog — Web Design & SEO Insights | ArtX Studio" },
       { name: "description", content: "Design thinking, SEO strategy and engineering insights from the ArtX team." },
-      { property: "og:title", content: "Blog — ArtX Studio" },
+      { property: "og:title", content: "Blog — Web Design & SEO Insights | ArtX Studio" },
       { property: "og:description", content: "Insights on web design, development and SEO from the ArtX team." },
-      { property: "og:url", content: "/blog" },
+      { property: "og:url", content: "https://artxx.lovable.app/blog" },
     ],
-    links: [{ rel: "canonical", href: "/blog" }],
+    links: [{ rel: "canonical", href: "https://artxx.lovable.app/blog" }],
   }),
   component: BlogIndexPage,
 });
@@ -27,8 +28,19 @@ function formatDate(iso: string, lang: string) {
   });
 }
 
+const categories = ["All", "Design", "Development", "SEO", "Security", "Case Study"];
+
 function BlogIndexPage() {
   const { language } = useLanguage();
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filteredPosts = useMemo(() => {
+    if (activeCategory === "All") return blogPosts;
+    return blogPosts.filter((post) => post.category.includes(activeCategory));
+  }, [activeCategory]);
+
+  const featuredPost = filteredPosts[0];
+  const remainingPosts = filteredPosts.slice(1);
 
   return (
     <>
@@ -55,11 +67,65 @@ function BlogIndexPage() {
         </div>
       </section>
 
-      <section className="px-6 py-16 md:py-24">
+      <section className="px-6 py-8">
         <div className="mx-auto max-w-7xl">
+          <ScrollReveal delay={0.1}>
+            <div className="flex flex-wrap gap-2 mb-12">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`rounded-full px-5 py-2 text-sm font-medium transition-all ${
+                    activeCategory === cat
+                      ? "bg-foreground text-background"
+                      : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                  }`}
+                >
+                  {cat === "All" && language === "bn" ? "সব" : cat}
+                </button>
+              ))}
+            </div>
+          </ScrollReveal>
+
+          {/* Featured Post */}
+          {featuredPost && (
+            <ScrollReveal delay={0.2} className="mb-12">
+              <Link
+                to={`/blog/${featuredPost.slug}`}
+                className="group flex flex-col md:flex-row overflow-hidden rounded-[2.5rem] border border-border bg-background transition-all duration-300 hover:border-accent/30 hover:shadow-xl"
+              >
+                <div className="flex-1 p-8 md:p-12 flex flex-col justify-center">
+                  <div className="mb-6 flex items-center gap-3">
+                    <span className="rounded-full bg-accent/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-accent">
+                      {featuredPost.category}
+                    </span>
+                    <span className="text-sm font-medium text-muted-foreground">
+                      {featuredPost.readTime} {language === "bn" ? "মিনিট পড়া" : "min read"}
+                    </span>
+                  </div>
+                  <h2 className="text-3xl md:text-5xl font-bold leading-tight tracking-tight group-hover:text-accent transition-colors mb-6">
+                    {featuredPost.title}
+                  </h2>
+                  <p className="text-lg leading-relaxed text-muted-foreground mb-10 max-w-2xl">
+                    {featuredPost.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between border-t border-border pt-6 mt-auto">
+                    <time className="text-sm font-medium text-muted-foreground" dateTime={featuredPost.date}>
+                      {formatDate(featuredPost.date, language)}
+                    </time>
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-border transition-all group-hover:border-accent group-hover:text-accent">
+                      <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </ScrollReveal>
+          )}
+
+          {/* Remaining Posts Grid */}
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {blogPosts.map((post, i) => (
-              <ScrollReveal key={post.slug} delay={i * 0.08}>
+            {remainingPosts.map((post, i) => (
+              <ScrollReveal key={post.slug} delay={0.3 + i * 0.1}>
                 <Link
                   to={`/blog/${post.slug}`}
                   className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-background transition-all duration-300 hover:border-accent/30 hover:shadow-lg"
@@ -92,6 +158,14 @@ function BlogIndexPage() {
               </ScrollReveal>
             ))}
           </div>
+
+          {filteredPosts.length === 0 && (
+            <div className="py-20 text-center">
+              <p className="text-lg text-muted-foreground">
+                {language === "bn" ? "এই ক্যাটাগরিতে কোনো পোস্ট পাওয়া যায়নি।" : "No posts found in this category."}
+              </p>
+            </div>
+          )}
         </div>
       </section>
 

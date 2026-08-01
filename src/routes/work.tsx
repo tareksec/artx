@@ -6,13 +6,13 @@ import { useLanguage } from "@/components/providers/LanguageProvider";
 export const Route = createFileRoute("/work")({
   head: () => ({
     meta: [
-      { title: "Work — ArtX Studio" },
+      { title: "Work — ArtX studio portfolio" },
       { name: "description", content: "Selected recent work from ArtX: editorial websites, e-commerce, brand systems and SaaS products." },
-      { property: "og:title", content: "Work — ArtX Studio" },
+      { property: "og:title", content: "Work — ArtX studio portfolio" },
       { property: "og:description", content: "Selected recent projects from ArtX." },
-      { property: "og:url", content: "/work" },
+      { property: "og:url", content: "https://artxx.lovable.app/work" },
     ],
-    links: [{ rel: "canonical", href: "/work" }],
+    links: [{ rel: "canonical", href: "https://artxx.lovable.app/work" }],
   }),
   component: WorkPage,
 });
@@ -32,13 +32,13 @@ function WorkPage() {
             {language === "bn" ? (
               <>আমাদের <em className="not-italic text-accent">কাজ</em>।</>
             ) : (
-              <>The <em className="not-italic text-accent">work</em>.</>
+              <>ArtX studio <em className="not-italic text-accent">portfolio</em>.</>
             )}
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
             {language === "bn"
               ? "নির্বাচিত প্রজেক্টের তালিকা। প্রতিটি প্রজেক্টের সাথে বিস্তারিত কেস স্টাডি ও বাস্তব ফলাফল রয়েছে।"
-              : "A curated selection of our high-performing projects. Full case studies and analytics reports available on request."}
+              : "A curated selection of our high-performing projects. Full case studies and analytics reports from our ArtX studio portfolio available on request."}
           </p>
         </div>
       </section>

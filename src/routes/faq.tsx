@@ -9,21 +9,21 @@ import { ArrowLeft } from "lucide-react";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ — Frequently Asked Questions | ArtX Studio" },
+      { title: "ArtX SEO services & Web development FAQ" },
       {
         name: "description",
         content:
           "Everything you need to know about ArtX services, project timelines, BDT pricing packages, WhatsApp checkout, and ongoing support.",
       },
-      { property: "og:title", content: "FAQ — ArtX Studio" },
+      { property: "og:title", content: "ArtX SEO services & Web development FAQ" },
       {
         property: "og:description",
         content:
           "Frequently asked questions about website design, development, SEO, and pricing packages at ArtX Studio.",
       },
-      { property: "og:url", content: "/faq" },
+      { property: "og:url", content: "https://artxx.lovable.app/faq" },
     ],
-    links: [{ rel: "canonical", href: "/faq" }],
+    links: [{ rel: "canonical", href: "https://artxx.lovable.app/faq" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -33,36 +33,44 @@ export const Route = createFileRoute("/faq")({
           mainEntity: [
             {
               "@type": "Question",
-              name: "What does ArtX do?",
+              name: "What is ArtX Studio?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "ArtX is an independent creative studio specializing in high-craft website design, production-grade React development, technical SEO, and web security. We design, build, and rank standout websites.",
+                text: "ArtX is an independent creative studio founded in 2016, offering website design, development, SEO, and security services. We build digital products for SaaS, e-commerce, and hospitality brands globally.",
               },
             },
             {
               "@type": "Question",
-              name: "How long does a typical project take?",
+              name: "How much does a website cost from ArtX?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "A standard website design and development project typically takes between 3 to 6 weeks from initial discovery to final deployment, depending on project scope and page volume.",
+                text: "ArtX offers affordable web design packages starting at ৳2,000 for a Basic tier. Our Premium package is ৳5,000 for custom domains, and the Ultra package is ৳8,000 for all-in-one scaling solutions.",
               },
             },
             {
               "@type": "Question",
-              name: "What's included in Basic/Premium/Ultra packages?",
+              name: "Does ArtX build e-commerce websites?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Our Basic tier (৳2,000) includes unlimited pages, a product control panel, WhatsApp redirect payment option, full on-page SEO, a free subdomain, and 1 GB hosting. Premium (৳5,000) adds custom domain & hosting, and a custom admin dashboard. Ultra (৳8,000) provides an all-in-one scaling solution.",
+                text: "Yes, ArtX specializes in e-commerce website development engineered for conversions. Our packages include product control panels, order management systems, and WhatsApp redirect payment integrations.",
               },
             },
             {
               "@type": "Question",
-              name: "How does WhatsApp redirect payment work?",
+              name: "Is ArtX a web development agency in Bangladesh?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "When a customer completes checkout on your website, our system automatically formats their order details into a clean WhatsApp message and redirects them to chat directly with your business WhatsApp number.",
+                text: "Yes, ArtX is a web development agency in Bangladesh serving global clients. We operate remote-first, collaborating with brands across 4 continents to deliver custom web solutions.",
               },
             },
+            {
+              "@type": "Question",
+              name: "What SEO services does ArtX offer?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "As a technical SEO agency, ArtX offers comprehensive on-page and technical SEO, content architecture, and JSON-LD schema integration. We ensure your site is built to rank on modern AI and search engines.",
+              },
+            }
           ],
         }),
       },
@@ -90,23 +98,35 @@ const faqCategories: FaqCategory[] = [
     categoryBn: "সাধারণ প্রশ্নাবলী",
     items: [
       {
-        qEn: "What does ArtX do?",
-        qBn: "ArtX মূলত কী কাজ করে?",
-        aEn: "ArtX is an independent creative studio specializing in high-craft website design, production-grade React development, technical SEO, and web security. We design, build, and rank standout websites for brands across SaaS, e-commerce, hospitality, and finance that refuse to blend in.",
-        aBn: "ArtX একটি স্বাধীন ক্রিয়েটিভ স্টুডিও, যা আধুনিক ও উচ্চমানের ওয়েবসাইট ডিজাইন, প্রোডাকশন-গ্রেড React ডেভেলপমেন্ট, টেকনিক্যাল এসইও (SEO) এবং ওয়েব সিকিউরিটি সার্ভিস প্রদান করে। আমরা আধুনিক ব্র্যান্ডের জন্য আকর্ষণীয় ও দ্রুতগতির ওয়েবসাইট তৈরি করি।",
+        qEn: "What is ArtX Studio?",
+        qBn: "আর্টএক্স স্টুডিও কী?",
+        aEn: "ArtX is an independent creative studio founded in 2016, offering website design, development, SEO, and security services. We build digital products for SaaS, e-commerce, and hospitality brands globally.",
+        aBn: "আর্টএক্স হলো ২০১৬ সালে প্রতিষ্ঠিত একটি স্বাধীন ক্রিয়েটিভ স্টুডিও, যা ওয়েবসাইট ডিজাইন, ডেভেলপমেন্ট, এসইও এবং সিকিউরিটি সার্ভিস প্রদান করে। আমরা বিশ্বব্যাপী ব্র্যান্ডের জন্য ডিজিটাল পণ্য তৈরি করি।",
       },
       {
-        qEn: "How long does a typical project take?",
-        qBn: "একটি প্রোজেক্ট সম্পন্ন হতে সাধারণত কত দিন সময় লাগে?",
-        aEn: "A standard website design and development project typically takes between 3 to 6 weeks from initial discovery to final deployment, depending on project scope, page volume, and any custom backend integration requirements.",
-        aBn: "একটি স্ট্যান্ডার্ড ওয়েবসাইট ডিজাইন ও ডেভেলপমেন্ট প্রোজেক্ট সম্পন্ন হতে সাধারণত ৩ থেকে ৬ সপ্তাহ সময় লাগে, যা প্রোজেক্টের পরিধি, পেজ সংখ্যা এবং কাস্টম ফিচারের চাহিদার ওপর নির্ভর করে।",
+        qEn: "How much does a website cost from ArtX?",
+        qBn: "আর্টএক্স থেকে একটি ওয়েবসাইট তৈরি করতে কত খরচ হয়?",
+        aEn: "ArtX offers affordable web design packages starting at ৳2,000 for a Basic tier. Our Premium package is ৳5,000 for custom domains, and the Ultra package is ৳8,000 for all-in-one scaling solutions.",
+        aBn: "আর্টএক্স সাশ্রয়ী মূল্যের প্যাকেজ অফার করে, যার Basic টিয়ার ৳২,০০০ থেকে শুরু। কাস্টম ডোমেইনসহ Premium প্যাকেজ ৳৫,০০০ এবং সম্পূর্ণ সমাধানের জন্য Ultra প্যাকেজ ৳৮,০০০।",
       },
       {
-        qEn: "Do you work with clients outside Bangladesh?",
-        qBn: "আপনারা কি বাংলাদেশের বাইরের ক্লায়েন্টদের সাথে কাজ করেন?",
-        aEn: "Absolutely. While we are proud of our roots, our studio operates remotely and collaborates with teams across 4 continents. We have successfully completed over 950+ projects for clients globally across North America, Europe, Asia, and Australia.",
-        aBn: "অবশ্যই। আমাদের স্টুডিও রিমোটলি কাজ করে এবং আমরা ইতোমধ্যে ৪ মহাদেশ জুড়ে বিশ্বব্যাপী ক্লায়েন্টদের সাথে ৯৫০+ এর বেশি প্রোজেক্ট সফলভাবে সম্পন্ন করেছি।",
+        qEn: "Does ArtX build e-commerce websites?",
+        qBn: "আর্টএক্স কি ই-কমার্স ওয়েবসাইট তৈরি করে?",
+        aEn: "Yes, ArtX specializes in e-commerce website development engineered for conversions. Our packages include product control panels, order management systems, and WhatsApp redirect payment integrations.",
+        aBn: "হ্যাঁ, আর্টএক্স ই-কমার্স ওয়েবসাইট তৈরিতে পারদর্শী। আমাদের প্যাকেজগুলোতে প্রোডাক্ট কন্ট্রোল প্যানেল, অর্ডার ম্যানেজমেন্ট এবং হোয়াটসঅ্যাপ পেমেন্ট ইন্টিগ্রেশন অন্তর্ভুক্ত থাকে।",
       },
+      {
+        qEn: "Is ArtX a web development agency in Bangladesh?",
+        qBn: "আর্টএক্স কি বাংলাদেশের একটি ওয়েব ডেভেলপমেন্ট এজেন্সি?",
+        aEn: "Yes, ArtX is a web development agency in Bangladesh serving global clients. We operate remote-first, collaborating with brands across 4 continents to deliver custom web solutions.",
+        aBn: "হ্যাঁ, আর্টএক্স বাংলাদেশের একটি ওয়েব ডেভেলপমেন্ট এজেন্সি যা বিশ্বব্যাপী কাজ করে। আমরা ৪টি মহাদেশের ক্লায়েন্টদের জন্য রিমোটলি কাস্টম ওয়েব সলিউশন প্রদান করি।",
+      },
+      {
+        qEn: "What SEO services does ArtX offer?",
+        qBn: "আর্টএক্স কী ধরনের এসইও সার্ভিস অফার করে?",
+        aEn: "As a technical SEO agency, ArtX offers comprehensive on-page and technical SEO, content architecture, and JSON-LD schema integration. We ensure your site is built to rank on modern AI and search engines.",
+        aBn: "একটি টেকনিক্যাল এসইও এজেন্সি হিসেবে আর্টএক্স অন-পেজ এবং টেকনিক্যাল এসইও, কন্টেন্ট আর্কিটেকচার এবং স্কিমা ইন্টিগ্রেশন অফার করে। আমরা আধুনিক সার্চ ইঞ্জিনের জন্য আপনার সাইট অপ্টিমাইজ করি।",
+      }
     ],
   },
   {

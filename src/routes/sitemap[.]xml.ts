@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
+import { projects, serviceDetails, blogPosts } from "@/content/site";
 
 const BASE_URL = "https://artxx.lovable.app";
 
@@ -13,10 +14,10 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        // Import project and service slugs for dynamic routes
-        const projectSlugs = ["gearabout", "jun-century", "veative-kitchen", "northform-saas"];
-        const serviceSlugs = ["website-design", "web-development", "seo", "web-security"];
-        const blogSlugs = ["web-design-trends-2025", "core-web-vitals-seo-guide", "gearabout-retrospective"];
+        // Use dynamic slugs from content
+        const projectSlugs = projects.map(p => p.slug);
+        const serviceSlugs = serviceDetails.map(s => s.slug);
+        const blogSlugs = blogPosts.map(p => p.slug);
 
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },

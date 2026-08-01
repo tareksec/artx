@@ -8,16 +8,38 @@ export const Route = createFileRoute("/blog_/$slug")({
   head: ({ params }) => {
     const post = blogPosts.find((p) => p.slug === params.slug);
     if (!post) return {};
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post.title,
+      "description": post.excerpt,
+      "datePublished": post.date,
+      "author": {
+        "@type": "Person",
+        "name": post.author.name
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ArtX Studio"
+      }
+    };
+
     return {
       meta: [
         { title: `${post.title} — ArtX Blog` },
         { name: "description", content: post.excerpt },
         { property: "og:title", content: post.title },
         { property: "og:description", content: post.excerpt },
-        { property: "og:url", content: `/blog/${post.slug}` },
+        { property: "og:url", content: `https://artxx.lovable.app/blog/${post.slug}` },
         { property: "article:published_time", content: post.date },
       ],
-      links: [{ rel: "canonical", href: `/blog/${post.slug}` }],
+      links: [{ rel: "canonical", href: `https://artxx.lovable.app/blog/${post.slug}` }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(schema),
+        }
+      ]
     };
   },
   loader: ({ params }) => {
@@ -25,7 +47,8 @@ export const Route = createFileRoute("/blog_/$slug")({
     if (!post) throw notFound();
     const related = post.relatedSlugs
       .map((s) => blogPosts.find((p) => p.slug === s))
-      .filter(Boolean);
+      .filter(Boolean)
+      .slice(0, 3);
     return { post, related };
   },
   component: BlogArticlePage,
@@ -88,6 +111,13 @@ function RenderContent({ content }: { content: string }) {
       );
     } else if (line.startsWith("---")) {
       elements.push(<hr key={i} className="my-10 border-border" />);
+      i++;
+    } else if (line.startsWith("> ")) {
+      elements.push(
+        <blockquote key={i} className="my-8 border-l-2 border-accent pl-6 text-xl italic leading-relaxed text-foreground/90">
+          {line.slice(2)}
+        </blockquote>
+      );
       i++;
     } else if (line.trim() === "") {
       i++;
@@ -206,6 +236,26 @@ function BlogArticlePage() {
             {/* Main content */}
             <article className="min-w-0">
               <RenderContent content={post.content} />
+              
+              {/* Author Bio Footer */}
+              <div className="mt-16 rounded-2xl bg-secondary p-8 flex items-center gap-6">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-dark text-xl font-bold text-dark-foreground">
+                  AX
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg">Written by the ArtX team</h3>
+                  <p className="text-muted-foreground text-sm mt-1">
+                    We're a small team of designers, engineers and search strategists.
+                  </p>
+                </div>
+              </div>
+
+              {/* CTA */}
+              <div className="mt-12 text-center md:text-left">
+                <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-6 py-3 text-sm font-semibold text-accent transition-colors hover:bg-accent/20">
+                  <span className="text-lg leading-none">✱</span> Need this done for your site? Talk to us
+                </Link>
+              </div>
             </article>
           </div>
         </div>

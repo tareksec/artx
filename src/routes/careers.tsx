@@ -21,9 +21,9 @@ export const Route = createFileRoute("/careers")({
         content:
           "Explore open roles and remote careers in design, development, and SEO at ArtX Studio.",
       },
-      { property: "og:url", content: "/careers" },
+      { property: "og:url", content: "https://artxx.lovable.app/careers" },
     ],
-    links: [{ rel: "canonical", href: "/careers" }],
+    links: [{ rel: "canonical", href: "https://artxx.lovable.app/careers" }],
   }),
   component: CareersPage,
 });

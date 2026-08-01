@@ -9,13 +9,13 @@ import { useLanguage } from "@/components/providers/LanguageProvider";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — ArtX Studio" },
+      { title: "Contact — ArtXdev contact & project inquiries" },
       { name: "description", content: "Start a project with ArtX. Tell us about your brand, your goals and your timeline — we reply within one business day." },
-      { property: "og:title", content: "Contact — ArtX Studio" },
+      { property: "og:title", content: "Contact — ArtXdev contact & project inquiries" },
       { property: "og:description", content: "Start a project with ArtX." },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: "https://artxx.lovable.app/contact" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: "https://artxx.lovable.app/contact" }],
   }),
   component: ContactPage,
 });
@@ -179,7 +179,7 @@ function ContactPage() {
               {language === "bn" ? (
                 <>চলুন একসাথে কিছু <em className="not-italic text-accent">আকর্ষণীয়</em> তৈরি করি।</>
               ) : (
-                <>Let's build something <em className="not-italic text-accent">worth&nbsp;sharing</em>.</>
+                <>ArtXdev <em className="not-italic text-accent">contact</em>: Start your project.</>
               )}
             </h1>
             <p className="mt-8 max-w-md text-lg text-muted-foreground">
