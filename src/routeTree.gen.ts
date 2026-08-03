@@ -16,6 +16,8 @@ import { Route as CareersRouteImport } from './routes/careers'
 import { Route as ConceptsRouteImport } from './routes/concepts'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as HostingOfferRouteImport } from './routes/hosting-offer'
+import { Route as OfferRouteImport } from './routes/offer'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ScrapeRouteImport } from './routes/scrape'
@@ -61,6 +63,16 @@ const ContactRoute = ContactRouteImport.update({
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HostingOfferRoute = HostingOfferRouteImport.update({
+  id: '/hosting-offer',
+  path: '/hosting-offer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OfferRoute = OfferRouteImport.update({
+  id: '/offer',
+  path: '/offer',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PricingRoute = PricingRouteImport.update({
@@ -127,6 +139,8 @@ export interface FileRoutesByFullPath {
   '/concepts': typeof ConceptsRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/hosting-offer': typeof HostingOfferRoute
+  '/offer': typeof OfferRoute
   '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/scrape': typeof ScrapeRoute
@@ -147,6 +161,8 @@ export interface FileRoutesByTo {
   '/concepts': typeof ConceptsRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/hosting-offer': typeof HostingOfferRoute
+  '/offer': typeof OfferRoute
   '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/scrape': typeof ScrapeRoute
@@ -168,6 +184,8 @@ export interface FileRoutesById {
   '/concepts': typeof ConceptsRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/hosting-offer': typeof HostingOfferRoute
+  '/offer': typeof OfferRoute
   '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/scrape': typeof ScrapeRoute
@@ -190,6 +208,8 @@ export interface FileRouteTypes {
     | '/concepts'
     | '/contact'
     | '/faq'
+    | '/hosting-offer'
+    | '/offer'
     | '/pricing'
     | '/privacy-policy'
     | '/scrape'
@@ -210,6 +230,8 @@ export interface FileRouteTypes {
     | '/concepts'
     | '/contact'
     | '/faq'
+    | '/hosting-offer'
+    | '/offer'
     | '/pricing'
     | '/privacy-policy'
     | '/scrape'
@@ -230,6 +252,8 @@ export interface FileRouteTypes {
     | '/concepts'
     | '/contact'
     | '/faq'
+    | '/hosting-offer'
+    | '/offer'
     | '/pricing'
     | '/privacy-policy'
     | '/scrape'
@@ -251,6 +275,8 @@ export interface RootRouteChildren {
   ConceptsRoute: typeof ConceptsRoute
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
+  HostingOfferRoute: typeof HostingOfferRoute
+  OfferRoute: typeof OfferRoute
   PricingRoute: typeof PricingRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ScrapeRoute: typeof ScrapeRoute
@@ -313,6 +339,20 @@ declare module '@tanstack/react-router' {
       path: '/faq'
       fullPath: '/faq'
       preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hosting-offer': {
+      id: '/hosting-offer'
+      path: '/hosting-offer'
+      fullPath: '/hosting-offer'
+      preLoaderRoute: typeof HostingOfferRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/offer': {
+      id: '/offer'
+      path: '/offer'
+      fullPath: '/offer'
+      preLoaderRoute: typeof OfferRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pricing': {
@@ -403,6 +443,8 @@ const rootRouteChildren: RootRouteChildren = {
   ConceptsRoute: ConceptsRoute,
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
+  HostingOfferRoute: HostingOfferRoute,
+  OfferRoute: OfferRoute,
   PricingRoute: PricingRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ScrapeRoute: ScrapeRoute,

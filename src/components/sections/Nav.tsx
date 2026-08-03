@@ -10,6 +10,14 @@ export function Nav() {
   const { language, setLanguage, t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
+  React.useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileMenuOpen(false);
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, []);
+
   const navLinks = [
     { to: "/work", label: t.nav.work },
     { to: "/services", label: t.nav.services },
@@ -67,7 +75,7 @@ export function Nav() {
           <Link
             to="/contact"
             onClick={() => setMobileMenuOpen(false)}
-            className="rounded-full bg-foreground px-4 py-1.5 text-sm font-medium text-background transition-colors hover:bg-accent hover:text-accent-foreground"
+            className="hidden sm:inline-flex rounded-full bg-foreground px-4 py-1.5 text-sm font-medium text-background transition-colors hover:bg-accent hover:text-accent-foreground"
           >
             {t.nav.letsTalk}
           </Link>
@@ -75,7 +83,7 @@ export function Nav() {
           <div className="flex items-center rounded-full border border-border bg-secondary/80 p-0.5">
             <button
               onClick={() => setLanguage("en")}
-              className={`rounded-full px-2.5 py-1 text-xs font-bold transition-all duration-200 ${
+              className={`rounded-full px-3 py-2 min-h-[44px] min-w-[44px] flex items-center justify-center text-xs font-bold transition-all duration-200 ${
                 language === "en"
                   ? "bg-foreground text-background shadow-sm"
                   : "text-muted-foreground hover:text-foreground"
@@ -86,7 +94,7 @@ export function Nav() {
             </button>
             <button
               onClick={() => setLanguage("bn")}
-              className={`rounded-full px-2.5 py-1 text-xs font-bold transition-all duration-200 ${
+              className={`rounded-full px-3 py-2 min-h-[44px] min-w-[44px] flex items-center justify-center text-xs font-bold transition-all duration-200 ${
                 language === "bn"
                   ? "bg-foreground text-background shadow-sm"
                   : "text-muted-foreground hover:text-foreground"
@@ -99,42 +107,70 @@ export function Nav() {
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="flex h-8 w-8 items-center justify-center rounded-full border border-border/60 bg-secondary/80 text-foreground md:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-border/60 bg-secondary/80 text-foreground md:hidden"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
-            {mobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </nav>
 
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -10, scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-            className="mt-2 w-full max-w-xs rounded-3xl border border-border/80 bg-background/95 p-4 shadow-2xl backdrop-blur-2xl md:hidden"
-          >
-            <ul className="flex flex-col gap-1">
-              {navLinks.map((l) => (
-                <li key={l.to}>
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setMobileMenuOpen(false)}
+              className="fixed inset-0 top-0 left-0 right-0 bottom-0 z-40 bg-background/80 backdrop-blur-sm md:hidden h-screen w-screen"
+            />
+            <motion.div
+              initial={{ opacity: 0, x: "100%" }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: "100%" }}
+              transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
+              className="fixed inset-y-0 right-0 z-50 w-[85vw] max-w-sm border-l border-border/80 bg-background/95 p-6 shadow-2xl backdrop-blur-2xl md:hidden overflow-y-auto"
+            >
+              <div className="flex justify-end mb-6">
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-secondary/80 text-foreground transition-colors hover:bg-secondary"
+                  aria-label="Close menu"
+                >
+                  <X className="h-6 w-6" />
+                </button>
+              </div>
+              <ul className="flex flex-col gap-2">
+                <li className="mb-4 sm:hidden">
                   <Link
-                    to={l.to}
+                    to="/contact"
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`block rounded-2xl px-4 py-2.5 text-sm font-medium transition-colors ${
-                      l.highlight
-                        ? "bg-accent/10 text-accent border border-accent/20 hover:bg-accent/20"
-                        : "text-foreground/80 hover:bg-secondary hover:text-foreground"
-                    }`}
-                    activeProps={{ className: l.highlight ? "bg-accent/20 font-bold" : "bg-secondary text-foreground font-bold" }}
+                    className="block w-full rounded-full bg-foreground px-4 py-3.5 text-center text-sm font-medium text-background transition-colors hover:bg-accent hover:text-accent-foreground"
                   >
-                    {l.label}
+                    {t.nav.letsTalk}
                   </Link>
                 </li>
-              ))}
-            </ul>
-          </motion.div>
+                {navLinks.map((l) => (
+                  <li key={l.to}>
+                    <Link
+                      to={l.to}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`block rounded-2xl px-4 py-3.5 text-center text-base font-medium transition-colors ${
+                        l.highlight
+                          ? "bg-accent/10 text-accent border border-accent/20 hover:bg-accent/20"
+                          : "text-foreground/80 hover:bg-secondary hover:text-foreground"
+                      }`}
+                      activeProps={{ className: l.highlight ? "bg-accent/20 font-bold" : "bg-secondary text-foreground font-bold" }}
+                    >
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </motion.header>

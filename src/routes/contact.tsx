@@ -269,7 +269,9 @@ function ContactPage() {
                         }`}
                         placeholder={language === "bn" ? "আপনার নাম" : "Your name"}
                       />
-                      {errors.name && <p className="mt-1.5 text-xs text-red-500 font-medium">{errors.name}</p>}
+                      <div className="min-h-[1.5rem] mt-1.5">
+                        {errors.name && <p className="text-xs text-red-500 font-medium">{errors.name}</p>}
+                      </div>
                     </label>
 
                     <label className="block">
@@ -287,7 +289,9 @@ function ContactPage() {
                         }`}
                         placeholder="you@company.com"
                       />
-                      {errors.email && <p className="mt-1.5 text-xs text-red-500 font-medium">{errors.email}</p>}
+                      <div className="min-h-[1.5rem] mt-1.5">
+                        {errors.email && <p className="text-xs text-red-500 font-medium">{errors.email}</p>}
+                      </div>
                     </label>
                   </div>
 
@@ -367,7 +371,9 @@ function ContactPage() {
                       }`}
                       placeholder={language === "bn" ? "আপনার প্রোজেক্ট সম্পর্কে আমাদের বিস্তারিত জানান..." : "Tell us what you're building, your goals, and timeline…"}
                     />
-                    {errors.message && <p className="mt-1.5 text-xs text-red-500 font-medium">{errors.message}</p>}
+                    <div className="min-h-[1.5rem] mt-1.5">
+                      {errors.message && <p className="text-xs text-red-500 font-medium">{errors.message}</p>}
+                    </div>
                   </label>
 
                   {/* reCAPTCHA Security Verification */}
@@ -396,7 +402,9 @@ function ContactPage() {
                         v2
                       </span>
                     </div>
-                    {errors.recaptcha && <p className="mt-1.5 text-xs text-red-500 font-medium">{errors.recaptcha}</p>}
+                    <div className="min-h-[1.5rem] mt-1.5">
+                      {errors.recaptcha && <p className="text-xs text-red-500 font-medium">{errors.recaptcha}</p>}
+                    </div>
                   </div>
 
                   {/* Error Alert Banner */}

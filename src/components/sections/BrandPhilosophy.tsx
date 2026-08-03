@@ -66,7 +66,7 @@ export function BrandPhilosophy() {
                   : "We're a small team of designers, engineers and search strategists building websites that move markets — not just cursors."}
               </p>
 
-              <dl className="mt-12 grid grid-cols-2 gap-8">
+              <dl className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {pillars.map((p) => (
                   <div key={p.n}>
                     <dt className="mb-2 flex items-baseline gap-2 text-sm text-dark-foreground/50">
