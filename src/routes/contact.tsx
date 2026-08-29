@@ -343,14 +343,14 @@ function ContactPage() {
                       <option value="General Inquiry / Custom Quote">
                         {language === "bn" ? "সাধারণ জিজ্ঞাসা / কাস্টম কোটেশন" : "General Inquiry / Custom Quote"}
                       </option>
-                      <option value="Basic Package (৳2,000 / 1 Page)">
-                        {language === "bn" ? "বেসিক প্যাকেজ (৳২,০০০ / ১ পেজ ল্যান্ডিং)" : "Basic Package — ৳2,000 (1 Page)"}
+                      <option value="Basic Package (৳3,500 / 1 Page)">
+                        {language === "bn" ? "বেসিক প্যাকেজ (৳৩,৫০০ / ১ পেজ ল্যান্ডিং)" : "Basic Package — ৳3,500 (1 Page)"}
                       </option>
-                      <option value="Premium Package (৳5,000 / up to 7 Pages)">
-                        {language === "bn" ? "প্রিমিয়াম প্যাকেজ (৳৫,০০০ / ৭ পেজ পর্যন্ত)" : "Premium Package — ৳5,000 (up to 7 Pages)"}
+                      <option value="Premium Package (৳6,500 / up to 7 Pages)">
+                        {language === "bn" ? "প্রিমিয়াম প্যাকেজ (৳৬,৫০০ / ৭ পেজ পর্যন্ত)" : "Premium Package — ৳6,500 (up to 7 Pages)"}
                       </option>
-                      <option value="Ultra Package (৳8,000 / up to 15 Pages)">
-                        {language === "bn" ? "আল্ট্রা প্যাকেজ (৳৮,০০০ / ১৫ পেজ + ই-কমার্স)" : "Ultra Package — ৳8,000 (up to 15 Pages)"}
+                      <option value="Ultra Package (৳9,500 / up to 15 Pages)">
+                        {language === "bn" ? "আল্ট্রা প্যাকেজ (৳৯,৫০০ / ১৫ পেজ + ই-কমার্স)" : "Ultra Package — ৳9,500 (up to 15 Pages)"}
                       </option>
                     </select>
                   </label>

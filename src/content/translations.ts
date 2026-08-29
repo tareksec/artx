@@ -67,7 +67,7 @@ export const translations = {
       packages: [
         {
           name: "Basic",
-          price: "৳2,000",
+          price: "৳3,500",
           description: "For businesses just getting started online.",
           services: [
             "Unlimited Pages (As needed)",
@@ -81,7 +81,7 @@ export const translations = {
         },
         {
           name: "Premium",
-          price: "৳5,000",
+          price: "৳6,500",
           description: "For brands ready to own their domain and operations.",
           services: [
             "Everything in Basic package",
@@ -94,7 +94,7 @@ export const translations = {
         },
         {
           name: "Ultra",
-          price: "৳8,000",
+          price: "৳9,500",
           description: "The all-in-one solution for serious growth.",
           services: [
             "Everything in Premium package",
@@ -246,7 +246,7 @@ export const translations = {
       packages: [
         {
           name: "Basic",
-          price: "৳2,000",
+          price: "৳3,500",
           description: "অনলাইনে নতুন শুরু করা ব্যবসাগুলোর জন্য।",
           services: [
             "Unlimited Pages (আপনার প্রয়োজন অনুযায়ী)",
@@ -260,7 +260,7 @@ export const translations = {
         },
         {
           name: "Premium",
-          price: "৳5,000",
+          price: "৳6,500",
           description: "যারা নিজেদের ডোমেইন ও অপারেশন নিয়ন্ত্রণ করতে প্রস্তুত।",
           services: [
             "Basic প্যাকেজের সব কিছু",
@@ -273,7 +273,7 @@ export const translations = {
         },
         {
           name: "Ultra",
-          price: "৳8,000",
+          price: "৳9,500",
           description: "সিরিয়াস গ্রোথের জন্য একটি অল-ইন-ওয়ান সমাধান।",
           services: [
             "Premium প্যাকেজের সব কিছু",

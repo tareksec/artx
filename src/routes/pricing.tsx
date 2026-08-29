@@ -11,7 +11,7 @@ export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
       { title: "ArtX website pricing & Affordable web design packages" },
-      { name: "description", content: "Packages built to scale with you. Pick the tier that fits where your business is today: Basic from ৳2,000, Premium from ৳5,000, Ultra from ৳8,000." },
+      { name: "description", content: "Packages built to scale with you. Pick the tier that fits where your business is today: Basic from ৳3,500, Premium from ৳6,500, Ultra from ৳9,500." },
       { property: "og:title", content: "ArtX website pricing & Affordable web design packages" },
       { property: "og:description", content: "Packages built to scale with you. Pick the tier that fits where your business is today." },
       { property: "og:url", content: "https://artxx.lovable.app/pricing" },
@@ -27,8 +27,8 @@ export const Route = createFileRoute("/pricing")({
           "description": "Affordable web design packages and custom website development services.",
           "offers": {
             "@type": "AggregateOffer",
-            "lowPrice": "2000",
-            "highPrice": "8000",
+            "lowPrice": "3500",
+            "highPrice": "9500",
             "priceCurrency": "BDT"
           }
         }),

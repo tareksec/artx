@@ -44,7 +44,7 @@ export const Route = createFileRoute("/faq")({
               name: "How much does a website cost from ArtX?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "ArtX offers affordable web design packages starting at ৳2,000 for a Basic tier. Our Premium package is ৳5,000 for custom domains, and the Ultra package is ৳8,000 for all-in-one scaling solutions.",
+                text: "ArtX offers affordable web design packages starting at ৳3,500 for a Basic tier. Our Premium package is ৳6,500 for custom domains, and the Ultra package is ৳9,500 for all-in-one scaling solutions.",
               },
             },
             {
@@ -106,8 +106,8 @@ const faqCategories: FaqCategory[] = [
       {
         qEn: "How much does a website cost from ArtX?",
         qBn: "আর্টএক্স থেকে একটি ওয়েবসাইট তৈরি করতে কত খরচ হয়?",
-        aEn: "ArtX offers affordable web design packages starting at ৳2,000 for a Basic tier. Our Premium package is ৳5,000 for custom domains, and the Ultra package is ৳8,000 for all-in-one scaling solutions.",
-        aBn: "আর্টএক্স সাশ্রয়ী মূল্যের প্যাকেজ অফার করে, যার Basic টিয়ার ৳২,০০০ থেকে শুরু। কাস্টম ডোমেইনসহ Premium প্যাকেজ ৳৫,০০০ এবং সম্পূর্ণ সমাধানের জন্য Ultra প্যাকেজ ৳৮,০০০।",
+        aEn: "ArtX offers affordable web design packages starting at ৳3,500 for a Basic tier. Our Premium package is ৳6,500 for custom domains, and the Ultra package is ৳9,500 for all-in-one scaling solutions.",
+        aBn: "আর্টএক্স সাশ্রয়ী মূল্যের প্যাকেজ অফার করে, যার Basic টিয়ার ৳৩,৫০০ থেকে শুরু। কাস্টম ডোমেইনসহ Premium প্যাকেজ ৳৬,৫০০ এবং সম্পূর্ণ সমাধানের জন্য Ultra প্যাকেজ ৳৯,৫০০।",
       },
       {
         qEn: "Does ArtX build e-commerce websites?",
@@ -136,8 +136,8 @@ const faqCategories: FaqCategory[] = [
       {
         qEn: "What's included in Basic/Premium/Ultra packages?",
         qBn: "Basic, Premium এবং Ultra প্যাকেজে কী কী অন্তর্ভুক্ত থাকে?",
-        aEn: "Our Basic tier (৳2,000) includes unlimited pages (as needed), a product control panel, WhatsApp redirect payment option, full on-page SEO, a free subdomain, and 1 GB hosting. Premium (৳5,000) adds a custom domain & hosting, a full custom admin dashboard, and an order management system. Ultra (৳8,000) is an all-in-one scaling solution featuring priority support and advanced customization.",
-        aBn: "আমাদের Basic প্যাকেজে (৳2,000) রয়েছে আনলিমিটেড পেজ, প্রোডাক্ট কন্ট্রোল প্যানেল, হোয়াটসঅ্যাপ পেমেন্ট রিডাইরেক্ট, অন-পেজ এসইও, ফ্রি সাবডোমেইন এবং ১ জিবি হোস্টিং। Premium প্যাকেজে (৳5,000) রয়েছে কাস্টম ডোমেইন ও হোস্টিং, ফুল কাস্টম অ্যাডমিন ড্যাশবোর্ড এবং অর্ডার ম্যানেজমেন্ট সিস্টেম। আর Ultra প্যাকেজে (৳8,000) রয়েছে অল-ইন-ওয়ান সমাধান, প্রায়োরিটি সাপোর্ট এবং অ্যাডভান্সড কাস্টমাইজেশন।",
+        aEn: "Our Basic tier (৳3,500) includes unlimited pages (as needed), a product control panel, WhatsApp redirect payment option, full on-page SEO, a free subdomain, and 1 GB hosting. Premium (৳6,500) adds a custom domain & hosting, a full custom admin dashboard, and an order management system. Ultra (৳9,500) is an all-in-one scaling solution featuring priority support and advanced customization.",
+        aBn: "আমাদের Basic প্যাকেজে (৳৩,৫০০) রয়েছে আনলিমিটেড পেজ, প্রোডাক্ট কন্ট্রোল প্যানেল, হোয়াটসঅ্যাপ পেমেন্ট রিডাইরেক্ট, অন-পেজ এসইও, ফ্রি সাবডোমেইন এবং ১ জিবি হোস্টিং। Premium প্যাকেজে (৳৬,৫০০) রয়েছে কাস্টম ডোমেইন ও হোস্টিং, ফুল কাস্টম অ্যাডমিন ড্যাশবোর্ড এবং অর্ডার ম্যানেজমেন্ট সিস্টেম। আর Ultra প্যাকেজে (৳৯,৫০০) রয়েছে অল-ইন-ওয়ান সমাধান, প্রায়োরিটি সাপোর্ট এবং অ্যাডভান্সড কাস্টমাইজেশন।",
       },
       {
         qEn: "Can I upgrade my package later?",
