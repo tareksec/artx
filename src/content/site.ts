@@ -967,6 +967,24 @@ export const projects: CaseStudy[] = [
 
 export const blogPosts: BlogPost[] = [
   {
+    "slug": "minimalist-web-design-2026",
+    "title": "The Evolution of Minimalist Web Design in 2026: Aesthetics Meets Performance",
+    "excerpt": "Modern minimalism in 2026 is no longer about stark white voids. It is a disciplined balance of typography, whitespace, and micro-latency.",
+    "date": "2026-09-23",
+    "readTime": 6,
+    "category": "Design",
+    "author": {
+      "name": "ArtX Studio",
+      "role": "Design Lead"
+    },
+    "relatedSlugs": [
+      "saas-landing-page-anatomy",
+      "core-web-vitals-2026"
+    ],
+    "content": "## Beyond the Empty Canvas\n\nMinimalism has matured. In 2026, web minimalism is an operational philosophy: delivering maximum communicative impact with minimal DOM complexity. Fast load times and high visual sophistication now converge through deliberate typography, tailored grid rhythm, and subtle depth."
+  },
+
+  {
     slug: "core-web-vitals-2026",
     title: "Why Core Web Vitals matter more than ever in 2026",
     excerpt: "With AI overviews dominating search, the margin for poor performance is zero. Here's why CWV is your technical moat.",
