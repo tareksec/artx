@@ -1,0 +1,166 @@
+[
+  {
+    "slug": "minimalist-web-design-2026",
+    "title": "The Evolution of Minimalist Web Design in 2026: Aesthetics Meets Performance",
+    "excerpt": "Modern minimalism in 2026 is no longer about stark white voids. It is a disciplined balance of typography, whitespace, and micro-latency.",
+    "date": "2026-09-24",
+    "readTime": 6,
+    "category": "Design",
+    "author": {
+      "name": "ArtX Studio",
+      "role": "Design Lead"
+    },
+    "relatedSlugs": [
+      "saas-landing-page-anatomy",
+      "core-web-vitals-2026"
+    ],
+    "content": "## Beyond the Empty Canvas\n\nMinimalism has matured. In 2026, web minimalism is an operational philosophy: delivering maximum communicative impact with minimal DOM complexity. Fast load times and high visual sophistication now converge through deliberate typography, tailored grid rhythm, and subtle depth."
+  },
+  {
+    "slug": "micro-interactions-ux-conversion",
+    "title": "Designing High-Converting Micro-Interactions for Modern Web Applications",
+    "excerpt": "How subtle haptic cues, magnetic hover states, and smooth physics-based transitions increase product engagement and conversion.",
+    "date": "2026-09-25",
+    "readTime": 5,
+    "category": "Development",
+    "author": {
+      "name": "ArtX Studio",
+      "role": "UI Engineer"
+    },
+    "relatedSlugs": [
+      "minimalist-web-design-2026",
+      "core-web-vitals-2026"
+    ],
+    "content": "## The Psychology of the Micro-Interaction\n\nMicro-interactions provide immediate feedback, transforming static pages into responsive digital products. When implemented using hardware-accelerated CSS and spring physics, they create intuitive tactile satisfaction that lowers friction in conversion funnels."
+  },
+  {
+    "slug": "kinetic-typography-digital-branding",
+    "title": "The Role of Variable and Kinetic Typography in Digital Brand Identity",
+    "excerpt": "Why variable font technology and subtle scroll-linked typography are replacing heavy image graphics in enterprise brand design.",
+    "date": "2026-09-26",
+    "readTime": 7,
+    "category": "Design",
+    "author": {
+      "name": "ArtX Studio",
+      "role": "Creative Director"
+    },
+    "relatedSlugs": [
+      "minimalist-web-design-2026"
+    ],
+    "content": "## Typography as an Interface\n\nVariable fonts compress dozens of font weights into a single tiny HTTP request. Combined with modern CSS scroll-driven animations, typography now carries the full weight of brand expression without degrading Lighthouse scores."
+  },
+  {
+    "slug": "dark-mode-ui-architecture",
+    "title": "Dark Mode UI Architecture: Contrast, Accessibility, and OLED Optimization",
+    "excerpt": "A comprehensive technical guide to implementing dark mode that respects WCAG standards, avoids eye strain, and optimizes mobile battery life.",
+    "date": "2026-09-27",
+    "readTime": 6,
+    "category": "Design",
+    "author": {
+      "name": "ArtX Studio",
+      "role": "Accessibility Specialist"
+    },
+    "relatedSlugs": [
+      "minimalist-web-design-2026"
+    ],
+    "content": "## Pure Black vs. Balanced Charcoal\n\nPure black (#000000) causes high-contrast halation for many readers. Professional dark interfaces utilize curated neutral scales (zinc, slate, neutral grays) with semantic elevation tokens to convey hierarchy while meeting WCAG AAA compliance."
+  },
+  {
+    "slug": "container-queries-css-grid",
+    "title": "Beyond 12-Column Grids: Modern CSS Grid & Container Queries in Production",
+    "excerpt": "How container queries fundamentally decouple components from viewport widths, enabling truly modular design system architectures.",
+    "date": "2026-09-28",
+    "readTime": 8,
+    "category": "Development",
+    "author": {
+      "name": "ArtX Studio",
+      "role": "Frontend Architect"
+    },
+    "relatedSlugs": [
+      "saas-landing-page-anatomy"
+    ],
+    "content": "## Component-Owned Responsiveness\n\nViewport media queries are inherently brittle for micro-components. Container queries allow a card or modal to adapt its layout based strictly on the dimensions of its parent container, achieving genuine front-end modularity."
+  },
+  {
+    "slug": "figma-to-react-design-systems",
+    "title": "Building Resilient Design Systems: Bridging the Gap Between Figma and React",
+    "excerpt": "Eliminating the designer-developer handoff gap with automated design tokens, Tailwind mapping, and component parity.",
+    "date": "2026-09-29",
+    "readTime": 7,
+    "category": "Design",
+    "author": {
+      "name": "ArtX Studio",
+      "role": "Design Systems Lead"
+    },
+    "relatedSlugs": [
+      "saas-landing-page-anatomy"
+    ],
+    "content": "## The Single Source of Truth\n\nWhen design tokens in Figma automatically sync to Tailwind configurations via CI/CD, visual regressions drop to zero. A living design system ensures brand consistency across enterprise applications."
+  },
+  {
+    "slug": "zero-layout-shift-cls-guide",
+    "title": "Eliminating Cumulative Layout Shift (CLS): A Front-End Architect Guide",
+    "excerpt": "Technical patterns for locking down aspect ratios, dynamic font loading, and layout shifts to achieve perfect zero CLS on web vitals.",
+    "date": "2026-09-30",
+    "readTime": 6,
+    "category": "SEO",
+    "author": {
+      "name": "ArtX Studio",
+      "role": "Technical SEO Lead"
+    },
+    "relatedSlugs": [
+      "core-web-vitals-2026",
+      "on-page-seo-checklist"
+    ],
+    "content": "## Why CLS Destroys User Trust\n\nNothing frustrates users more than clicking a link only for an unreserved image banner to shift the layout. Reserving explicit aspect ratio boxes and using font-display: optional completely eliminates shifts."
+  },
+  {
+    "slug": "headless-cms-architecture-2026",
+    "title": "Choosing the Right Headless CMS in 2026: Speed, Security, and Scalability",
+    "excerpt": "Comparative analysis of Git-based, database-backed, and API-first CMS architectures for high-traffic modern marketing sites.",
+    "date": "2026-10-01",
+    "readTime": 8,
+    "category": "Development",
+    "author": {
+      "name": "ArtX Studio",
+      "role": "Solutions Architect"
+    },
+    "relatedSlugs": [
+      "shopify-vs-custom"
+    ],
+    "content": "## Decoupled Content Delivery\n\nSeparating the presentation layer from content authoring prevents database bottlenecks. In 2026, modern marketing engines favor headless architectures that compile directly to static edges."
+  },
+  {
+    "slug": "interactive-3d-web-experiences",
+    "title": "Implementing Three.js and WebGL Without Killing Mobile Performance",
+    "excerpt": "Techniques for lazy-loading shaders, LOD mesh optimization, and battery-friendly frame pacing in browser 3D graphics.",
+    "date": "2026-10-02",
+    "readTime": 7,
+    "category": "Development",
+    "author": {
+      "name": "ArtX Studio",
+      "role": "Creative Developer"
+    },
+    "relatedSlugs": [
+      "core-web-vitals-2026"
+    ],
+    "content": "## Progressive 3D Enhancement\n\n3D web graphics should never block initial page hydration. Progressive loading, geometry instancing, and adaptive render resolution ensure seamless 60fps animations even on mid-tier mobile hardware."
+  },
+  {
+    "slug": "technical-seo-react-applications",
+    "title": "Technical SEO Checklist for Client-Side and Hybrid React Applications",
+    "excerpt": "Crucial rules for hydration rendering, dynamic canonicals, Open Graph cards, and structured JSON-LD schemas in modern SPAs.",
+    "date": "2026-10-03",
+    "readTime": 9,
+    "category": "SEO",
+    "author": {
+      "name": "ArtX Studio",
+      "role": "Technical SEO Lead"
+    },
+    "relatedSlugs": [
+      "on-page-seo-checklist",
+      "core-web-vitals-2026"
+    ],
+    "content": "## Guaranteeing Bot Crawlability\n\nWhile search engines execute JavaScript, client-side latency risks search timeouts. Proper meta tag injection, automated sitemap generation, and schema markup ensure full search indexing."
+  }
+]
