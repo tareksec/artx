@@ -967,6 +967,24 @@ export const projects: CaseStudy[] = [
 
 export const blogPosts: BlogPost[] = [
   {
+    "slug": "micro-interactions-ux-conversion",
+    "title": "Designing High-Converting Micro-Interactions for Modern Web Applications",
+    "excerpt": "How subtle haptic cues, magnetic hover states, and smooth physics-based transitions increase product engagement and conversion.",
+    "date": "2026-09-24",
+    "readTime": 5,
+    "category": "Development",
+    "author": {
+      "name": "ArtX Studio",
+      "role": "UI Engineer"
+    },
+    "relatedSlugs": [
+      "minimalist-web-design-2026",
+      "core-web-vitals-2026"
+    ],
+    "content": "## The Psychology of the Micro-Interaction\n\nMicro-interactions provide immediate feedback, transforming static pages into responsive digital products. When implemented using hardware-accelerated CSS and spring physics, they create intuitive tactile satisfaction that lowers friction in conversion funnels."
+  },
+
+  {
     "slug": "minimalist-web-design-2026",
     "title": "The Evolution of Minimalist Web Design in 2026: Aesthetics Meets Performance",
     "excerpt": "Modern minimalism in 2026 is no longer about stark white voids. It is a disciplined balance of typography, whitespace, and micro-latency.",

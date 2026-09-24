@@ -1,22 +1,5 @@
 [
   {
-    "slug": "micro-interactions-ux-conversion",
-    "title": "Designing High-Converting Micro-Interactions for Modern Web Applications",
-    "excerpt": "How subtle haptic cues, magnetic hover states, and smooth physics-based transitions increase product engagement and conversion.",
-    "date": "2026-09-25",
-    "readTime": 5,
-    "category": "Development",
-    "author": {
-      "name": "ArtX Studio",
-      "role": "UI Engineer"
-    },
-    "relatedSlugs": [
-      "minimalist-web-design-2026",
-      "core-web-vitals-2026"
-    ],
-    "content": "## The Psychology of the Micro-Interaction\n\nMicro-interactions provide immediate feedback, transforming static pages into responsive digital products. When implemented using hardware-accelerated CSS and spring physics, they create intuitive tactile satisfaction that lowers friction in conversion funnels."
-  },
-  {
     "slug": "kinetic-typography-digital-branding",
     "title": "The Role of Variable and Kinetic Typography in Digital Brand Identity",
     "excerpt": "Why variable font technology and subtle scroll-linked typography are replacing heavy image graphics in enterprise brand design.",
