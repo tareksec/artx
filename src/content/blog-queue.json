@@ -1,21 +1,5 @@
 [
   {
-    "slug": "kinetic-typography-digital-branding",
-    "title": "The Role of Variable and Kinetic Typography in Digital Brand Identity",
-    "excerpt": "Why variable font technology and subtle scroll-linked typography are replacing heavy image graphics in enterprise brand design.",
-    "date": "2026-09-26",
-    "readTime": 7,
-    "category": "Design",
-    "author": {
-      "name": "ArtX Studio",
-      "role": "Creative Director"
-    },
-    "relatedSlugs": [
-      "minimalist-web-design-2026"
-    ],
-    "content": "## Typography as an Interface\n\nVariable fonts compress dozens of font weights into a single tiny HTTP request. Combined with modern CSS scroll-driven animations, typography now carries the full weight of brand expression without degrading Lighthouse scores."
-  },
-  {
     "slug": "dark-mode-ui-architecture",
     "title": "Dark Mode UI Architecture: Contrast, Accessibility, and OLED Optimization",
     "excerpt": "A comprehensive technical guide to implementing dark mode that respects WCAG standards, avoids eye strain, and optimizes mobile battery life.",
