@@ -337,7 +337,7 @@ function RecommendationsPanel({ audit }: { audit: SiteAudit }) {
 }
 
 function ScrapePage() {
-  const [url, setUrl] = useState("https://artxx.lovable.app");
+  const [url, setUrl] = useState("https://artxdev.tech");
   const [competitorUrl, setCompetitorUrl] = useState("");
   const [mode, setMode] = useState<Mode>("scrape");
   const [status, setStatus] = useState<Status>("idle");

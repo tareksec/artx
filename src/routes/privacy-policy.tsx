@@ -5,21 +5,21 @@ import { ArrowLeft, MessageCircle, Mail, ShieldCheck } from "lucide-react";
 export const Route = createFileRoute("/privacy-policy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — ArtX Studio" },
+      { title: "Privacy Policy | ArtX Web Design Studio" },
       {
         name: "description",
         content:
           "Privacy Policy and data protection practices for ArtX Studio. Learn how we collect, use, and protect your information.",
       },
-      { property: "og:title", content: "Privacy Policy — ArtX Studio" },
+      { property: "og:title", content: "Privacy Policy | ArtX Web Design Studio" },
       {
         property: "og:description",
         content:
           "Privacy Policy and data protection practices for ArtX Studio. Learn how we collect, use, and protect your information.",
       },
-      { property: "og:url", content: "https://artxx.lovable.app/privacy-policy" },
+      { property: "og:url", content: "https://artxdev.tech/privacy-policy" },
     ],
-    links: [{ rel: "canonical", href: "https://artxx.lovable.app/privacy-policy" }],
+    links: [{ rel: "canonical", href: "https://artxdev.tech/privacy-policy" }],
   }),
   component: PrivacyPolicyPage,
 });

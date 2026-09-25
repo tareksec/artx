@@ -7,16 +7,67 @@ import { useLanguage } from "@/components/providers/LanguageProvider";
 import { useState, useMemo } from "react";
 
 export const Route = createFileRoute("/blog")({
-  head: () => ({
-    meta: [
-      { title: "Blog — Web Design & SEO Insights | ArtX Studio" },
-      { name: "description", content: "Design thinking, SEO strategy and engineering insights from the ArtX team." },
-      { property: "og:title", content: "Blog — Web Design & SEO Insights | ArtX Studio" },
-      { property: "og:description", content: "Insights on web design, development and SEO from the ArtX team." },
-      { property: "og:url", content: "https://artxx.lovable.app/blog" },
-    ],
-    links: [{ rel: "canonical", href: "https://artxx.lovable.app/blog" }],
-  }),
+  head: () => {
+    const seoTitle = "Web Design, SEO & Tech Insights Blog Bangladesh | ArtX";
+    const metaDesc = "Actionable guides on web design costs, SEO strategies, e-commerce setup, WordPress vs custom development, and GEO in Bangladesh. Read our expert articles!";
+    const canonicalUrl = "https://artxdev.tech/blog";
+
+    const schema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Blog",
+          "@id": `${canonicalUrl}#blog`,
+          name: "ArtX Digital Insights Blog",
+          description: metaDesc,
+          url: canonicalUrl,
+          publisher: {
+            "@type": "Organization",
+            name: "ArtX Studio",
+            url: "https://artxdev.tech",
+          },
+        },
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://artxdev.tech",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Blog",
+              item: canonicalUrl,
+            },
+          ],
+        },
+      ],
+    };
+
+    return {
+      meta: [
+        { title: seoTitle },
+        { name: "description", content: metaDesc },
+        { property: "og:title", content: seoTitle },
+        { property: "og:description", content: metaDesc },
+        { property: "og:url", content: canonicalUrl },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: seoTitle },
+        { name: "twitter:description", content: metaDesc },
+      ],
+      links: [{ rel: "canonical", href: canonicalUrl }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(schema),
+        },
+      ],
+    };
+  },
   component: BlogIndexPage,
 });
 

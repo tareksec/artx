@@ -22,11 +22,12 @@ export function Nav() {
     { to: "/work", label: t.nav.work },
     { to: "/services", label: t.nav.services },
     { to: "/about", label: t.nav.about },
+    { to: "/why-us", label: t.nav.whyUs },
+    { to: "/blog", label: t.nav.blog },
     { to: "/concepts", label: t.nav.concepts, highlight: true },
     { to: "/pricing", label: t.nav.pricing },
     { to: "/faq", label: t.nav.faq },
     { to: "/testimonials", label: t.nav.testimonials },
-    { to: "/careers", label: t.nav.careers },
     { to: "/contact", label: t.nav.contact },
   ];
 

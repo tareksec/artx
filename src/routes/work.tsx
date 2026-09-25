@@ -6,13 +6,13 @@ import { useLanguage } from "@/components/providers/LanguageProvider";
 export const Route = createFileRoute("/work")({
   head: () => ({
     meta: [
-      { title: "Work — ArtX studio portfolio" },
-      { name: "description", content: "Selected recent work from ArtX: editorial websites, e-commerce, brand systems and SaaS products." },
-      { property: "og:title", content: "Work — ArtX studio portfolio" },
-      { property: "og:description", content: "Selected recent projects from ArtX." },
-      { property: "og:url", content: "https://artxx.lovable.app/work" },
+      { title: "Web Design Portfolio & Case Studies | ArtX Studio" },
+      { name: "description", content: "Explore selected web design and custom development case studies from ArtX. High-converting B2B, SaaS, and e-commerce websites built to perform. View work!" },
+      { property: "og:title", content: "Web Design Portfolio & Case Studies | ArtX Studio" },
+      { property: "og:description", content: "Explore selected web design and custom development case studies from ArtX." },
+      { property: "og:url", content: "https://artxdev.tech/work" },
     ],
-    links: [{ rel: "canonical", href: "https://artxx.lovable.app/work" }],
+    links: [{ rel: "canonical", href: "https://artxdev.tech/work" }],
   }),
   component: WorkPage,
 });

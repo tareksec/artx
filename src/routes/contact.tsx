@@ -7,16 +7,59 @@ import { nextAvailableQuarter } from "@/lib/availability";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — ArtXdev contact & project inquiries" },
-      { name: "description", content: "Start a project with ArtX. Tell us about your brand, your goals and your timeline — we reply within one business day." },
-      { property: "og:title", content: "Contact — ArtXdev contact & project inquiries" },
-      { property: "og:description", content: "Start a project with ArtX." },
-      { property: "og:url", content: "https://artxx.lovable.app/contact" },
-    ],
-    links: [{ rel: "canonical", href: "https://artxx.lovable.app/contact" }],
-  }),
+  head: () => {
+    const seoTitle = "Contact ArtX — Hire Web Design Agency in Dhaka, Bangladesh";
+    const metaDesc = "Get in touch with ArtX for custom web design, e-commerce, or SaaS development in Bangladesh. Call +8801645441584 or email artxstudiocom@gmail.com for a quote!";
+    const canonicalUrl = "https://artxdev.tech/contact";
+
+    const schema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ContactPage",
+          "@id": `${canonicalUrl}#contactpage`,
+          name: "Contact ArtX Studio",
+          description: metaDesc,
+          url: canonicalUrl,
+        },
+        {
+          "@type": "LocalBusiness",
+          name: "ArtX Studio",
+          alternateName: "ArtXdev",
+          telephone: "+8801645441584",
+          email: "artxstudiocom@gmail.com",
+          url: "https://artxdev.tech",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Dhaka",
+            addressRegion: "Dhaka",
+            addressCountry: "BD",
+          },
+        },
+      ],
+    };
+
+    return {
+      meta: [
+        { title: seoTitle },
+        { name: "description", content: metaDesc },
+        { property: "og:title", content: seoTitle },
+        { property: "og:description", content: metaDesc },
+        { property: "og:url", content: canonicalUrl },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: seoTitle },
+        { name: "twitter:description", content: metaDesc },
+      ],
+      links: [{ rel: "canonical", href: canonicalUrl }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(schema),
+        },
+      ],
+    };
+  },
   component: ContactPage,
 });
 

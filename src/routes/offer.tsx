@@ -13,9 +13,9 @@ export const Route = createFileRoute("/offer")({
       { name: "description", content: "Fast, secure NVMe SSD hosting plans starting at ৳1,299/year. Free SSL, free daily backups, 24/7 support. Choose the plan that fits your business." },
       { property: "og:title", content: "Web Hosting Plans — NVMe SSD Hosting | ArtX" },
       { property: "og:description", content: "Fast, secure NVMe SSD hosting plans starting at ৳1,299/year. Free SSL, free daily backups, 24/7 support. Choose the plan that fits your business." },
-      { property: "og:url", content: "https://artxx.lovable.app/offer" },
+      { property: "og:url", content: "https://artxdev.tech/offer" },
     ],
-    links: [{ rel: "canonical", href: "https://artxx.lovable.app/offer" }],
+    links: [{ rel: "canonical", href: "https://artxdev.tech/offer" }],
     scripts: [
       {
         type: "application/ld+json",

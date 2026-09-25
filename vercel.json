@@ -4,5 +4,29 @@
   "framework": null,
   "env": {
     "NITRO_PRESET": "vercel"
-  }
+  },
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "artx.techvrs.com"
+        }
+      ],
+      "destination": "https://artxdev.tech/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "artxx.lovable.app"
+        }
+      ],
+      "destination": "https://artxdev.tech/:path*",
+      "permanent": true
+    }
+  ]
 }

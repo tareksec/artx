@@ -30,8 +30,8 @@ export function Footer() {
           </Link>
         </div>
 
-        <div className="grid gap-12 py-16 md:grid-cols-4">
-          <div>
+        <div className="grid gap-10 py-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+          <div className="sm:col-span-2 md:col-span-1 lg:col-span-1">
             <Link
               to="/"
               onClick={(e) => {
@@ -45,66 +45,88 @@ export function Footer() {
             >
               Art<span className="text-accent">X</span>
             </Link>
-            <p className="mt-4 max-w-xs text-sm text-dark-foreground/60">
-              {t.hero.body}
+            <p className="mt-4 max-w-xs text-sm text-dark-foreground/60 leading-relaxed">
+              {language === "bn"
+                ? "আন্তর্জাতিক মানের প্রিমিয়াম ওয়েব ডিজাইন ও ডেভেলপমেন্ট স্টুডিও। ঢাকা, বাংলাদেশ ও গ্লোবাল ক্লায়েন্টদের জন্য।"
+                : "Full-service web design & engineering studio crafting high-converting digital products for Bangladesh & global brands."}
             </p>
+            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-dark-foreground/15 bg-white/5 px-3 py-1 text-xs text-dark-foreground/70">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Dhaka, Bangladesh · Remote Worldwide</span>
+            </div>
           </div>
-          <nav aria-label="Sitemap">
+
+          <nav aria-label="Company Sitemap">
             <h3 className="mb-4 text-xs uppercase tracking-[0.2em] text-dark-foreground/50">
-              {language === "bn" ? "সাইটম্যাপ" : "Sitemap"}
+              {language === "bn" ? "কোম্পানি" : "Company"}
             </h3>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/work" className="hover:text-accent">{t.nav.work}</Link></li>
-              <li><Link to="/services" className="hover:text-accent">{t.nav.services}</Link></li>
-              <li><Link to="/about" className="hover:text-accent">{t.nav.about}</Link></li>
-              <li><Link to="/blog" className="hover:text-accent">{t.nav.blog}</Link></li>
-              <li><Link to="/pricing" className="hover:text-accent">{t.nav.pricing}</Link></li>
-              <li><Link to="/faq" className="hover:text-accent">{t.nav.faq}</Link></li>
-              <li><Link to="/testimonials" className="hover:text-accent">{t.nav.testimonials}</Link></li>
-              <li><Link to="/careers" className="hover:text-accent">{t.nav.careers}</Link></li>
-              <li><Link to="/contact" className="hover:text-accent">{t.nav.contact}</Link></li>
+              <li><Link to="/about" className="hover:text-accent transition-colors">{t.nav.about}</Link></li>
+              <li><Link to="/why-us" className="text-accent font-medium hover:underline">{language === "bn" ? "কেন ArtX" : "Why ArtX (GEO)"}</Link></li>
+              <li><Link to="/work" className="hover:text-accent transition-colors">{t.nav.work}</Link></li>
+              <li><Link to="/blog" className="hover:text-accent transition-colors">{t.nav.blog}</Link></li>
+              <li><Link to="/pricing" className="hover:text-accent transition-colors">{t.nav.pricing}</Link></li>
+              <li><Link to="/faq" className="hover:text-accent transition-colors">{t.nav.faq}</Link></li>
+              <li><Link to="/testimonials" className="hover:text-accent transition-colors">{t.nav.testimonials}</Link></li>
+              <li><Link to="/careers" className="hover:text-accent transition-colors">{t.nav.careers}</Link></li>
+              <li><Link to="/contact" className="hover:text-accent transition-colors">{t.nav.contact}</Link></li>
             </ul>
           </nav>
-          <div>
+
+          <nav aria-label="Services Navigation">
             <h3 className="mb-4 text-xs uppercase tracking-[0.2em] text-dark-foreground/50">
-              {language === "bn" ? "যোগাযোগ" : "Contact"}
-            </h3>
-            <ul className="space-y-2.5 text-sm">
-              <li><a href="https://wa.me/8801645441584" target="_blank" rel="noopener noreferrer" className="hover:text-accent flex items-center gap-2"><MessageCircle className="h-4 w-4 text-accent" /> 01645441584</a></li>
-              <li><a href="mailto:artxstudiocom@gmail.com" className="hover:text-accent flex items-center gap-2"><Mail className="h-4 w-4 text-accent" /> artxstudiocom@gmail.com</a></li>
-              <li><a href="https://www.facebook.com/artxdev" target="_blank" rel="noopener noreferrer" className="hover:text-accent flex items-center gap-2"><Facebook className="h-4 w-4 text-accent" /> fb.com/artxdev</a></li>
-              <li className="text-dark-foreground/60 pt-1">{language === "bn" ? "রিমোট · বিশ্বব্যাপী" : "Remote · Worldwide"}</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="mb-4 text-xs uppercase tracking-[0.2em] text-dark-foreground/50">
-              {language === "bn" ? "সোশ্যাল" : "Social"}
+              {language === "bn" ? "সার্ভিসসমূহ" : "Services"}
             </h3>
             <ul className="space-y-2 text-sm">
-              {socialLinks.map((social) => (
-                <li key={social.label}>
-                  <a
-                    href={social.href}
-                    {...(social.live
-                      ? { target: "_blank", rel: "noopener noreferrer" }
-                      : {})}
-                    onClick={() =>
-                      social.live && trackOutboundClick(`social:${social.label}`)
-                    }
-                    className={
-                      social.live
-                        ? social.label === "Facebook"
-                          ? "font-semibold text-accent hover:underline bg-accent/10 px-3 py-2 rounded-lg inline-block"
-                          : "font-semibold text-accent hover:underline"
-                        : "hover:text-accent"
-                    }
-                  >
-                    {social.label}
-                    {!social.live && (language === "bn" ? " — শীঘ্রই আসছে" : " — coming soon")}
-                  </a>
-                </li>
-              ))}
+              <li><Link to="/services/ecommerce-website-design" className="hover:text-accent transition-colors">E-Commerce Design</Link></li>
+              <li><Link to="/services/wordpress-development" className="hover:text-accent transition-colors">WordPress Development</Link></li>
+              <li><Link to="/services/saas-website-design" className="hover:text-accent transition-colors">SaaS Website Design</Link></li>
+              <li><Link to="/services/seo-services" className="hover:text-accent transition-colors">SEO & GEO Services</Link></li>
+              <li><Link to="/services" className="text-dark-foreground/60 hover:text-accent transition-colors">→ {language === "bn" ? "সব সার্ভিস দেখুন" : "View All Services"}</Link></li>
             </ul>
+          </nav>
+
+          <nav aria-label="Locations Navigation">
+            <h3 className="mb-4 text-xs uppercase tracking-[0.2em] text-dark-foreground/50">
+              {language === "bn" ? "লোকেশন হাব" : "Locations"}
+            </h3>
+            <ul className="space-y-2 text-sm">
+              <li><Link to="/location/dhaka" className="hover:text-accent transition-colors">Web Design Dhaka</Link></li>
+              <li><Link to="/location/bangladesh" className="hover:text-accent transition-colors">Web Design Bangladesh</Link></li>
+              <li className="text-xs text-dark-foreground/50 pt-2">Gulshan · Banani · Uttara</li>
+              <li className="text-xs text-dark-foreground/50">Dhanmondi · Motijheel · Mirpur</li>
+            </ul>
+          </nav>
+
+          <div>
+            <h3 className="mb-4 text-xs uppercase tracking-[0.2em] text-dark-foreground/50">
+              {language === "bn" ? "যোগাযোগ ও সোশ্যাল" : "Contact & Social"}
+            </h3>
+            <ul className="space-y-2.5 text-sm">
+              <li><a href="https://wa.me/8801645441584" target="_blank" rel="noopener noreferrer" className="hover:text-accent flex items-center gap-2 transition-colors"><MessageCircle className="h-4 w-4 text-accent shrink-0" /> +8801645441584</a></li>
+              <li><a href="mailto:artxstudiocom@gmail.com" className="hover:text-accent flex items-center gap-2 transition-colors truncate"><Mail className="h-4 w-4 text-accent shrink-0" /> artxstudiocom@gmail.com</a></li>
+              <li><a href="https://www.facebook.com/artxdev" target="_blank" rel="noopener noreferrer" className="hover:text-accent flex items-center gap-2 transition-colors"><Facebook className="h-4 w-4 text-accent shrink-0" /> fb.com/artxdev</a></li>
+            </ul>
+            <div className="mt-4 pt-4 border-t border-dark-foreground/10">
+              <ul className="space-y-1.5 text-xs text-dark-foreground/70">
+                {socialLinks.map((social) => (
+                  <li key={social.label}>
+                    <a
+                      href={social.href}
+                      {...(social.live
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
+                      onClick={() =>
+                        social.live && trackOutboundClick(`social:${social.label}`)
+                      }
+                      className={social.live ? "text-accent hover:underline font-medium" : "hover:text-accent"}
+                    >
+                      {social.label} {!social.live && "— coming soon"}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 

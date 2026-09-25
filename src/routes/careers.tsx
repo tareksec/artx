@@ -9,21 +9,21 @@ import { ArrowLeft, ArrowUpRight, Mail, Sparkles, CheckCircle2, Globe, Cpu, Hear
 export const Route = createFileRoute("/careers")({
   head: () => ({
     meta: [
-      { title: "Careers — Join the ArtX Team | ArtX Studio" },
+      { title: "Careers at ArtX | Remote Web Design & Engineering Jobs" },
       {
         name: "description",
         content:
-          "Join ArtX Studio, an independent, remote-first creative studio obsessed with high-craft design, 60fps React development, and technical SEO.",
+          "Join ArtX Studio. Remote engineering, UI/UX design, and SEO positions with competitive pay and flexible work. Explore open roles and apply today!",
       },
-      { property: "og:title", content: "Careers — ArtX Studio" },
+      { property: "og:title", content: "Careers at ArtX | Remote Web Design & Engineering Jobs" },
       {
         property: "og:description",
         content:
-          "Explore open roles and remote careers in design, development, and SEO at ArtX Studio.",
+          "Join ArtX Studio. Remote engineering, UI/UX design, and SEO positions with competitive pay and flexible work. Explore open roles and apply today!",
       },
-      { property: "og:url", content: "https://artxx.lovable.app/careers" },
+      { property: "og:url", content: "https://artxdev.tech/careers" },
     ],
-    links: [{ rel: "canonical", href: "https://artxx.lovable.app/careers" }],
+    links: [{ rel: "canonical", href: "https://artxdev.tech/careers" }],
   }),
   component: CareersPage,
 });

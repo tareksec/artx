@@ -16,26 +16,26 @@ export const Route = createFileRoute("/work_/$slug")({
           "@type": "ListItem",
           "position": 1,
           "name": "Work",
-          "item": "https://artxx.lovable.app/work"
+          "item": "https://artxdev.tech/work"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": project.title,
-          "item": `https://artxx.lovable.app/work/${project.slug}`
+          "item": `https://artxdev.tech/work/${project.slug}`
         }
       ]
     };
 
     return {
       meta: [
-        { title: `${project.title} — ArtX Studio` },
-        { name: "description", content: project.fullDescription?.slice(0, 160) ?? project.challenge },
-        { property: "og:title", content: `${project.title} — ArtX Studio` },
-        { property: "og:description", content: project.challenge },
-        { property: "og:url", content: `https://artxx.lovable.app/work/${project.slug}` },
+        { title: `${project.title} | ArtX Studio Case Study`.slice(0, 60) },
+        { name: "description", content: (project.fullDescription ?? project.challenge).slice(0, 155) },
+        { property: "og:title", content: `${project.title} | ArtX Studio Case Study`.slice(0, 60) },
+        { property: "og:description", content: project.challenge.slice(0, 155) },
+        { property: "og:url", content: `https://artxdev.tech/work/${project.slug}` },
       ],
-      links: [{ rel: "canonical", href: `https://artxx.lovable.app/work/${project.slug}` }],
+      links: [{ rel: "canonical", href: `https://artxdev.tech/work/${project.slug}` }],
       scripts: [
         {
           type: "application/ld+json",

@@ -9,21 +9,21 @@ import { ArrowLeft } from "lucide-react";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "ArtX SEO services & Web development FAQ" },
+      { title: "Web Design & SEO FAQs Bangladesh | Common Questions | ArtX" },
       {
         name: "description",
         content:
-          "Everything you need to know about ArtX services, project timelines, BDT pricing packages, WhatsApp checkout, and ongoing support.",
+          "Got questions about web design, custom development, e-commerce, or SEO pricing in Bangladesh? Read our comprehensive FAQ or contact our expert team today!",
       },
-      { property: "og:title", content: "ArtX SEO services & Web development FAQ" },
+      { property: "og:title", content: "Web Design & SEO FAQs Bangladesh | Common Questions | ArtX" },
       {
         property: "og:description",
         content:
-          "Frequently asked questions about website design, development, SEO, and pricing packages at ArtX Studio.",
+          "Got questions about web design, custom development, e-commerce, or SEO pricing in Bangladesh? Read our comprehensive FAQ or contact our expert team today!",
       },
-      { property: "og:url", content: "https://artxx.lovable.app/faq" },
+      { property: "og:url", content: "https://artxdev.tech/faq" },
     ],
-    links: [{ rel: "canonical", href: "https://artxx.lovable.app/faq" }],
+    links: [{ rel: "canonical", href: "https://artxdev.tech/faq" }],
     scripts: [
       {
         type: "application/ld+json",

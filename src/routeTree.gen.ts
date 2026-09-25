@@ -29,6 +29,8 @@ import { Route as BlogSlugRouteImport } from './routes/blog_.$slug'
 import { Route as ConceptsSlugRouteImport } from './routes/concepts_.$slug'
 import { Route as ServicesSlugRouteImport } from './routes/services_.$slug'
 import { Route as WorkSlugRouteImport } from './routes/work_.$slug'
+import { Route as WhyUsRouteImport } from './routes/why-us'
+import { Route as LocationSlugRouteImport } from './routes/location_.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -130,6 +132,16 @@ const WorkSlugRoute = WorkSlugRouteImport.update({
   path: '/work/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WhyUsRoute = WhyUsRouteImport.update({
+  id: '/why-us',
+  path: '/why-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationSlugRoute = LocationSlugRouteImport.update({
+  id: '/location_/$slug',
+  path: '/location/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -147,9 +159,11 @@ export interface FileRoutesByFullPath {
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/testimonials': typeof TestimonialsRoute
+  '/why-us': typeof WhyUsRoute
   '/work': typeof WorkRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/concepts/$slug': typeof ConceptsSlugRoute
+  '/location/$slug': typeof LocationSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/work/$slug': typeof WorkSlugRoute
 }
@@ -169,9 +183,11 @@ export interface FileRoutesByTo {
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/testimonials': typeof TestimonialsRoute
+  '/why-us': typeof WhyUsRoute
   '/work': typeof WorkRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/concepts/$slug': typeof ConceptsSlugRoute
+  '/location/$slug': typeof LocationSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/work/$slug': typeof WorkSlugRoute
 }
@@ -192,9 +208,11 @@ export interface FileRoutesById {
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/testimonials': typeof TestimonialsRoute
+  '/why-us': typeof WhyUsRoute
   '/work': typeof WorkRoute
   '/blog_/$slug': typeof BlogSlugRoute
   '/concepts_/$slug': typeof ConceptsSlugRoute
+  '/location_/$slug': typeof LocationSlugRoute
   '/services_/$slug': typeof ServicesSlugRoute
   '/work_/$slug': typeof WorkSlugRoute
 }
@@ -216,9 +234,11 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/testimonials'
+    | '/why-us'
     | '/work'
     | '/blog/$slug'
     | '/concepts/$slug'
+    | '/location/$slug'
     | '/services/$slug'
     | '/work/$slug'
   fileRoutesByTo: FileRoutesByTo
@@ -238,9 +258,11 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/testimonials'
+    | '/why-us'
     | '/work'
     | '/blog/$slug'
     | '/concepts/$slug'
+    | '/location/$slug'
     | '/services/$slug'
     | '/work/$slug'
   id:
@@ -260,9 +282,11 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/testimonials'
+    | '/why-us'
     | '/work'
     | '/blog_/$slug'
     | '/concepts_/$slug'
+    | '/location_/$slug'
     | '/services_/$slug'
     | '/work_/$slug'
   fileRoutesById: FileRoutesById
@@ -283,9 +307,11 @@ export interface RootRouteChildren {
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TestimonialsRoute: typeof TestimonialsRoute
+  WhyUsRoute: typeof WhyUsRoute
   WorkRoute: typeof WorkRoute
   BlogSlugRoute: typeof BlogSlugRoute
   ConceptsSlugRoute: typeof ConceptsSlugRoute
+  LocationSlugRoute: typeof LocationSlugRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
   WorkSlugRoute: typeof WorkSlugRoute
 }
@@ -432,6 +458,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/why-us': {
+      id: '/why-us'
+      path: '/why-us'
+      fullPath: '/why-us'
+      preLoaderRoute: typeof WhyUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/location_/$slug': {
+      id: '/location_/$slug'
+      path: '/location/$slug'
+      fullPath: '/location/$slug'
+      preLoaderRoute: typeof LocationSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -451,9 +491,11 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TestimonialsRoute: TestimonialsRoute,
+  WhyUsRoute: WhyUsRoute,
   WorkRoute: WorkRoute,
   BlogSlugRoute: BlogSlugRoute,
   ConceptsSlugRoute: ConceptsSlugRoute,
+  LocationSlugRoute: LocationSlugRoute,
   ServicesSlugRoute: ServicesSlugRoute,
   WorkSlugRoute: WorkSlugRoute,
 }

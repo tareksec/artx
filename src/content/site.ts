@@ -83,7 +83,13 @@ export type ServiceDetail = {
   relatedProjects: string[];
   link?: string;
   relatedPricing?: { name: string; description: string };
+  seoTitle?: string;
+  metaDescription?: string;
+  targetKeyword?: string;
 };
+
+export { locationDetails, type LocationDetail } from "./locations";
+
 
 export type BlogPost = {
   slug: string;
@@ -152,29 +158,36 @@ export const heroContent = {
 export const services: Service[] = [
   {
     n: "01",
-    t: "Website Design",
-    d: "Editorial, high-craft interfaces designed to convert without shouting.",
-    img: sDesign,
-    slug: "website-design",
+    t: "E-Commerce Website Design",
+    d: "High-converting online stores with instant bKash/Nagad checkout and courier tracking.",
+    img: w1,
+    slug: "ecommerce-website-design",
   },
   {
     n: "02",
-    t: "Web Development",
-    d: "Production-grade React, tuned for Core Web Vitals and effortless CMS ops.",
+    t: "WordPress Development",
+    d: "Custom, lightweight WordPress development with zero plugin bloat and 95+ PageSpeed.",
     img: sDev,
-    slug: "web-development",
+    slug: "wordpress-development",
   },
   {
     n: "03",
-    t: "SEO",
-    d: "Technical audits, content architecture and link work that compounds.",
-    img: sSeo,
-    slug: "seo",
+    t: "SaaS Website Design",
+    d: "Editorial, high-converting product interfaces and interactive landing pages for tech brands.",
+    img: sDesign,
+    slug: "saas-website-design",
   },
   {
     n: "04",
+    t: "SEO Services",
+    d: "Technical audits, local Dhaka Google rankings, and Generative Engine Optimization (GEO).",
+    img: sSeo,
+    slug: "seo-services",
+  },
+  {
+    n: "05",
     t: "Web Security",
-    d: "Security audits, hardening and monitoring — delivered with our partner.",
+    d: "Enterprise audits, penetration testing and 24/7 hardening delivered with Techvrs.",
     img: sSecurity,
     slug: "web-security",
     link: "https://techvrs.com",
@@ -183,8 +196,276 @@ export const services: Service[] = [
 
 export const serviceDetails: ServiceDetail[] = [
   {
-    slug: "website-design",
+    slug: "ecommerce-website-design",
     n: "01",
+    t: "E-Commerce Website Design Bangladesh",
+    d: "Custom online storefronts engineered for high conversions, fast mobile checkout, and local MFS payments.",
+    img: w1,
+    valueProp: "Custom e-commerce website design in Bangladesh with instant bKash/Nagad checkout, mobile speed optimization, and courier tracking integration.",
+    seoTitle: "E-Commerce Website Design Bangladesh | Custom Online Stores",
+    metaDescription: "Build high-converting online stores with custom e-commerce website design in Bangladesh. Fast checkout, bKash/Nagad integration & SEO ready. Get a quote!",
+    targetKeyword: "e-commerce website design Bangladesh",
+    deliverables: [
+      "Custom responsive storefront UI/UX designed in Figma",
+      "Instant WhatsApp & Mobile Financial Service (MFS) Checkout",
+      "bKash, Nagad, Rocket & Card Payment Gateway Integration",
+      "Courier API shipping setup (Steadfast, Pathao, RedX)",
+      "Automated inventory management & order tracking dashboard",
+      "Core Web Vitals speed optimization (LCP < 2.5s)",
+      "Meta Pixel, Google Tag Manager & Conversion API tracking",
+      "Complete on-page SEO & Product Schema markup",
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Discovery & Architecture",
+        description: "We map your inventory categories, target buyer personas in Bangladesh, and checkout flow.",
+      },
+      {
+        step: "02",
+        title: "Figma UI/UX Design",
+        description: "We craft high-converting mobile-first wireframes and high-fidelity screens tailored to your brand.",
+      },
+      {
+        step: "03",
+        title: "Development & Gateway Setup",
+        description: "We build your custom storefront, integrate bKash/Nagad gateways and courier tracking APIs.",
+      },
+      {
+        step: "04",
+        title: "Speed Testing & Launch",
+        description: "Rigorous stress testing across mobile networks, payment confirmation tests, and Google indexing.",
+      },
+    ],
+    faqs: [
+      {
+        q: "How much does e-commerce website design cost in Bangladesh?",
+        a: "A professional e-commerce website in Bangladesh typically costs between ৳6,500 and ৳95,000+ depending on whether you need simple WhatsApp ordering, custom inventory dashboards, or multi-vendor capabilities. Our Premium tier starts at ৳6,500.",
+      },
+      {
+        q: "Can you integrate bKash, Nagad, and local Bangladeshi payment gateways?",
+        a: "Yes. We integrate both direct manual/WhatsApp MFS checkout and automated merchant APIs via SSLCommerz, Shurjopay, and AamarPay, allowing your customers to pay instantly with bKash, Nagad, Rocket, or credit cards.",
+      },
+      {
+        q: "How do you connect delivery courier services like Pathao and Steadfast?",
+        a: "We integrate courier APIs directly into your order management panel, enabling automatic shipping label generation, pickup requests, and real-time SMS tracking updates for your customers.",
+      },
+      {
+        q: "Will my e-commerce website load fast on mobile 4G networks in Bangladesh?",
+        a: "Yes. All our online stores are engineered for sub-2.5 second Largest Contentful Paint (LCP) speeds on mobile connections, utilizing image compression, lazy loading, and lightweight code.",
+      },
+      {
+        q: "Do you provide training on how to add products and manage orders?",
+        a: "Yes. Every e-commerce build includes video training and a walkthrough of your custom control panel so your team can easily add products, update prices, and process orders without technical expertise.",
+      },
+    ],
+    relatedProjects: ["gearabout", "veative-kitchen"],
+    relatedPricing: { name: "Premium", description: "Our most popular package for online stores." },
+  },
+  {
+    slug: "wordpress-development",
+    n: "02",
+    t: "WordPress Development Bangladesh",
+    d: "Custom, lightweight WordPress development with zero plugin bloat, rock-solid security, and top PageSpeed scores.",
+    img: sDev,
+    valueProp: "Professional WordPress development in Bangladesh delivering tailored themes, ACF customization, and guaranteed Core Web Vitals performance.",
+    seoTitle: "WordPress Development Bangladesh | Custom Themes & Speed",
+    metaDescription: "Professional WordPress development in Bangladesh. Custom themes, ACF, WooCommerce, security hardening & lightning-fast Core Web Vitals. Contact ArtX today!",
+    targetKeyword: "WordPress development Bangladesh",
+    deliverables: [
+      "Custom WordPress theme development from scratch (no bloated page builders)",
+      "Advanced Custom Fields (ACF) architecture for effortless content updates",
+      "WooCommerce setup & payment gateway integration (bKash/Nagad/Cards)",
+      "Enterprise security hardening via Techvrs partnership",
+      "Core Web Vitals speed optimization (90+ mobile PageSpeed score)",
+      "SEO plugin setup (RankMath/Yoast) and XML sitemap configuration",
+      "Automated daily cloud backups and SSL certificate deployment",
+      "30 days post-launch technical support and staff training",
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Requirement Mapping",
+        description: "We define custom post types, editorial workflows, and required plugin integrations.",
+      },
+      {
+        step: "02",
+        title: "Bespoke Theme Development",
+        description: "We code clean, modular PHP/HTML5/Tailwind templates with zero bloated third-party page builders.",
+      },
+      {
+        step: "03",
+        title: "Security & Speed Hardening",
+        description: "We configure server-level caching, penetration protection with Techvrs, and database indexing.",
+      },
+      {
+        step: "04",
+        title: "Handoff & Training",
+        description: "We train your editorial team and manage zero-downtime DNS deployment to high-speed hosting.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Why should I choose custom WordPress development over ready-made themes?",
+        a: "Ready-made themes from marketplaces are bloated with hundreds of unused features, slow plugins, and security vulnerabilities. Custom WordPress development delivers clean code built specifically for your business, resulting in sub-2s load times, higher Google rankings, and bulletproof security.",
+      },
+      {
+        q: "How much does professional WordPress development cost in Bangladesh?",
+        a: "Custom WordPress websites in Bangladesh range from ৳6,500 for small business sites to ৳45,000+ for complex corporate portals. ArtX offers transparent packages starting at ৳6,500 with custom admin dashboards included.",
+      },
+      {
+        q: "Can you fix and speed up my existing slow WordPress website?",
+        a: "Yes. We offer WordPress speed optimization and security audits. We remove redundant plugins, optimize uncompressed images, configure caching, and clean up database overhead to achieve 90+ PageSpeed scores.",
+      },
+      {
+        q: "Is WordPress secure against hackers and malware?",
+        a: "When properly hardened with our security partner Techvrs, WordPress is exceptionally secure. We disable XML-RPC, enforce two-factor authentication, set up firewall rules, and eliminate vulnerable plugins.",
+      },
+      {
+        q: "Can non-technical staff manage and update website content?",
+        a: "Yes! Using Advanced Custom Fields (ACF), we build a tailored admin panel where your team can edit text, upload photos, and publish blog posts through simple, self-explanatory forms without touching any code.",
+      },
+    ],
+    relatedProjects: ["gearabout", "veative-kitchen"],
+    relatedPricing: { name: "Premium", description: "Our standard custom WordPress package." },
+  },
+  {
+    slug: "saas-website-design",
+    n: "03",
+    t: "SaaS Website Design Studio",
+    d: "Editorial, high-converting product interfaces, landing pages, and interactive design systems for tech startups.",
+    img: sDesign,
+    valueProp: "A specialized SaaS website design studio building high-converting landing pages, interactive product demos, and scalable design systems.",
+    seoTitle: "SaaS Website Design Studio | High-Converting B2B UI/UX",
+    metaDescription: "ArtX is a specialized SaaS website design studio crafting high-converting landing pages, interactive product demos & design systems for B2B brands. Hire us!",
+    targetKeyword: "SaaS website design studio",
+    deliverables: [
+      "High-converting B2B SaaS landing page architecture",
+      "Interactive product UI mockups and animated feature demos",
+      "Transparent SaaS pricing table design with tier comparison toggles",
+      "Comprehensive Figma design system with tokens and components",
+      "Production-grade React / Next.js / TanStack Start frontend engineering",
+      "Frictionless free trial & demo request funnel optimization",
+      "Enterprise trust signals, customer logo ribbons & social proof grids",
+      "Technical SEO and AEO schema markup for AI search citations",
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Product & Positioning",
+        description: "We unpack your product features, ICP (ideal customer profile), and define your high-converting value proposition.",
+      },
+      {
+        step: "02",
+        title: "Information Architecture",
+        description: "We blueprint the conversion journey from hero section through product showcase, proof, and pricing.",
+      },
+      {
+        step: "03",
+        title: "High-Fidelity Interface",
+        description: "Editorial typography, custom micro-interactions, and pixel-perfect Figma screens.",
+      },
+      {
+        step: "04",
+        title: "Production Frontend",
+        description: "Component-driven development in React/TypeScript with sub-second page transitions.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What makes ArtX different from traditional web design agencies for SaaS?",
+        a: "ArtX specializes in conversion-driven product marketing. We don't just make pretty pages; we design high-converting value propositions, interactive product demonstrations, and clear pricing tables that lower CAC and increase trial signups.",
+      },
+      {
+        q: "Do you design in Figma and provide design tokens for our development team?",
+        a: "Yes. All SaaS deliverables include structured Figma files with responsive auto-layout components, color/typography tokens, and interactive prototypes ready for seamless developer handoff.",
+      },
+      {
+        q: "Can ArtX also code the frontend of our SaaS website?",
+        a: "Yes. We are a full-service design and engineering studio. We build production-ready frontends using React, Next.js, or TanStack Start, ensuring instant page transitions and Core Web Vitals < 2.5s.",
+      },
+      {
+        q: "How do you optimize SaaS pricing pages for conversions?",
+        a: "We structure pricing pages with clear feature matrices, monthly/annual billing toggles, highlighted recommended tiers, and low-friction secondary CTAs to capture prospects at every buying stage.",
+      },
+      {
+        q: "Can you help our SaaS website appear in ChatGPT, Perplexity, and AI search engines?",
+        a: "Yes! We implement Generative Engine Optimization (GEO) with rich JSON-LD schemas, structured Q&A sections, and high-density entity data so your SaaS product is cited in AI-generated recommendations.",
+      },
+    ],
+    relatedProjects: ["northform-saas", "samriddhi"],
+    relatedPricing: { name: "Ultra", description: "Comprehensive custom SaaS design and development." },
+  },
+  {
+    slug: "seo-services",
+    n: "04",
+    t: "SEO Services Bangladesh",
+    d: "Technical audits, local Google search domination, content architecture, and Generative Engine Optimization (GEO).",
+    img: sSeo,
+    valueProp: "Data-driven SEO services in Bangladesh that drive compounding organic traffic, local Dhaka Google rankings, and AI search citations.",
+    seoTitle: "SEO Services Bangladesh | Technical & Local SEO Agency",
+    metaDescription: "Data-driven SEO services in Bangladesh. Technical audits, local SEO for Dhaka, content strategy & GEO AI engine optimization that drives organic revenue.",
+    targetKeyword: "SEO services Bangladesh",
+    deliverables: [
+      "200+ checkpoint technical SEO audit (crawling, indexing, Core Web Vitals)",
+      "Local SEO optimization for Dhaka & Bangladesh (Google Business Profile, NAP)",
+      "Commercial keyword research & competitive gap analysis",
+      "On-page optimization (titles, metas, H1-H3 hierarchy, image alt text)",
+      "Comprehensive JSON-LD Schema implementation (LocalBusiness, FAQPage, Service)",
+      "Generative Engine Optimization (GEO) for ChatGPT and Perplexity citations",
+      "High-authority internal linking strategy and topical content clusters",
+      "Monthly keyword rank tracking and transparent ROI analytics reports",
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Deep Technical Crawl",
+        description: "We audit your site's indexing health, Core Web Vitals, and competitor search footprints.",
+      },
+      {
+        step: "02",
+        title: "Opportunity Mapping",
+        description: "We identify high-intent commercial keywords and content gaps with immediate revenue potential.",
+      },
+      {
+        step: "03",
+        title: "Technical & On-Page Execution",
+        description: "We implement schema markup, optimize speed, restructure headings, and publish topical content.",
+      },
+      {
+        step: "04",
+        title: "Rank Compounding & GEO Scaling",
+        description: "Continuous performance monitoring, local citation building, and GEO answer-engine optimization.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What is included in ArtX's SEO services in Bangladesh?",
+        a: "Our SEO services cover full technical audits, Core Web Vitals fixes, on-page optimization, local Dhaka Google Maps ranking, structured JSON-LD schema, content strategy, and Generative Engine Optimization (GEO) for AI search engines.",
+      },
+      {
+        q: "How long does it take for SEO to rank my website on Google in Bangladesh?",
+        a: "Most businesses see significant improvements in keyword rankings and impressions within 60 to 90 days. Competitive commercial terms typically achieve top-3 positions within 4 to 6 months of steady optimization.",
+      },
+      {
+        q: "Why is Local SEO important for businesses in Dhaka?",
+        a: "Local SEO places your business in the Google 3-Pack Maps results when customers search for services near them in Gulshan, Banani, Dhanmondi, or Uttara, driving high-intent phone calls and store visits.",
+      },
+      {
+        q: "How is GEO (Generative Engine Optimization) included in your SEO service?",
+        a: "We structure your web content into clear Q&A formats, embed rich schema graphs, and optimize entity authority so AI search engines like ChatGPT, Perplexity, and Google AI Overviews cite your brand as a primary source.",
+      },
+      {
+        q: "Do you guarantee #1 rankings on Google?",
+        a: "No legitimate agency can guarantee a #1 rank because Google's algorithm changes constantly. However, ArtX uses 100% white-hat, data-driven technical methods that consistently deliver top-page organic rankings and measurable business ROI.",
+      },
+    ],
+    relatedProjects: ["samriddhi", "gearabout"],
+    relatedPricing: { name: "Premium", description: "Monthly SEO growth retainer." },
+  },
+  {
+    slug: "website-design",
+    n: "05",
     t: "Creative web design studio",
     d: "Editorial, high-craft interfaces designed to convert without shouting.",
     img: sDesign,
@@ -965,293 +1246,8 @@ export const projects: CaseStudy[] = [
 
 // ─── Blog ─────────────────────────────────────────────────────────────────────
 
-export const blogPosts: BlogPost[] = [
-  {
-    "slug": "micro-interactions-ux-conversion",
-    "title": "Designing High-Converting Micro-Interactions for Modern Web Applications",
-    "excerpt": "How subtle haptic cues, magnetic hover states, and smooth physics-based transitions increase product engagement and conversion.",
-    "date": "2026-09-24",
-    "readTime": 5,
-    "category": "Development",
-    "author": {
-      "name": "ArtX Studio",
-      "role": "UI Engineer"
-    },
-    "relatedSlugs": [
-      "minimalist-web-design-2026",
-      "core-web-vitals-2026"
-    ],
-    "content": "## The Psychology of the Micro-Interaction\n\nMicro-interactions provide immediate feedback, transforming static pages into responsive digital products. When implemented using hardware-accelerated CSS and spring physics, they create intuitive tactile satisfaction that lowers friction in conversion funnels."
-  },
+export { blogPosts } from "./blog-posts";
 
-  {
-    "slug": "minimalist-web-design-2026",
-    "title": "The Evolution of Minimalist Web Design in 2026: Aesthetics Meets Performance",
-    "excerpt": "Modern minimalism in 2026 is no longer about stark white voids. It is a disciplined balance of typography, whitespace, and micro-latency.",
-    "date": "2026-09-23",
-    "readTime": 6,
-    "category": "Design",
-    "author": {
-      "name": "ArtX Studio",
-      "role": "Design Lead"
-    },
-    "relatedSlugs": [
-      "saas-landing-page-anatomy",
-      "core-web-vitals-2026"
-    ],
-    "content": "## Beyond the Empty Canvas\n\nMinimalism has matured. In 2026, web minimalism is an operational philosophy: delivering maximum communicative impact with minimal DOM complexity. Fast load times and high visual sophistication now converge through deliberate typography, tailored grid rhythm, and subtle depth."
-  },
-
-  {
-    slug: "core-web-vitals-2026",
-    title: "Why Core Web Vitals matter more than ever in 2026",
-    excerpt: "With AI overviews dominating search, the margin for poor performance is zero. Here's why CWV is your technical moat.",
-    date: "2026-08-01",
-    readTime: 6,
-    category: "SEO",
-    author: { name: "ArtX Studio", role: "Technical SEO Lead" },
-    relatedSlugs: ["on-page-seo-checklist", "saas-landing-page-anatomy"],
-    content: `## The new search reality
-
-As AI-generated summaries take over top-of-funnel queries, traditional search traffic is compressing. What remains are high-intent users looking for definitive answers, trusted brands, or seamless transactions. 
-
-In this environment, **Core Web Vitals (CWV)** are no longer just a tie-breaker. They are a baseline requirement for participation.
-
-### 1. Interaction to Next Paint (INP) is the new king
-
-Since INP replaced FID, we've seen a brutal reality check for React-heavy sites. INP measures *every* interaction, not just the first one. That complex mega-menu that causes a 300ms main-thread freeze? Google sees it, and users feel it.
-
-**How we fix it:** We heavily utilize React 19's concurrent features, aggressively split bundles, and push non-critical state updates off the main thread. 
-
-### 2. LCP is a design problem, not just an engineering one
-
-Largest Contentful Paint fails when designers insist on 4MB hero videos or client-side rendered carousels above the fold. 
-
-> ✱ "Performance is a design decision before it ever reaches a repository."
-
-**The ArtX approach:** We design with LCP in mind. We use CSS-driven hero sections, optimized WebP/AVIF formats, and strict preloading strategies. A beautiful site that takes 6 seconds to load is a failed site.
-
-### 3. The compounding effect of CLS
-
-Cumulative Layout Shift destroys trust. When a user tries to click "Buy" and a late-loading ad pushes the button down, you haven't just lost a sale—you've lost a customer forever.
-
-We enforce strict aspect-ratio bounding boxes on all dynamic content. No layout should shift after the initial paint.
-
----
-
-### The takeaway
-
-In 2026, performance is brand equity. If your site feels slow, users assume your product is inferior. Stop treating CWV as an SEO checklist and start treating it as user experience infrastructure.`,
-  },
-  {
-    slug: "saas-landing-page-anatomy",
-    title: "The anatomy of a high-converting SaaS landing page",
-    excerpt: "Stop guessing what works. Here is the exact structural blueprint we use to build SaaS landing pages that convert at 8%+.",
-    date: "2026-07-28",
-    readTime: 7,
-    category: "Design",
-    author: { name: "ArtX Studio", role: "Creative Director" },
-    relatedSlugs: ["website-redesign-signs", "core-web-vitals-2026"],
-    content: `## The 8% Conversion Benchmark
-
-Most B2B SaaS landing pages convert between 2% and 4%. The ones we build aim for 8%+. This isn't magic; it's a rigorous application of information architecture, psychological anchoring, and frictionless UX.
-
-Here is the exact anatomy we use.
-
-### 1. The H1 is a mirror, not a megaphone
-
-Your H1 should not say "The Ultimate Marketing Platform." Nobody wakes up looking for an ultimate platform. They wake up trying to solve a specific, painful problem.
-
-Your H1 should reflect that pain and immediately offer the resolution. 
-*Example: "Stop losing leads to spreadsheet chaos. Close deals 3x faster."*
-
-### 2. Show the product immediately
-
-SaaS buyers are cynical. They don't want abstract illustrations of people high-fiving near a server rack. They want to see the UI. 
-
-> ✱ "If you hide your interface behind a demo wall, users will assume it's terrible."
-
-We place high-fidelity, interactive product mockups directly above the fold. Let them see exactly what they are buying.
-
-### 3. The 'How it Works' section must be 3 steps
-
-If your product takes more than 3 steps to explain, your marketing is too complex.
-1. **Connect:** (e.g., Sync your data)
-2. **Automate:** (e.g., Set your rules)
-3. **Scale:** (e.g., Watch your revenue grow)
-
-### 4. Social Proof requires specificity
-
-"Great tool!" - John D. is worthless.
-"Our sales cycle dropped from 45 days to 12 days within a month of implementation." - Sarah Jenkins, VP Sales at Acme Corp. is gold.
-
-Use data-backed testimonials and always include headshots and company logos to anchor trust.
-
-### 5. The primary CTA needs a safety net
-
-"Start Free Trial" is a high-commitment action. Always pair it with a low-commitment secondary CTA like "Watch 2-min Demo" or "See Pricing." This catches the users who are interested but not yet ready to hand over an email address.`,
-  },
-  {
-    slug: "on-page-seo-checklist",
-    title: "On-page SEO checklist every new site needs before launch",
-    excerpt: "Don't launch into a black hole. This is the exact 10-point checklist our SEO team runs before pushing any site live.",
-    date: "2026-07-15",
-    readTime: 5,
-    category: "SEO",
-    author: { name: "ArtX Studio", role: "SEO & Growth" },
-    relatedSlugs: ["core-web-vitals-2026", "shopify-vs-custom"],
-    content: `## Launching without a safety net
-
-Building a beautiful website without SEO is like building a stunning billboard and placing it in your basement. Traffic won't magically appear just because you pressed 'Deploy'.
-
-Here is the non-negotiable checklist we use for every ArtX launch.
-
-### 1. Title Tags and Meta Descriptions
-
-Every page needs a unique, highly relevant Title Tag (50-60 characters) and Meta Description (150-160 characters). 
-*Pro-tip:* Treat your Meta Description like ad copy. Its only job is to get the click from the SERP.
-
-### 2. Semantic Heading Hierarchy (H1-H6)
-
-- Strictly **one H1** per page containing the primary keyword.
-- Use H2s for main sections and H3s for subsections.
-- Never use heading tags just to make text larger (use CSS for that).
-
-### 3. Image Optimization & Alt Text
-
-- Compress all images (WebP or AVIF).
-- Descriptive file names (\`dark-mode-dashboard.webp\` not \`IMG_9921.jpg\`).
-- Meaningful Alt Text for every image that conveys information.
-
-### 4. Internal Linking Structure
-
-> ✱ "Orphan pages are dead pages."
-
-Ensure every page is linked to from at least one other page. Use descriptive anchor text, not "click here". This helps Google crawl your site and establishes topical authority.
-
-### 5. Schema Markup (Structured Data)
-
-We implement JSON-LD schema for Local Business, Articles, FAQs, and Products. This is how you win rich snippets in search results.
-
-### 6. Canonical Tags
-
-Prevent duplicate content issues by ensuring every page has a self-referencing canonical tag. If you have pagination, ensure canonicals are set up correctly.
-
-### 7. robots.txt and XML Sitemap
-
-Ensure \`robots.txt\` is not blocking search engines from important pages, and submit a dynamic XML sitemap to Google Search Console immediately upon launch.`,
-  },
-  {
-    slug: "shopify-vs-custom",
-    title: "Shopify vs custom builds: how we decide for clients",
-    excerpt: "Should you use Shopify or build a custom e-commerce stack? Here is our framework for making the million-dollar decision.",
-    date: "2026-06-22",
-    readTime: 8,
-    category: "Development",
-    author: { name: "ArtX Studio", role: "Lead Engineer" },
-    relatedSlugs: ["website-redesign-signs", "saas-landing-page-anatomy"],
-    content: `## The e-commerce dilemma
-
-Every week, a client asks us: *"Should we just use Shopify, or do we need a custom build?"*
-
-The answer depends entirely on your operational complexity, desired customer experience, and scale. Here is how we break it down.
-
-### When to choose Shopify (or Shopify Plus)
-
-Shopify is an incredible platform. We recommend it when:
-
-1. **You are selling standard physical goods.** If your product variants (size, color) fit neatly into standard e-commerce models.
-2. **Speed to market is critical.** You need to launch in 4 weeks, not 4 months.
-3. **You want out-of-the-box integrations.** You need to plug into standard fulfillment centers, accounting software, and marketing tools without custom API work.
-
-> ✱ "Don't reinvent the shopping cart unless the shopping cart is your unique value proposition."
-
-### When to choose a Custom Build (Headless/Custom Stack)
-
-We push clients toward custom architectures (like Next.js + Stripe + Custom CMS) when:
-
-1. **Complex Digital Products or Subscriptions.** If you are selling software, highly customizable bundles, or complex tiered subscriptions, Shopify's rigid backend becomes a nightmare of third-party apps.
-2. **Extreme Performance Requirements.** If you need sub-second page loads across thousands of dynamic pages, a staticly-generated custom front-end will always beat a liquid-templated monolith.
-3. **Bespoke User Experiences.** If your brand requires 3D WebGL product configurators, highly non-standard checkout flows, or deeply integrated user dashboards.
-
-### The Hybrid Approach: Headless Shopify
-
-Often, the best answer is both. We frequently build **Headless Shopify** setups. 
-We use Shopify for the robust backend (inventory, checkout, payment processing) but build a custom Next.js/React frontend. This gives the client the operational reliability of Shopify with the blazing speed and limitless design freedom of a custom build.`,
-  },
-  {
-    slug: "website-redesign-signs",
-    title: "5 signs your website needs a redesign, not a refresh",
-    excerpt: "Are you putting lipstick on a pig? Here's how to know when a simple coat of paint isn't enough.",
-    date: "2026-06-05",
-    readTime: 6,
-    category: "Design",
-    author: { name: "ArtX Studio", role: "Creative Director" },
-    relatedSlugs: ["saas-landing-page-anatomy", "shopify-vs-custom"],
-    content: `## The "Quick Refresh" Trap
-
-Clients often approach us asking for a "quick refresh." They want new fonts, updated colors, and maybe some new imagery. 
-
-Sometimes, that's exactly what they need. But often, the underlying foundation is rotting. Here are 5 signs that your site needs to be torn down to the studs.
-
-### 1. Your conversion rate is dropping despite stable traffic
-
-If your SEO and paid ads are bringing in the same quality of traffic, but your lead generation is steadily declining, your UX is broken. Users are getting frustrated by outdated flows or confused by bloated architecture. A new font won't fix this.
-
-### 2. Your team avoids updating it
-
-> ✱ "If your marketing team needs a developer to publish a blog post, your CMS has failed."
-
-If the content on your site is outdated simply because your backend is terrifying to use, you need a redesign with a modern headless CMS (like Sanity or Strapi). Content velocity is a competitive advantage.
-
-### 3. Mobile feels like an afterthought
-
-Look at your analytics. If 60% of your traffic is mobile, but your mobile bounce rate is double your desktop bounce rate, your site is broken. A true redesign starts with a mobile-first philosophy, not just CSS media queries that shrink desktop elements.
-
-### 4. It doesn't reflect your current business model
-
-Companies pivot. Startups evolve. If your website still heavily promotes a service you deprecated two years ago, or fails to mention your new enterprise offering, you are confusing your buyers. The architecture needs to reflect the *current* business reality.
-
-### 5. It takes more than 3 seconds to load
-
-Performance is design. If your site is bloated with years of accumulated marketing tags, jQuery plugins, and unoptimized hero videos, a "refresh" won't save you. You need a modern, compiled tech stack that treats speed as a feature.`,
-  },
-  {
-    slug: "gearabout-retrospective",
-    title: "What We Learned Building Gearabout's Editorial Platform",
-    excerpt: "A retrospective on rebuilding a cult magazine's digital presence — the technical decisions, the mistakes and what we'd do differently.",
-    date: "2025-07-18",
-    readTime: 11,
-    category: "Case Study",
-    author: { name: "ArtX Studio", role: "Lead Engineer" },
-    relatedSlugs: ["core-web-vitals-2026", "saas-landing-page-anatomy"],
-    content: `## Why we're writing this
-
-Gearabout was our most technically ambitious project. A 4,000-article archive, a fastidious editorial team and a readership that would notice any regression in quality.
-
-We shipped it on time and within budget. But there were decisions we'd make differently.
-
-## What went well
-
-### The CMS migration
-Moving 4,000 articles from WordPress to Sanity without content loss was the thing we were most nervous about. We built a custom migration script with full round-trip validation. Final result: zero content loss.
-
-### The reading experience
-The long-read format tested better than anything we'd shipped before. Bounce rates dropped from 67% to 31%. 
-
-## What we'd do differently
-
-### We underestimated the CMS training
-The technical delivery was smooth. The content team handoff was not. We allocated 4 hours for CMS training. We needed 12.
-
-**Lesson:** CMS complexity is a UX problem for editors, not just readers.
-
-### We over-engineered the article template system
-We built a flexible template system with 7 layout variants. The editorial team uses 2 of them.
-
-**Lesson:** Build for the jobs the content team actually does, not the jobs they theoretically might do.`,
-  },
-];
 
 // ─── Pricing ──────────────────────────────────────────────────────────────────
 
@@ -1334,10 +1330,10 @@ export const pricingFaqs: ServiceFaq[] = [
 
 export const teamMembers: TeamMember[] = [
   {
-    name: "Alex Mercer",
+    name: "Muhammad Tarek (MD Tarek)",
     role: "Founder & Creative Director",
     bio: "10 years building digital products for brands across SaaS, e-commerce and hospitality. Believes beautiful and functional are the same thing, badly explained.",
-    initials: "AM",
+    initials: "MT",
   },
   {
     name: "Sophia Lin",

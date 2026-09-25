@@ -10,21 +10,21 @@ import { useState, useMemo } from "react";
 export const Route = createFileRoute("/testimonials")({
   head: () => ({
     meta: [
-      { title: "Testimonials — ArtX web design studio reviews" },
+      { title: "Client Testimonials & Reviews | ArtX Studio Bangladesh" },
       {
         name: "description",
         content:
-          "Read client reviews, feedback, and case study results from SaaS, e-commerce, and global brands who partnered with ArtX Studio.",
+          "Read verified client testimonials and case study results from SaaS, e-commerce, and global brands who partnered with ArtX Studio. Check reviews!",
       },
-      { property: "og:title", content: "Testimonials — ArtX web design studio reviews" },
+      { property: "og:title", content: "Client Testimonials & Reviews | ArtX Studio Bangladesh" },
       {
         property: "og:description",
         content:
-          "Read client reviews, feedback, and case study results from SaaS, e-commerce, and global brands who partnered with ArtX Studio.",
+          "Read verified client testimonials and case study results from SaaS, e-commerce, and global brands who partnered with ArtX Studio. Check reviews!",
       },
-      { property: "og:url", content: "https://artxx.lovable.app/testimonials" },
+      { property: "og:url", content: "https://artxdev.tech/testimonials" },
     ],
-    links: [{ rel: "canonical", href: "https://artxx.lovable.app/testimonials" }],
+    links: [{ rel: "canonical", href: "https://artxdev.tech/testimonials" }],
     scripts: [
       {
         type: "application/ld+json",
