@@ -1,0 +1,62 @@
+name: Scheduled Article Publisher (12:00 PM BST)
+
+on:
+  schedule:
+    # Runs daily at 06:00 UTC = 12:00 PM (noon) Bangladesh Standard Time (BST = UTC+6)
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish-articles:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Move 2 unpublished articles from pending to published
+        id: select-articles
+        run: |
+          mkdir -p articles/pending articles/published
+
+          # Find up to 2 markdown files in articles/pending
+          FILES=$(find articles/pending -maxdepth 1 -type f -name "*.md" | sort | head -n 2)
+
+          if [ -z "$FILES" ]; then
+            echo "No pending articles found in articles/pending/. Workflow complete."
+            echo "has_articles=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          echo "has_articles=true" >> $GITHUB_OUTPUT
+          MOVED_LIST=""
+
+          for FILE in $FILES; do
+            BASENAME=$(basename "$FILE")
+            echo "Publishing: $BASENAME"
+            mv "$FILE" "articles/published/$BASENAME"
+            MOVED_LIST="${MOVED_LIST} ${BASENAME}"
+          done
+
+          echo "moved_names=${MOVED_LIST}" >> $GITHUB_OUTPUT
+
+      - name: Commit and push changes to main branch
+        if: steps.select-articles.outputs.has_articles == 'true'
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add articles/
+          if [ -n "$(git status --porcelain articles/)" ]; then
+            git commit -m "content(articles): publish daily articles [skip ci] -${{ steps.select-articles.outputs.moved_names }}"
+            git push origin HEAD:main
+            echo "Successfully published and pushed articles to main."
+          else
+            echo "No changes detected to commit."
+          fi
