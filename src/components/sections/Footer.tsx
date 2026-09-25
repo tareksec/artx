@@ -13,7 +13,7 @@ export function Footer() {
 
   return (
     <footer id="contact" className="bg-dark text-dark-foreground">
-      <ScrollReveal className="mx-auto max-w-7xl px-6 pt-24 pb-12 md:pt-32">
+      <ScrollReveal className="mx-auto max-w-7xl px-6 pt-24 pb-28 md:pb-12 md:pt-32">
         <div className="flex flex-col gap-10 border-b border-dark-foreground/15 pb-16 lg:flex-row lg:items-end lg:justify-between">
           <h2 className="text-balance text-5xl leading-[0.95] md:text-7xl lg:text-8xl">
             {t.footer.titleStart}

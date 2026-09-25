@@ -16,6 +16,7 @@ export const translations = {
       whyUs: "Why ArtX",
       contact: "Contact",
       letsTalk: "Let's talk",
+      more: "More",
     },
     hero: {
       eyebrow: "950+ projects completed worldwide",
@@ -197,6 +198,7 @@ export const translations = {
       whyUs: "কেন ArtX",
       contact: "যোগাযোগ",
       letsTalk: "কথা বলুন",
+      more: "আরও",
     },
     hero: {
       eyebrow: "বিশ্বজুড়ে ৯৫০+ প্রোজেক্ট সম্পন্ন",
