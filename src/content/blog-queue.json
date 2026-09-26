@@ -1,21 +1,5 @@
 [
   {
-    "slug": "dark-mode-ui-architecture",
-    "title": "Dark Mode UI Architecture: Contrast, Accessibility, and OLED Optimization",
-    "excerpt": "A comprehensive technical guide to implementing dark mode that respects WCAG standards, avoids eye strain, and optimizes mobile battery life.",
-    "date": "2026-09-27",
-    "readTime": 6,
-    "category": "Design",
-    "author": {
-      "name": "ArtX Studio",
-      "role": "Accessibility Specialist"
-    },
-    "relatedSlugs": [
-      "minimalist-web-design-2026"
-    ],
-    "content": "## Pure Black vs. Balanced Charcoal\n\nPure black (#000000) causes high-contrast halation for many readers. Professional dark interfaces utilize curated neutral scales (zinc, slate, neutral grays) with semantic elevation tokens to convey hierarchy while meeting WCAG AAA compliance."
-  },
-  {
     "slug": "container-queries-css-grid",
     "title": "Beyond 12-Column Grids: Modern CSS Grid & Container Queries in Production",
     "excerpt": "How container queries fundamentally decouple components from viewport widths, enabling truly modular design system architectures.",
