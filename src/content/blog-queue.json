@@ -1,21 +1,5 @@
 [
   {
-    "slug": "container-queries-css-grid",
-    "title": "Beyond 12-Column Grids: Modern CSS Grid & Container Queries in Production",
-    "excerpt": "How container queries fundamentally decouple components from viewport widths, enabling truly modular design system architectures.",
-    "date": "2026-09-28",
-    "readTime": 8,
-    "category": "Development",
-    "author": {
-      "name": "ArtX Studio",
-      "role": "Frontend Architect"
-    },
-    "relatedSlugs": [
-      "saas-landing-page-anatomy"
-    ],
-    "content": "## Component-Owned Responsiveness\n\nViewport media queries are inherently brittle for micro-components. Container queries allow a card or modal to adapt its layout based strictly on the dimensions of its parent container, achieving genuine front-end modularity."
-  },
-  {
     "slug": "figma-to-react-design-systems",
     "title": "Building Resilient Design Systems: Bridging the Gap Between Figma and React",
     "excerpt": "Eliminating the designer-developer handoff gap with automated design tokens, Tailwind mapping, and component parity.",

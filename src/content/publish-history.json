@@ -22,5 +22,11 @@
     "title": "Dark Mode UI Architecture: Contrast, Accessibility, and OLED Optimization",
     "publishedAt": "2026-09-26T20:37:16.115Z",
     "remainingInQueue": 6
+  },
+  {
+    "slug": "container-queries-css-grid",
+    "title": "Beyond 12-Column Grids: Modern CSS Grid & Container Queries in Production",
+    "publishedAt": "2026-09-27T20:50:03.834Z",
+    "remainingInQueue": 5
   }
 ]
