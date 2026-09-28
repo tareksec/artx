@@ -1254,7 +1254,7 @@ export { blogPosts } from "./blog-posts";
 export const pricingTiers: PricingTier[] = [
   {
     name: "Basic",
-    price: "৳3,500",
+    price: "৳35,000",
     description: "For businesses just getting started online.",
     services: [
       "Unlimited Pages (আপনার প্রয়োজন অনুযায়ী)",
@@ -1268,7 +1268,7 @@ export const pricingTiers: PricingTier[] = [
   },
   {
     name: "Premium",
-    price: "৳6,500",
+    price: "৳65,000",
     description: "For brands ready to own their domain and operations.",
     services: [
       "Basic প্যাকেজের সব কিছু",
@@ -1281,7 +1281,7 @@ export const pricingTiers: PricingTier[] = [
   },
   {
     name: "Ultra",
-    price: "৳9,500",
+    price: "৳95,000",
     description: "The all-in-one solution for serious growth.",
     services: [
       "Premium প্যাকেজের সব কিছু",
@@ -1296,9 +1296,9 @@ export const pricingTiers: PricingTier[] = [
 export const pricingFaqs: ServiceFaq[] = [
   {
     q: "What's included in the Basic, Premium, and Ultra packages?",
-    a: "Our Basic tier (৳3,500) includes unlimited pages (as needed), product control panel, WhatsApp redirect payment option, full on-page SEO, free subdomain, and 1 GB hosting. Premium (৳6,500) adds custom domain & hosting and a full custom admin dashboard. Ultra (৳9,500) is an all-in-one scaling solution with priority support.",
+    a: "Our Basic tier (৳35,000) includes unlimited pages (as needed), product control panel, WhatsApp redirect payment option, full on-page SEO, free subdomain, and 1 GB hosting. Premium (৳65,000) adds custom domain & hosting and a full custom admin dashboard. Ultra (৳95,000) is an all-in-one scaling solution with priority support.",
     qBn: "Basic, Premium এবং Ultra প্যাকেজে কী কী অন্তর্ভুক্ত থাকে?",
-    aBn: "আমাদের Basic প্যাকেজে (৳৩,৫০০) রয়েছে আনলিমিটেড পেজ, প্রোডাক্ট কন্ট্রোল প্যানেল, হোয়াটসঅ্যাপ পেমেন্ট রিডাইরেক্ট, অন-পেজ এসইও, ফ্রি সাবডোমেইন এবং ১ জিবি হোস্টিং। Premium প্যাকেজে (৳৬,৫০০) রয়েছে কাস্টম ডোমেইন ও হোস্টিং এবং ফুল কাস্টম অ্যাডমিন ড্যাশবোর্ড। আর Ultra প্যাকেজে (৳৯,৫০০) রয়েছে অল-ইন-ওয়ান সমাধান ও প্রায়োরিটি সাপোর্ট।",
+    aBn: "আমাদের Basic প্যাকেজে (৳৩৫,০০০) রয়েছে আনলিমিটেড পেজ, প্রোডাক্ট কন্ট্রোল প্যানেল, হোয়াটসঅ্যাপ পেমেন্ট রিডাইরেক্ট, অন-পেজ এসইও, ফ্রি সাবডোমেইন এবং ১ জিবি হোস্টিং। Premium প্যাকেজে (৳৬৫,০০০) রয়েছে কাস্টম ডোমেইন ও হোস্টিং এবং ফুল কাস্টম অ্যাডমিন ড্যাশবোর্ড। আর Ultra প্যাকেজে (৳৯৫,০০০) রয়েছে অল-ইন-ওয়ান সমাধান ও প্রায়োরিটি সাপোর্ট।",
   },
   {
     q: "How does the WhatsApp redirect checkout work?",

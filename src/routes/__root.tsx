@@ -13,7 +13,6 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import { LanguageProvider } from "@/components/providers/LanguageProvider";
-import { PromoPopup } from "@/components/PromoPopup";
 import { Nav } from "@/components/sections/Nav";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 
@@ -208,7 +207,6 @@ function RootComponent() {
           <main suppressHydrationWarning>
             <Outlet />
           </main>
-          <PromoPopup />
         </SmoothScrollProvider>
       </LanguageProvider>
     </QueryClientProvider>

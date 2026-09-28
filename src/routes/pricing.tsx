@@ -10,7 +10,7 @@ import { useLanguage } from "@/components/providers/LanguageProvider";
 export const Route = createFileRoute("/pricing")({
   head: () => {
     const seoTitle = "Website Design Packages & Pricing in Bangladesh | ArtX";
-    const metaDesc = "Transparent web design pricing in Bangladesh. Basic, Premium & Ultra packages starting from ৳3,500 with full SEO, responsive UI & WhatsApp checkout. View plans!";
+    const metaDesc = "Transparent web design pricing in Bangladesh. Basic, Premium & Ultra packages starting from ৳35,000 with full SEO, responsive UI & WhatsApp checkout. View plans!";
     const canonicalUrl = "https://artxdev.tech/pricing";
 
     const schema = {
@@ -27,29 +27,29 @@ export const Route = createFileRoute("/pricing")({
           },
           offers: {
             "@type": "AggregateOffer",
-            lowPrice: "3500",
-            highPrice: "9500",
+            lowPrice: "35000",
+            highPrice: "95000",
             priceCurrency: "BDT",
             offerCount: "3",
             offers: [
               {
                 "@type": "Offer",
                 name: "Basic Website Package",
-                price: "3500",
+                price: "35000",
                 priceCurrency: "BDT",
                 description: "Unlimited pages, control panel, WhatsApp redirect checkout, full on-page SEO.",
               },
               {
                 "@type": "Offer",
                 name: "Premium Website Package",
-                price: "6500",
+                price: "65000",
                 priceCurrency: "BDT",
                 description: "Custom domain & hosting, custom admin dashboard, order & inventory management.",
               },
               {
                 "@type": "Offer",
                 name: "Ultra Website Package",
-                price: "9500",
+                price: "95000",
                 priceCurrency: "BDT",
                 description: "All-in-one custom digital product solution with priority support and advanced animations.",
               },
