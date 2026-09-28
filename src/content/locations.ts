@@ -276,5 +276,201 @@ export const locationDetails: LocationDetail[] = [
         a: "Yes! You receive 100% full ownership of your custom domain name, web hosting access, database, and all source code upon project completion. There are never any lock-in contracts or hidden licensing fees."
       }
     ]
+  },
+  {
+    slug: "chittagong",
+    city: "Chittagong",
+    country: "Bangladesh",
+    targetKeyword: "web design agency Chittagong",
+    seoTitle: "Web Design Agency Chittagong | Custom Websites & SEO | ArtX",
+    metaDescription: "Top web design agency in Chittagong, Bangladesh. ArtX builds custom websites, e-commerce stores & provides SEO services for Chittagong businesses. Contact now!",
+    h1: "Professional Web Design Agency in Chittagong",
+    subheading: "Custom websites, e-commerce stores, and SEO services built for Chittagong's thriving business ecosystem.",
+    intro: "ArtX brings world-class web design and development expertise to Chittagong, Bangladesh's commercial capital and busiest port city. From export-oriented businesses in the Agrabad Commercial Area to retail brands in GEC Circle and Nasirabad, we help Chittagong enterprises establish powerful digital storefronts that convert local and international visitors into paying customers.",
+    marketOverview: {
+      title: "Why Chittagong Businesses Need Professional Web Design in 2026",
+      description: "Chittagong (Chattogram) is Bangladesh's second-largest economic hub with a GDP contribution exceeding 12% of the national economy. The city's port handles over 90% of Bangladesh's export-import trade, creating a massive B2B digital opportunity. Yet most Chittagong businesses still rely on outdated websites or social media pages that fail to capture high-intent international buyers.",
+      points: [
+        "Chittagong's export-oriented businesses need multilingual, fast-loading websites to attract international buyers.",
+        "Local service providers in Agrabad, GEC Circle, and Nasirabad compete for Google Maps visibility.",
+        "E-commerce adoption is accelerating across Chittagong with growing demand for bKash/Nagad-enabled stores.",
+        "Mobile internet penetration in Chittagong exceeds 75%, making mobile-first design essential."
+      ]
+    },
+    servicesProvided: [
+      { title: "E-Commerce Website Design", description: "Online stores with local payment gateways for Chittagong's retail and wholesale businesses.", link: "/services/ecommerce-website-design" },
+      { title: "WordPress Development", description: "Custom, lightweight WordPress sites for corporate Chittagong businesses and exporters.", link: "/services/wordpress-development" },
+      { title: "SEO Services", description: "Local SEO to dominate Chittagong Google Maps results and technical SEO for national rankings.", link: "/services/seo-services" },
+      { title: "Landing Page Design", description: "High-converting landing pages for Chittagong business advertising campaigns.", link: "/services/landing-page-design" },
+    ],
+    whyLocalMatters: [
+      { title: "Port City Commerce", description: "Chittagong's port-centric economy demands websites that serve both local Bangladeshi and international trade audiences with multilingual support." },
+      { title: "Local Search Dominance", description: "Businesses in Agrabad, Nasirabad, and Halishahar need Google Maps optimization to capture location-specific searches." },
+      { title: "Mobile-First Market", description: "With over 75% mobile internet users, Chittagong websites must load in under 3 seconds on 4G to retain visitors." },
+    ],
+    localPricingHighlights: [
+      { tier: "Basic", price: "৳3,500", description: "Perfect for small Chittagong businesses and service providers.", highlights: ["Unlimited pages", "WhatsApp checkout", "Mobile-responsive", "Basic SEO"] },
+      { tier: "Premium", price: "৳6,500", description: "Custom domain, hosting & admin dashboard for growing Chittagong enterprises.", highlights: ["Custom domain", "Admin dashboard", "Order management", "Full SEO"] },
+      { tier: "Ultra", price: "৳9,500", description: "Full custom solution for Chittagong's ambitious brands and exporters.", highlights: ["Custom design", "Advanced animations", "Priority support", "GEO optimization"] },
+    ],
+    process: [
+      { step: "01", title: "Discovery Call", description: "We discuss your Chittagong business goals, target audience, and competitive landscape." },
+      { step: "02", title: "Design & Develop", description: "Custom Figma design followed by high-performance development optimized for Chittagong's mobile-first users." },
+      { step: "03", title: "Local SEO Setup", description: "Google Business Profile, local citations, and NAP consistency for Chittagong-specific rankings." },
+      { step: "04", title: "Launch & Support", description: "Live deployment with 30-day support and performance monitoring." },
+    ],
+    faqs: [
+      { q: "Do you have an office in Chittagong?", a: "ArtX operates remote-first from Dhaka, serving clients across Chittagong and all of Bangladesh. Our remote workflow ensures you receive the same senior talent and quality regardless of location, with all communication via WhatsApp, Zoom, and email." },
+      { q: "How much does a website cost for a Chittagong business?", a: "Website prices for Chittagong businesses start at ৳3,500 for basic sites and go up to ৳95,000+ for custom e-commerce stores. Visit our pricing page for transparent package details." },
+      { q: "Can you help my Chittagong business rank on Google?", a: "Yes. Our Local SEO services optimize your Google Business Profile, build Chittagong-specific citations, and create locally relevant content to help your business appear in the Google Maps 3-Pack for Chittagong searches." },
+      { q: "Do you build export-oriented business websites?", a: "Yes. We specialize in multilingual, fast-loading websites for Chittagong's export businesses, including product catalogs, inquiry forms, and international payment gateway integration." },
+    ]
+  },
+  {
+    slug: "sylhet",
+    city: "Sylhet",
+    country: "Bangladesh",
+    targetKeyword: "web design company Sylhet",
+    seoTitle: "Web Design Company Sylhet | Custom Websites & SEO | ArtX",
+    metaDescription: "Professional web design company serving Sylhet businesses. Custom websites, e-commerce stores & SEO services. Get a modern website for your Sylhet business!",
+    h1: "Web Design Company Serving Sylhet Businesses",
+    subheading: "Custom websites and digital solutions tailored for Sylhet's unique business landscape and expatriate community.",
+    intro: "ArtX delivers premium web design and development services to businesses in Sylhet Division. Known for its tea gardens, tourism potential, and strong diaspora connections, Sylhet has a unique digital opportunity. We help Sylhet-based businesses — from hospitality brands and tea estates to remittance services and local retailers — build modern websites that serve both local customers and the global Sylheti community.",
+    marketOverview: {
+      title: "Sylhet's Digital Opportunity in 2026",
+      description: "Sylhet Division benefits from one of Bangladesh's highest remittance inflows, creating a digitally connected population with strong international ties. Businesses in Sylhet that invest in professional web presence can tap into both the local market and the substantial UK, USA, and Middle East diaspora audience.",
+      points: [
+        "Sylhet's diaspora in UK, USA, and Middle East creates a unique international audience for local businesses.",
+        "Tourism and hospitality businesses (tea gardens, resorts) need visually stunning, fast-loading websites.",
+        "Local retail and service businesses compete for Google visibility in Sylhet city searches.",
+        "Remittance-driven economy creates tech-savvy consumers who expect modern digital experiences."
+      ]
+    },
+    servicesProvided: [
+      { title: "E-Commerce Website Design", description: "Online stores connecting Sylhet products with local and diaspora buyers.", link: "/services/ecommerce-website-design" },
+      { title: "WordPress Development", description: "Professional WordPress sites for Sylhet hotels, restaurants, and service businesses.", link: "/services/wordpress-development" },
+      { title: "SEO Services", description: "Local SEO for Sylhet city and divisional search rankings.", link: "/services/seo-services" },
+      { title: "Website Redesign", description: "Modernize outdated Sylhet business websites for better performance.", link: "/services/website-redesign" },
+    ],
+    whyLocalMatters: [
+      { title: "Diaspora Connection", description: "Sylhet businesses can reach their UK, USA, and Middle East diaspora audience with multilingual, fast-loading websites." },
+      { title: "Tourism & Hospitality", description: "Hotels, resorts, and tea estates in Sylhet need visually rich websites with booking integration and mobile optimization." },
+      { title: "Local Discovery", description: "Sylhet consumers increasingly use Google and Facebook to find local businesses, making web presence essential." },
+    ],
+    localPricingHighlights: [
+      { tier: "Basic", price: "৳3,500", description: "Perfect for Sylhet shops and service providers.", highlights: ["Unlimited pages", "WhatsApp checkout", "Mobile-responsive", "Basic SEO"] },
+      { tier: "Premium", price: "৳6,500", description: "Custom domain & hosting for growing Sylhet businesses.", highlights: ["Custom domain", "Admin dashboard", "Order management", "Full SEO"] },
+      { tier: "Ultra", price: "৳9,500", description: "Full custom solution for Sylhet hospitality and tourism brands.", highlights: ["Custom design", "Booking integration", "Priority support", "GEO optimization"] },
+    ],
+    process: [
+      { step: "01", title: "Discovery", description: "Understand your Sylhet business model, target audience (local vs diaspora), and digital goals." },
+      { step: "02", title: "Design & Build", description: "Custom design and development optimized for Sylhet's audience, including multilingual support if needed." },
+      { step: "03", title: "SEO & Launch", description: "Local SEO setup for Sylhet-specific search terms and Google Business Profile optimization." },
+      { step: "04", title: "Growth Support", description: "30-day post-launch support with performance monitoring and content guidance." },
+    ],
+    faqs: [
+      { q: "Can ArtX build websites for Sylhet businesses remotely?", a: "Yes. ArtX operates remote-first and has successfully delivered websites for clients across all divisions of Bangladesh. Our WhatsApp-first communication and structured project workflow ensure smooth collaboration regardless of location." },
+      { q: "How much does a website cost for a Sylhet business?", a: "Website packages for Sylhet businesses start at ৳3,500 for basic websites. E-commerce stores with payment integration start from ৳6,500. Visit our pricing page for full details." },
+      { q: "Can you build a website for my Sylhet hotel or resort?", a: "Absolutely. We specialize in hospitality websites with booking systems, gallery showcases, Google Maps integration, and mobile-optimized designs that convert visitors into guests." },
+      { q: "Do you offer SEO for Sylhet-based businesses?", a: "Yes. Our Local SEO service optimizes your business for Sylhet-specific Google searches, including Google Maps rankings, local directory citations, and location-relevant content creation." },
+    ]
+  },
+  {
+    slug: "rajshahi",
+    city: "Rajshahi",
+    country: "Bangladesh",
+    targetKeyword: "website development Rajshahi",
+    seoTitle: "Website Development Rajshahi | Custom Web Design | ArtX",
+    metaDescription: "Professional website development for Rajshahi businesses. Custom web design, e-commerce & SEO services. Modern websites for Rajshahi's growing economy!",
+    h1: "Website Development for Rajshahi Businesses",
+    subheading: "Modern, performance-optimized websites built for Rajshahi's agricultural, educational, and commercial enterprises.",
+    intro: "ArtX provides professional website development services to businesses in Rajshahi Division, northwestern Bangladesh's cultural and educational hub. From Rajshahi University-adjacent startups to agricultural exporters and local retailers, we create fast, conversion-focused websites that help Rajshahi businesses compete digitally across Bangladesh and beyond.",
+    marketOverview: {
+      title: "Rajshahi's Growing Digital Economy in 2026",
+      description: "Rajshahi Division is experiencing rapid digital transformation. As Bangladesh's second-largest university city, it has a growing tech-savvy population. The city's silk industry, mango exports, and educational institutions present significant digital opportunities for businesses willing to invest in professional web presence.",
+      points: [
+        "Rajshahi's educational institutions create a digitally literate consumer base.",
+        "Agricultural exporters (silk, mangoes) need professional websites for B2B international trade.",
+        "Growing IT sector with new coworking spaces and freelancer communities.",
+        "Mobile internet adoption growing rapidly, requiring mobile-first web design."
+      ]
+    },
+    servicesProvided: [
+      { title: "E-Commerce Website Design", description: "Online stores for Rajshahi's retail, agricultural, and craft businesses.", link: "/services/ecommerce-website-design" },
+      { title: "WordPress Development", description: "Custom WordPress websites for educational institutions and businesses.", link: "/services/wordpress-development" },
+      { title: "SEO Services", description: "Local and national SEO to help Rajshahi businesses rank across Bangladesh.", link: "/services/seo-services" },
+      { title: "Website Maintenance", description: "Monthly care plans to keep Rajshahi business websites secure and fast.", link: "/services/website-maintenance" },
+    ],
+    whyLocalMatters: [
+      { title: "Educational Hub", description: "With Rajshahi University and multiple institutions, the city has a tech-aware audience that expects modern digital experiences." },
+      { title: "Agricultural Commerce", description: "Rajshahi's mango and silk exporters benefit from professional product websites that attract national and international buyers." },
+      { title: "Emerging IT Ecosystem", description: "Rajshahi's growing freelancer and startup community creates demand for professional digital services." },
+    ],
+    localPricingHighlights: [
+      { tier: "Basic", price: "৳3,500", description: "Ideal for Rajshahi small businesses and professionals.", highlights: ["Unlimited pages", "WhatsApp checkout", "Mobile-responsive", "Basic SEO"] },
+      { tier: "Premium", price: "৳6,500", description: "Full business website with custom domain for Rajshahi enterprises.", highlights: ["Custom domain", "Admin dashboard", "Order management", "Full SEO"] },
+      { tier: "Ultra", price: "৳9,500", description: "Comprehensive custom solution for ambitious Rajshahi brands.", highlights: ["Custom design", "Advanced features", "Priority support", "GEO optimization"] },
+    ],
+    process: [
+      { step: "01", title: "Consultation", description: "Free consultation to understand your Rajshahi business goals and digital requirements." },
+      { step: "02", title: "Design & Develop", description: "Custom design and development with mobile-first approach and local SEO considerations." },
+      { step: "03", title: "Optimize & Test", description: "Speed optimization, cross-device testing, and Google Search Console setup." },
+      { step: "04", title: "Launch & Monitor", description: "Live deployment with 30-day support and Google Analytics setup for data-driven growth." },
+    ],
+    faqs: [
+      { q: "Can I get a professional website built for my Rajshahi business?", a: "Yes. ArtX delivers professional website development remotely for businesses in Rajshahi and across Bangladesh. Our structured remote workflow ensures you receive the same quality as our Dhaka-based clients." },
+      { q: "How much does website development cost in Rajshahi?", a: "Professional website development for Rajshahi businesses starts at ৳3,500 for basic sites. Custom e-commerce and enterprise websites range from ৳6,500 to ৳95,000+." },
+      { q: "Can you build an e-commerce site for agricultural products from Rajshahi?", a: "Yes. We build product catalog and e-commerce websites specifically designed for agricultural exporters, featuring inventory management, order tracking, and payment gateway integration." },
+      { q: "Do you provide ongoing support after the website is launched?", a: "Yes. All projects include 30 days of free post-launch support. We also offer monthly maintenance plans starting from ৳2,500/month for ongoing security, updates, and content changes." },
+    ]
+  },
+  {
+    slug: "khulna",
+    city: "Khulna",
+    country: "Bangladesh",
+    targetKeyword: "web design Khulna",
+    seoTitle: "Web Design Khulna | Professional Websites & SEO | ArtX",
+    metaDescription: "Professional web design services in Khulna, Bangladesh. Custom websites, online stores & SEO for Khulna businesses. Affordable packages from ৳3,500!",
+    h1: "Professional Web Design for Khulna Businesses",
+    subheading: "Custom, high-performance websites designed to help Khulna businesses grow their digital presence and attract more customers.",
+    intro: "ArtX extends its professional web design and development expertise to Khulna, southwestern Bangladesh's industrial and commercial center. From shrimp exporters and jute mills to retail businesses and service providers, Khulna's diverse economy needs modern digital solutions. We build fast, mobile-optimized websites that help Khulna businesses attract customers online and compete with larger metro-area competitors.",
+    marketOverview: {
+      title: "Khulna's Digital Growth Potential in 2026",
+      description: "Khulna Division, home to the Sundarbans and Bangladesh's southwestern industrial corridor, represents a significant digital opportunity. The city's export-oriented industries, growing service sector, and increasing internet penetration create demand for professional web presence that most local businesses haven't yet captured.",
+      points: [
+        "Khulna's shrimp, jute, and seafood exporters need professional B2B websites for international trade.",
+        "Tourism businesses near the Sundarbans need visually striking websites with booking capabilities.",
+        "Local retailers and service providers are losing customers to competitors with better online presence.",
+        "Growing 4G/5G coverage in Khulna makes mobile-first web design essential."
+      ]
+    },
+    servicesProvided: [
+      { title: "E-Commerce Website Design", description: "Online stores for Khulna's retail and export businesses.", link: "/services/ecommerce-website-design" },
+      { title: "WordPress Development", description: "Professional WordPress sites for Khulna businesses and organizations.", link: "/services/wordpress-development" },
+      { title: "SEO Services", description: "Local SEO for Khulna and divisional Google search rankings.", link: "/services/seo-services" },
+      { title: "Landing Page Design", description: "Conversion-focused landing pages for Khulna advertising campaigns.", link: "/services/landing-page-design" },
+    ],
+    whyLocalMatters: [
+      { title: "Industrial & Export Hub", description: "Khulna's export businesses need professional websites that build trust with international buyers and facilitate B2B inquiries." },
+      { title: "Sundarbans Tourism", description: "Tourism operators and eco-lodges near the Sundarbans need visually compelling websites with booking and inquiry systems." },
+      { title: "Local Competition Gap", description: "Most Khulna businesses lack professional websites, creating a significant competitive advantage for early digital adopters." },
+    ],
+    localPricingHighlights: [
+      { tier: "Basic", price: "৳3,500", description: "Perfect for small Khulna businesses going online.", highlights: ["Unlimited pages", "WhatsApp checkout", "Mobile-responsive", "Basic SEO"] },
+      { tier: "Premium", price: "৳6,500", description: "Professional website with custom domain for growing Khulna businesses.", highlights: ["Custom domain", "Admin dashboard", "Order management", "Full SEO"] },
+      { tier: "Ultra", price: "৳9,500", description: "Full custom solution for Khulna exporters and ambitious brands.", highlights: ["Custom design", "Multi-language", "Priority support", "GEO optimization"] },
+    ],
+    process: [
+      { step: "01", title: "Free Consultation", description: "Discuss your Khulna business goals and get a custom proposal tailored to your industry." },
+      { step: "02", title: "Design & Build", description: "Custom design and development optimized for Khulna's target audience and business model." },
+      { step: "03", title: "SEO & Launch", description: "Local SEO configuration for Khulna searches, Google Business Profile setup, and live deployment." },
+      { step: "04", title: "Post-Launch Care", description: "30-day free support, performance monitoring, and guidance for ongoing digital growth." },
+    ],
+    faqs: [
+      { q: "Do you serve businesses in Khulna?", a: "Yes. ArtX serves businesses across all divisions of Bangladesh, including Khulna. Our remote-first model ensures Khulna clients receive the same premium quality as our Dhaka-based projects." },
+      { q: "How much does a website cost for a Khulna business?", a: "Website development for Khulna businesses starts at ৳3,500 for basic packages. E-commerce and custom business websites range from ৳6,500 to ৳95,000+ depending on requirements." },
+      { q: "Can you build a tourism website for Sundarbans operators?", a: "Yes. We build tourism and hospitality websites with high-quality image galleries, booking systems, Google Maps integration, and SEO optimization targeting tourism-related keywords." },
+      { q: "How long does it take to build a website for my Khulna business?", a: "Most basic and premium websites are delivered within 1 to 3 weeks. Custom e-commerce and enterprise projects typically take 4 to 8 weeks depending on complexity." },
+    ]
   }
 ];

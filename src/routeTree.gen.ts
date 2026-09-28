@@ -24,13 +24,13 @@ import { Route as ScrapeRouteImport } from './routes/scrape'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
+import { Route as WhyUsRouteImport } from './routes/why-us'
 import { Route as WorkRouteImport } from './routes/work'
 import { Route as BlogSlugRouteImport } from './routes/blog_.$slug'
 import { Route as ConceptsSlugRouteImport } from './routes/concepts_.$slug'
+import { Route as LocationSlugRouteImport } from './routes/location_.$slug'
 import { Route as ServicesSlugRouteImport } from './routes/services_.$slug'
 import { Route as WorkSlugRouteImport } from './routes/work_.$slug'
-import { Route as WhyUsRouteImport } from './routes/why-us'
-import { Route as LocationSlugRouteImport } from './routes/location_.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -107,6 +107,11 @@ const TestimonialsRoute = TestimonialsRouteImport.update({
   path: '/testimonials',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WhyUsRoute = WhyUsRouteImport.update({
+  id: '/why-us',
+  path: '/why-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WorkRoute = WorkRouteImport.update({
   id: '/work',
   path: '/work',
@@ -122,6 +127,11 @@ const ConceptsSlugRoute = ConceptsSlugRouteImport.update({
   path: '/concepts/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LocationSlugRoute = LocationSlugRouteImport.update({
+  id: '/location_/$slug',
+  path: '/location/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesSlugRoute = ServicesSlugRouteImport.update({
   id: '/services_/$slug',
   path: '/services/$slug',
@@ -130,16 +140,6 @@ const ServicesSlugRoute = ServicesSlugRouteImport.update({
 const WorkSlugRoute = WorkSlugRouteImport.update({
   id: '/work_/$slug',
   path: '/work/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const WhyUsRoute = WhyUsRouteImport.update({
-  id: '/why-us',
-  path: '/why-us',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LocationSlugRoute = LocationSlugRouteImport.update({
-  id: '/location_/$slug',
-  path: '/location/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -423,6 +423,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TestimonialsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/why-us': {
+      id: '/why-us'
+      path: '/why-us'
+      fullPath: '/why-us'
+      preLoaderRoute: typeof WhyUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/work': {
       id: '/work'
       path: '/work'
@@ -444,6 +451,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ConceptsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/location_/$slug': {
+      id: '/location_/$slug'
+      path: '/location/$slug'
+      fullPath: '/location/$slug'
+      preLoaderRoute: typeof LocationSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services_/$slug': {
       id: '/services_/$slug'
       path: '/services/$slug'
@@ -456,20 +470,6 @@ declare module '@tanstack/react-router' {
       path: '/work/$slug'
       fullPath: '/work/$slug'
       preLoaderRoute: typeof WorkSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/why-us': {
-      id: '/why-us'
-      path: '/why-us'
-      fullPath: '/why-us'
-      preLoaderRoute: typeof WhyUsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/location_/$slug': {
-      id: '/location_/$slug'
-      path: '/location/$slug'
-      fullPath: '/location/$slug'
-      preLoaderRoute: typeof LocationSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
