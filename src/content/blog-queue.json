@@ -1,21 +1,5 @@
 [
   {
-    "slug": "figma-to-react-design-systems",
-    "title": "Building Resilient Design Systems: Bridging the Gap Between Figma and React",
-    "excerpt": "Eliminating the designer-developer handoff gap with automated design tokens, Tailwind mapping, and component parity.",
-    "date": "2026-09-29",
-    "readTime": 7,
-    "category": "Design",
-    "author": {
-      "name": "ArtX Studio",
-      "role": "Design Systems Lead"
-    },
-    "relatedSlugs": [
-      "saas-landing-page-anatomy"
-    ],
-    "content": "## The Single Source of Truth\n\nWhen design tokens in Figma automatically sync to Tailwind configurations via CI/CD, visual regressions drop to zero. A living design system ensures brand consistency across enterprise applications."
-  },
-  {
     "slug": "zero-layout-shift-cls-guide",
     "title": "Eliminating Cumulative Layout Shift (CLS): A Front-End Architect Guide",
     "excerpt": "Technical patterns for locking down aspect ratios, dynamic font loading, and layout shifts to achieve perfect zero CLS on web vitals.",
