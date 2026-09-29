@@ -34,5 +34,11 @@
     "title": "Building Resilient Design Systems: Bridging the Gap Between Figma and React",
     "publishedAt": "2026-09-28T22:54:46.583Z",
     "remainingInQueue": 4
+  },
+  {
+    "slug": "zero-layout-shift-cls-guide",
+    "title": "Eliminating Cumulative Layout Shift (CLS): A Front-End Architect Guide",
+    "publishedAt": "2026-09-29T21:49:28.698Z",
+    "remainingInQueue": 3
   }
 ]

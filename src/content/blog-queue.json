@@ -1,22 +1,5 @@
 [
   {
-    "slug": "zero-layout-shift-cls-guide",
-    "title": "Eliminating Cumulative Layout Shift (CLS): A Front-End Architect Guide",
-    "excerpt": "Technical patterns for locking down aspect ratios, dynamic font loading, and layout shifts to achieve perfect zero CLS on web vitals.",
-    "date": "2026-09-30",
-    "readTime": 6,
-    "category": "SEO",
-    "author": {
-      "name": "ArtX Studio",
-      "role": "Technical SEO Lead"
-    },
-    "relatedSlugs": [
-      "core-web-vitals-2026",
-      "on-page-seo-checklist"
-    ],
-    "content": "## Why CLS Destroys User Trust\n\nNothing frustrates users more than clicking a link only for an unreserved image banner to shift the layout. Reserving explicit aspect ratio boxes and using font-display: optional completely eliminates shifts."
-  },
-  {
     "slug": "headless-cms-architecture-2026",
     "title": "Choosing the Right Headless CMS in 2026: Speed, Security, and Scalability",
     "excerpt": "Comparative analysis of Git-based, database-backed, and API-first CMS architectures for high-traffic modern marketing sites.",
