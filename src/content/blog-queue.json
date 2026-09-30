@@ -1,21 +1,5 @@
 [
   {
-    "slug": "headless-cms-architecture-2026",
-    "title": "Choosing the Right Headless CMS in 2026: Speed, Security, and Scalability",
-    "excerpt": "Comparative analysis of Git-based, database-backed, and API-first CMS architectures for high-traffic modern marketing sites.",
-    "date": "2026-10-01",
-    "readTime": 8,
-    "category": "Development",
-    "author": {
-      "name": "ArtX Studio",
-      "role": "Solutions Architect"
-    },
-    "relatedSlugs": [
-      "shopify-vs-custom"
-    ],
-    "content": "## Decoupled Content Delivery\n\nSeparating the presentation layer from content authoring prevents database bottlenecks. In 2026, modern marketing engines favor headless architectures that compile directly to static edges."
-  },
-  {
     "slug": "interactive-3d-web-experiences",
     "title": "Implementing Three.js and WebGL Without Killing Mobile Performance",
     "excerpt": "Techniques for lazy-loading shaders, LOD mesh optimization, and battery-friendly frame pacing in browser 3D graphics.",
