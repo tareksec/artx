@@ -1,9 +1,9 @@
-name: Daily Scheduled Blog Publisher (12:00 AM BST)
+name: Daily Scheduled Blog Publisher (12:00 PM BST)
 
 on:
   schedule:
-    # 18:00 UTC = 12:00 AM (00:00) Bangladesh Standard Time (BST = UTC+6)
-    - cron: '0 18 * * *'
+    # 06:00 UTC = 12:00 PM (noon) Bangladesh Standard Time (BST = UTC+6)
+    - cron: '0 6 * * *'
   workflow_dispatch:
 
 permissions:
@@ -32,9 +32,9 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          if [ -n "$(git status --porcelain src/content/)" ]; then
-            git add src/content/
-            git commit -m "chore(blog): publish daily post"
+          if [ -n "$(git status --porcelain src/content/ articles/)" ]; then
+            git add src/content/ articles/
+            git commit -m "chore(blog): publish daily article at 12:00 PM BST [skip ci]"
             git push origin HEAD:${{ github.ref_name }}
             echo "Successfully committed and pushed daily published article."
           else

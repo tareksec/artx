@@ -10,6 +10,8 @@ const QUEUE_FILE = path.join(ROOT_DIR, 'src', 'content', 'blog-queue.json')
 const BLOG_POSTS_FILE = path.join(ROOT_DIR, 'src', 'content', 'blog-posts.ts')
 const SITE_FILE = path.join(ROOT_DIR, 'src', 'content', 'site.ts')
 const HISTORY_FILE = path.join(ROOT_DIR, 'src', 'content', 'publish-history.json')
+const PENDING_DIR = path.join(ROOT_DIR, 'articles', 'pending')
+const PUBLISHED_DIR = path.join(ROOT_DIR, 'articles', 'published')
 
 if (!fs.existsSync(QUEUE_FILE)) {
   console.log('No blog queue file found.')
@@ -51,10 +53,22 @@ if (fs.existsSync(targetPostFile)) {
   }
 }
 
-// 3. Save remaining queue
+// 3. Move markdown file from articles/pending to articles/published (if present)
+if (!fs.existsSync(PUBLISHED_DIR)) {
+  fs.mkdirSync(PUBLISHED_DIR, { recursive: true })
+}
+const pendingMdFile = path.join(PENDING_DIR, `${postToPublish.slug}.md`)
+const publishedMdFile = path.join(PUBLISHED_DIR, `${postToPublish.slug}.md`)
+
+if (fs.existsSync(pendingMdFile)) {
+  fs.renameSync(pendingMdFile, publishedMdFile)
+  console.log(`Moved ${postToPublish.slug}.md from articles/pending to articles/published`)
+}
+
+// 4. Save remaining queue
 fs.writeFileSync(QUEUE_FILE, JSON.stringify(queue, null, 2), 'utf8')
 
-// 4. Update history
+// 5. Update history
 let history = []
 if (fs.existsSync(HISTORY_FILE)) {
   try {
