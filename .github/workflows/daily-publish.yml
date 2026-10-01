@@ -1,4 +1,4 @@
-﻿name: Daily Scheduled Blog Publisher (12:00 AM BST)
+name: Daily Scheduled Blog Publisher (12:00 AM BST)
 
 on:
   schedule:
@@ -34,7 +34,7 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           if [ -n "$(git status --porcelain src/content/)" ]; then
             git add src/content/
-            git commit -m "chore(blog): publish daily post [skip ci]"
+            git commit -m "chore(blog): publish daily post"
             git push origin HEAD:${{ github.ref_name }}
             echo "Successfully committed and pushed daily published article."
           else

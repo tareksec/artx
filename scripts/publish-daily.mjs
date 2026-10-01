@@ -1,4 +1,4 @@
-﻿import fs from 'fs'
+import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
@@ -7,6 +7,7 @@ const __dirname = path.dirname(__filename)
 
 const ROOT_DIR = path.resolve(__dirname, '..')
 const QUEUE_FILE = path.join(ROOT_DIR, 'src', 'content', 'blog-queue.json')
+const BLOG_POSTS_FILE = path.join(ROOT_DIR, 'src', 'content', 'blog-posts.ts')
 const SITE_FILE = path.join(ROOT_DIR, 'src', 'content', 'site.ts')
 const HISTORY_FILE = path.join(ROOT_DIR, 'src', 'content', 'publish-history.json')
 
@@ -34,18 +35,19 @@ console.log(`Publishing 1 post for ArtX: ${postToPublish.title} (${postToPublish
 // Update post date to current ISO date
 postToPublish.date = new Date().toISOString().split('T')[0]
 
-// 2. Insert into site.ts blogPosts array
-if (fs.existsSync(SITE_FILE)) {
-  const siteContent = fs.readFileSync(SITE_FILE, 'utf8')
+// 2. Insert into blogPosts array in blog-posts.ts (or site.ts fallback)
+const targetPostFile = fs.existsSync(BLOG_POSTS_FILE) ? BLOG_POSTS_FILE : SITE_FILE
+if (fs.existsSync(targetPostFile)) {
+  const content = fs.readFileSync(targetPostFile, 'utf8')
   const marker = 'export const blogPosts: BlogPost[] = ['
   
-  if (siteContent.includes(marker)) {
+  if (content.includes(marker)) {
     const postSnippet = '  ' + JSON.stringify(postToPublish, null, 2).replace(/\n/g, '\n  ') + ',\n'
-    const updatedContent = siteContent.replace(marker, marker + '\n' + postSnippet)
-    fs.writeFileSync(SITE_FILE, updatedContent, 'utf8')
-    console.log(`Appended ${postToPublish.slug} to blogPosts in site.ts`)
+    const updatedContent = content.replace(marker, marker + '\n' + postSnippet)
+    fs.writeFileSync(targetPostFile, updatedContent, 'utf8')
+    console.log(`Appended ${postToPublish.slug} to blogPosts in ${path.basename(targetPostFile)}`)
   } else {
-    console.warn('Could not locate blogPosts marker in site.ts')
+    console.warn(`Could not locate blogPosts marker in ${path.basename(targetPostFile)}`)
   }
 }
 
