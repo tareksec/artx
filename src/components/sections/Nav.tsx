@@ -20,6 +20,7 @@ import {
   Mail,
   Phone,
   ArrowUpRight,
+  FolderTree,
 } from "lucide-react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { GlassDock, type DockItem } from "@/components/ui/glass-dock";
@@ -92,6 +93,13 @@ export function Nav() {
       description: language === "bn" ? "GEO ও অপ্টিমাইজেশন সুবিধা" : "GEO, AI search & speed advantage",
       icon: Zap,
       highlight: true,
+    },
+    {
+      to: "/workproof",
+      label: t.nav.workproof,
+      description: language === "bn" ? "লাইভ কোডবেস ও প্রজেক্ট আর্কিটেকচার" : "Live codebase & project architectures",
+      icon: FolderTree,
+      badge: language === "bn" ? "নতুন" : "Proof",
     },
     {
       to: "/concepts",
@@ -493,6 +501,7 @@ export function Nav() {
                   { to: "/blog", label: t.nav.blog, icon: BookOpen },
                   { to: "/about", label: t.nav.about, icon: Users },
                   { to: "/why-us", label: t.nav.whyUs, icon: Zap, highlight: true },
+                  { to: "/workproof", label: t.nav.workproof, icon: FolderTree, highlight: true },
                   { to: "/concepts", label: t.nav.concepts, icon: Compass },
                   { to: "/testimonials", label: t.nav.testimonials, icon: MessageSquare },
                   { to: "/faq", label: t.nav.faq, icon: HelpCircle },

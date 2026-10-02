@@ -26,6 +26,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as WhyUsRouteImport } from './routes/why-us'
 import { Route as WorkRouteImport } from './routes/work'
+import { Route as WorkproofRouteImport } from './routes/workproof'
 import { Route as BlogSlugRouteImport } from './routes/blog_.$slug'
 import { Route as ConceptsSlugRouteImport } from './routes/concepts_.$slug'
 import { Route as LocationSlugRouteImport } from './routes/location_.$slug'
@@ -117,6 +118,11 @@ const WorkRoute = WorkRouteImport.update({
   path: '/work',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkproofRoute = WorkproofRouteImport.update({
+  id: '/workproof',
+  path: '/workproof',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog_/$slug',
   path: '/blog/$slug',
@@ -161,6 +167,7 @@ export interface FileRoutesByFullPath {
   '/testimonials': typeof TestimonialsRoute
   '/why-us': typeof WhyUsRoute
   '/work': typeof WorkRoute
+  '/workproof': typeof WorkproofRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/concepts/$slug': typeof ConceptsSlugRoute
   '/location/$slug': typeof LocationSlugRoute
@@ -185,6 +192,7 @@ export interface FileRoutesByTo {
   '/testimonials': typeof TestimonialsRoute
   '/why-us': typeof WhyUsRoute
   '/work': typeof WorkRoute
+  '/workproof': typeof WorkproofRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/concepts/$slug': typeof ConceptsSlugRoute
   '/location/$slug': typeof LocationSlugRoute
@@ -210,6 +218,7 @@ export interface FileRoutesById {
   '/testimonials': typeof TestimonialsRoute
   '/why-us': typeof WhyUsRoute
   '/work': typeof WorkRoute
+  '/workproof': typeof WorkproofRoute
   '/blog_/$slug': typeof BlogSlugRoute
   '/concepts_/$slug': typeof ConceptsSlugRoute
   '/location_/$slug': typeof LocationSlugRoute
@@ -236,6 +245,7 @@ export interface FileRouteTypes {
     | '/testimonials'
     | '/why-us'
     | '/work'
+    | '/workproof'
     | '/blog/$slug'
     | '/concepts/$slug'
     | '/location/$slug'
@@ -260,6 +270,7 @@ export interface FileRouteTypes {
     | '/testimonials'
     | '/why-us'
     | '/work'
+    | '/workproof'
     | '/blog/$slug'
     | '/concepts/$slug'
     | '/location/$slug'
@@ -284,6 +295,7 @@ export interface FileRouteTypes {
     | '/testimonials'
     | '/why-us'
     | '/work'
+    | '/workproof'
     | '/blog_/$slug'
     | '/concepts_/$slug'
     | '/location_/$slug'
@@ -309,6 +321,7 @@ export interface RootRouteChildren {
   TestimonialsRoute: typeof TestimonialsRoute
   WhyUsRoute: typeof WhyUsRoute
   WorkRoute: typeof WorkRoute
+  WorkproofRoute: typeof WorkproofRoute
   BlogSlugRoute: typeof BlogSlugRoute
   ConceptsSlugRoute: typeof ConceptsSlugRoute
   LocationSlugRoute: typeof LocationSlugRoute
@@ -437,6 +450,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/workproof': {
+      id: '/workproof'
+      path: '/workproof'
+      fullPath: '/workproof'
+      preLoaderRoute: typeof WorkproofRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog_/$slug': {
       id: '/blog_/$slug'
       path: '/blog/$slug'
@@ -493,6 +513,7 @@ const rootRouteChildren: RootRouteChildren = {
   TestimonialsRoute: TestimonialsRoute,
   WhyUsRoute: WhyUsRoute,
   WorkRoute: WorkRoute,
+  WorkproofRoute: WorkproofRoute,
   BlogSlugRoute: BlogSlugRoute,
   ConceptsSlugRoute: ConceptsSlugRoute,
   LocationSlugRoute: LocationSlugRoute,
