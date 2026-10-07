@@ -15,6 +15,7 @@ import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvide
 import { LanguageProvider } from "@/components/providers/LanguageProvider";
 import { Nav } from "@/components/sections/Nav";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
+import { SupporterChat } from "@/components/SupporterChat";
 
 function NotFoundComponent() {
   return (
@@ -309,6 +310,7 @@ function RootComponent() {
           <main suppressHydrationWarning>
             <Outlet />
           </main>
+          <SupporterChat />
         </SmoothScrollProvider>
       </LanguageProvider>
     </QueryClientProvider>
