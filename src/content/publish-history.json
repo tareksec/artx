@@ -88,5 +88,11 @@
     "title": "Headless WordPress with React & Next.js: The Ultimate High-Performance Stack",
     "publishedAt": "2026-10-06T12:59:02.405Z",
     "remainingInQueue": 14
+  },
+  {
+    "slug": "interactive-3d-web-experiences",
+    "title": "Implementing Three.js and WebGL on Modern Websites Without Killing Mobile Performance",
+    "publishedAt": "2026-10-07T12:53:14.774Z",
+    "remainingInQueue": 13
   }
 ]
