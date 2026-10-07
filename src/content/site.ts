@@ -144,12 +144,12 @@ export const heroContent = {
   credibility:
     "10 years in business · Serving SaaS, e-commerce, hospitality & finance teams across 4 continents",
   body:
-    "ArtX is an independent studio designing, building, and ranking standout digital products for brands that refuse to blend in.",
+    "ArtX Dev (artxdev.tech) is an independent studio designing, building, and ranking standout digital products for brands that refuse to blend in.",
   primaryCta: { label: "Get Started", to: "/contact" as const },
   secondaryCta: { label: "View selected work", to: "/work" as const },
   image: {
     src: heroCollage,
-    alt: "Torn paper collage illustrating ArtX as a creative web design studio",
+    alt: "Torn paper collage illustrating ArtX Dev as a creative web design studio",
   },
 };
 
@@ -202,9 +202,9 @@ export const serviceDetails: ServiceDetail[] = [
     d: "Custom online storefronts engineered for high conversions, fast mobile checkout, and local MFS payments.",
     img: w1,
     valueProp: "Custom e-commerce website design in Bangladesh with instant bKash/Nagad checkout, mobile speed optimization, and courier tracking integration.",
-    seoTitle: "E-Commerce Website Design Bangladesh | Custom Online Stores",
-    metaDescription: "Build high-converting online stores with custom e-commerce website design in Bangladesh. Fast checkout, bKash/Nagad integration & SEO ready. Get a quote!",
-    targetKeyword: "e-commerce website design Bangladesh",
+    seoTitle: "ArtX Dev E-Commerce Website Design | Custom Stores Bangladesh",
+    metaDescription: "Build high-converting online stores with ArtX Dev in Bangladesh. Instant bKash/Nagad checkout, courier API integration & SEO ready. Get a quote from ArtX Dev!",
+    targetKeyword: "artx dev ecommerce",
     deliverables: [
       "Custom responsive storefront UI/UX designed in Figma",
       "Instant WhatsApp & Mobile Financial Service (MFS) Checkout",
@@ -269,9 +269,9 @@ export const serviceDetails: ServiceDetail[] = [
     d: "Custom, lightweight WordPress development with zero plugin bloat, rock-solid security, and top PageSpeed scores.",
     img: sDev,
     valueProp: "Professional WordPress development in Bangladesh delivering tailored themes, ACF customization, and guaranteed Core Web Vitals performance.",
-    seoTitle: "WordPress Development Bangladesh | Custom Themes & Speed",
-    metaDescription: "Professional WordPress development in Bangladesh. Custom themes, ACF, WooCommerce, security hardening & lightning-fast Core Web Vitals. Contact ArtX today!",
-    targetKeyword: "WordPress development Bangladesh",
+    seoTitle: "ArtX Dev WordPress Development | Custom Themes Bangladesh",
+    metaDescription: "Professional WordPress development in Bangladesh by ArtX Dev. Custom themes, ACF, WooCommerce, security hardening & 95+ PageSpeed. Call ArtX Dev!",
+    targetKeyword: "artx dev wordpress",
     deliverables: [
       "Custom WordPress theme development from scratch (no bloated page builders)",
       "Advanced Custom Fields (ACF) architecture for effortless content updates",
@@ -306,12 +306,12 @@ export const serviceDetails: ServiceDetail[] = [
     ],
     faqs: [
       {
-        q: "Why should I choose custom WordPress development over ready-made themes?",
-        a: "Ready-made themes from marketplaces are bloated with hundreds of unused features, slow plugins, and security vulnerabilities. Custom WordPress development delivers clean code built specifically for your business, resulting in sub-2s load times, higher Google rankings, and bulletproof security.",
+        q: "Why should I choose ArtX Dev for custom WordPress development?",
+        a: "ArtX Dev delivers clean, bespoke code built specifically for your business, resulting in sub-2s load times, higher Google rankings, and bulletproof security backed by our partner Techvrs.",
       },
       {
         q: "How much does professional WordPress development cost in Bangladesh?",
-        a: "Custom WordPress websites in Bangladesh range from ৳6,500 for small business sites to ৳45,000+ for complex corporate portals. ArtX offers transparent packages starting at ৳6,500 with custom admin dashboards included.",
+        a: "Custom WordPress websites in Bangladesh range from ৳6,500 for small business sites to ৳45,000+ for complex corporate portals. ArtX Dev offers transparent packages starting at ৳6,500 with custom admin dashboards included.",
       },
       {
         q: "Can you fix and speed up my existing slow WordPress website?",
@@ -336,9 +336,9 @@ export const serviceDetails: ServiceDetail[] = [
     d: "Editorial, high-converting product interfaces, landing pages, and interactive design systems for tech startups.",
     img: sDesign,
     valueProp: "A specialized SaaS website design studio building high-converting landing pages, interactive product demos, and scalable design systems.",
-    seoTitle: "SaaS Website Design Studio | High-Converting B2B UI/UX",
-    metaDescription: "ArtX is a specialized SaaS website design studio crafting high-converting landing pages, interactive product demos & design systems for B2B brands. Hire us!",
-    targetKeyword: "SaaS website design studio",
+    seoTitle: "ArtX Dev SaaS Website Design | High-Converting B2B UI/UX",
+    metaDescription: "ArtX Dev is a specialized SaaS website design studio crafting high-converting landing pages, interactive product demos & design systems for B2B brands.",
+    targetKeyword: "artx dev saas",
     deliverables: [
       "High-converting B2B SaaS landing page architecture",
       "Interactive product UI mockups and animated feature demos",
@@ -373,16 +373,16 @@ export const serviceDetails: ServiceDetail[] = [
     ],
     faqs: [
       {
-        q: "What makes ArtX different from traditional web design agencies for SaaS?",
-        a: "ArtX specializes in conversion-driven product marketing. We don't just make pretty pages; we design high-converting value propositions, interactive product demonstrations, and clear pricing tables that lower CAC and increase trial signups.",
+        q: "What makes ArtX Dev different from traditional web design agencies for SaaS?",
+        a: "ArtX Dev specializes in conversion-driven product marketing. We don't just make pretty pages; we design high-converting value propositions, interactive product demonstrations, and clear pricing tables that lower CAC and increase trial signups.",
       },
       {
         q: "Do you design in Figma and provide design tokens for our development team?",
         a: "Yes. All SaaS deliverables include structured Figma files with responsive auto-layout components, color/typography tokens, and interactive prototypes ready for seamless developer handoff.",
       },
       {
-        q: "Can ArtX also code the frontend of our SaaS website?",
-        a: "Yes. We are a full-service design and engineering studio. We build production-ready frontends using React, Next.js, or TanStack Start, ensuring instant page transitions and Core Web Vitals < 2.5s.",
+        q: "Can ArtX Dev also code the frontend of our SaaS website?",
+        a: "Yes. ArtX Dev is a full-service design and engineering studio. We build production-ready frontends using React, Next.js, or TanStack Start, ensuring instant page transitions and Core Web Vitals < 2.5s.",
       },
       {
         q: "How do you optimize SaaS pricing pages for conversions?",
@@ -403,9 +403,9 @@ export const serviceDetails: ServiceDetail[] = [
     d: "Technical audits, local Google search domination, content architecture, and Generative Engine Optimization (GEO).",
     img: sSeo,
     valueProp: "Data-driven SEO services in Bangladesh that drive compounding organic traffic, local Dhaka Google rankings, and AI search citations.",
-    seoTitle: "SEO Services Bangladesh | Technical & Local SEO Agency",
-    metaDescription: "Data-driven SEO services in Bangladesh. Technical audits, local SEO for Dhaka, content strategy & GEO AI engine optimization that drives organic revenue.",
-    targetKeyword: "SEO services Bangladesh",
+    seoTitle: "ArtX Dev SEO Services | Technical & Local SEO Agency Bangladesh",
+    metaDescription: "Data-driven SEO services in Bangladesh by ArtX Dev. Technical audits, local SEO for Dhaka, content strategy & GEO AI engine optimization that drives organic revenue.",
+    targetKeyword: "artx dev seo",
     deliverables: [
       "200+ checkpoint technical SEO audit (crawling, indexing, Core Web Vitals)",
       "Local SEO optimization for Dhaka & Bangladesh (Google Business Profile, NAP)",

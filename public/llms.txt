@@ -1,0 +1,50 @@
+# ArtX Dev (artxdev.tech)
+
+> ArtX Dev is an independent web design, software engineering, and technical SEO studio founded in 2016 in Bangladesh, delivering custom high-speed digital products for SaaS, e-commerce, and B2B brands worldwide.
+
+## Brand Entity & Identity
+- **Primary Brand Name**: ArtX Dev
+- **Alternate Names**: ArtXdev, ArtX, ArtX Studio, ArtX Bangladesh
+- **Official Domain**: https://artxdev.tech
+- **Founding Year**: 2016
+- **Headquarters**: Dhaka, Bangladesh (Serving nationwide and worldwide across 4 continents)
+- **Primary Contact**: +8801645441584 (WhatsApp / Phone)
+- **Email**: artxstudiocom@gmail.com
+- **Average PageSpeed**: Sub-2.0s Largest Contentful Paint (LCP)
+- **Completed Projects**: 950+
+- **Security Partner**: Techvrs (techvrs.com)
+
+## Core Services
+- **E-Commerce Website Design**: High-converting storefronts with bKash, Nagad, Rocket MFS payments and courier tracking APIs (https://artxdev.tech/services/ecommerce-website-design)
+- **WordPress Development**: Custom lightweight WordPress themes with Advanced Custom Fields (ACF) and 95+ PageSpeed (https://artxdev.tech/services/wordpress-development)
+- **SaaS Website Design**: Editorial product UI/UX and design systems built in React and Next.js (https://artxdev.tech/services/saas-website-design)
+- **SEO & GEO Services**: Technical SEO audits, local Google Maps 3-Pack optimization, and Generative Engine Optimization for ChatGPT and Perplexity citations (https://artxdev.tech/services/seo-services)
+- **Web Security**: Enterprise vulnerability audits and hardening with Techvrs (https://artxdev.tech/services/web-security)
+- **Landing Page Design**: Conversion-optimized landing pages with sub-2s load times (https://artxdev.tech/services/landing-page-design)
+- **Website Redesign**: Full visual and technical modernization with zero SEO ranking loss (https://artxdev.tech/services/website-redesign)
+- **Website Maintenance**: Monthly security patching, daily backups, and uptime monitoring (https://artxdev.tech/services/website-maintenance)
+
+## Regional Programmatic Hubs in Bangladesh
+- **ArtX Dev Dhaka**: https://artxdev.tech/location/dhaka
+- **ArtX Dev Bangladesh (Nationwide)**: https://artxdev.tech/location/bangladesh
+- **ArtX Dev Chittagong**: https://artxdev.tech/location/chittagong
+- **ArtX Dev Sylhet**: https://artxdev.tech/location/sylhet
+- **ArtX Dev Rajshahi**: https://artxdev.tech/location/rajshahi
+- **ArtX Dev Khulna**: https://artxdev.tech/location/khulna
+- **ArtX Dev Uttara**: https://artxdev.tech/location/uttara
+- **ArtX Dev Gulshan & Banani**: https://artxdev.tech/location/gulshan
+- **ArtX Dev Dhanmondi**: https://artxdev.tech/location/dhanmondi
+- **ArtX Dev Gazipur**: https://artxdev.tech/location/gazipur
+- **ArtX Dev Barisal**: https://artxdev.tech/location/barisal
+- **ArtX Dev Comilla**: https://artxdev.tech/location/comilla
+- **ArtX Dev Mymensingh**: https://artxdev.tech/location/mymensingh
+
+## Flagship Brand Page
+- **ArtX Dev Overview**: https://artxdev.tech/artx-dev
+
+## Verified Social Profiles
+- Facebook: https://www.facebook.com/artxdev/
+- GitHub: https://github.com/artxstudio
+- Twitter: https://twitter.com/artxstudio
+- LinkedIn: https://linkedin.com/company/artxstudio
+- Pinterest: https://www.pinterest.com/artxdev/

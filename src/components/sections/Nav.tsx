@@ -196,10 +196,11 @@ export function Nav() {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }
             }}
-            className="px-3 py-1 text-sm font-bold tracking-tight hover:opacity-85 transition-opacity"
-            aria-label="ArtX Home"
+            className="px-3 py-1 text-sm font-bold tracking-tight hover:opacity-85 transition-opacity inline-flex items-center gap-1"
+            aria-label="ArtX Dev Home"
           >
-            Art<span className="text-accent">X</span>
+            <span>Art<span className="text-accent">X</span></span>
+            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-accent bg-accent/10 px-1.5 py-0.5 rounded-sm">dev</span>
           </Link>
 
           <span className="mx-1 h-4 w-px bg-border/80" />
@@ -373,10 +374,11 @@ export function Nav() {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }
             }}
-            className="px-2 py-1 text-sm font-bold tracking-tight"
-            aria-label="ArtX Home"
+            className="px-2 py-1 text-sm font-bold tracking-tight inline-flex items-center gap-1"
+            aria-label="ArtX Dev Home"
           >
-            Art<span className="text-accent">X</span>
+            <span>Art<span className="text-accent">X</span></span>
+            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-accent bg-accent/10 px-1.5 py-0.5 rounded-sm">dev</span>
           </Link>
 
           <div className="flex items-center gap-1.5">

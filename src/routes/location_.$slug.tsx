@@ -16,10 +16,23 @@ export const Route = createFileRoute("/location_/$slug")({
 
     const localBusinessSchema = {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": `${canonicalUrl}#localbusiness`,
-      name: "ArtX Studio",
-      alternateName: "ArtXdev",
+      name: `ArtX Dev — ${loc.city}`,
+      alternateName: [
+        "artx dev",
+        "ArtX Dev",
+        "ArtXdev",
+        loc.targetKeyword,
+        `ArtX Dev ${loc.city}`,
+        `ArtX Dev ${loc.city} Bangladesh`,
+      ],
+      brand: {
+        "@type": "Brand",
+        name: "ArtX Dev",
+        alternateName: "artx dev",
+        url: "https://artxdev.tech",
+      },
       image: "https://artxdev.tech/favicon.ico",
       url: canonicalUrl,
       telephone: "+8801645441584",
@@ -29,9 +42,9 @@ export const Route = createFileRoute("/location_/$slug")({
       paymentAccepted: "Cash, Credit Card, bKash, Nagad, Bank Transfer",
       address: {
         "@type": "PostalAddress",
-        streetAddress: loc.slug === "dhaka" ? "Gulshan / Banani, Dhaka" : "Dhaka, Bangladesh",
-        addressLocality: "Dhaka",
-        addressRegion: "Dhaka",
+        streetAddress: loc.slug === "dhaka" ? "Gulshan / Banani, Dhaka" : `${loc.city}, Bangladesh`,
+        addressLocality: loc.city,
+        addressRegion: "Bangladesh",
         postalCode: "1212",
         addressCountry: "BD",
       },
@@ -54,6 +67,7 @@ export const Route = createFileRoute("/location_/$slug")({
         "https://www.facebook.com/artxdev/",
         "https://twitter.com/artxstudio",
         "https://linkedin.com/company/artxstudio",
+        "https://github.com/artxstudio",
       ],
     };
 
@@ -70,13 +84,13 @@ export const Route = createFileRoute("/location_/$slug")({
         {
           "@type": "ListItem",
           position: 2,
-          name: "Locations",
+          name: "ArtX Dev Locations",
           item: "https://artxdev.tech/location/bangladesh",
         },
         {
           "@type": "ListItem",
           position: 3,
-          name: loc.city,
+          name: `ArtX Dev ${loc.city}`,
           item: canonicalUrl,
         },
       ],
@@ -99,6 +113,10 @@ export const Route = createFileRoute("/location_/$slug")({
       meta: [
         { title: seoTitle },
         { name: "description", content: metaDescription },
+        {
+          name: "keywords",
+          content: `artx dev, ${loc.targetKeyword}, artx dev ${loc.city.toLowerCase()}, artx dev bangladesh, artx dev web design, artxdev.tech, web design agency ${loc.city.toLowerCase()}`,
+        },
         { property: "og:title", content: seoTitle },
         { property: "og:description", content: metaDescription },
         { property: "og:url", content: canonicalUrl },
@@ -127,14 +145,14 @@ export const Route = createFileRoute("/location_/$slug")({
   loader: ({ params }) => {
     const loc = locationDetails.find((l) => l.slug === params.slug);
     if (!loc) throw notFound();
-    const otherLocation = locationDetails.find((l) => l.slug !== loc.slug);
-    return { loc, otherLocation };
+    const otherLocations = locationDetails.filter((l) => l.slug !== loc.slug);
+    return { loc, otherLocations };
   },
   component: LocationPage,
 });
 
 function LocationPage() {
-  const { loc, otherLocation } = Route.useLoaderData();
+  const { loc, otherLocations } = Route.useLoaderData();
 
   return (
     <>
@@ -419,32 +437,46 @@ function LocationPage() {
         </div>
       </section>
 
-      {/* Cross link to other location & guides */}
+      {/* Cross link to other ArtX Dev locations & guides */}
       <section className="px-6 py-16 bg-card border-t border-border">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 md:grid-cols-3">
-            {otherLocation && (
-              <div className="rounded-2xl border border-border p-6 bg-background">
-                <div className="text-xs font-semibold uppercase tracking-wider text-accent mb-2">Also Explore</div>
-                <h3 className="font-semibold text-lg mb-1">{otherLocation.city} Services</h3>
-                <p className="text-xs text-muted-foreground mb-4">Discover our specialized web development solutions across {otherLocation.city}.</p>
-                <Link to={`/location/${otherLocation.slug}`} className="text-xs font-semibold text-accent flex items-center gap-1 hover:underline">
-                  View {otherLocation.city} page <ArrowRight className="h-3 w-3" />
-                </Link>
-              </div>
-            )}
-            <div className="rounded-2xl border border-border p-6 bg-background">
-              <div className="text-xs font-semibold uppercase tracking-wider text-accent mb-2">Pricing Guide</div>
-              <h3 className="font-semibold text-lg mb-1">Website Costs in Bangladesh</h3>
-              <p className="text-xs text-muted-foreground mb-4">Read our complete 2025 breakdown of website design and development prices in BDT.</p>
+          <div className="mb-8">
+            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-2">ArtX Dev Nationwide Network</div>
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Explore ArtX Dev across Bangladesh</h2>
+            <p className="text-xs text-muted-foreground mt-1">High-performance custom web development and SEO hubs engineered for every commercial center.</p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-8">
+            {otherLocations && otherLocations.slice(0, 8).map((other) => (
+              <Link
+                key={other.slug}
+                to={`/location/${other.slug}`}
+                className="group rounded-2xl border border-border p-4 bg-background transition-all hover:border-accent/50 hover:shadow-sm"
+              >
+                <div className="flex items-center justify-between text-xs font-semibold text-accent mb-1">
+                  <span>ArtX Dev {other.city}</span>
+                  <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+                </div>
+                <p className="text-[11px] text-muted-foreground line-clamp-2">
+                  {other.subheading}
+                </p>
+              </Link>
+            ))}
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2 pt-4 border-t border-border/60">
+            <div className="rounded-2xl border border-border p-5 bg-background">
+              <div className="text-xs font-semibold uppercase tracking-wider text-accent mb-1">Pricing Guide</div>
+              <h3 className="font-semibold text-base mb-1">Website Costs in Bangladesh (BDT)</h3>
+              <p className="text-xs text-muted-foreground mb-3">Read our complete breakdown of website design and development prices in Bangladeshi Taka.</p>
               <Link to="/blog/how-much-does-a-website-cost-in-bangladesh-2025" className="text-xs font-semibold text-accent flex items-center gap-1 hover:underline">
                 Read price guide <ArrowRight className="h-3 w-3" />
               </Link>
             </div>
-            <div className="rounded-2xl border border-border p-6 bg-background">
-              <div className="text-xs font-semibold uppercase tracking-wider text-accent mb-2">Agency Comparison</div>
-              <h3 className="font-semibold text-lg mb-1">Top 10 Web Agencies</h3>
-              <p className="text-xs text-muted-foreground mb-4">Compare top web design companies in Bangladesh for craft, speed, and client reviews.</p>
+            <div className="rounded-2xl border border-border p-5 bg-background">
+              <div className="text-xs font-semibold uppercase tracking-wider text-accent mb-1">Agency Comparison</div>
+              <h3 className="font-semibold text-base mb-1">Top Web Design Studios</h3>
+              <p className="text-xs text-muted-foreground mb-3">Compare top web design companies in Bangladesh for craft, speed, and client reviews.</p>
               <Link to="/blog/best-web-design-agencies-in-bangladesh-2025" className="text-xs font-semibold text-accent flex items-center gap-1 hover:underline">
                 Read ranking review <ArrowRight className="h-3 w-3" />
               </Link>

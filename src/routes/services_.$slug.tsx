@@ -10,10 +10,10 @@ export const Route = createFileRoute("/services_/$slug")({
     const svc = serviceDetails.find((s) => s.slug === params.slug);
     if (!svc) return {};
 
-    const defaultTitle = `${svc.t} | ArtX Studio`;
+    const defaultTitle = `ArtX Dev — ${svc.t} | artxdev.tech`;
     const seoTitle = (svc.seoTitle || defaultTitle).slice(0, 60);
 
-    const defaultDesc = `Professional ${svc.t.toLowerCase()} by ArtX. Custom design, lightning speed, and proven rankings. Get a free proposal today!`;
+    const defaultDesc = `Professional ${svc.t.toLowerCase()} by ArtX Dev. Custom design, sub-second speed, and proven rankings. Get a proposal from ArtX Dev!`;
     const metaDescription = (svc.metaDescription || defaultDesc).slice(0, 155);
 
     const canonicalUrl = `https://artxdev.tech/services/${svc.slug}`;
@@ -26,10 +26,16 @@ export const Route = createFileRoute("/services_/$slug")({
       serviceType: svc.t,
       description: svc.valueProp,
       url: canonicalUrl,
+      brand: {
+        "@type": "Brand",
+        name: "ArtX Dev",
+        alternateName: "artx dev",
+      },
       provider: {
-        "@type": "LocalBusiness",
+        "@type": ["LocalBusiness", "ProfessionalService"],
         "@id": "https://artxdev.tech/#localbusiness",
-        name: "ArtX Studio",
+        name: "ArtX Dev",
+        alternateName: ["artx dev", "ArtXdev", "ArtX", "ArtX Studio"],
         telephone: "+8801645441584",
         url: "https://artxdev.tech",
         address: {
@@ -118,6 +124,10 @@ export const Route = createFileRoute("/services_/$slug")({
       meta: [
         { title: seoTitle },
         { name: "description", content: metaDescription },
+        {
+          name: "keywords",
+          content: `artx dev, ${svc.targetKeyword || svc.t.toLowerCase()}, artx dev ${svc.slug}, artx dev web design, artx dev bangladesh, artxdev.tech`,
+        },
         { property: "og:title", content: seoTitle },
         { property: "og:description", content: metaDescription },
         { property: "og:url", content: canonicalUrl },

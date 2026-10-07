@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as ArtxDevRouteImport } from './routes/artx-dev'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as ConceptsRouteImport } from './routes/concepts'
@@ -40,6 +41,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArtxDevRoute = ArtxDevRouteImport.update({
+  id: '/artx-dev',
+  path: '/artx-dev',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogRoute = BlogRouteImport.update({
@@ -146,6 +152,7 @@ const WorkSlugRoute = WorkSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/artx-dev': typeof ArtxDevRoute
   '/blog': typeof BlogRoute
   '/careers': typeof CareersRoute
   '/concepts': typeof ConceptsRoute
@@ -170,6 +177,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/artx-dev': typeof ArtxDevRoute
   '/blog': typeof BlogRoute
   '/careers': typeof CareersRoute
   '/concepts': typeof ConceptsRoute
@@ -195,6 +203,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/artx-dev': typeof ArtxDevRoute
   '/blog': typeof BlogRoute
   '/careers': typeof CareersRoute
   '/concepts': typeof ConceptsRoute
@@ -221,6 +230,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/artx-dev'
     | '/blog'
     | '/careers'
     | '/concepts'
@@ -245,6 +255,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/artx-dev'
     | '/blog'
     | '/careers'
     | '/concepts'
@@ -269,6 +280,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/artx-dev'
     | '/blog'
     | '/careers'
     | '/concepts'
@@ -294,6 +306,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ArtxDevRoute: typeof ArtxDevRoute
   BlogRoute: typeof BlogRoute
   CareersRoute: typeof CareersRoute
   ConceptsRoute: typeof ConceptsRoute
@@ -330,6 +343,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/artx-dev': {
+      id: '/artx-dev'
+      path: '/artx-dev'
+      fullPath: '/artx-dev'
+      preLoaderRoute: typeof ArtxDevRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog': {
@@ -478,6 +498,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ArtxDevRoute: ArtxDevRoute,
   BlogRoute: BlogRoute,
   CareersRoute: CareersRoute,
   ConceptsRoute: ConceptsRoute,

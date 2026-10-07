@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useRef, useCallback, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, MessageCircle, Mail, Facebook } from "lucide-react";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
@@ -88,13 +89,16 @@ export function Footer() {
 
           <nav aria-label="Locations Navigation">
             <h3 className="mb-4 text-xs uppercase tracking-[0.2em] text-dark-foreground/50">
-              {language === "bn" ? "লোকেশন হাব" : "Locations"}
+              {language === "bn" ? "ArtX Dev হাব" : "ArtX Dev Hubs"}
             </h3>
-            <ul className="space-y-2 text-sm">
-              <li><Link to="/location/dhaka" className="hover:text-accent transition-colors">Web Design Dhaka</Link></li>
-              <li><Link to="/location/bangladesh" className="hover:text-accent transition-colors">Web Design Bangladesh</Link></li>
-              <li className="text-xs text-dark-foreground/50 pt-2">Gulshan · Banani · Uttara</li>
-              <li className="text-xs text-dark-foreground/50">Dhanmondi · Motijheel · Mirpur</li>
+            <ul className="space-y-1.5 text-xs">
+              <li><Link to="/artx-dev" className="text-accent font-medium hover:underline">→ ArtX Dev Overview</Link></li>
+              <li><Link to="/location/dhaka" className="hover:text-accent transition-colors">ArtX Dev Dhaka</Link></li>
+              <li><Link to="/location/bangladesh" className="hover:text-accent transition-colors">ArtX Dev Bangladesh</Link></li>
+              <li><Link to="/location/chittagong" className="hover:text-accent transition-colors">ArtX Dev Chittagong</Link></li>
+              <li><Link to="/location/sylhet" className="hover:text-accent transition-colors">ArtX Dev Sylhet</Link></li>
+              <li><Link to="/location/gulshan" className="hover:text-accent transition-colors">ArtX Dev Gulshan</Link></li>
+              <li><Link to="/location/uttara" className="hover:text-accent transition-colors">ArtX Dev Uttara</Link></li>
             </ul>
           </nav>
 
@@ -130,16 +134,257 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col items-start justify-between gap-4 border-t border-dark-foreground/15 pt-8 text-xs text-dark-foreground/50 sm:flex-row sm:items-center">
-          <div className="flex flex-wrap items-center gap-4">
-            <span>© {new Date().getFullYear()} ArtX (ArtXdev). {language === "bn" ? "সর্বস্বত্ব সংরক্ষিত।" : "All rights reserved."}</span>
-            <Link to="/privacy-policy" className="hover:text-accent underline underline-offset-4 transition-colors">
-              {language === "bn" ? "প্রাইভেসি পলিসি" : "Privacy Policy"}
-            </Link>
-          </div>
-          <p>{language === "bn" ? "ইন-হাউস ডিজাইন ও ডেভেলপকৃত।" : "Designed and built in-house."}</p>
-        </div>
+        {/* Visual Brand Showcase Card (Website Theme Adjusted + Interactive Hover Spotlight) */}
+        <FooterBrandCard language={language} />
       </ScrollReveal>
     </footer>
+  );
+}
+
+function FooterBrandCard({ language }: { language: string }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+
+  // Target coordinates
+  const targetCard = useRef({ x: 0, y: 0 });
+  const targetText = useRef({ x: 0, y: 0 });
+  // Interpolated smooth coordinates for butter-smooth 120fps physics
+  const currentCard = useRef({ x: 0, y: 0 });
+  const currentText = useRef({ x: 0, y: 0 });
+  const isHoveredRef = useRef(false);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    let animId: number;
+    const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+
+    const updateLoop = () => {
+      // Lerp smoothing factor for fluid motion and physical inertia
+      const factor = isHoveredRef.current ? 0.14 : 0.08;
+      currentCard.current.x = lerp(currentCard.current.x, targetCard.current.x, factor);
+      currentCard.current.y = lerp(currentCard.current.y, targetCard.current.y, factor);
+      currentText.current.x = lerp(currentText.current.x, targetText.current.x, factor);
+      currentText.current.y = lerp(currentText.current.y, targetText.current.y, factor);
+
+      const card = cardRef.current;
+      if (card) {
+        const rect = card.getBoundingClientRect();
+        const width = rect.width || 1;
+        const height = rect.height || 1;
+
+        // Subtle 3D perspective tilt reacting to cursor coordinates
+        const tiltX = isHoveredRef.current
+          ? ((currentCard.current.y / height) - 0.5) * -5.5
+          : 0;
+        const tiltY = isHoveredRef.current
+          ? ((currentCard.current.x / width) - 0.5) * 5.5
+          : 0;
+
+        card.style.setProperty("--mx", `${currentCard.current.x.toFixed(1)}px`);
+        card.style.setProperty("--my", `${currentCard.current.y.toFixed(1)}px`);
+        card.style.setProperty("--tx", `${currentText.current.x.toFixed(1)}px`);
+        card.style.setProperty("--ty", `${currentText.current.y.toFixed(1)}px`);
+        card.style.setProperty("--tilt-x", `${tiltX.toFixed(2)}deg`);
+        card.style.setProperty("--tilt-y", `${tiltY.toFixed(2)}deg`);
+      }
+
+      animId = requestAnimationFrame(updateLoop);
+    };
+
+    animId = requestAnimationFrame(updateLoop);
+    return () => cancelAnimationFrame(animId);
+  }, []);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (cardRef.current) {
+      const rect = cardRef.current.getBoundingClientRect();
+      targetCard.current = {
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      };
+    }
+    if (textRef.current) {
+      const textRect = textRef.current.getBoundingClientRect();
+      targetText.current = {
+        x: e.clientX - textRect.left,
+        y: e.clientY - textRect.top,
+      };
+    }
+  }, []);
+
+  const handleMouseEnter = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      isHoveredRef.current = true;
+      setIsHovered(true);
+      if (cardRef.current) {
+        const rect = cardRef.current.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        currentCard.current = { x, y };
+        targetCard.current = { x, y };
+      }
+      if (textRef.current) {
+        const textRect = textRef.current.getBoundingClientRect();
+        const tx = e.clientX - textRect.left;
+        const ty = e.clientY - textRect.top;
+        currentText.current = { x: tx, y: ty };
+        targetText.current = { x: tx, y: ty };
+      }
+    },
+    []
+  );
+
+  const handleMouseLeave = useCallback(() => {
+    isHoveredRef.current = false;
+    setIsHovered(false);
+    if (cardRef.current) {
+      const rect = cardRef.current.getBoundingClientRect();
+      targetCard.current = { x: rect.width / 2, y: rect.height / 2 };
+    }
+    if (textRef.current) {
+      const textRect = textRef.current.getBoundingClientRect();
+      targetText.current = { x: textRect.width / 2, y: textRect.height / 2 };
+    }
+  }, []);
+
+  return (
+    <div className="mt-14 sm:mt-20 [perspective:1200px]">
+      <div
+        ref={cardRef}
+        onMouseMove={handleMouseMove}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          transform: "rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateZ(0)",
+          transition: "transform 0.15s ease-out, border-color 0.4s ease",
+          transformStyle: "preserve-3d",
+        }}
+        className="group/card relative overflow-hidden rounded-[26px] sm:rounded-[40px] border border-white/[0.08] bg-[#070709] px-6 pt-6 pb-2 sm:px-10 sm:pt-8 sm:pb-3 shadow-2xl transition-all duration-500 hover:border-white/[0.18]"
+      >
+        {/* Subtle Ambient Breathing Aurora Background Glow */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-70"
+          style={{
+            background:
+              "radial-gradient(ellipse 85% 70% at 50% 90%, rgba(255, 69, 0, 0.16) 0%, rgba(234, 88, 12, 0.05) 50%, transparent 75%)",
+          }}
+        />
+
+        {/* Dynamic Specular Border Light Beam (lights up the border edge closest to mouse) */}
+        <div
+          className="pointer-events-none absolute -inset-[1px] rounded-[27px] sm:rounded-[41px] transition-opacity duration-300"
+          style={{
+            opacity: isHovered ? 1 : 0,
+            padding: "1px",
+            background: `radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 120, 50, 0.55) 0%, rgba(255, 69, 0, 0.18) 40%, transparent 75%)`,
+            WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+            WebkitMaskComposite: "xor",
+            maskComposite: "exclude",
+          }}
+        />
+
+        {/* Volumetric Smooth Hover Spotlight Beam */}
+        <div
+          className="pointer-events-none absolute inset-0 transition-opacity duration-400 ease-out"
+          style={{
+            opacity: isHovered ? 1 : 0,
+            background: `radial-gradient(550px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 87, 34, 0.22) 0%, rgba(255, 69, 0, 0.07) 45%, transparent 75%)`,
+          }}
+        />
+
+        {/* Top metadata row */}
+        <div className="relative z-10 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between text-[11px] sm:text-xs text-white/50 tracking-wide font-normal">
+          <span>
+            © {new Date().getFullYear()} ArtX Dev.{" "}
+            {language === "bn" ? "সর্বস্বত্ব সংরক্ষিত।" : "All rights reserved."}
+          </span>
+          <div className="flex flex-wrap items-center gap-3">
+            <Link
+              to="/privacy-policy"
+              className="hover:text-white/80 transition-colors underline underline-offset-4"
+            >
+              {language === "bn" ? "প্রাইভেসি পলিসি" : "Privacy Policy"}
+            </Link>
+            <span>·</span>
+            <span className="text-white/40">
+              Design by ArtX Dev · Powered by artxdev.tech
+            </span>
+          </div>
+        </div>
+
+        {/* Giant Typography Container (ARTX DEV) */}
+        <div
+          ref={textRef}
+          className="relative z-10 mt-6 sm:mt-10 mb-[-1.5%] flex justify-center items-center overflow-hidden select-none cursor-default [transform-style:preserve-3d]"
+        >
+          {/* Base Layer: Warm Flame & Ember vignette (darkened edges) */}
+          <span
+            className="block text-center font-black uppercase tracking-[-0.04em] leading-[0.84] text-[15.5vw] sm:text-[16vw] lg:text-[15.5vw] whitespace-nowrap transition-all duration-300"
+            style={{
+              backgroundImage:
+                "linear-gradient(90deg, #1f0601 0%, #471103 15%, #b43d0b 38%, #ff6b35 50%, #b43d0b 62%, #471103 85%, #1f0601 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              filter: "drop-shadow(0 0 35px rgba(255, 69, 0, 0.22))",
+              maskImage:
+                "linear-gradient(90deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0.25) 100%)",
+              WebkitMaskImage:
+                "linear-gradient(90deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0.25) 100%)",
+            }}
+          >
+            ARTX DEV
+          </span>
+
+          {/* Enlightened Layer: Ultra-radiant Molten Light centered at smooth cursor physics */}
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 flex justify-center items-center text-center font-black uppercase tracking-[-0.04em] leading-[0.84] text-[15.5vw] sm:text-[16vw] lg:text-[15.5vw] whitespace-nowrap transition-opacity duration-300"
+            style={{
+              opacity: isHovered ? 1 : 0,
+              backgroundImage:
+                "linear-gradient(100deg, #ff5722 0%, #ff8a50 20%, #ffffff 48%, #fff7ed 52%, #ff8a50 80%, #ff5722 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              filter:
+                "drop-shadow(0 0 20px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 45px rgba(255, 115, 55, 0.95)) drop-shadow(0 0 90px rgba(255, 69, 0, 0.75))",
+              maskImage: `radial-gradient(340px circle at var(--tx, 50%) var(--ty, 50%), black 0%, rgba(0,0,0,0.6) 45%, transparent 100%)`,
+              WebkitMaskImage: `radial-gradient(340px circle at var(--tx, 50%) var(--ty, 50%), black 0%, rgba(0,0,0,0.6) 45%, transparent 100%)`,
+            }}
+          >
+            ARTX DEV
+          </span>
+
+          {/* Floating Photon Glare / Optical Core at cursor position */}
+          <div
+            className="pointer-events-none absolute w-36 h-36 rounded-full blur-2xl transition-opacity duration-300 mix-blend-screen"
+            style={{
+              opacity: isHovered ? 0.75 : 0,
+              left: "var(--tx, 50%)",
+              top: "var(--ty, 50%)",
+              transform: "translate(-50%, -50%)",
+              background:
+                "radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 138, 80, 0.6) 40%, rgba(255, 69, 0, 0) 70%)",
+            }}
+          />
+        </div>
+      </div>
+
+      {/* Mirrored Floor Reflection below card with dynamic horizontal spotlight tracking */}
+      <div className="relative -mt-1 flex justify-center overflow-hidden h-7 sm:h-14 opacity-25 pointer-events-none select-none">
+        <span
+          className="block text-center font-black uppercase tracking-[-0.04em] leading-[0.84] text-[15.5vw] sm:text-[16vw] lg:text-[15.5vw] whitespace-nowrap scale-y-[-1] blur-[2.5px] transition-all duration-300"
+          style={{
+            backgroundImage:
+              "linear-gradient(90deg, #1f0601 0%, #471103 15%, #b43d0b 38%, #ff6b35 50%, #b43d0b 62%, #471103 85%, #1f0601 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            maskImage: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)",
+            WebkitMaskImage: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)",
+          }}
+        >
+          ARTX DEV
+        </span>
+      </div>
+    </div>
   );
 }

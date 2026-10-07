@@ -85,14 +85,14 @@ export function BrandPhilosophy() {
               <div className="sticky top-24 flex aspect-square flex-col justify-between rounded-3xl border border-dark-foreground/10 bg-gradient-to-br from-dark-foreground/[0.06] to-transparent p-8">
                 <div className="flex items-start justify-between">
                   <span className="text-xs uppercase tracking-[0.25em] text-dark-foreground/50">
-                    The ArtX Studio
+                    The ArtX Dev Studio
                   </span>
                   <RotatingAsterisk className="text-2xl text-accent" />
                 </div>
                 <div>
                   <div className="text-[22vw] leading-[0.85] tracking-[-0.06em] md:text-[10vw] lg:text-[7vw]">
                     the<br />
-                    <span className="text-accent">artx</span>
+                    <span className="text-accent">artx.dev</span>
                   </div>
                   <div className="mt-6 flex items-center justify-between text-xs uppercase tracking-[0.25em] text-dark-foreground/50">
                     <span>Est. 2016</span>

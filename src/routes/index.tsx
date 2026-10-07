@@ -11,14 +11,15 @@ import { Footer } from "@/components/sections/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => {
-    const seoTitle = "Web Design Agency Bangladesh & Custom Development | ArtX";
-    const metaDesc = "ArtX is a premier web design agency in Bangladesh crafting custom websites, SaaS interfaces & high-converting e-commerce stores. Get a free proposal today!";
+    const seoTitle = "ArtX Dev — Web Design & Development Agency Bangladesh | artxdev.tech";
+    const metaDesc = "ArtX Dev is Bangladesh's top web design & development studio. Crafting high-converting custom websites, SaaS products, e-commerce stores & SEO. Hire ArtX Dev!";
     const canonicalUrl = "https://artxdev.tech/";
 
     return {
       meta: [
         { title: seoTitle },
         { name: "description", content: metaDesc },
+        { name: "keywords", content: "artx dev, artx dev bangladesh, artx dev web design, artx dev studio, artx dev agency, artx dev dhaka, artxdev.tech" },
         { property: "og:title", content: seoTitle },
         { property: "og:description", content: metaDesc },
         { property: "og:url", content: canonicalUrl },
