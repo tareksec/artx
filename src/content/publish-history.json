@@ -28,5 +28,65 @@
     "title": "Beyond 12-Column Grids: Modern CSS Grid & Container Queries in Production",
     "publishedAt": "2026-09-27T20:50:03.834Z",
     "remainingInQueue": 5
+  },
+  {
+    "slug": "figma-to-react-design-systems",
+    "title": "Building Resilient Design Systems: Bridging the Gap Between Figma and React",
+    "publishedAt": "2026-09-28T22:54:46.583Z",
+    "remainingInQueue": 4
+  },
+  {
+    "slug": "zero-layout-shift-cls-guide",
+    "title": "Eliminating Cumulative Layout Shift (CLS): A Front-End Architect Guide",
+    "publishedAt": "2026-09-29T21:49:28.698Z",
+    "remainingInQueue": 3
+  },
+  {
+    "slug": "headless-cms-architecture-2026",
+    "title": "Choosing the Right Headless CMS in 2026: Speed, Security, and Scalability",
+    "publishedAt": "2026-09-30T21:50:46.625Z",
+    "remainingInQueue": 2
+  },
+  {
+    "slug": "b2b-lead-generation-website-strategy",
+    "title": "B2B Lead Generation Website Strategy: How to Turn Enterprise Visitors into Inbound Leads",
+    "publishedAt": "2026-10-01T08:45:59.864Z",
+    "remainingInQueue": 19
+  },
+  {
+    "slug": "b2b-saas-pricing-page-strategy",
+    "title": "B2B SaaS Pricing Page Strategy: How to Design High-Converting Tier Architecture",
+    "publishedAt": "2026-10-01T09:01:40.509Z",
+    "remainingInQueue": 19
+  },
+  {
+    "slug": "conversion-rate-optimization-cro-guide",
+    "title": "Conversion Rate Optimization (CRO) Guide: How to Double Your Website Revenue Without Extra Traffic",
+    "publishedAt": "2026-10-02T12:05:58.852Z",
+    "remainingInQueue": 18
+  },
+  {
+    "slug": "ecommerce-checkout-optimization-bangladesh",
+    "title": "E-Commerce Checkout Optimization in Bangladesh: Slashing Cart Abandonment with bKash, Nagad & UX",
+    "publishedAt": "2026-10-03T11:17:26.777Z",
+    "remainingInQueue": 17
+  },
+  {
+    "slug": "enterprise-web-application-architecture",
+    "title": "Enterprise Web Application Architecture: Building for 99.99% Uptime, Sub-Second Latency, and Scale",
+    "publishedAt": "2026-10-04T11:57:05.188Z",
+    "remainingInQueue": 16
+  },
+  {
+    "slug": "future-of-seo-ai-search-engines",
+    "title": "The Future of SEO: How ChatGPT, Perplexity & Google Gemini are Replacing Traditional Search",
+    "publishedAt": "2026-10-05T13:57:54.104Z",
+    "remainingInQueue": 15
+  },
+  {
+    "slug": "headless-wordpress-with-react-guide",
+    "title": "Headless WordPress with React & Next.js: The Ultimate High-Performance Stack",
+    "publishedAt": "2026-10-06T12:59:02.405Z",
+    "remainingInQueue": 14
   }
 ]
