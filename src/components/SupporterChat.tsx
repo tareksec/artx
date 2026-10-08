@@ -229,6 +229,8 @@ const normalizeText = (value: string) =>
     .replace(/\s+/g, " ")
     .trim();
 
+const getFaqLabel = (question: string) => question.split("(")[0].trim();
+
 function findBestFaqMatch(text: string) {
   const normalizedText = normalizeText(text);
 
@@ -261,7 +263,7 @@ export function SupporterChat() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const replyTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const visibleFaqs = showAllFaqs ? FAQ : FAQ.slice(0, 5);
+  const visibleFaqs = showAllFaqs ? FAQ : FAQ.slice(0, 3);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -410,19 +412,19 @@ export function SupporterChat() {
                   className="shrink-0 text-[11px] font-medium text-accent underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
                   aria-expanded={showAllFaqs}
                 >
-                  {showAllFaqs ? "কম দেখান" : "আরও প্রশ্ন"}
+                  {showAllFaqs ? "কম দেখান" : `আরও ${FAQ.length - 3}টি`}
                 </button>
               </div>
-              <div className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:flex-wrap sm:overflow-visible">
+              <div className="flex max-h-24 flex-wrap gap-1.5 overflow-y-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 {visibleFaqs.map((faq) => (
                   <button
                     key={faq.question}
                     type="button"
                     onClick={() => handleSend(faq.question)}
                     disabled={isTyping}
-                    className="min-h-10 max-w-[84vw] shrink-0 rounded-xl border border-border/60 bg-secondary/50 px-3 py-2 text-left text-xs font-medium leading-snug text-secondary-foreground transition-colors hover:border-accent/50 hover:bg-secondary disabled:cursor-wait disabled:opacity-60 sm:max-w-none sm:rounded-full"
+                    className="max-w-[12rem] overflow-hidden text-ellipsis whitespace-nowrap rounded-full border border-border/60 bg-secondary/50 px-2.5 py-1.5 text-[11px] font-medium leading-tight text-secondary-foreground transition-colors hover:border-accent/50 hover:bg-secondary disabled:cursor-wait disabled:opacity-60"
                   >
-                    {faq.question}
+                    {getFaqLabel(faq.question)}
                   </button>
                 ))}
               </div>
