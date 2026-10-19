@@ -33,6 +33,7 @@ import {
   Eye,
   SlidersHorizontal,
 } from "lucide-react";
+import { WorkShowcaseSection } from "@/components/sections/WorkShowcaseSection";
 
 // Asset imports
 import w1 from "@/assets/work-1.jpg";
@@ -571,70 +572,9 @@ function WorkproofPage() {
   }, [searchQuery]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      {/* ─── Hero Section (Fluid across 1899px widescreen and mobile) ──────────── */}
-      <section className="relative px-4 sm:px-6 md:px-8 xl:px-12 2xl:px-16 pt-32 sm:pt-40 pb-12 md:pt-48 border-b border-border/40 overflow-hidden">
-        {/* Subtle radial background glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.12),rgba(255,255,255,0))] pointer-events-none" />
-
-        <div className="relative mx-auto max-w-7xl 2xl:max-w-[1780px]">
-          <ScrollReveal>
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-3 py-1 text-xs font-mono uppercase tracking-[0.18em] text-accent">
-              <Sparkles className="h-3.5 w-3.5" />
-              <span>{language === "bn" ? "প্রজেক্ট ডিরেক্টরি ও কাজের প্রমাণ" : "Worked Projects & Workproof Directory"}</span>
-            </div>
-
-            <h1 className="text-balance text-4xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl font-bold tracking-tight">
-              {language === "bn" ? (
-                <>
-                  আমাদের কাজের <em className="not-italic text-accent">প্রমাণ</em>।
-                </>
-              ) : (
-                <>
-                  Workproof. <em className="not-italic text-accent">Real Projects</em>.
-                </>
-              )}
-            </h1>
-
-            <p className="mt-5 sm:mt-6 max-w-3xl 2xl:max-w-4xl text-base sm:text-lg text-muted-foreground md:text-xl 2xl:text-2xl leading-relaxed">
-              {language === "bn"
-                ? "আমাদের তৈরি করা লাইভ প্রজেক্টসমূহ সহজ ফোল্ডার আকারে সাজানো রয়েছে—ইকমার্স ওয়েবসাইট (Next.js, ওয়ার্ডপ্রেস ও ড্যাশবোর্ড), SaaS অ্যাপ্লিকেশন এবং বিজনেস পোর্টাল। প্রতিটি প্রজেক্টে ক্লিক করে লাইভ লিংক, ইমেজ ও বিবরণ দেখুন।"
-                : "Explore our verified archive of live client projects organized into natural, intuitive folders—E-Commerce Websites (Next.js, WordPress & Dashboards), SaaS Platforms, and Business Portals. Click any project in the tree to explore live links, screenshots, and deliverables."}
-            </p>
-
-            {/* Quick Stat Badges - Responsive grid from mobile to 1899px laptop */}
-            <div className="mt-8 sm:mt-10 grid grid-cols-2 gap-2.5 sm:gap-4 lg:grid-cols-4 max-w-5xl 2xl:max-w-6xl">
-              <div className="rounded-xl border border-border/60 bg-card/60 p-3 sm:p-4 2xl:p-5 backdrop-blur-sm">
-                <div className="text-2xl sm:text-3xl 2xl:text-4xl font-bold font-mono text-accent">950+</div>
-                <div className="text-xs 2xl:text-sm text-muted-foreground mt-1 font-medium">
-                  {language === "bn" ? "সমাপ্ত প্রোজেক্ট" : "Completed Builds"}
-                </div>
-              </div>
-
-              <div className="rounded-xl border border-border/60 bg-card/60 p-3 sm:p-4 2xl:p-5 backdrop-blur-sm">
-                <div className="text-xl sm:text-2xl 2xl:text-3xl font-bold font-mono text-accent">Next.js &amp; Woo</div>
-                <div className="text-xs 2xl:text-sm text-muted-foreground mt-1 font-medium">
-                  {language === "bn" ? "ইকমার্স স্পেশালিস্ট" : "E-Commerce Specialists"}
-                </div>
-              </div>
-
-              <div className="rounded-xl border border-border/60 bg-card/60 p-3 sm:p-4 2xl:p-5 backdrop-blur-sm">
-                <div className="text-2xl sm:text-3xl 2xl:text-4xl font-bold font-mono text-accent">&lt; 1.8s</div>
-                <div className="text-xs 2xl:text-sm text-muted-foreground mt-1 font-medium">
-                  {language === "bn" ? "মোবাইল স্পিড LCP" : "Mobile Speed LCP"}
-                </div>
-              </div>
-
-              <div className="rounded-xl border border-border/60 bg-card/60 p-3 sm:p-4 2xl:p-5 backdrop-blur-sm">
-                <div className="text-xl sm:text-2xl 2xl:text-3xl font-bold font-mono text-accent">bKash/Nagad</div>
-                <div className="text-xs 2xl:text-sm text-muted-foreground mt-1 font-medium">
-                  {language === "bn" ? "অটো পেমেন্ট ও কুরিয়ার" : "MFS Checkout & Shipping"}
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+    <div className="min-h-screen bg-[#f4f4f2] dark:bg-[#0e0f11] text-foreground overflow-x-hidden pt-16 sm:pt-20">
+      {/* ─── SECTION: Visual Works & Live Demo Showcase (Exact match to sample UI) ──── */}
+      <WorkShowcaseSection />
 
       {/* ─── MAIN SECTION: Interactive Worked Work Files Explorer ────────────────── */}
       <section ref={workspaceRef} className="px-4 sm:px-6 md:px-8 xl:px-12 2xl:px-16 py-12 sm:py-16 2xl:py-20 border-b border-border/40">
