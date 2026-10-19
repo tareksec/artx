@@ -25,6 +25,9 @@ jobs:
         with:
           node-version: 20
 
+      - name: Validate queued articles
+        run: node scripts/validate-blog-queue.mjs
+
       - name: Run daily post publisher
         run: node scripts/publish-daily.mjs
 
