@@ -114,19 +114,3 @@ Yes! Website redesign is one of our most requested services. We audit your exist
 - **Website:** [https://artxdev.tech](https://artxdev.tech)
 
 ---
-
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Digital Product & UI/UX Design Agency",
-  "provider": {
-    "@type": "Organization",
-    "name": "ArtX Studio",
-    "url": "https://artxdev.tech"
-  },
-  "serviceType": "UI/UX Design & Brand Strategy",
-  "description": "Comprehensive UI/UX design systems, Figma product prototyping, and conversion-optimized interfaces engineered for high growth enterprises.",
-  "areaServed": ["BD", "US", "CA", "GB", "AU"]
-}
-```

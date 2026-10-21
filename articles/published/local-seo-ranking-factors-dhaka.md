@@ -57,36 +57,6 @@ Discover our localized service capabilities on our [Dhaka Location Hub](/locatio
 
 ### 2. Implement LocalBusiness Schema Markup
 Inject unambiguous microdata directly into your website's HTML `<head>`:
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "ArtX Studio",
-  "image": "https://artxdev.tech/assets/logo.png",
-  "@id": "https://artxdev.tech/#organization",
-  "url": "https://artxdev.tech",
-  "telephone": "+8801700000000",
-  "priceRange": "৳3,500 - ৳9,500+",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Gulshan-2, Dhaka-1212",
-    "addressLocality": "Dhaka",
-    "postalCode": "1212",
-    "addressCountry": "BD"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 23.7925,
-    "longitude": 90.4078
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Sunday"],
-    "opens": "09:00",
-    "closes": "18:00"
-  }
-}
-```
 
 ### 3. Build Dhaka Neighborhood Landing Pages
 If you serve multiple commercial zones across Dhaka, do not create one generic page. Architect dedicated neighborhood hubs:

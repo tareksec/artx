@@ -166,7 +166,8 @@ function formatDate(iso: string) {
 
 function BlogArticlePage() {
   const { post, related } = Route.useLoaderData();
-  const headings = extractHeadings(post.content);
+  const cleanContent = post.content.replace(/```(?:json)?\s*\{[\s\S]*?"@context"[\s\S]*?\}\s*```/gi, "").trim();
+  const headings = extractHeadings(cleanContent);
 
   return (
     <>
@@ -345,7 +346,7 @@ function BlogArticlePage() {
                     ),
                   }}
                 >
-                  {post.content}
+                  {cleanContent}
                 </ReactMarkdown>
               </div>
 

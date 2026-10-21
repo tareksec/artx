@@ -135,15 +135,3 @@ Absolutely. All ArtX websites are engineered on modular, componentized architect
 - **Website:** [https://artxdev.tech](https://artxdev.tech)
 
 ---
-
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "PriceSpecification",
-  "name": "Website Development Cost in Bangladesh Guide 2026",
-  "priceCurrency": "BDT",
-  "minPrice": "8000",
-  "maxPrice": "350000",
-  "description": "Comprehensive pricing overview for corporate websites, e-commerce stores, and custom React web applications in Bangladesh."
-}
-```
