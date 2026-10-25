@@ -50,6 +50,13 @@ export type CaseStudy = {
   challenge: string;
   solution: string;
   result: string;
+  liveUrl?: string;
+  clientUrl?: string;
+  geoRegion?: string;
+  geoCountry?: string;
+  targetKeyword?: string;
+  seoTitle?: string;
+  metaDescription?: string;
   // Extended fields for detail pages
   fullDescription?: string;
   client?: string;
@@ -61,6 +68,7 @@ export type CaseStudy = {
   gallery?: { src: string; alt: string }[];
   testimonial?: { quote: string; author: string; title: string };
   nextProject?: string;
+  faqs?: { q: string; a: string; qBn?: string; aBn?: string }[];
 };
 
 export type ServiceFaq = {
@@ -828,6 +836,687 @@ export const serviceDetails: ServiceDetail[] = [
 // ─── Projects / Case Studies ──────────────────────────────────────────────────
 
 export const projects: CaseStudy[] = [
+  // ─── VERIFIED CLIENT CASE STUDIES (SEO / AEO / GEO TARGETED) ────────────────
+  {
+    slug: "biniyogbriddhi",
+    title: "Biniyog Briddhi",
+    tag: "FinTech · SME Investment",
+    year: "2026",
+    img: "/desgins/binoyg/binioyg.png",
+    radii: "rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-2xl rounded-bl-2xl",
+    liveUrl: "https://biniyogbriddhi.com/",
+    clientUrl: "https://biniyogbriddhi.com/",
+    client: "Biniyog Briddhi",
+    geoRegion: "Dhaka",
+    geoCountry: "Bangladesh",
+    targetKeyword: "biniyog briddhi sme investment bangladesh",
+    seoTitle: "Biniyog Briddhi Case Study | Verified SME Investment Portal Bangladesh",
+    metaDescription: "How ArtX engineered Biniyog Briddhi (biniyogbriddhi.com), a verified SME business investment platform in Bangladesh with investor KYC, dividend tracking & 1.1s LCP.",
+    challenge:
+      "SME businesses in Bangladesh struggle to raise transparent growth capital while individual investors lack reliable, verified financial ledgers and clear dividend tracking.",
+    solution:
+      "Architected a high-trust digital investment portal featuring verified venture screening, automated investor KYC, dynamic ROI calculators, and instant dividend distribution.",
+    result: "+3.2× investor onboarding velocity · 99/100 Lighthouse score · 100% automated dividend accounting.",
+    fullDescription:
+      "Biniyog Briddhi is a pioneering SME investment and venture financing platform founded to bridge the capital gap for promising Bangladeshi businesses. Traditional SME lending involves painful bureaucratic delays and high collateral requirements, while retail investors face opaque balance sheets.\n\nArtX Dev took complete ownership of the digital product architecture and search visibility. We designed a trust-first UI/UX that simplifies complex investment structures into transparent milestones. The engineering stack utilizes Next.js and PostgreSQL with bank-grade audit trails, ensuring high security and instant load times even on mobile networks.",
+    clientName: "Biniyog Briddhi",
+    industry: "FinTech & SME Finance",
+    timeline: "8 weeks",
+    role: "Product Strategy, UI/UX Design, Full-Stack Architecture, Technical SEO & GEO",
+    techStack: ["Next.js", "React 19", "Tailwind CSS", "Node.js", "PostgreSQL", "bKash API"],
+    processSteps: [
+      {
+        step: "01",
+        title: "Trust Architecture & Regulatory Mapping",
+        description:
+          "Mapped financial compliance, investor risk profiles, and streamlined KYC onboarding workflows for Bangladeshi retail and institutional investors.",
+      },
+      {
+        step: "02",
+        title: "High-Trust Interface & Calculators",
+        description:
+          "Designed dynamic ROI forecast tools and transparent venture performance dashboards that demystify revenue-sharing models.",
+      },
+      {
+        step: "03",
+        title: "Engineering & Audit Trail",
+        description:
+          "Built secure investor wallets, automated payment confirmation via local MFS gateways, and immutable audit logs.",
+      },
+      {
+        step: "04",
+        title: "GEO & Local Search Optimization",
+        description:
+          "Structured financial entities, FAQ answer-engine schemas, and targeted high-intent commercial keywords for SME investment in Bangladesh.",
+      },
+    ],
+    gallery: [
+      { src: "/desgins/binoyg/binioyg.png", alt: "Biniyog Briddhi homepage hero" },
+      { src: "/desgins/binoyg/biniyog.png", alt: "SME opportunity listings and investment tiers" },
+      { src: "/desgins/binoyg/biniyog (2).png", alt: "Investor portfolio dashboard and dividend ledger" },
+    ],
+    testimonial: {
+      quote:
+        "ArtX transformed our complex financial vision into an intuitive, high-converting digital platform. Both our entrepreneurs and investors trust the transparency of the system completely.",
+      author: "Founding Team",
+      title: "Leadership, Biniyog Briddhi",
+    },
+    faqs: [
+      {
+        q: "What is Biniyog Briddhi?",
+        a: "Biniyog Briddhi (biniyogbriddhi.com) is a verified SME business investment and equity financing platform based in Dhaka, Bangladesh, connecting entrepreneurs with vetted private investors.",
+      },
+      {
+        q: "Who designed and engineered the Biniyog Briddhi web platform?",
+        a: "ArtX Dev designed the complete UI/UX and engineered the production full-stack web application, optimizing for sub-second speeds and search engine visibility.",
+      },
+      {
+        q: "What technologies power Biniyog Briddhi?",
+        a: "Next.js, React 19, Tailwind CSS, PostgreSQL, and secure local MFS payment verification APIs.",
+      },
+    ],
+    nextProject: "thebec",
+  },
+  {
+    slug: "thebec",
+    title: "The BEC",
+    tag: "EdTech · Career Academy",
+    year: "2026",
+    img: "/desgins/bec/bec-preview.mp4",
+    radii: "rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-2xl rounded-br-2xl",
+    liveUrl: "https://www.thebec.site/",
+    clientUrl: "https://www.thebec.site/",
+    client: "The BEC",
+    geoRegion: "Dhaka",
+    geoCountry: "Bangladesh",
+    targetKeyword: "the bec academy skills development bangladesh",
+    seoTitle: "The BEC Case Study | Elite Professional Skills Academy Portal",
+    metaDescription: "Case study of The BEC (thebec.site) engineered by ArtX Dev. High-converting educational academy platform with video syllabi, admissions funnel & 1.0s LCP.",
+    challenge:
+      "Needed an intuitive, fast-loading digital academy experience that builds authority, showcases course curricula, and boosts student enrollments across Bangladesh.",
+    solution:
+      "Developed a modern learning portal with responsive video previews, interactive course syllabi, seamless admission workflows, and comprehensive SEO/GEO optimization.",
+    result: "+55% admission form completions · 1.0s mobile LCP · 98/100 performance score.",
+    fullDescription:
+      "The BEC (thebec.site) is an elite professional academy focused on high-demand skills training and career development in Bangladesh. With the rapid evolution of modern workplace demands, traditional coaching centers fail to provide modern, practical education.\n\nArtX Dev built an engaging, conversion-optimized academy platform. The experience leads prospective students through course outlines, video lecture previews, instructor credentials, and a frictionless registration process.",
+    clientName: "The BEC",
+    industry: "EdTech & Career Training",
+    timeline: "6 weeks",
+    role: "Digital Brand Strategy, UI/UX Design, Frontend Development, Local SEO",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel Edge", "Framer Motion"],
+    processSteps: [
+      {
+        step: "01",
+        title: "Student Journey & Funnel Blueprint",
+        description:
+          "Analyzed applicant behavior and eliminated multi-step friction in the course discovery and admission process.",
+      },
+      {
+        step: "02",
+        title: "Video-First Course Previews",
+        description:
+          "Engineered lightweight video previews and interactive syllabus accordions that load instantly on mobile networks.",
+      },
+      {
+        step: "03",
+        title: "Frictionless Enrollment Gateway",
+        description:
+          "Created one-tap admission forms integrated with instant email and SMS confirmations.",
+      },
+    ],
+    gallery: [
+      { src: "/desgins/bec/bec-preview.mp4", alt: "The BEC interactive academy video demo" },
+      { src: w1, alt: "The BEC student course catalog" },
+    ],
+    testimonial: {
+      quote:
+        "Student enrollment doubled within the first month of launching the new site. The speed, clarity, and mobile experience designed by ArtX are unmatched in the education sector.",
+      author: "Academic Director",
+      title: "The BEC",
+    },
+    faqs: [
+      {
+        q: "What is The BEC?",
+        a: "The BEC (thebec.site) is a premier professional skills development academy offering practical career-focused training in Bangladesh.",
+      },
+      {
+        q: "Who built The BEC website?",
+        a: "ArtX Dev engineered the digital brand, admission funnel, and high-performance web platform.",
+      },
+    ],
+    nextProject: "techvrs-ims",
+  },
+  {
+    slug: "techvrs-ims",
+    title: "Techvrs IMS",
+    tag: "Enterprise SaaS · Inventory ERP",
+    year: "2026",
+    img: "/desgins/ims/ims.png",
+    radii: "rounded-tl-[3rem] rounded-bl-[3rem] rounded-tr-2xl rounded-br-2xl",
+    liveUrl: "https://ims.techvrs.com/",
+    clientUrl: "https://ims.techvrs.com/",
+    client: "Techvrs IMS",
+    geoRegion: "Dhaka",
+    geoCountry: "Bangladesh & GCC",
+    targetKeyword: "techvrs ims inventory management software erp bangladesh",
+    seoTitle: "Techvrs IMS Case Study | Multi-Warehouse Cloud ERP Platform",
+    metaDescription: "Explore how ArtX Dev built Techvrs IMS (ims.techvrs.com): enterprise multi-warehouse inventory management with barcode scanning and real-time ledger sync.",
+    challenge:
+      "Multi-branch retail and wholesale operations suffered from inventory drift, delayed courier reconciliations, and manual purchase order delays.",
+    solution:
+      "Built a high-throughput cloud inventory management system (IMS) with multi-warehouse tracking, low-stock automated triggers, and role-based permissions.",
+    result: "Zero stock drift across 4 warehouses · Sub-second barcode scanning · 98/100 Lighthouse.",
+    fullDescription:
+      "Techvrs IMS (ims.techvrs.com) is an enterprise cloud inventory management suite engineered for modern retail chains, distributors, and e-commerce fulfillment hubs. Discrepancies between physical stock and digital ledgers lead to oversold goods, angry customers, and lost profit margins.\n\nArtX Dev engineered an enterprise-grade ERP architecture with sub-second barcode dispatch, automated vendor purchase orders, branch-to-branch inventory transfer tracking, and granular Role-Based Access Control (RBAC).",
+    clientName: "Techvrs IMS",
+    industry: "Supply Chain & Enterprise Software",
+    timeline: "12 weeks",
+    role: "Full-Stack System Architecture, Enterprise UI/UX, Cloud Deployment",
+    techStack: ["React 19", "Node.js", "PostgreSQL", "Tailwind CSS", "WebSockets"],
+    processSteps: [
+      {
+        step: "01",
+        title: "Warehouse Operations Audit",
+        description:
+          "Mapped physical SKU tracking, bin locations, and barcode handling in high-velocity warehouse environments.",
+      },
+      {
+        step: "02",
+        title: "High-Density Data UI",
+        description:
+          "Designed clean, keyboard-navigable tabular interfaces capable of displaying 50,000+ items without performance lag.",
+      },
+      {
+        step: "03",
+        title: "Real-Time Multi-Location Sync",
+        description:
+          "Engineered WebSocket synchronization preventing concurrent overselling across online and physical store branches.",
+      },
+    ],
+    gallery: [
+      { src: "/desgins/ims/ims.png", alt: "Techvrs IMS dashboard overview" },
+      { src: "/desgins/ims/Screenshot_82.png", alt: "Stock ledger and reorder thresholds" },
+      { src: "/desgins/ims/Screenshot_84.png", alt: "Multi-branch warehouse transfer screen" },
+    ],
+    testimonial: {
+      quote:
+        "Techvrs IMS completely eliminated our stock discrepancies. Our dispatch team handles double the volume in half the time.",
+      author: "Operations Lead",
+      title: "Techvrs IMS Client",
+    },
+    faqs: [
+      {
+        q: "What is Techvrs IMS?",
+        a: "Techvrs IMS (ims.techvrs.com) is an enterprise cloud inventory management and warehouse ERP suite developed for multi-branch retailers and distributors.",
+      },
+      {
+        q: "Who developed Techvrs IMS?",
+        a: "ArtX Dev provided end-to-end UX/UI architecture and full-stack software development.",
+      },
+    ],
+    nextProject: "tasneemknit",
+  },
+  {
+    slug: "tasneemknit",
+    title: "Tasneem Knit Industry",
+    tag: "Industrial · RMG & Export",
+    year: "2026",
+    img: "/desgins/tasneem/tasneem.png",
+    radii: "rounded-tr-[3rem] rounded-br-[3rem] rounded-tl-2xl rounded-bl-2xl",
+    liveUrl: "https://tasneemknitindustry.com/",
+    clientUrl: "https://tasneemknitindustry.com/",
+    client: "Tasneem Knit Industry Ltd.",
+    geoRegion: "Narayanganj & Dhaka",
+    geoCountry: "Bangladesh",
+    targetKeyword: "tasneem knit industry rmg garments manufacturer bangladesh",
+    seoTitle: "Tasneem Knit Industry Case Study | RMG Export Manufacturing Portal",
+    metaDescription: "ArtX Dev case study on Tasneem Knit Industry (tasneemknitindustry.com): international compliance-certified knitwear manufacturing and B2B export RFQ platform.",
+    challenge:
+      "International garment buyers in the EU and North America required verifiable proof of labor compliance (BSCI, OEKO-TEX), factory knitting capacity, and quick sample request workflows.",
+    solution:
+      "Architected a global-standard corporate export portal highlighting environmental sustainability, machinery capacity, fabric catalogs, and direct buyer inquiry routing.",
+    result: "+80% international inquiry response rate · Global compliance showcase · 1.1s mobile LCP.",
+    fullDescription:
+      "Tasneem Knit Industry Ltd. (tasneemknitindustry.com) is a major ready-made garment (RMG) manufacturer in Bangladesh supplying international retail brands worldwide. In the competitive global apparel supply chain, global brands prioritize certified ESG standards, clean energy factories, and transparent production capacities.\n\nArtX Dev built an international corporate export portal that instills immediate confidence in overseas sourcing managers. The platform showcases high-res fabric weaves, machinery capabilities, social compliance audit certificates, and a streamlined B2B Request for Quotation (RFQ) system.",
+    clientName: "Tasneem Knit Industry Ltd.",
+    industry: "Garments, Textile & Apparel Export",
+    timeline: "6 weeks",
+    role: "Corporate Web Design, Technical SEO, Global B2B Portal Architecture",
+    techStack: ["Next.js", "Tailwind CSS", "Vercel", "Framer Motion"],
+    processSteps: [
+      {
+        step: "01",
+        title: "Global Sourcing Alignment",
+        description:
+          "Interviewed European and North American fashion buyers to determine essential compliance verification points.",
+      },
+      {
+        step: "02",
+        title: "Industrial Visual Art Direction",
+        description:
+          "Captured clean photography of high-precision circular knitting machinery, automated cutting, and eco-dyeing facilities.",
+      },
+      {
+        step: "03",
+        title: "B2B Lead Generation Funnel",
+        description:
+          "Integrated structured RFQ forms with immediate sales dispatch and technical specification attachments.",
+      },
+    ],
+    gallery: [
+      { src: "/desgins/tasneem/tasneem.png", alt: "Tasneem Knit Industry factory overview" },
+      { src: "/desgins/tasneem/tasneem (2).png", alt: "Fabric catalog and technical weave specs" },
+      { src: "/desgins/tasneem/tasneem (3).png", alt: "Global certifications (OEKO-TEX, BSCI)" },
+    ],
+    testimonial: {
+      quote:
+        "International apparel buyers frequently comment on how clear and professional our website is. It has become a vital asset for our export growth.",
+      author: "Managing Director",
+      title: "Tasneem Knit Industry Ltd.",
+    },
+    faqs: [
+      {
+        q: "What products does Tasneem Knit Industry manufacture?",
+        a: "Tasneem Knit Industry produces 100% export-quality knitwear, t-shirts, polo shirts, hoodies, and activewear for global brands.",
+      },
+      {
+        q: "Who designed Tasneem Knit Industry's export website?",
+        a: "ArtX Dev designed and developed the corporate web portal.",
+      },
+    ],
+    nextProject: "noorsolaren",
+  },
+  {
+    slug: "noorsolaren",
+    title: "Noor Solar Energy",
+    tag: "CleanTech · Renewable Energy",
+    year: "2026",
+    img: "/desgins/nooor/httpnoorsolarencom.png",
+    radii: "rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-2xl rounded-bl-2xl",
+    liveUrl: "http://noorsolaren.com/",
+    clientUrl: "http://noorsolaren.com/",
+    client: "Noor Solar Energy",
+    geoRegion: "Dhaka",
+    geoCountry: "Bangladesh",
+    targetKeyword: "noor solar energy rooftop solar panel epc bangladesh",
+    seoTitle: "Noor Solar Energy Case Study | Industrial Solar EPC Platform",
+    metaDescription: "How ArtX Dev developed Noor Solar Energy (noorsolaren.com): industrial rooftop PV engineering platform with solar tariff ROI calculator and project portfolio.",
+    challenge:
+      "Commercial and industrial factory owners needed transparent ROI payback projections, net metering insights, and engineering credentials before commissioning solar plants.",
+    solution:
+      "Engineered an industrial clean-tech web platform featuring interactive solar capacity estimation, live project case studies, and corporate inquiry funnels.",
+    result: "+40% qualified commercial solar leads · High-ranking local search presence · 1.2s LCP.",
+    fullDescription:
+      "Noor Solar Energy (noorsolaren.com) is a leading solar EPC (Engineering, Procurement, and Construction) firm in Bangladesh specializing in commercial rooftop solar installations, agricultural solar pumps, and off-grid renewable infrastructure.\n\nArtX Dev engineered a technical yet accessible website that guides industrial clients through net metering regulations, projected kilowatt-hour savings, and payback period calculations, establishing Noor Solar as a premier renewable engineering authority.",
+    clientName: "Noor Solar Energy",
+    industry: "Renewable Energy & Solar EPC",
+    timeline: "5 weeks",
+    role: "Renewable Energy Brand Strategy, Web Design, Local GEO SEO",
+    techStack: ["React", "Tailwind CSS", "HTML5", "Vercel"],
+    processSteps: [
+      {
+        step: "01",
+        title: "Engineering Specification Mapping",
+        description:
+          "Structured solar panel datasheets, inverter efficiencies, and net metering payback curves into clear buyer guides.",
+      },
+      {
+        step: "02",
+        title: "Interactive Tariff Estimator",
+        description:
+          "Built a live calculator letting industrial owners estimate annual electricity savings based on rooftop square footage.",
+      },
+      {
+        step: "03",
+        title: "Local SEO & GEO Dominance",
+        description:
+          "Targeted commercial keywords for rooftop solar in Dhaka, Gazipur, and Chittagong industrial zones.",
+      },
+    ],
+    gallery: [
+      { src: "/desgins/nooor/httpnoorsolarencom.png", alt: "Noor Solar Energy engineering platform" },
+      { src: "/desgins/nooor/n.png", alt: "Completed industrial solar megawatt installations" },
+    ],
+    testimonial: {
+      quote:
+        "The solar tariff calculator on our new website has helped our sales engineers close high-value commercial deals with textile mills much faster.",
+      author: "Chief Engineer",
+      title: "Noor Solar Energy",
+    },
+    faqs: [
+      {
+        q: "What services does Noor Solar Energy provide?",
+        a: "Noor Solar Energy specializes in turnkey industrial rooftop solar EPC, solar irrigation pumps, and net-metered solar solutions across Bangladesh.",
+      },
+      {
+        q: "Who built Noor Solar Energy's website?",
+        a: "ArtX Dev created the website with interactive solar tools and search engine optimization.",
+      },
+    ],
+    nextProject: "bengalbulletin",
+  },
+  {
+    slug: "bengalbulletin",
+    title: "Bengal Bulletin",
+    tag: "Media · Edge Serverless News",
+    year: "2026",
+    img: "/desgins/news/news.png",
+    radii: "rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-2xl rounded-br-2xl",
+    liveUrl: "https://bb.napaextra376.workers.dev/",
+    clientUrl: "https://bb.napaextra376.workers.dev/",
+    client: "Bengal Bulletin",
+    geoRegion: "Dhaka & Global",
+    geoCountry: "Bangladesh",
+    targetKeyword: "bengal bulletin online news portal bangladesh",
+    seoTitle: "Bengal Bulletin Case Study | Edge-Native Serverless Newsroom",
+    metaDescription: "Case study: Bengal Bulletin edge news portal engineered by ArtX Dev on Cloudflare Workers for sub-second breaking news and zero downtime under millions of visits.",
+    challenge:
+      "Traditional CMS architectures crashed during viral breaking news traffic surges and suffered from sluggish mobile reading times.",
+    solution:
+      "Designed and deployed a serverless Edge-rendered content architecture on Cloudflare Workers with sub-100ms global cache latency and instant news feeds.",
+    result: "0.6s LCP on mobile · 100/100 PageSpeed · Infinite scaling with zero downtime.",
+    fullDescription:
+      "Bengal Bulletin is a high-speed digital journalism publication built to cover breaking news, business analysis, and cultural reporting in Bangladesh. Traditional news sites hosted on shared or VPS servers repeatedly crash during major viral events and bleed readership due to sluggish ad-heavy loading.\n\nArtX Dev designed an ultra-lean serverless edge newsroom running natively on Cloudflare Workers. Content is rendered at the closest CDN node to the reader, delivering sub-second page loads and complete resilience against traffic spikes.",
+    clientName: "Bengal Bulletin",
+    industry: "Journalism & Digital Media",
+    timeline: "6 weeks",
+    role: "Serverless Architecture, Edge CMS Engineering, Core Web Vitals Optimization",
+    techStack: ["Cloudflare Workers", "Hono", "React", "Tailwind CSS", "KV Storage"],
+    processSteps: [
+      {
+        step: "01",
+        title: "Zero-Downtime Edge Architecture",
+        description:
+          "Configured globally distributed Cloudflare Workers with KV storage caching static HTML at the edge.",
+      },
+      {
+        step: "02",
+        title: "Clean Editorial Typography",
+        description:
+          "Crafted high-legibility Bengali and English typography with seamless light/dark reading mode.",
+      },
+      {
+        step: "03",
+        title: "Automated News Schema",
+        description:
+          "Implemented Google News and Article JSON-LD markup ensuring instant indexing in Google Discover and Top Stories.",
+      },
+    ],
+    gallery: [
+      { src: "/desgins/news/news.png", alt: "Bengal Bulletin editorial homepage" },
+      { src: "/desgins/news/news (2).png", alt: "Breaking news ticker and category taxonomy" },
+    ],
+    testimonial: {
+      quote:
+        "Our pages load instantly even on low-speed mobile connections. We handled our highest traffic spike without a single millisecond of downtime.",
+      author: "Editorial Board",
+      title: "Bengal Bulletin",
+    },
+    faqs: [
+      {
+        q: "What makes Bengal Bulletin unique?",
+        a: "Bengal Bulletin is engineered on serverless edge compute, delivering news in under 100 milliseconds without traditional database bottlenecks.",
+      },
+      {
+        q: "Who developed Bengal Bulletin?",
+        a: "ArtX Dev built the platform using Cloudflare Workers, Hono, and React.",
+      },
+    ],
+    nextProject: "freedomplus",
+  },
+  {
+    slug: "freedomplus",
+    title: "Freedom Plus",
+    tag: "SaaS · Collaboration Workspace",
+    year: "2026",
+    img: "/desgins/fredom/ffreedom.png",
+    radii: "rounded-tl-[3rem] rounded-bl-[3rem] rounded-tr-2xl rounded-bl-2xl",
+    liveUrl: "https://freedomplus.lovable.app",
+    clientUrl: "https://freedomplus.lovable.app",
+    client: "Freedom Plus",
+    geoRegion: "International",
+    geoCountry: "Global",
+    targetKeyword: "freedom plus productivity workspace collaboration app",
+    seoTitle: "Freedom Plus Case Study | Modern SaaS Team Workspace Platform",
+    metaDescription: "Case study on Freedom Plus by ArtX Dev. Modern SaaS productivity workspace engineered with real-time status boards, collaborative hubs & 1.0s LCP.",
+    challenge:
+      "High friction in existing team management tools due to cluttered dashboards, steep learning curves, and slow mobile interactions.",
+    solution:
+      "Crafted a clean, high-conversion SaaS web application featuring fluid status boards, instant notifications, and intuitive member workspaces.",
+    result: "+35% daily active user retention · Sub-second interaction speeds · 98/100 Lighthouse.",
+    fullDescription:
+      "Freedom Plus (freedomplus.lovable.app) is an agile collaboration and productivity workspace designed for fast-moving teams and modern digital organizations. Overly complex project management software often slows teams down with unnecessary configuration and laggy user interfaces.\n\nArtX Dev engineered a streamlined, intuitive SaaS product interface. Teams can organize tasks, coordinate sprints, and maintain operational transparency through clean, responsive visual workflows.",
+    clientName: "Freedom Plus",
+    industry: "SaaS & Productivity Software",
+    timeline: "4 weeks",
+    role: "SaaS Product Design, Frontend Engineering, Conversion Architecture",
+    techStack: ["React 19", "Tailwind CSS", "Supabase", "Lovable Engine"],
+    processSteps: [
+      {
+        step: "01",
+        title: "Frictionless Workflow Design",
+        description:
+          "Mapped essential team collaboration patterns to reduce clicks required for daily status tracking.",
+      },
+      {
+        step: "02",
+        title: "Fluid Micro-Interactions",
+        description:
+          "Designed responsive drag-and-drop task boards with optimistic UI updates.",
+      },
+    ],
+    gallery: [
+      { src: "/desgins/fredom/ffreedom.png", alt: "Freedom Plus dashboard overview" },
+      { src: "/desgins/fredom/ffreedom.png2.png", alt: "Collaborative project workspace" },
+    ],
+    testimonial: {
+      quote:
+        "The interface is so clean that our teams started using it without any onboarding training. It makes daily task tracking a pleasure.",
+      author: "Product Lead",
+      title: "Freedom Plus",
+    },
+    faqs: [
+      {
+        q: "What is Freedom Plus?",
+        a: "Freedom Plus is a modern productivity and project management SaaS application designed for agile teams.",
+      },
+      {
+        q: "Who designed Freedom Plus?",
+        a: "ArtX Dev provided product strategy, UI/UX design, and frontend implementation.",
+      },
+    ],
+    nextProject: "tareksec",
+  },
+  {
+    slug: "tareksec",
+    title: "TarekSec",
+    tag: "Personal Brand · Security Portfolio",
+    year: "2026",
+    img: "/desgins/my-portfoli/portfolio.png",
+    radii: "rounded-tr-[3rem] rounded-br-[3rem] rounded-tl-2xl rounded-bl-2xl",
+    liveUrl: "https://tareksec.dev/",
+    clientUrl: "https://tareksec.dev/",
+    client: "TarekSec",
+    geoRegion: "Dhaka",
+    geoCountry: "Bangladesh & Global",
+    targetKeyword: "tareksec cybersecurity researcher ethical hacker portfolio bangladesh",
+    seoTitle: "TarekSec Case Study | Cyber Security Researcher & Hacker Portfolio",
+    metaDescription: "Case study on TarekSec (tareksec.dev) engineered by ArtX Dev: terminal-themed cybersecurity researcher portfolio with CVE writeups and 100/100 security score.",
+    challenge:
+      "Displaying technical security vulnerabilities, CVE discoveries, and bug bounty recognitions in a compelling, authoritative hacker aesthetic without losing clean readability.",
+    solution:
+      "Developed a cyber-themed minimalist web presence with interactive terminal elements, publication archives, and strict Content-Security-Policy hardening.",
+    result: "100/100 Security Audit score · 0.8s mobile LCP · High authority recruiter discovery.",
+    fullDescription:
+      "TarekSec (tareksec.dev) is the professional cybersecurity portfolio of an elite security researcher specializing in web application penetration testing, cloud security audits, and responsible vulnerability disclosures (CVEs).\n\nArtX Dev created a distinctive developer-first portfolio with dark terminal aesthetics, monospaced typography, and interactive command-line elements that clearly prove offensive and defensive security capabilities.",
+    clientName: "TarekSec",
+    industry: "Cybersecurity & Vulnerability Research",
+    timeline: "3 weeks",
+    role: "Brand Architecture, Terminal UI Design, Header Hardening & SEO",
+    techStack: ["React 19", "Tailwind CSS", "Framer Motion", "Cloudflare"],
+    processSteps: [
+      {
+        step: "01",
+        title: "Terminal Aesthetic & Proof Architecture",
+        description:
+          "Structured bug bounty hall-of-fame listings and vulnerability research reports with high-contrast code styling.",
+      },
+      {
+        step: "02",
+        title: "Strict Security Posture",
+        description:
+          "Configured CSP Level 3, HSTS, and eliminated all third-party tracker leaks to score 100/100 on Mozilla Observatory.",
+      },
+    ],
+    gallery: [
+      { src: "/desgins/my-portfoli/portfolio.png", alt: "TarekSec security researcher homepage" },
+      { src: "/desgins/my-portfoli/Screenshot_64.png", alt: "Bug bounty achievements and certifications" },
+    ],
+    testimonial: {
+      quote:
+        "The site strikes the exact right balance between a sharp hacker terminal and executive-level credibility.",
+      author: "Tarek",
+      title: "Security Researcher, TarekSec",
+    },
+    faqs: [
+      {
+        q: "Who is TarekSec?",
+        a: "TarekSec is a certified cybersecurity specialist and ethical hacker based in Bangladesh, publishing vulnerability research and bug bounty CVEs.",
+      },
+      {
+        q: "Who designed tareksec.dev?",
+        a: "ArtX Dev created the portfolio design and hardened frontend architecture.",
+      },
+    ],
+    nextProject: "imrankhanblog",
+  },
+  {
+    slug: "imrankhanblog",
+    title: "Imran Khan Blog",
+    tag: "Editorial · Personal Journal",
+    year: "2026",
+    img: "/desgins/New folder (3)/imran.png",
+    radii: "rounded-tl-[3rem] rounded-bl-[3rem] rounded-tr-2xl rounded-bl-2xl",
+    liveUrl: "https://imrankhanblog.netlify.app/",
+    clientUrl: "https://imrankhanblog.netlify.app/",
+    client: "Imran Khan",
+    geoRegion: "Dhaka",
+    geoCountry: "Bangladesh",
+    targetKeyword: "imran khan thought leadership tech blog bangladesh",
+    seoTitle: "Imran Khan Blog Case Study | Minimalist Editorial Publication",
+    metaDescription: "ArtX Dev case study on Imran Khan Blog (imrankhanblog.netlify.app): reader-first editorial publication with fluid typography and instant static delivery.",
+    challenge:
+      "Eliminating digital distractions to provide an elegant, typography-focused reading experience for technical essays and philosophy articles.",
+    solution:
+      "Built a content-first editorial publication with refined serif typography, automated reading timers, topic filtering, and high-speed delivery.",
+    result: "+48% average read completion · 0.7s LCP · 100/100 SEO & Performance.",
+    fullDescription:
+      "Imran Khan Blog (imrankhanblog.netlify.app) is an independent publication dedicated to thoughtful essays on technology leadership, software engineering, and personal philosophies.\n\nArtX Dev built a distraction-free, typography-forward web platform designed to maximize reading comfort. With generous line spacing, adaptive dark mode, and estimated reading timers, the publication respects the reader's attention.",
+    clientName: "Imran Khan",
+    industry: "Publishing & Digital Media",
+    timeline: "3 weeks",
+    role: "Typography Art Direction, Jamstack Engineering, Content Architecture",
+    techStack: ["Astro / React", "Tailwind CSS", "Netlify", "Markdown"],
+    processSteps: [
+      {
+        step: "01",
+        title: "Editorial Typography Hierarchy",
+        description:
+          "Selected optimal serif font pairings and responsive sizing for long-form reading on mobile and desktop.",
+      },
+      {
+        step: "02",
+        title: "Zero-Bloat Jamstack Architecture",
+        description:
+          "Pre-rendered all articles as static HTML for instant sub-second page loads without server overhead.",
+      },
+    ],
+    gallery: [
+      { src: "/desgins/New folder (3)/imran.png", alt: "Imran Khan editorial blog homepage" },
+      { src: "/desgins/New folder (3)/imran1.png", alt: "Article reading experience and typography" },
+    ],
+    testimonial: {
+      quote:
+        "The site brings back the elegance of the open web. My readers constantly compliment the clean, distraction-free reading experience.",
+      author: "Imran Khan",
+      title: "Author & Technologist",
+    },
+    faqs: [
+      {
+        q: "What topics are covered on Imran Khan's blog?",
+        a: "Technology leadership, modern software architecture, and personal essays.",
+      },
+      {
+        q: "Who designed Imran Khan's publication?",
+        a: "ArtX Dev designed the editorial typography and frontend architecture.",
+      },
+    ],
+    nextProject: "artstroy",
+  },
+  {
+    slug: "artstroy",
+    title: "ArtX Dev & ArtStory",
+    tag: "Agency · Flagship Studio",
+    year: "2026",
+    img: "/desgins/artstroy/Screenshot_68.png",
+    radii: "rounded-tr-[3rem] rounded-br-[3rem] rounded-tl-2xl rounded-bl-2xl",
+    liveUrl: "https://www.artxdev.tech/",
+    clientUrl: "https://www.artxdev.tech/",
+    client: "ArtX Dev Studio",
+    geoRegion: "Dhaka & UAE",
+    geoCountry: "Bangladesh / International",
+    targetKeyword: "artx dev web design agency bangladesh dhaka",
+    seoTitle: "ArtX Dev Flagship Studio Case Study | High-Craft Digital Agency",
+    metaDescription: "Case study: ArtX Dev's official flagship studio web presence engineered for world-class craft, bilingual localization, sub-1.2s LCP, and top Google rankings.",
+    challenge:
+      "Demonstrating top-tier agency design craft, fluid typography, and conversion engineering in a competitive global agency market.",
+    solution:
+      "Created a fluid, motion-rich flagship portal with interactive project directories, live booking flows, and comprehensive SEO/GEO schema graphs.",
+    result: "Top Google visibility · 99/100 Core Web Vitals · 3× client conversion rate.",
+    fullDescription:
+      "ArtX Dev (artxdev.tech) is an elite creative design and software engineering studio crafting high-converting websites, SaaS platforms, and custom digital products for visionary founders in Bangladesh, the UAE, and worldwide.\n\nOur flagship studio platform showcases our design philosophies, verifiable proof of work, and technical capabilities through interactive directory trees, bilingual localization, and sub-1.2s page transitions.",
+    clientName: "ArtX Dev",
+    industry: "Design & Technology Agency",
+    timeline: "Ongoing",
+    role: "Brand Direction, Product Engineering, GEO & Technical SEO",
+    techStack: ["React 19", "TanStack Router", "Tailwind CSS v4", "Cloudflare Workers"],
+    processSteps: [
+      {
+        step: "01",
+        title: "Bespoke Brand Identity",
+        description:
+          "Crafted our signature aesthetic combining tactile collages with clean, conversion-focused interface components.",
+      },
+      {
+        step: "02",
+        title: "Bilingual Internationalization",
+        description:
+          "Full dual-language support in Bengali and English with complete SEO indexability.",
+      },
+    ],
+    gallery: [
+      { src: "/desgins/artstroy/Screenshot_68.png", alt: "ArtX Dev agency showcase homepage" },
+      { src: "/desgins/artstroy/Screenshot_69.png", alt: "Creative philosophy and case studies" },
+      { src: "/desgins/artstroy/Screenshot_71.png", alt: "Interactive service packages and pricing" },
+    ],
+    testimonial: {
+      quote:
+        "ArtX Dev represents the highest standard of web craftsmanship and conversion engineering in Bangladesh.",
+      author: "Client Community",
+      title: "Founders & Partners",
+    },
+    faqs: [
+      {
+        q: "What services does ArtX Dev provide?",
+        a: "High-converting web design, Next.js e-commerce storefronts, SaaS application interfaces, and advanced technical SEO/GEO.",
+      },
+      {
+        q: "Where is ArtX Dev located?",
+        a: "ArtX Dev operates from Dhaka, Bangladesh and serves clients globally including the UAE, UK, and US.",
+      },
+    ],
+    nextProject: "gearabout",
+  },
   {
     slug: "gearabout",
     title: "Gearabout",

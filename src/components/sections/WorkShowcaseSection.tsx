@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ExternalLink, Link as LinkIcon } from "lucide-react";
+import { X, ExternalLink, Link as LinkIcon, Lock } from "lucide-react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
+import { AutoMediaPreview } from "@/components/ui/AutoMediaPreview";
 
 // Imported showcase assets matching reference UI + additional real workproof assets
 import imgMetricra from "@/assets/showcase-metricra.jpg";
@@ -24,14 +25,274 @@ export interface ShowcaseProject {
   titleBn: string;
   category: string;
   categoryBn: string;
-  image: string;
+  image?: string;
+  images?: string[];
+  video?: string;
   url?: string;
+  caseStudyUrl?: string;
+  isLiveExternal?: boolean;
+  isPrivate?: boolean;
+  badge?: string;
+  badgeBn?: string;
   description: string;
   descriptionBn: string;
 }
 
 export const ALL_SHOWCASE_PROJECTS: ShowcaseProject[] = [
-  // ─── 6 EXACT MATCHES FROM SAMPLE IMAGE ──────────────────────────────────────
+  // ─── VERIFIED WORK PROOFS & LIVE PRODUCTION SITES (PLACED AT TOP) ───────────
+  {
+    id: "biniyog-sme",
+    title: "Biniyog Briddhi — SME Investment Portal",
+    titleBn: "বিনিয়োগ বৃদ্ধি — ভেরিফায়েড SME ইনভেস্টমেন্ট",
+    category: "Fintech & Investment",
+    categoryBn: "ফিনটেক ও ইনভেস্টমেন্ট",
+    video: "/desgins/binoyg/biniyog-video.mp4",
+    images: [
+      "/desgins/binoyg/binioyg.png",
+      "/desgins/binoyg/biniyog.png",
+      "/desgins/binoyg/biniyog (2).png",
+      "/desgins/binoyg/biniyog.png1.png",
+    ],
+    url: "https://biniyogbriddhi.com/",
+    caseStudyUrl: "/work/biniyogbriddhi",
+    isLiveExternal: true,
+    badge: "Live Production",
+    badgeBn: "লাইভ প্রোডাকশন",
+    description: "Live SME business investment and growth platform in Bangladesh with automated KYC, verified venture screening, investor dividend ledger, and financial telemetry.",
+    descriptionBn: "যাচাইকৃত SME ব্যবসায় নিরাপদ বিনিয়োগ প্ল্যাটফর্ম। উদ্যোক্তা ও বিনিয়োগকারীদের জন্য রিয়েল-টাইম ড্যাশবোর্ড, KYC ও লাভ বন্টন ব্যবস্থা।",
+  },
+  {
+    id: "bec-portal",
+    title: "The BEC — Elite Skills Academy",
+    titleBn: "দ্য বিইসি — স্কিলস ও একাডেমি পোর্টাল",
+    category: "EdTech & Career",
+    categoryBn: "এডটেক ও ক্যারিয়ার",
+    video: "/desgins/bec/bec-preview.mp4",
+    url: "https://www.thebec.site/",
+    caseStudyUrl: "/work/thebec",
+    isLiveExternal: true,
+    badge: "Live Academy",
+    badgeBn: "লাইভ একাডেমি",
+    description: "Interactive skill development and education portal with live student admissions, course curricula, video lecture management, and modern onboarding.",
+    descriptionBn: "প্রফেশনাল স্কিলস ট্রেইনিং ও এডুকেশন একাডেমি প্ল্যাটফর্ম। অনলাইন কোর্স তালিকা, স্টুডেন্ট এডমিশন এবং রিসোর্স হাব সহ।",
+  },
+  {
+    id: "artstroy-studio",
+    title: "ArtX Dev & ArtStory — Design & Engineering",
+    titleBn: "আর্টএক্স দেব ও আর্টস্টোরি — ডিজাইন ও ইঞ্জিনিয়ারিং",
+    category: "Digital Agency",
+    categoryBn: "ক্রিয়েটিভ এজেন্সি",
+    images: [
+      "/desgins/artstroy/Screenshot_68.png",
+      "/desgins/artstroy/Screenshot_69.png",
+      "/desgins/artstroy/Screenshot_71.png",
+    ],
+    url: "https://www.artxdev.tech/",
+    caseStudyUrl: "/work/artstroy",
+    isLiveExternal: true,
+    badge: "Official Studio",
+    badgeBn: "অফিসিয়াল স্টুডিও",
+    description: "High-performance digital studio flagship experience featuring responsive interactive layouts, case study showcases, and fluid editorial aesthetics.",
+    descriptionBn: "আধুনিক ডিজিটাল পণ্য ও ওয়েবসাইটের জন্য তৈরি হাই-কনভার্সন ক্রিয়েটিভ ডিজাইন ও ডেভেলপমেন্ট স্টুডিও।",
+  },
+  {
+    id: "ims-platform",
+    title: "Techvrs IMS — Enterprise Multi-Warehouse ERP",
+    titleBn: "টেকভার্স IMS — এন্টারপ্রাইজ ইনভেন্টরি ERP",
+    category: "Enterprise ERP",
+    categoryBn: "ইনভেন্টরি ও ERP",
+    images: [
+      "/desgins/ims/ims.png",
+      "/desgins/ims/ims1.png",
+      "/desgins/ims/Screenshot_82.png",
+      "/desgins/ims/Screenshot_83.png",
+      "/desgins/ims/Screenshot_84.png",
+      "/desgins/ims/Screenshot_85.png",
+      "/desgins/ims/Screenshot_86.png",
+    ],
+    url: "https://ims.techvrs.com/",
+    caseStudyUrl: "/work/techvrs-ims",
+    isLiveExternal: true,
+    badge: "Live ERP",
+    badgeBn: "লাইভ ERP",
+    description: "Comprehensive multi-branch inventory management software featuring real-time stock telemetry, barcode scanning, automated purchase orders, and audit ledgers.",
+    descriptionBn: "মাল্টি-ব্রাঞ্চ স্টক কন্ট্রোল, রিয়েল-টাইম ইনভেন্টরি ট্র্যাকিং ও সাপ্লাই চেইন ম্যানেজমেন্ট সিস্টেম।",
+  },
+  {
+    id: "okkhor-library-live",
+    title: "Okkhor Pathagar — Digital Public Archive",
+    titleBn: "অক্ষর পাঠাগার — উন্মুক্ত ডিজিটাল লাইব্রেরি",
+    category: "Digital Library",
+    categoryBn: "ডিজিটাল লাইব্রেরি ও আর্কাইভ",
+    images: [
+      "/desgins/library/library.png",
+      "/desgins/library/library3.png",
+      "/desgins/library/livrary.png",
+      "/desgins/library/Screenshot_62.png",
+      "/desgins/library/Screenshot_67.png",
+    ],
+    url: "https://okkhorpathagar.com/",
+    caseStudyUrl: "/work/okkhor-pathagar",
+    isLiveExternal: true,
+    badge: "Live Archive",
+    badgeBn: "লাইভ লাইব্রেরি",
+    description: "Non-profit community public library with catalog search, reader registration, book reservations, and online donation channels.",
+    descriptionBn: "কমিউনিটি লাইব্রেরির জন্য অনলাইন বই সার্চ, ডিজিটাল মেম্বারশিপ ও অনলাইন ডোনেশন গেটওয়ে।",
+  },
+  {
+    id: "tasneem-textile",
+    title: "Tasneem Knit Industry — RMG Export Portal",
+    titleBn: "তাসনিম নিট ইন্ডাস্ট্রি — গার্মেন্টস ও আরএমজি এক্সপোর্ট",
+    category: "Industrial & Export",
+    categoryBn: "ইন্ডাস্ট্রি ও ম্যানুফ্যাকচারিং",
+    images: [
+      "/desgins/tasneem/tasneem.png",
+      "/desgins/tasneem/tasneem (2).png",
+      "/desgins/tasneem/tasneem (3).png",
+      "/desgins/tasneem/tasneem (4).png",
+    ],
+    url: "https://tasneemknitindustry.com/",
+    caseStudyUrl: "/work/tasneemknit",
+    isLiveExternal: true,
+    badge: "Live Corporate",
+    badgeBn: "লাইভ কর্পোরেট",
+    description: "International buyer-facing portal for knitwear manufacturing, sustainable fabric sourcing, global compliance certifications, and RFQ workflows.",
+    descriptionBn: "আন্তর্জাতিক বায়ারদের জন্য তৈরি কমপ্লায়েন্স-সার্টিফায়েড নিটওয়্যার ও গার্মেন্টস প্রস্তুতকারক প্রতিষ্ঠানের কর্পোরেট পোর্টাল।",
+  },
+  {
+    id: "noor-solar",
+    title: "Noor Solar Energy — Clean Tech Infrastructure",
+    titleBn: "নূর সোলার এনার্জি — নবায়নযোগ্য শক্তি সলিউশন",
+    category: "Renewable Energy",
+    categoryBn: "নবায়নযোগ্য শক্তি",
+    images: [
+      "/desgins/nooor/httpnoorsolarencom.png",
+      "/desgins/nooor/n.png",
+      "/desgins/nooor/norr.png",
+    ],
+    url: "http://noorsolaren.com/",
+    caseStudyUrl: "/work/noorsolaren",
+    isLiveExternal: true,
+    badge: "Live GreenTech",
+    badgeBn: "গ্রিন এনার্জি",
+    description: "Solar power EPC engineering platform featuring industrial rooftop PV systems, net metering estimations, and sustainability tracking.",
+    descriptionBn: "শিল্প ও আবাসিক সোলার পিভি সিস্টেম, এনার্জি অডিট এবং গ্রিন পাওয়ার প্রজেক্ট শোকেস পোর্টাল।",
+  },
+  {
+    id: "bengal-bulletin-news",
+    title: "Bengal Bulletin — Edge-Powered News Portal",
+    titleBn: "বেঙ্গল বুলেটিন — হাই-স্পিড ডিজিটাল নিউজ মিডিয়া",
+    category: "News & Media",
+    categoryBn: "নিউজ ও মিডিয়া",
+    images: [
+      "/desgins/news/news.png",
+      "/desgins/news/news (2).png",
+      "/desgins/news/news (3).png",
+      "/desgins/news/news3.png",
+      "/desgins/news/news3 (2).png",
+    ],
+    url: "https://bb.napaextra376.workers.dev/",
+    caseStudyUrl: "/work/bengalbulletin",
+    isLiveExternal: true,
+    badge: "Live News",
+    badgeBn: "লাইভ নিউজ পোর্টাল",
+    description: "Cloudflare Edge-rendered online news portal built for sub-second breaking news delivery, zero downtime under viral traffic, and instant category filters.",
+    descriptionBn: "ক্লাউডফ্লেয়ার এজ আর্কিটেকচারে তৈরি দ্রুতগতির অনলাইন নিউজ পোর্টাল। ইনস্ট্যান্ট ব্রেকিং নিউজ আপডেট সহ।",
+  },
+  {
+    id: "freedom-plus",
+    title: "Freedom Plus — Productivity & Workspace",
+    titleBn: "ফ্রিডম প্লাস — প্রোডাক্টিভিটি ও ওয়ার্কস্পেস",
+    category: "SaaS Application",
+    categoryBn: "SaaS ও ওয়েব অ্যাপ",
+    images: [
+      "/desgins/fredom/ffreedom.png",
+      "/desgins/fredom/ffreedom.png2.png",
+    ],
+    url: "https://freedomplus.lovable.app",
+    caseStudyUrl: "/work/freedomplus",
+    isLiveExternal: true,
+    badge: "Live SaaS",
+    badgeBn: "লাইভ SaaS",
+    description: "Modern productivity web application offering collaborative team hubs, smart notifications, and streamlined project progress boards.",
+    descriptionBn: "টিম কলাবোরেশন, টাস্ক ট্র্যাকিং এবং মসৃণ ইউজার এক্সপেরিয়েন্স সমৃদ্ধ আধুনিক SaaS ওয়েব অ্যাপ্লিকেশন।",
+  },
+  {
+    id: "techvrs-platform-live",
+    title: "Techvrs — Security Prompts & Threat Intelligence",
+    titleBn: "টেকভার্স — সিকিউরিটি প্রম্পটস ও ডিফেন্স হাব",
+    category: "Cybersecurity & AI",
+    categoryBn: "সাইবার সিকিউরিটি ও AI",
+    images: [
+      "/desgins/techvrs/Screenshot_61.png",
+      "/desgins/techvrs/Screenshot_63.png",
+    ],
+    url: "https://techvrs.com/pormts",
+    caseStudyUrl: "/work/techvrs-security",
+    isLiveExternal: true,
+    badge: "Live Platform",
+    badgeBn: "লাইভ প্ল্যাটফর্ম",
+    description: "Cybersecurity prompts directory and threat intelligence platform designed for defensive engineers, CISOs, and security auditors.",
+    descriptionBn: "এন্টারপ্রাইজ সিকিউরিটি প্রম্পটস, কমপ্লায়েন্স গাইডলাইন এবং সাইবার থ্রেট ডিফেন্স রিসোর্স হাব।",
+  },
+  {
+    id: "tarek-portfolio",
+    title: "TarekSec — Cyber Security Researcher",
+    titleBn: "তারিক সিক — সাইবার সিকিউরিটি রিসার্চার",
+    category: "Security Portfolio",
+    categoryBn: "সিকিউরিটি ও রিসার্চ",
+    images: [
+      "/desgins/my-portfoli/portfolio.png",
+      "/desgins/my-portfoli/Screenshot_64.png",
+      "/desgins/my-portfoli/Screenshot_65.png",
+      "/desgins/my-portfoli/Screenshot_66.png",
+    ],
+    url: "https://tareksec.dev/",
+    caseStudyUrl: "/work/tareksec",
+    isLiveExternal: true,
+    badge: "Live Portfolio",
+    badgeBn: "লাইভ পোর্টফোলিও",
+    description: "Personal cybersecurity portfolio featuring bug bounty CVEs, security tooling, vulnerability writeups, and terminal aesthetics.",
+    descriptionBn: "সাইবার সিকিউরিটি স্পেশালিস্ট ও এথিক্যাল হ্যাকারের প্রফেশনাল পোর্টফোলিও এবং রিসার্চ পাবলিকেশন।",
+  },
+  {
+    id: "imran-blog",
+    title: "Imran Khan — Thought Leadership & Blog",
+    titleBn: "ইমরান খান — ডিজিটাল জার্নাল ও ব্লগ",
+    category: "Editorial & Publications",
+    categoryBn: "এডিটোরিয়াল ও ব্লগ",
+    images: [
+      "/desgins/New folder (3)/imran.png",
+      "/desgins/New folder (3)/imran1.png",
+    ],
+    url: "https://imrankhanblog.netlify.app/",
+    caseStudyUrl: "/work/imrankhanblog",
+    isLiveExternal: true,
+    badge: "Live Blog",
+    badgeBn: "লাইভ ব্লগ",
+    description: "Clean modern blog publication focused on technology insights, software architecture essays, and personal reflections.",
+    descriptionBn: "মিনিমালিস্ট ও রিডার-ফার্স্ট এডিটোরিয়াল ব্লগ প্ল্যাটফর্ম। ক্যাটাগরি ফিল্টার এবং পরিচ্ছন্ন লেআউট সহ।",
+  },
+
+  // ─── PRIVATE ENTERPRISE PORTALS (PREVIEW ONLY) ──────────────────────────────
+  {
+    id: "trade-portal-b2b",
+    title: "Global Trade Portal — B2B Logistics & Customs",
+    titleBn: "গ্লোবাল ট্রেড পোর্টাল — B2B লজিস্টিকস (প্রাইভেট)",
+    category: "Enterprise Trade (Private)",
+    categoryBn: "এন্টারপ্রাইজ পোর্টাল (প্রাইভেট)",
+    images: [
+      "/desgins/treadportal/Screenshot_59.png",
+      "/desgins/treadportal/Screenshot_60.png",
+    ],
+    isPrivate: true,
+    badge: "Private Preview",
+    badgeBn: "প্রাইভেট প্রিভিউ",
+    description: "Confidential enterprise B2B trade management system, shipment tracking, and LC document processing. Private client system — preview images only.",
+    descriptionBn: "কনফিডেনশিয়াল এন্টারপ্রাইজ B2B ট্রেড ও শিপমেন্ট ট্র্যাকিং পোর্টাল। ক্লায়েন্টের অভ্যন্তরীণ সিস্টেম হওয়ায় কেবল প্রিভিউ প্রদর্শিত হচ্ছে।",
+  },
+
+  // ─── EXISTING SHOWCASE DEMOS & CASE STUDIES (PRESERVED BELOW) ───────────────
   {
     id: "metricra-harbor",
     title: "Metricra — Harbor & Maritime SaaS",
@@ -98,8 +359,6 @@ export const ALL_SHOWCASE_PROJECTS: ShowcaseProject[] = [
     description: "Isometric 3D army art direction paired with high-throughput workflow orchestration controls and mission deployment.",
     descriptionBn: "আইসোমেট্রিক ৩ডি মিনিয়াচার স্টাইলের সাথে হাই-থ্রুপুট মাল্টি-এজেন্ট অর্কেস্ট্রেশন প্ল্যাটফর্ম।",
   },
-
-  // ─── ADDITIONAL WORKPROOF DEMOS (EXPANDED COLLECTION) ──────────────────────
   {
     id: "samriddhi-ecom",
     title: "Samriddhi — Agro & Organic Commerce",
@@ -341,17 +600,32 @@ export function WorkShowcaseSection() {
                   onClick={() => setSelectedProject(item)}
                   className="group relative cursor-pointer overflow-hidden rounded-[24px] sm:rounded-[28px] border border-black/[0.06] dark:border-white/[0.08] bg-white dark:bg-[#18191c] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] transition-all duration-300"
                 >
-                  {/* Clean Visual Card (Identical to sample screenshot) */}
+                  {/* Clean Visual Card with Auto Video Autoplay and Image Auto-Slider */}
                   <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-100 dark:bg-neutral-900">
-                    <img
-                      src={item.image}
+                    <AutoMediaPreview
+                      video={item.video}
+                      images={item.images}
+                      image={item.image}
                       alt={isBn ? item.titleBn : item.title}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                      aspectRatio="aspect-[4/3]"
                     />
 
+                    {/* Top status badge if provided */}
+                    {(item.badge || item.badgeBn) && (
+                      <div className="absolute top-3 right-3 z-20 pointer-events-none">
+                        <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] font-semibold backdrop-blur-md shadow-sm border ${
+                          item.isPrivate
+                            ? "bg-amber-500/80 text-white border-amber-400/30"
+                            : "bg-black/60 text-emerald-400 border-emerald-500/30"
+                        }`}>
+                          {item.isPrivate && <Lock className="h-3 w-3" />}
+                          {isBn ? item.badgeBn || item.badge : item.badge}
+                        </span>
+                      </div>
+                    )}
+
                     {/* Smooth bottom title bar revealed on hover */}
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-between">
+                    <div className="absolute inset-x-0 bottom-0 z-30 bg-gradient-to-t from-black/85 via-black/50 to-transparent p-5 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-between pointer-events-none">
                       <div>
                         <div className="text-[11px] font-medium text-neutral-300 uppercase tracking-wider">
                           {isBn ? item.categoryBn : item.category}
@@ -361,8 +635,14 @@ export function WorkShowcaseSection() {
                         </div>
                       </div>
                       <div className="rounded-full bg-white/20 backdrop-blur-md px-3 py-1 text-xs font-medium text-white flex items-center gap-1">
-                        <span>{isBn ? "প্রিভিউ" : "Preview"}</span>
-                        <span>↗</span>
+                        <span>
+                          {item.isLiveExternal
+                            ? isBn ? "লাইভ সাইট" : "Live Site"
+                            : item.isPrivate
+                            ? isBn ? "প্রাইভেট" : "Private"
+                            : isBn ? "প্রিভিউ" : "Preview"}
+                        </span>
+                        <span>{item.isPrivate ? "🔒" : "↗"}</span>
                       </div>
                     </div>
                   </div>
@@ -393,18 +673,34 @@ export function WorkShowcaseSection() {
               <button
                 type="button"
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-4 right-4 z-20 rounded-full bg-black/60 text-white p-2.5 hover:bg-black/80 transition-colors shadow-md"
+                className="absolute top-4 right-4 z-30 rounded-full bg-black/60 text-white p-2.5 hover:bg-black/80 transition-colors shadow-md"
               >
                 <X className="h-5 w-5" />
               </button>
 
-              {/* Full Showcase Image */}
+              {/* Media Container: Autoplay Video or Auto-Sliding Images */}
               <div className="relative w-full aspect-[16/10] bg-neutral-950 overflow-hidden">
-                <img
-                  src={selectedProject.image}
-                  alt={isBn ? selectedProject.titleBn : selectedProject.title}
-                  className="h-full w-full object-cover"
-                />
+                {selectedProject.video ? (
+                  <video
+                    src={selectedProject.video}
+                    autoPlay
+                    loop
+                    controls
+                    className="h-full w-full object-contain bg-black"
+                  />
+                ) : selectedProject.images && selectedProject.images.length > 0 ? (
+                  <AutoMediaPreview
+                    images={selectedProject.images}
+                    alt={isBn ? selectedProject.titleBn : selectedProject.title}
+                    aspectRatio="aspect-[16/10]"
+                  />
+                ) : (
+                  <img
+                    src={selectedProject.image}
+                    alt={isBn ? selectedProject.titleBn : selectedProject.title}
+                    className="h-full w-full object-cover"
+                  />
+                )}
               </div>
 
               {/* Project Meta Information */}
@@ -419,15 +715,46 @@ export function WorkShowcaseSection() {
                     </h3>
                   </div>
 
-                  {selectedProject.url && (
-                    <Link
-                      to={selectedProject.url}
-                      className="inline-flex items-center gap-2 rounded-full bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-5 py-2.5 text-xs sm:text-sm font-semibold hover:opacity-90 transition shadow-sm"
-                    >
-                      <span>{isBn ? "কেস স্টাডি দেখুন" : "View Case Study"}</span>
-                      <ExternalLink className="h-3.5 w-3.5" />
-                    </Link>
-                  )}
+                  <div className="flex flex-wrap items-center gap-2">
+                    {selectedProject.isLiveExternal && selectedProject.url && (
+                      <a
+                        href={selectedProject.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full bg-[#f95738] hover:bg-[#ea4829] text-white px-5 py-2.5 text-xs sm:text-sm font-semibold transition shadow-sm"
+                      >
+                        <span>{isBn ? "লাইভ সাইট ভিজিট করুন" : "Visit Live Website"}</span>
+                        <ExternalLink className="h-3.5 w-3.5" />
+                      </a>
+                    )}
+
+                    {selectedProject.caseStudyUrl && (
+                      <Link
+                        to={selectedProject.caseStudyUrl}
+                        className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 px-4 py-2.5 text-xs sm:text-sm font-semibold hover:border-[#f95738] transition shadow-xs"
+                      >
+                        <span>{isBn ? "কেস স্টাডি ও এসইও" : "Case Study & SEO"}</span>
+                        <span>→</span>
+                      </Link>
+                    )}
+
+                    {!selectedProject.isLiveExternal && selectedProject.url && !selectedProject.caseStudyUrl && (
+                      <Link
+                        to={selectedProject.url}
+                        className="inline-flex items-center gap-2 rounded-full bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-5 py-2.5 text-xs sm:text-sm font-semibold hover:opacity-90 transition shadow-sm"
+                      >
+                        <span>{isBn ? "কেস স্টাডি দেখুন" : "View Case Study"}</span>
+                        <ExternalLink className="h-3.5 w-3.5" />
+                      </Link>
+                    )}
+
+                    {selectedProject.isPrivate && (
+                      <div className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-amber-500/10 text-amber-500 border border-amber-500/20 text-xs font-semibold">
+                        <Lock className="h-3.5 w-3.5" />
+                        <span>{isBn ? "প্রাইভেট ক্লায়েন্ট সিস্টেম (প্রিভিউ অনলি)" : "Private Enterprise Client (Preview Only)"}</span>
+                      </div>
+                    )}
+                  </div>
                 </div>
 
                 <p className="mt-4 text-sm sm:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">

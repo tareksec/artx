@@ -53,9 +53,9 @@ export const Route = createFileRoute("/sitemap.xml")({
           })),
           ...projectSlugs.map((slug) => ({
             path: `/work/${slug}`,
-            changefreq: "monthly" as const,
-            priority: "0.8",
-            lastmod: "2026-08-01",
+            changefreq: "weekly" as const,
+            priority: "0.9",
+            lastmod: today,
           })),
           ...blogSlugs.map(({ slug, date }) => ({
             path: `/blog/${slug}`,
