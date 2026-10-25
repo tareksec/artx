@@ -38,7 +38,7 @@ function extractHeadings(content: string) {
 
 export const Route = createFileRoute("/blog_/$slug")({
   head: ({ params }) => {
-    const post = blogPosts.find((p) => p.slug === params.slug);
+    const post = blogPosts.find((p) => p?.slug === params.slug);
     if (!post) return {};
 
     const fullTitle = `${post.title} | ArtX`;
@@ -145,10 +145,10 @@ export const Route = createFileRoute("/blog_/$slug")({
     };
   },
   loader: ({ params }) => {
-    const post = blogPosts.find((p) => p.slug === params.slug);
+    const post = blogPosts.find((p) => p?.slug === params.slug);
     if (!post) throw notFound();
-    const related = post.relatedSlugs
-      .map((s) => blogPosts.find((p) => p.slug === s))
+    const related = (post.relatedSlugs ?? [])
+      .map((s) => blogPosts.find((p) => p?.slug === s))
       .filter(Boolean)
       .slice(0, 3);
     return { post, related };

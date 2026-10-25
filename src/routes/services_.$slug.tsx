@@ -144,9 +144,9 @@ export const Route = createFileRoute("/services_/$slug")({
     const svc = serviceDetails.find((s) => s.slug === params.slug);
     if (!svc) throw notFound();
     const related = svc.relatedProjects
-      .map((slug) => projects.find((p) => p.slug === slug))
+      .map((slug) => projects.find((p) => p?.slug === slug))
       .filter(Boolean);
-    const otherServices = services.filter((s) => s.slug !== svc.slug).slice(0, 3);
+    const otherServices = services.filter((s) => s?.slug && s.slug !== svc.slug).slice(0, 3);
     return { svc, related, otherServices };
   },
   component: ServiceDetailPage,
