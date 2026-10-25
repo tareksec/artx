@@ -27,6 +27,12 @@ export const Route = createFileRoute("/about")({
             alternateName: "ArtXdev",
             url: "https://artxdev.tech",
             foundingDate: "2016",
+            parentOrganization: {
+              "@type": "Organization",
+              "@id": "https://techvrs.com/#organization",
+              name: "TechVRS",
+              url: "https://techvrs.com"
+            },
             founder: {
               "@type": "Person",
               name: "Muhammad Tarek (MD Tarek)",
@@ -105,11 +111,11 @@ const disciplines = [
   },
   {
     icon: ShieldCheck,
-    title: "4. Web Security via Techvrs",
-    titleBn: "ওয়েব নিরাপত্তা ও সুরক্ষার ব্যবস্থা",
-    desc: "Enterprise penetration testing and continuous vulnerability monitoring delivered through our Techvrs partnership.",
-    descBn: "techvrs.com পার্টনারশিপের মাধ্যমে এন্টারপ্রাইজ-গ্রেড নিরাপত্তা। আমরা আপনার ডিজিটাল সম্পদকে আধুনিক ঝুঁকির হাত থেকে রক্ষা করি।",
-    link: "https://techvrs.com",
+    title: "4. TechVRS (Mother Co) Enterprise Security & AI",
+    titleBn: "টেক ভিআরএস (মাদার কোম্পানি) সিকিউরিটি ও এআই",
+    desc: "Enterprise penetration testing, SOC audits, and zero-leak AI automation delivered through our parent company TechVRS (techvrs.com).",
+    descBn: "আমাদের মূল মাদার কোম্পানি techvrs.com এর মাধ্যমে এন্টারপ্রাইজ-গ্রেড সাইবার নিরাপত্তা, পেনিট্রেশন টেস্টিং এবং প্রাইভেট এআই অটোমেশন।",
+    link: "/techvrs",
   },
 ];
 
@@ -136,7 +142,7 @@ function AboutPage() {
             <p className="mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl leading-relaxed">
               {language === "bn"
                 ? "২০১৬ সালে প্রতিষ্ঠিত একটি ছোট স্বাধীন স্টুডিও, যা ডিজাইন, ইঞ্জিনিয়ারিং এবং সার্চের নিখুঁত সমন্বয়ে কাজ করে। এ পর্যন্ত ৪টি মহাদেশের ব্র্যান্ডগুলোর জন্য ৯৫০+ প্রজেক্ট সফলভাবে সম্পন্ন করেছি।"
-                : "ArtX (also known as ArtXdev) is an independent creative studio founded in 2016 in Bangladesh. We design, code, and rank standout digital products for B2B, SaaS, and e-commerce brands worldwide that refuse to blend into generic templates."}
+                : "ArtX Studio (also known as ArtXdev) operates as the dedicated digital product design and bespoke software engineering arm under parent holding enterprise TechVRS (https://techvrs.com/). Founded in 2016, we design, code, and rank standout digital products for B2B, SaaS, and e-commerce brands worldwide with sub-second speeds and bulletproof security."}
             </p>
           </ScrollReveal>
         </div>

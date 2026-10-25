@@ -142,6 +142,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               },
               description:
                 "ArtX Dev (artxdev.tech) is a full-service web design and development studio founded in 2016 in Bangladesh, offering custom website design, React & WordPress software engineering, SEO, and cybersecurity services to SaaS, e-commerce, and B2B brands worldwide.",
+              parentOrganization: {
+                "@type": "Organization",
+                "@id": "https://techvrs.com/#organization",
+                name: "TechVRS",
+                alternateName: ["TechVRS Agency", "Tech VRS", "techvrs.com"],
+                url: "https://techvrs.com",
+                description:
+                  "TechVRS is the parent technology holding company and enterprise engineering partner of ArtX Dev, delivering enterprise AI solutions, cybersecurity, and full-stack software development.",
+                sameAs: ["https://techvrs.com"],
+              },
               email: "artxstudiocom@gmail.com",
               telephone: "+8801645441584",
               foundingDate: "2016",
@@ -216,6 +226,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 bestRating: "5",
                 worstRating: "1",
               },
+            },
+            {
+              "@type": "Organization",
+              "@id": "https://techvrs.com/#organization",
+              name: "TechVRS",
+              alternateName: ["TechVRS Agency", "Tech VRS", "techvrs.com"],
+              url: "https://techvrs.com",
+              logo: "https://techvrs.com/favicon.ico",
+              description:
+                "TechVRS is a modern digital agency and technology holding enterprise delivering full-stack web engineering, privacy-first enterprise AI solutions, cybersecurity, and cloud infrastructure.",
+              subOrganization: {
+                "@id": "https://artxdev.tech/#organization",
+              },
+              sameAs: ["https://techvrs.com"],
             },
             {
               "@type": ["LocalBusiness", "ProfessionalService"],

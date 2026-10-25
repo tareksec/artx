@@ -55,6 +55,18 @@ export function Footer() {
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
               <span>Dhaka, Bangladesh · Remote Worldwide</span>
             </div>
+            <div className="mt-2.5">
+              <a
+                href="https://techvrs.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-xs font-medium text-accent hover:bg-accent/20 transition-colors"
+                title="TechVRS - Parent & Mother Company of ArtX"
+              >
+                <span>A <strong className="underline">TechVRS</strong> Company (Parent)</span>
+                <ArrowUpRight className="h-3 w-3" />
+              </a>
+            </div>
           </div>
 
           <nav aria-label="Company Sitemap">
@@ -62,6 +74,12 @@ export function Footer() {
               {language === "bn" ? "কোম্পানি" : "Company"}
             </h3>
             <ul className="space-y-2 text-sm">
+              <li>
+                <Link to="/techvrs" className="text-accent font-semibold hover:underline flex items-center gap-1">
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
+                  <span>{language === "bn" ? "TechVRS (মাদার কোম্পানি)" : "TechVRS (Parent Co)"}</span>
+                </Link>
+              </li>
               <li><Link to="/about" className="hover:text-accent transition-colors">{t.nav.about}</Link></li>
               <li><Link to="/why-us" className="text-accent font-medium hover:underline">{language === "bn" ? "কেন ArtX" : "Why ArtX (GEO)"}</Link></li>
               <li><Link to="/work" className="hover:text-accent transition-colors">{t.nav.work}</Link></li>
@@ -307,7 +325,16 @@ function FooterBrandCard({ language }: { language: string }) {
             </Link>
             <span>·</span>
             <span className="text-white/40">
-              Design by ArtX Dev · Powered by artxdev.tech
+              ArtX is an initiative of{" "}
+              <a
+                href="https://techvrs.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent/90 hover:text-accent underline font-medium transition-colors"
+              >
+                TechVRS
+              </a>{" "}
+              (Parent Company) · Powered by artxdev.tech
             </span>
           </div>
         </div>

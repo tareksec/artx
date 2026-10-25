@@ -24,6 +24,7 @@ import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ScrapeRouteImport } from './routes/scrape'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TechvrsRouteImport } from './routes/techvrs'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as WhyUsRouteImport } from './routes/why-us'
 import { Route as WorkRouteImport } from './routes/work'
@@ -109,6 +110,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TechvrsRoute = TechvrsRouteImport.update({
+  id: '/techvrs',
+  path: '/techvrs',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TestimonialsRoute = TestimonialsRouteImport.update({
   id: '/testimonials',
   path: '/testimonials',
@@ -171,6 +177,7 @@ export interface FileRoutesByFullPath {
   '/scrape': typeof ScrapeRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/techvrs': typeof TechvrsRoute
   '/testimonials': typeof TestimonialsRoute
   '/why-us': typeof WhyUsRoute
   '/work': typeof WorkRoute
@@ -197,6 +204,7 @@ export interface FileRoutesByTo {
   '/scrape': typeof ScrapeRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/techvrs': typeof TechvrsRoute
   '/testimonials': typeof TestimonialsRoute
   '/why-us': typeof WhyUsRoute
   '/work': typeof WorkRoute
@@ -224,6 +232,7 @@ export interface FileRoutesById {
   '/scrape': typeof ScrapeRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/techvrs': typeof TechvrsRoute
   '/testimonials': typeof TestimonialsRoute
   '/why-us': typeof WhyUsRoute
   '/work': typeof WorkRoute
@@ -252,6 +261,7 @@ export interface FileRouteTypes {
     | '/scrape'
     | '/services'
     | '/sitemap.xml'
+    | '/techvrs'
     | '/testimonials'
     | '/why-us'
     | '/work'
@@ -278,6 +288,7 @@ export interface FileRouteTypes {
     | '/scrape'
     | '/services'
     | '/sitemap.xml'
+    | '/techvrs'
     | '/testimonials'
     | '/why-us'
     | '/work'
@@ -304,6 +315,7 @@ export interface FileRouteTypes {
     | '/scrape'
     | '/services'
     | '/sitemap.xml'
+    | '/techvrs'
     | '/testimonials'
     | '/why-us'
     | '/work'
@@ -331,6 +343,7 @@ export interface RootRouteChildren {
   ScrapeRoute: typeof ScrapeRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TechvrsRoute: typeof TechvrsRoute
   TestimonialsRoute: typeof TestimonialsRoute
   WhyUsRoute: typeof WhyUsRoute
   WorkRoute: typeof WorkRoute
@@ -449,6 +462,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/techvrs': {
+      id: '/techvrs'
+      path: '/techvrs'
+      fullPath: '/techvrs'
+      preLoaderRoute: typeof TechvrsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/testimonials': {
       id: '/testimonials'
       path: '/testimonials'
@@ -531,6 +551,7 @@ const rootRouteChildren: RootRouteChildren = {
   ScrapeRoute: ScrapeRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TechvrsRoute: TechvrsRoute,
   TestimonialsRoute: TestimonialsRoute,
   WhyUsRoute: WhyUsRoute,
   WorkRoute: WorkRoute,
