@@ -76,6 +76,10 @@ export function Nav() {
     }, 150);
   };
 
+  if (pathname.startsWith("/artxhub")) {
+    return null;
+  }
+
   // Primary compact links for desktop
   const primaryLinks = [
     { to: "/work", label: t.nav.work },
