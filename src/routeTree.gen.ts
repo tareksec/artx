@@ -30,6 +30,8 @@ import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as WhyUsRouteImport } from './routes/why-us'
 import { Route as WorkRouteImport } from './routes/work'
 import { Route as WorkproofRouteImport } from './routes/workproof'
+import { Route as ArtxhubAboutRouteImport } from './routes/artxhub_.about'
+import { Route as ArtxhubAppsRouteImport } from './routes/artxhub_.apps'
 import { Route as BlogSlugRouteImport } from './routes/blog_.$slug'
 import { Route as ConceptsSlugRouteImport } from './routes/concepts_.$slug'
 import { Route as LocationSlugRouteImport } from './routes/location_.$slug'
@@ -141,6 +143,16 @@ const WorkproofRoute = WorkproofRouteImport.update({
   path: '/workproof',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ArtxhubAboutRoute = ArtxhubAboutRouteImport.update({
+  id: '/artxhub_/about',
+  path: '/artxhub/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArtxhubAppsRoute = ArtxhubAppsRouteImport.update({
+  id: '/artxhub_/apps',
+  path: '/artxhub/apps',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog_/$slug',
   path: '/blog/$slug',
@@ -189,6 +201,8 @@ export interface FileRoutesByFullPath {
   '/why-us': typeof WhyUsRoute
   '/work': typeof WorkRoute
   '/workproof': typeof WorkproofRoute
+  '/artxhub/about': typeof ArtxhubAboutRoute
+  '/artxhub/apps': typeof ArtxhubAppsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/concepts/$slug': typeof ConceptsSlugRoute
   '/location/$slug': typeof LocationSlugRoute
@@ -217,6 +231,8 @@ export interface FileRoutesByTo {
   '/why-us': typeof WhyUsRoute
   '/work': typeof WorkRoute
   '/workproof': typeof WorkproofRoute
+  '/artxhub/about': typeof ArtxhubAboutRoute
+  '/artxhub/apps': typeof ArtxhubAppsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/concepts/$slug': typeof ConceptsSlugRoute
   '/location/$slug': typeof LocationSlugRoute
@@ -246,6 +262,8 @@ export interface FileRoutesById {
   '/why-us': typeof WhyUsRoute
   '/work': typeof WorkRoute
   '/workproof': typeof WorkproofRoute
+  '/artxhub_/about': typeof ArtxhubAboutRoute
+  '/artxhub_/apps': typeof ArtxhubAppsRoute
   '/blog_/$slug': typeof BlogSlugRoute
   '/concepts_/$slug': typeof ConceptsSlugRoute
   '/location_/$slug': typeof LocationSlugRoute
@@ -276,6 +294,8 @@ export interface FileRouteTypes {
     | '/why-us'
     | '/work'
     | '/workproof'
+    | '/artxhub/about'
+    | '/artxhub/apps'
     | '/blog/$slug'
     | '/concepts/$slug'
     | '/location/$slug'
@@ -304,6 +324,8 @@ export interface FileRouteTypes {
     | '/why-us'
     | '/work'
     | '/workproof'
+    | '/artxhub/about'
+    | '/artxhub/apps'
     | '/blog/$slug'
     | '/concepts/$slug'
     | '/location/$slug'
@@ -332,6 +354,8 @@ export interface FileRouteTypes {
     | '/why-us'
     | '/work'
     | '/workproof'
+    | '/artxhub_/about'
+    | '/artxhub_/apps'
     | '/blog_/$slug'
     | '/concepts_/$slug'
     | '/location_/$slug'
@@ -361,6 +385,8 @@ export interface RootRouteChildren {
   WhyUsRoute: typeof WhyUsRoute
   WorkRoute: typeof WorkRoute
   WorkproofRoute: typeof WorkproofRoute
+  ArtxhubAboutRoute: typeof ArtxhubAboutRoute
+  ArtxhubAppsRoute: typeof ArtxhubAppsRoute
   BlogSlugRoute: typeof BlogSlugRoute
   ConceptsSlugRoute: typeof ConceptsSlugRoute
   LocationSlugRoute: typeof LocationSlugRoute
@@ -517,6 +543,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkproofRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/artxhub_/about': {
+      id: '/artxhub_/about'
+      path: '/artxhub/about'
+      fullPath: '/artxhub/about'
+      preLoaderRoute: typeof ArtxhubAboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/artxhub_/apps': {
+      id: '/artxhub_/apps'
+      path: '/artxhub/apps'
+      fullPath: '/artxhub/apps'
+      preLoaderRoute: typeof ArtxhubAppsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog_/$slug': {
       id: '/blog_/$slug'
       path: '/blog/$slug'
@@ -577,6 +617,8 @@ const rootRouteChildren: RootRouteChildren = {
   WhyUsRoute: WhyUsRoute,
   WorkRoute: WorkRoute,
   WorkproofRoute: WorkproofRoute,
+  ArtxhubAboutRoute: ArtxhubAboutRoute,
+  ArtxhubAppsRoute: ArtxhubAppsRoute,
   BlogSlugRoute: BlogSlugRoute,
   ConceptsSlugRoute: ConceptsSlugRoute,
   LocationSlugRoute: LocationSlugRoute,

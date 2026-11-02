@@ -28,6 +28,8 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/techvrs", changefreq: "weekly", priority: "0.95", lastmod: today },
           { path: "/artx-dev", changefreq: "weekly", priority: "1.0", lastmod: today },
           { path: "/artxhub", changefreq: "weekly", priority: "0.95", lastmod: today },
+          { path: "/artxhub/apps", changefreq: "weekly", priority: "0.9", lastmod: today },
+          { path: "/artxhub/about", changefreq: "monthly", priority: "0.6", lastmod: today },
           { path: "/work", changefreq: "weekly", priority: "0.9", lastmod: "2026-09-01" },
           { path: "/workproof", changefreq: "weekly", priority: "0.85", lastmod: today },
           { path: "/services", changefreq: "weekly", priority: "0.9", lastmod: today },
