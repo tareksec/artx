@@ -37,6 +37,7 @@ import { Route as ConceptsSlugRouteImport } from './routes/concepts_.$slug'
 import { Route as LocationSlugRouteImport } from './routes/location_.$slug'
 import { Route as ServicesSlugRouteImport } from './routes/services_.$slug'
 import { Route as WorkSlugRouteImport } from './routes/work_.$slug'
+import { Route as ArtxhubAppsSlugRouteImport } from './routes/artxhub_.apps_.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -178,6 +179,11 @@ const WorkSlugRoute = WorkSlugRouteImport.update({
   path: '/work/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ArtxhubAppsSlugRoute = ArtxhubAppsSlugRouteImport.update({
+  id: '/artxhub_/apps_/$slug',
+  path: '/artxhub/apps/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -208,6 +214,7 @@ export interface FileRoutesByFullPath {
   '/location/$slug': typeof LocationSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/work/$slug': typeof WorkSlugRoute
+  '/artxhub/apps/$slug': typeof ArtxhubAppsSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -238,6 +245,7 @@ export interface FileRoutesByTo {
   '/location/$slug': typeof LocationSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/work/$slug': typeof WorkSlugRoute
+  '/artxhub/apps/$slug': typeof ArtxhubAppsSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -269,6 +277,7 @@ export interface FileRoutesById {
   '/location_/$slug': typeof LocationSlugRoute
   '/services_/$slug': typeof ServicesSlugRoute
   '/work_/$slug': typeof WorkSlugRoute
+  '/artxhub_/apps_/$slug': typeof ArtxhubAppsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -301,6 +310,7 @@ export interface FileRouteTypes {
     | '/location/$slug'
     | '/services/$slug'
     | '/work/$slug'
+    | '/artxhub/apps/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -331,6 +341,7 @@ export interface FileRouteTypes {
     | '/location/$slug'
     | '/services/$slug'
     | '/work/$slug'
+    | '/artxhub/apps/$slug'
   id:
     | '__root__'
     | '/'
@@ -361,6 +372,7 @@ export interface FileRouteTypes {
     | '/location_/$slug'
     | '/services_/$slug'
     | '/work_/$slug'
+    | '/artxhub_/apps_/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -392,6 +404,7 @@ export interface RootRouteChildren {
   LocationSlugRoute: typeof LocationSlugRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
   WorkSlugRoute: typeof WorkSlugRoute
+  ArtxhubAppsSlugRoute: typeof ArtxhubAppsSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -592,6 +605,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/artxhub_/apps_/$slug': {
+      id: '/artxhub_/apps_/$slug'
+      path: '/artxhub/apps/$slug'
+      fullPath: '/artxhub/apps/$slug'
+      preLoaderRoute: typeof ArtxhubAppsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -624,6 +644,7 @@ const rootRouteChildren: RootRouteChildren = {
   LocationSlugRoute: LocationSlugRoute,
   ServicesSlugRoute: ServicesSlugRoute,
   WorkSlugRoute: WorkSlugRoute,
+  ArtxhubAppsSlugRoute: ArtxhubAppsSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -3,7 +3,6 @@ import * as React from "react";
 import {
   Download,
   ArrowRight,
-  ExternalLink,
   ShieldCheck,
   BadgeCheck,
   HandCoins,
@@ -12,12 +11,11 @@ import {
   Layers,
   Zap,
 } from "lucide-react";
-import { artxHubApps, type ArtXApp } from "@/content/artxhub-apps";
+import { artxHubApps } from "@/content/artxhub-apps";
 import {
   artxHubFontLink,
   artxHubPageClass,
   ArtXHubAppCard,
-  ArtXHubDownloadDialog,
   ArtXHubFooter,
   ArtXHubHeader,
 } from "@/components/artxhub/ArtXHubChrome";
@@ -169,7 +167,6 @@ export const Route = createFileRoute("/artxhub")({
 /* ARTXHUB MAIN COMPONENT                                       */
 /* ============================================================ */
 function ArtXHubPage() {
-  const [activeModalApp, setActiveModalApp] = React.useState<ArtXApp | null>(null);
   const [emailInput, setEmailInput] = React.useState<string>("");
   const [subscribeStatus, setSubscribeStatus] = React.useState<
     "idle" | "sending" | "subscribed" | "error"
@@ -245,8 +242,9 @@ function ArtXHubPage() {
               </p>
 
               {/* Highlighted app */}
-              <a
-                href={spotlightApp.downloadUrl}
+              <Link
+                to="/artxhub/apps/$slug"
+                params={{ slug: spotlightApp.id }}
                 className="mt-5 inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white py-1.5 pl-1.5 pr-4 shadow-xs hover:border-slate-300 transition-colors"
               >
                 <img
@@ -258,8 +256,8 @@ function ArtXHubPage() {
                   <span className="font-semibold text-slate-900">New:</span> {spotlightApp.name}
                   {spotlightApp.nameBn ? ` (${spotlightApp.nameBn})` : ""}
                 </span>
-                <Download className="w-3.5 h-3.5 text-[#1B4266] shrink-0" />
-              </a>
+                <ArrowRight className="w-3.5 h-3.5 text-[#1B4266] shrink-0" />
+              </Link>
 
               {/* Action Button */}
               <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -340,7 +338,7 @@ function ArtXHubPage() {
           {/* App Cards Grid (4 columns on desktop, exactly like mockup) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredApps.map((app) => (
-              <ArtXHubAppCard key={app.id} app={app} onDetails={() => setActiveModalApp(app)} />
+              <ArtXHubAppCard key={app.id} app={app} />
             ))}
 
             {featuredApps.length === 1 && (
@@ -442,17 +440,14 @@ function ArtXHubPage() {
                         <span>Download APK ({spotlightApp.fileSize})</span>
                       </a>
 
-                      {spotlightApp.websiteUrl && (
-                        <a
-                          href={spotlightApp.websiteUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300/80 bg-white/80 px-4 py-3 text-xs font-semibold text-slate-800 hover:bg-white transition-colors"
-                        >
-                          <span>Visit Website</span>
-                          <ExternalLink className="w-3.5 h-3.5 text-[#1B4266]" />
-                        </a>
-                      )}
+                      <Link
+                        to="/artxhub/apps/$slug"
+                        params={{ slug: spotlightApp.id }}
+                        className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300/80 bg-white/80 px-4 py-3 text-xs font-semibold text-slate-800 hover:bg-white transition-colors"
+                      >
+                        <span>View Details</span>
+                        <ArrowRight className="w-3.5 h-3.5 text-[#1B4266]" />
+                      </Link>
                     </div>
                   </div>
 
@@ -617,7 +612,6 @@ function ArtXHubPage() {
       </section>
 
       <ArtXHubFooter />
-      <ArtXHubDownloadDialog app={activeModalApp} onClose={() => setActiveModalApp(null)} />
     </div>
   );
 }

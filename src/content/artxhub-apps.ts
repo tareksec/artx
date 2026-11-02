@@ -7,7 +7,10 @@ export interface ArtXApp {
   description: string;
   fullDescription: string;
   iconSrc: string;
+  developer: string;
   websiteUrl?: string;
+  supportEmail?: string;
+  screenshots: { src: string; alt: string }[];
   // Update version and fileSize when a new release is published.
   version: string;
   fileSize: string;
@@ -31,7 +34,14 @@ export const artxHubApps: ArtXApp[] = [
     fullDescription:
       "Biniyog Briddhi helps you discover verified businesses in Bangladesh and take part through an interest-free co-investment model built on transparency.",
     iconSrc: "https://biniyogbriddhi.com/logo.png",
+    developer: "ArtX Dev",
     websiteUrl: "https://biniyogbriddhi.com/",
+    supportEmail: "support@biniyogbriddhi.com",
+    screenshots: [
+      { src: "/desgins/binoyg/binioyg.png", alt: "Biniyog Briddhi home screen" },
+      { src: "/desgins/binoyg/biniyog (2).png", alt: "Biniyog Briddhi opportunities overview" },
+      { src: "/desgins/binoyg/biniyog.png1.png", alt: "Biniyog Briddhi active opportunities" },
+    ],
     version: "v0.2.0",
     fileSize: "63.7 MB",
     platform: "Android",

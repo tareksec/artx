@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { projects, serviceDetails, blogPosts, locationDetails } from "@/content/site";
+import { artxHubApps } from "@/content/artxhub-apps";
 
 const BASE_URL = "https://artxdev.tech";
 
@@ -30,6 +31,12 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/artxhub", changefreq: "weekly", priority: "0.95", lastmod: today },
           { path: "/artxhub/apps", changefreq: "weekly", priority: "0.9", lastmod: today },
           { path: "/artxhub/about", changefreq: "monthly", priority: "0.6", lastmod: today },
+          ...artxHubApps.map((app) => ({
+            path: `/artxhub/apps/${app.id}`,
+            changefreq: "weekly" as const,
+            priority: "0.9",
+            lastmod: today,
+          })),
           { path: "/work", changefreq: "weekly", priority: "0.9", lastmod: "2026-09-01" },
           { path: "/workproof", changefreq: "weekly", priority: "0.85", lastmod: today },
           { path: "/services", changefreq: "weekly", priority: "0.9", lastmod: today },

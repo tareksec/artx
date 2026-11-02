@@ -1,12 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import * as React from "react";
 import { Search } from "lucide-react";
-import { artxHubApps, artxHubCategories, type ArtXApp } from "@/content/artxhub-apps";
+import { artxHubApps, artxHubCategories } from "@/content/artxhub-apps";
 import {
   artxHubFontLink,
   artxHubPageClass,
   ArtXHubAppCard,
-  ArtXHubDownloadDialog,
   ArtXHubFooter,
   ArtXHubHeader,
 } from "@/components/artxhub/ArtXHubChrome";
@@ -36,7 +35,6 @@ export const Route = createFileRoute("/artxhub_/apps")({
 function ArtXHubAppsPage() {
   const [selectedCategory, setSelectedCategory] = React.useState<string>("all");
   const [searchQuery, setSearchQuery] = React.useState<string>("");
-  const [activeModalApp, setActiveModalApp] = React.useState<ArtXApp | null>(null);
 
   // Filter apps based on category and search query
   const filteredApps = React.useMemo(() => {
@@ -116,7 +114,7 @@ function ArtXHubAppsPage() {
           {/* App Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {filteredApps.map((app) => (
-              <ArtXHubAppCard key={app.id} app={app} onDetails={() => setActiveModalApp(app)} />
+              <ArtXHubAppCard key={app.id} app={app} />
             ))}
           </div>
 
@@ -138,7 +136,6 @@ function ArtXHubAppsPage() {
       </section>
 
       <ArtXHubFooter />
-      <ArtXHubDownloadDialog app={activeModalApp} onClose={() => setActiveModalApp(null)} />
     </div>
   );
 }
