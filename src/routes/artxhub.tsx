@@ -28,7 +28,7 @@ export const Route = createFileRoute("/artxhub")({
   head: () => {
     const seoTitle = "ArtXHub — Discover & Download Android Apps by ArtX Dev";
     const metaDesc =
-      "ArtXHub is the official home for every app built by ArtX Dev. Discover and download Android apps, including Biniyog Briddhi (বিনিয়োগ বৃদ্ধি).";
+      "ArtXHub is the official home for every app built by ArtX Dev. Discover and download Android apps, including Biniyog Briddhi (বিনিয়োগ বৃদ্ধি) and the ArtX Hub launcher.";
     const canonicalUrl = "https://artxdev.tech/artxhub";
     const ogImageUrl = "https://biniyogbriddhi.com/og-image.jpg";
 
@@ -341,8 +341,10 @@ function ArtXHubPage() {
               <ArtXHubAppCard key={app.id} app={app} />
             ))}
 
-            {featuredApps.length === 1 && (
-              <div className="lg:col-span-3 flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white/50 p-6 text-center">
+            {featuredApps.length <= 2 && (
+              <div
+                className={`sm:col-span-2 ${featuredApps.length === 1 ? "lg:col-span-3" : "lg:col-span-2"} flex items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white/50 p-6 text-center`}
+              >
                 <div>
                   <div className="font-['Playfair_Display',serif] text-xl font-medium text-slate-800">
                     More apps coming soon.

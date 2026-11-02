@@ -15,7 +15,9 @@ export interface ArtXApp {
   version: string;
   fileSize: string;
   platform: string;
+  requires?: string;
   downloadUrl: string;
+  installSteps?: string[];
   features: { title: string; description: string }[];
   notice?: string;
   isFeatured?: boolean;
@@ -64,6 +66,57 @@ export const artxHubApps: ArtXApp[] = [
     notice: "Every investment carries risk, and returns are not guaranteed.",
     isFeatured: true,
     isSpotlight: true,
+  },
+  {
+    id: "artx-hub",
+    name: "ArtX Hub",
+    tagline: "Anime HUD Launcher",
+    category: "Launcher",
+    description: "Turn your phone into an anime HUD home screen.",
+    fullDescription:
+      "ArtX Hub turns your Android phone into an anime HUD home screen. Choose from the BIRD, Mika and CyberHome themes, and hold the round dial on the home screen to switch between them.",
+    iconSrc: "/artxhub/artxhub-app-logo.png",
+    developer: "ArtX Dev",
+    screenshots: [
+      {
+        src: "https://github.com/tareksec/artxhub-releases/releases/download/v1.0.0/screenshot-bird-dark.png",
+        alt: "ArtX Hub BIRD theme in dark mode",
+      },
+      {
+        src: "https://github.com/tareksec/artxhub-releases/releases/download/v1.0.0/screenshot-bird-light.png",
+        alt: "ArtX Hub BIRD theme in light mode",
+      },
+    ],
+    version: "v1.0.0",
+    fileSize: "16.4 MB",
+    platform: "Android",
+    requires: "Android 8 or newer",
+    downloadUrl:
+      "https://github.com/tareksec/artxhub-releases/releases/download/v1.0.0/ArtXHub-1.0.0.apk",
+    installSteps: [
+      `Tap "Download APK" on your Android phone (Android 8 or newer).`,
+      "Open the downloaded file and allow install from this source.",
+      `Open ArtX Hub, pick Light, Dark or Auto, then tap "Apply look".`,
+      "Choose ArtX Hub as your home app when Android asks.",
+      "Hold the round dial on the home screen to change themes.",
+    ],
+    features: [
+      {
+        title: "Anime HUD Home Screen",
+        description: "Give your phone a full anime HUD look.",
+      },
+      {
+        title: "Three Themes",
+        description: "Choose BIRD, Mika or CyberHome.",
+      },
+      {
+        title: "Light, Dark or Auto",
+        description: "Pick a mode and apply your look in one tap.",
+      },
+    ],
+    notice:
+      "This is an early test build, tested on one phone so far. Apply look replaces your home and lock wallpaper. To leave, open Android Settings > Apps > Default apps > Home app.",
+    isFeatured: true,
   },
 ];
 

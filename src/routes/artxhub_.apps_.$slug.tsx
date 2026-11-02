@@ -83,6 +83,7 @@ function ArtXHubAppDetailsPage() {
     { label: "Platform", value: app.platform },
     { label: "Category", value: app.category },
     { label: "Developer", value: app.developer },
+    ...(app.requires ? [{ label: "Requires", value: app.requires }] : []),
   ];
 
   return (
@@ -195,7 +196,7 @@ function ArtXHubAppDetailsPage() {
         <section className="mt-10">
           <h2 className="text-lg font-semibold text-slate-900">How to install</h2>
           <ol className="mt-3 space-y-2 text-sm text-slate-600 list-decimal list-inside">
-            {installSteps.map((step) => (
+            {(app.installSteps ?? installSteps).map((step) => (
               <li key={step}>{step}</li>
             ))}
           </ol>

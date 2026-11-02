@@ -1,6 +1,16 @@
 import * as React from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { ArrowRight, Download, Facebook, Mail, Menu, MessageCircle, Search, X } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Download,
+  Facebook,
+  Mail,
+  Menu,
+  MessageCircle,
+  Search,
+  X,
+} from "lucide-react";
 import type { ArtXApp } from "@/content/artxhub-apps";
 
 export const artxHubFontLink = {
@@ -62,6 +72,13 @@ export function ArtXHubHeader() {
           <Link to="/artxhub/about" className={navLinkClass(pathname === "/artxhub/about")}>
             About
             {pathname === "/artxhub/about" && activeBar}
+          </Link>
+          <Link
+            to="/"
+            className="inline-flex items-center gap-1 py-1 font-semibold text-[#1B4266] hover:text-slate-900 transition-colors focus:outline-none"
+          >
+            <span>ArtX Dev</span>
+            <ArrowUpRight className="w-3.5 h-3.5" />
           </Link>
         </nav>
 
