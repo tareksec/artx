@@ -87,12 +87,12 @@ export const artxHubApps: ArtXApp[] = [
         alt: "ArtX Hub BIRD theme in light mode",
       },
     ],
-    version: "v1.0.0",
+    version: "v1.0.1",
     fileSize: "16.4 MB",
     platform: "Android",
     requires: "Android 8 or newer",
     downloadUrl:
-      "https://github.com/tareksec/artxhub-releases/releases/download/v1.0.0/ArtXHub-1.0.0.apk",
+      "https://github.com/tareksec/artxhub-releases/releases/download/v1.0.0/ArtXHub-1.0.1-1500020301.apk",
     installSteps: [
       `Tap "Download APK" on your Android phone (Android 8 or newer).`,
       "Open the downloaded file and allow install from this source.",
@@ -112,6 +112,10 @@ export const artxHubApps: ArtXApp[] = [
       {
         title: "Light, Dark or Auto",
         description: "Pick a mode and apply your look in one tap.",
+      },
+      {
+        title: "Auto Updates",
+        description: "The app updates itself when a new version is out.",
       },
     ],
     notice:
